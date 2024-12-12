@@ -52,7 +52,7 @@ and you should see "Hello from Docker!" with some other output.
 
 You can install with Pip using:
 ```
-python3 -m pip install openlane
+python3 -m pip install openlane==2.2.9
 ```
 
 From here, you can enter a Docker shell with the OpenLane tools by running:
@@ -75,7 +75,9 @@ To check your installation, run the "smoke test":
 ```
 openlane --smoke-test
 ```
-which should download and run the SPM test design. This should end with: "Smoke test passed."
-
-
+which should download and run the SPM test design. This should end with the following:
+```
+[19:43:42] INFO     Smoke test passed.
+```
+Note, there might be a few "WARNING" messages, but that is ok.
 
