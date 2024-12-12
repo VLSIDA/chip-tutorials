@@ -1,0 +1,66 @@
+# Installing OpenLane Binaries (OpenROAD, KLayout, etc.)
+
+You must install OpenLane2 using either the Nix or the Docker method as discussed here:
+
+https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html
+
+For this class, we will be using *OpenLane 2.2.9* unless you are told later. Be sure to use this 
+version for compatibility with our grading!
+
+# Nix Instructions
+
+In this method, Nix will provide the binaries, but you first need to install Nix depending on your OS:
+https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html
+
+Nix will use the binaries locally, but you need the Nix settings from the OpenLane2 repository.
+To do this, you can clone this with:
+
+ git clone -b 2.2.9 https://github.com/efabless/openlane2
+
+Change to the openlane2 directory and open a Nix shell:
+
+ cd openlane2
+ nix-shell
+
+You should always use OpenLane in this shell since it is how the binaries are installed. 
+The first time, it should download all of the correct binaries.
+
+# Docker Instructions
+
+In this method, Docker will provide the binaries, but you first need to install Docker depending on your OS:
+https://openlane2.readthedocs.io/en/latest/getting_started/common/docker_installation/index.html
+
+In this method, the binaries will be provided in a Docker image and the
+OpenLane Python package will call commands in the Docker image as appropriate.
+
+## Check Docker
+
+Check that Docker is working by running:
+
+ docker run -it hello-world
+
+and you should see "Hello from Docker!" with some other output.
+
+## Install OpenLane2
+
+You can install with Pip using:
+
+ python3 -m pip install openlane
+
+From here, you can enter a Docker shell with the OpenLane tools by running:
+
+ openlane --dockerized
+
+You can either run OpenLane here, or you can run it from your regular OS and the scripts will be smart 
+enugh to run commands in the Docker image.
+
+# Smoke Test
+
+To check your installation, run the "smoke test":
+
+ openlane --smoke-test
+
+which should download and run the SPM test design. This should end with: "Smoke test passed."
+
+
+
