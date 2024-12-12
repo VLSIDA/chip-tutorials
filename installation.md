@@ -2,8 +2,6 @@
 
 You must install OpenLane2 using either the Nix or the Docker method as discussed here:
 [https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html](https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html)
-If you are using Linux or MacOS, you can use either method. If you are using Windows, 
-you must use the Docker method.
 
 For this class, we will be using *OpenLane 2.2.9* unless you are told later. Be sure to use this 
 version for compatibility with our grading! The version is included in several steps below, so do not
