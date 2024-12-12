@@ -75,7 +75,11 @@ To check your installation, run the "smoke test":
 ```
 openlane --smoke-test
 ```
-which should download and run the SPM test design. This should end with the following:
+or (if you are using the Docker method and not in a Docker shell):
+```
+openlane --dockerized --smoke-test
+```
+This should end with the following:
 ```
 [19:43:42] INFO     Smoke test passed.
 ```
