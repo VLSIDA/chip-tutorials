@@ -7,13 +7,13 @@ class material is provided in [our Canvas page](https://canvas.ucsc.edu/courses/
 
 1. [OpenLane Installation](installation.md)
 
-1. [Docker](docker.md)
+1. [OpenLane Walkthrough](openlane.md)
 
 1. [Sky130](sky130.md)
 
 1. [KLayout](klayout.md)
 
-1. Static Timing Analysis
+1. [Static Timing Analysis](sta.md)
 
 ## Other interesting things
 
