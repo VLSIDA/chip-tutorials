@@ -33,6 +33,6 @@
         $beol = "false"
         $offgrid = "false"
         
-        # %include ../drc/sky130A_mr.drc
+        # %include ../drc/sky130A.drc
     </text>
 </klayout-macro>

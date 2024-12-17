@@ -15,7 +15,7 @@ platforms (Windows, MacOS, Linux) and is easy to install.
 as the version used in OpenLane-2, so it should be compatible.
 
 *WARNING*: If you install another version, you must *UNINSTALL* KLayout before using
-OpenLane-2 in subsequent parts of the class. Or, at least, removing it from
+OpenLane-2 in subsequent parts of the class. Or, at least, remove it from
 your PATH. The OL2 developers use locally installed executables instead of the
 ones in the Docker container when they exist. You may run into problems during
 KLayout steps in OL2 if you do not do this!
@@ -73,10 +73,29 @@ a range, or holding down the control key and selecting individual layers.
 If the Sky130 technology files are properly loaded, you should see a menu called "Efabless sky130" with
 the following contents:
 
+![Sky130 menu](klayout/klayout-sky130-menu.png)
+
+## 2.5D Viewer
+
+The 2.5D viewer lets you look at and interact with a "3D" view of the layout:
+
+![2.5D Cell View](klayout/klayout-d25.png)
+
+This is useful for seeing how the the cell will look with the z-dimension
+information. Note that commercial tools do not have this feature and it is only
+really used for educational purposes.
+
+
 ## Running DRC
 
 
-There are a few options for running DRC: BEOL, FEOL, Full, Custom. BEOL means
+There are a few options for running DRC: 
+- BEOL: "back-end of line" or device layer checks only
+- FEOL: "front-end of line" or metal layer checks only
+- Full: Both BEOL and FEOL checks.
+- Custom: A custom set of DRC checks (BEOL, FEOL, grid, seal, etc.)
+
+BEOL means
 "back-end of line" and is short for the device layers. FEOL means "front-end of
 line" and is short for the metal layers. Full runs both BEOL and FEOL. Custom
 can run a custom subset of DRC checks. Sometimes, you might want to run just
