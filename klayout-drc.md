@@ -24,16 +24,23 @@ see the following errors (after expanding the tabs):
 
 ![DRC Marker Browser with errors](klayout/klayout-marker-browser-errors.png)
 
+Note that I resized the window and epanded the "Cell/Category" column to show the full
+information.
+
 If you click on a given error, it will open an explanation as well as highlight
 the related error in the layout with a thin black line.
 
-Detailed explanations of the DRC errors can be found in the Sky130 documentation:
-[https://skywater-pdk.readthedocs.io/en/main/rules.html](https://skywater-pdk.readthedocs.io/en/main/rules.html)
-We highlighted the poly rule and can go to the "poly" section to see the details:
+Detailed explanations of the DRC errors can be found in the 
+[Sky130 Periphery Rules documentation](https://skywater-pdk.readthedocs.io/en/main/rules.html)
+
+Typically, DRC rules are formulated by the layer and the rule number. 
+We highlighted the poly.7 rule and can go to the poly section to see the details:
 
 ![Poly design rules](klayout/klayout-poly-designrules.png)
 
-Specifically, poly.7 specifies the "Extension of diffusion beyond poly" and poly.8 specifies the "Extension of poly beyond diffusion".
+Specifically, poly.7 specifies the "Extension of diffusion beyond poly" or the minimum source/drain length.  
+Poly.8 specifies the "Extension of poly beyond diffusion". Poly.7 should be 0.25um and poly.8 should be 0.13um.
+(I don't know why the units are missing for these rules in the manual.)
 If you look closely at the examples, there is an example of poly.7 and poly.8 with measurement markers:
 
 ![Poly.7 and poly.8 examples](klayout/klayout-poly7-poly8.png)
@@ -41,7 +48,13 @@ If you look closely at the examples, there is an example of poly.7 and poly.8 wi
 In the example, there are also licon.1 and licon.5 errors which are available
 in the [licon
 section](https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#licon)
-of the design rules.
+of the design rules. Licon.1 specifies the minimum and maximum contact size which must be 0.17um. Licon.5 
+has several sub rules (a, b, and c) which can be seen most easily in the following image:
+
+![Licon.5 design rules](klayout/klayout-licon.png)
+
+Basically, the contact needs to have space on the left/right or bottom/top of different size. Licon.5b
+is related to licon in tap well taps and not diff.
 
 
 
