@@ -49,14 +49,16 @@ You will then be greeted with the main KLayout window:
 ![Main window](klayout/klayout-main.png)
 
 
-# Loading a GDS file
+# Using KLayout
+
+## Loading a GDS file
 
 You can open a GDS file by selecting `File` -> `Open` and selecting the GDS file you want to open. Select
 the GDS file in the klayout subdirectory called 'sky130_fd_sc_hd__inv_1.gds' and you will see the following:
 
 ![GDS file loaded with tech](klayout/klayout-load.png)
 
-# Layer palette
+## Layer palette
 
 On the right, you should see the "Layers" palette. However, this includes a lot of layers that
 are not used and are grayed out. To only show the layers that are used in the cell click,
@@ -68,14 +70,14 @@ If you double click on any layer, it will make it invisible. If you double click
 make it visible. You can also select multiple layers by holding down the shift key and selecting
 a range, or holding down the control key and selecting individual layers.
 
-# Sky130 Menu
+## Sky130 Menu
 
 If the Sky130 technology files are properly loaded, you should see a menu called "Efabless sky130" with
 the following contents:
 
 ![Sky130 menu](klayout/klayout-sky130-menu.png)
 
-## 2.5D Viewer
+### 2.5D Viewer
 
 The 2.5D viewer lets you look at and interact with a "3D" view of the layout:
 
@@ -86,7 +88,7 @@ information. Note that commercial tools do not have this feature and it is only
 really used for educational purposes.
 
 
-## Running DRC
+### Running DRC
 
 
 There are a few options for running DRC: 
@@ -134,14 +136,14 @@ of the design rules.
 
 
 
-## Running LVS
+### Running LVS
 
 Make sure to uncheck the "scale" option in the LVS dialog box. Sky130 uses an
 odd scale factor in the spice netlist of microns instead of meters. If you
 don't uncheck this, the transistor sizes won't match and your LVS will fail.
 
 
-# Closing crash
+## Closing crash
 
 For some reason, on my Ubuntu machine, KLayout crashes when I close it. I get this window and must select "Cancel" to
 fully exit out:
