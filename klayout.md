@@ -39,17 +39,12 @@ running the following command:
 KLAYOUT_PATH=klayout klayout -e
 ```
 where klayout is the subdirectory with the tech subdirectory.
-If you are in another directory, you can specify the absolute path instead:
+If you are in another directory, you can specify the absolute path to the klayout subdirectory instead.
 
-```bash
-KLAYOUT_PATH=/path/to/klayout_subdir klayout -e
-```
+You must specify the "-e" argument to enable edit mode. Otherwise, KLayout is
+just started in read-only (viewer) mode.
 
-You will be prompted with the following window each ti
-
-![Setting to select hierarchy mode](klayout/klayout-hierarchy.png)
-
-You will then be greeted with the main KLayout window. 
+You will then be greeted with the main KLayout window:
 
 ![Main window](klayout/klayout-main.png)
 
@@ -59,12 +54,7 @@ You will then be greeted with the main KLayout window.
 You can open a GDS file by selecting `File` -> `Open` and selecting the GDS file you want to open. Select
 the GDS file in the klayout subdirectory called 'sky130_fd_sc_hd__inv_1.gds' and you will see the following:
 
-![GDS file loaded](klayout/klayout-load-notech.png)
-
-Select the drop down menu in the upper right with the "T" to select the Sky130 technology and
-then click the sky130 button. You should see:
-
-![GDS file loaded with tech](klayout/klayout-load-tech.png)
+![GDS file loaded with tech](klayout/klayout-load.png)
 
 # Layer palette
 
