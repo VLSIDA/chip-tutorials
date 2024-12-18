@@ -11,16 +11,15 @@ git clone git@github.com:VLSIDA/cse122-222a-w25.git
 
 1. [Git](git.md)
 
-1. [OpenLane Installation](installation.md)
-
-1. [OpenLane Walkthrough](openlane.md)
+1. [Sky130](sky130.md)
 
 1. [KLayout](klayout.md)
 
 1. [Spice](spice.md)
 
+1. [OpenLane Installation](installation.md)
 
-1. [Sky130](sky130.md)
+1. [OpenLane Walkthrough](openlane.md)
 
 1. [Static Timing Analysis](sta.md)
 
