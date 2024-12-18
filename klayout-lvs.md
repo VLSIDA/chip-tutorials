@@ -4,29 +4,21 @@
 *WARNING*: Make sure you are using a DRC clean layout for this tutorial. While layouts with
 DRC errors *might* work, they also might not. It depends on the DRC error.
 
-LVS will compare a layout with a netlist in Spice (or CDL) format. CDL is
-"Cadence Description Language" and is essentially the same as Spice. For more
-understanding of Spice syntax, take a look at the [Spice](spice.md) tutorial.
-Suffixes for spice files can have many variations including:
-- .sp
-- .spi
-- .spice
-- .cdl
-- .cir
-- .ckt
-and probably others.
+LVS will compare a layout with a netlist in SPICE (or CDL) format. CDL is
+"Cadence Description Language" and is essentially the same as SPICE. For more
+understanding of SPICE syntax, take a look at the [SPICE](spice.md) tutorial.
 
-After running LVS, you are presented with an option to import the spice netlist:
+After running LVS, you are presented with an option to import the SPICE netlist:
 
 ![LVS netlist](klayout/klayout-lvs-netlist.png)
 
-where you should select the spice netlist: ``sky130_fd_sc_hd__inv_1.spice``. 
+where you should select the SPICE netlist: ``sky130_fd_sc_hd__inv_1.spice``. 
 After this, the LVS options menu will appear:
 
 ![LVS menu](klayout/klayout-lvs-menu.png)
 
 Make sure to uncheck the "scale" option in the LVS dialog box. Sky130 uses an
-odd scale factor in the spice netlist of microns instead of meters. If you
+odd scale factor in the SPICE netlist of microns instead of meters. If you
 don't uncheck this, the transistor sizes won't match and your LVS will fail.
 
 After running LVS, you will get a window with the results like this:
@@ -50,4 +42,12 @@ if it is difficult to see.
 
 ### Parameter mismatch
 
+### Substrate connection
 
+### Missing devices
+
+### Unconnected net
+
+### Short-circuit connection
+
+### Pin mismatch
