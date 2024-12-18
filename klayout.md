@@ -85,7 +85,7 @@ This is useful for seeing how the the cell will look with the z-dimension
 information. Note that commercial tools do not have this feature and it is only
 really used for educational purposes.
 
-The [DRC](klayout-drc.md) and [LVS](klayout-lvs.md) tools are also available in the Sky130 menu.
+The [Running DRC](klayout-drc.md) and [Running LVS](klayout-lvs.md) tutorials discuss how to run DRC and LVS, respectively.
 
 The [Edit](klayout-edit.md) tutorial has some useful instructions for editing shapes in the layout.
 

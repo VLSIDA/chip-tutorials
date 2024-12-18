@@ -1,12 +1,9 @@
-# Welcome
-
-Welcome to the Winter 2025 CSE 122/222A VLSI class. This provides the tutorials for the class only. All other
-class material is provided in [our Canvas page](https://canvas.ucsc.edu/courses/79397).
+# UCSC VLSI-DA Chip Tutorials
 
 To clone this repo and all of the tutorial files locally, you can use the following command:
 
 ```bash
-git clone git@github.com:VLSIDA/cse122-222a-w25.git
+git clone git@github.com:VLSIDA/chip-tutorials.git
 ```
 
 1. [Git](git.md)
