@@ -2,22 +2,9 @@
 
 ## Running OpenSTA
 
-OpenSTA is a command line tool. To run it, open a terminal and type `sta`.
-
-```
-$ sta
-OpenSTA 2.6.0 GITDIR-NOT Copyright (c) 2024, Parallax Software, Inc.
-License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
-
-This is free software, and you are free to change and redistribute it
-under certain conditions; type `show_copying' for details.
-This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
-warning: `/var/empty/.tclsh-history' is not writable.
-sta [/home/user/chip-tutorials/sta]
-```
-
-However, it is also integrated into OpenROAD. You can run the same commands there:
-
+OpenSTA is a command line tool called `sta`, but it is 
+also integrated into OpenROAD and the OpenLane environment. You can run it there in either the
+[Nix or Docker environment](installation.md):
 ```
 $ openroad
 OpenROAD edf00dff99f6c40d67a30c0e22a8191c5d2ed9d6
@@ -31,7 +18,8 @@ openroad>
 These tutorials all use [TCL (Tool Command
 Language)](https://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html) scripts to
 interact with OpenSTA. You don't need to master TCL, but you should be familiar with
-it. It is based on LISP but with customized commands for EDA tools.
+it. It is based on LISP but with customized commands for EDA tools. While you can also use
+these commands in Python, *the industry standard is currently TCL*. 
 
 This tutorial will utilize the spm design example final output that was created by OpenLane2.
 You should untar the file for this tutorial:
@@ -39,18 +27,7 @@ You should untar the file for this tutorial:
 tar -zxvf final.tar.gz
 ```
 which will create the final subdirectory with subdirectories for the different design files.
-The ones that we are concerned with are the following:
-- def
-- lef
-- lib
-- odb
-- pnl
-- sdc
-- sdf
-- spef
-- spice
-- vh
-
+The ones that we are concerned with are the following: def, odb, nl, sdc, and spef.
 
 ## Single corner timing analysis
 
@@ -137,8 +114,20 @@ report_checks
 
 ## SDC (Synopsys Design Constraints)
 
+### Input constraints
+
+### Output constraints
+
+### Clocks
+
+### Timing Exceptions
+
+`set_false_path`
+`set_multi_cycle_path`
+
 ## Ideal vs propagated clocks
 
+`set_propagated_clock`
 
 ## OpenROAD Timing GUI
 
@@ -157,6 +146,6 @@ of the path like this:
 ![Timing Path in OpenROAD](sta/openroad-timing-report.png)
 
 The path should also be highlighted in the layout to see the placement. However, the color 
-defaults to black. (Submit a PR to this tutorial if you know how to fix it!)
+defaults to black. ([Submit a PR to this tutorial]( if you know how to fix it!)
 
 
