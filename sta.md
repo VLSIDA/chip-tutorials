@@ -24,6 +24,8 @@ these commands in Python, *the industry standard is currently TCL*.
 This tutorial will utilize the spm design example final output that was created by OpenLane2.
 You should untar the file for this tutorial:
 ```bash
+git clone git@github.com:VLSIDA/chip-tutorials.git
+cd chip-tutorials/sta
 tar -zxvf final.tar.gz
 ```
 which will create the final subdirectory with subdirectories for the different design files.
@@ -35,20 +37,23 @@ There are four main steps to setting up a timing analysis.
 1. Read in the library file(s)
 1. Read in the design file(s)
 1. Read in the parasitic file(s)
-1. Read in the constraints file(s)
+1. Read in the constraints 
 
-The following is an example that does this:
+The following is an example that does each of these steps:
 ```tcl
 read_lib $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
 read_db odb/spm.odb 
 read_spef spef/max/spm.max.spef
 read_sdc sdc/spm.sdc
 ```
+Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
+PDK installation directory. 
 
 ###  Other ways to read the design file(s)
 
 Instead of reading the ODB (OpenROAD database format) file, you can use
-gate-level verilog file or the DEF (Design Exchange Format) file. However,
+gate-level verilog file or the DEF (Design Exchange Format) file. You may need to do this
+depending on what output is available from the steps of the design flow (i.e. they don't all save ODB files). However,
 these both require that you also read in the LEF technology and cell files. This would replace the
 reading of the design above with these multiple steps like this for the DEF:
 ```tcl
@@ -77,24 +82,14 @@ missing liberty files:
 but that is ok since they are special cells that do not have timing.
 
 
-## Reporting timing
+## Reports
+
+The [STA Reporting Tutorial](sta-reports.md) goes into more detail on the different reports that can be generated.
 
 
-## Reporting power
+## Timing Constraints
 
-
-```tcl
-set_power_activity -input 0.1
-set_power_activity -input_port clk 0.5
-set_power_activity -input_port rst 0.0
-report_power
-```
-
-You can also use VCD (Verilog Change Dump) files to get the activity for better accuracy:
-```tcl
-read_vcd -scope tb/spm spm.vcd
-```
-if you've created a file with your testbench, `tb`.
+The [STA Timing Constraints Tutorial](sta-constraints.md) goes into more detail on the different constraints that can be used.
 
 
 ## Multi-corner timing analysis
@@ -111,23 +106,6 @@ read_spef -corner typ spef/max/spm.nom.spef
 read_sdc sdc/spm.sdc
 report_checks
 ```
-
-## SDC (Synopsys Design Constraints)
-
-### Input constraints
-
-### Output constraints
-
-### Clocks
-
-### Timing Exceptions
-
-`set_false_path`
-`set_multi_cycle_path`
-
-## Ideal vs propagated clocks
-
-`set_propagated_clock`
 
 ## OpenROAD Timing GUI
 

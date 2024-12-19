@@ -20,15 +20,6 @@ your PATH. The OL2 developers use locally installed executables instead of the
 ones in the Docker container when they exist. You may run into problems during
 KLayout steps in OL2 if you do not do this!
 
-## Clone this repository
-
-This repository contains the Sky130 technology files for KLayout. Clone this using:
-
-```bash
-git clone git@github.com:VLSIDA/cse122-222a-w25.git
-cd cse122-222a-w25
-```
-
 ## Starting KLayout with Sky130
 
 The subdirectory `klayout/tech` contains the Sky130 technology files for

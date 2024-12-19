@@ -4,7 +4,9 @@ To clone this repo and all of the tutorial files locally, you can use the follow
 
 ```bash
 git clone git@github.com:VLSIDA/chip-tutorials.git
+cd chip-tutorials
 ```
+
 
 1. [Git](git.md)
 
