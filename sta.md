@@ -1,6 +1,4 @@
-# OpenSTA Tutorial
-
-## Running OpenSTA
+# Static Timing Analysis (STA) Tutorial
 
 OpenSTA is a command line tool called `sta`, but it is 
 also integrated into OpenROAD and the OpenLane environment. You can run it there in either the
