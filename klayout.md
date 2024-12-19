@@ -77,6 +77,8 @@ the following contents:
 
 ![Sky130 menu](klayout/klayout-sky130-menu.png)
 
+### 2.5D Viewer
+
 The 2.5D viewer lets you look at and interact with a "3D" view of the layout:
 
 ![2.5D Cell View](klayout/klayout-d25.png)
@@ -85,9 +87,14 @@ This is useful for seeing how the the cell will look with the z-dimension
 information. Note that commercial tools do not have this feature and it is only
 really used for educational purposes.
 
-The [Running DRC](klayout-drc.md) and [Running LVS](klayout-lvs.md) tutorials discuss how to run DRC and LVS, respectively.
+### Running DRC and LVS
 
-The [Edit](klayout-edit.md) tutorial has some useful instructions for editing shapes in the layout.
+The [Running DRC](klayout-drc.md) tutorial discusses how to run Design Rule Checks (DRC) in KLayout with Sky130.
+The [Edit](klayout-edit.md) tutorial has some useful instructions for editing shapes in the layout which
+can be used to fix DRC errors.
+
+The [Running LVS](klayout-lvs.md) tutorial discusses how to run LVS as well as some common errors and how to fix them.
+
 
 ## Closing crash
 
