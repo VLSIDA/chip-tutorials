@@ -89,21 +89,13 @@ The [STA Reporting Tutorial](sta-reports.md) goes into more detail on the differ
 
 The [STA Timing Constraints Tutorial](sta-constraints.md) goes into more detail on the different constraints that can be used.
 
+## Multi-Corner STA
 
-## Multi-corner timing analysis
+The [STA Multi-Corner Tutorial](sta-mc.md) goes into more detail on how to set up a multi-corner analysis.
 
-```tcl
-define_corners wc bc typ
-read_lib -corner wc $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
-read_lib -corner bc $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__nom_n40C_1v95.lib
-fead_lib -corner typ $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_db odb/spm.db
-read_spef -corner wc spef/max/spm.max.spef
-read_spef -corner bc spef/max/spm.min.spef
-read_spef -corner typ spef/max/spm.nom.spef
-read_sdc sdc/spm.sdc
-report_checks
-```
+## Noise Analysis
+
+TBD
 
 ## OpenROAD Timing GUI
 

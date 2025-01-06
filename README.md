@@ -14,7 +14,9 @@ cd chip-tutorials
 
 1. [KLayout](klayout.md)
 
-1. [Spice](spice.md)
+1. [Spice Syntax](spice.md)
+
+1. [Ngspice Usage](ngspice.md)
 
 1. [OpenLane Installation](installation.md)
 
