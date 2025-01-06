@@ -1,5 +1,5 @@
 
-remote_theme: "mmistakes/so-simple-theme@3.2.0"
+remote_theme: "jeckyll-theme-minimal"
 
 title: "UCSC VLSI-DA Chip Tutorial Pages
 description: "A collection of tutorial pages used by classes at UCSC."
