@@ -10,19 +10,22 @@ cd chip-tutorials
 
 1. [Git](git.md)
 
-1. [Sky130](sky130.md)
-
-1. [KLayout](klayout.md)
-
 1. [Spice Syntax](spice.md)
 
 1. [Ngspice Usage](ngspice.md)
+
+1. [KLayout](klayout.md)
 
 1. [OpenLane Installation](installation.md)
 
 1. [OpenLane Walkthrough](openlane.md)
 
 1. [Static Timing Analysis](sta.md)
+
+## In progress...
+
+1. [Sky130](sky130.md)
+
 
 ## Other interesting things
 
