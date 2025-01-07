@@ -25,17 +25,6 @@ nix shell github:efabless/nix-eda#ngspice
 In this method, Nix will provide the binaries, but you first need to install Nix depending on your OS:
 [https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html](https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html)
 
-
-## Interface
-
-Ngspice is primarily a text interface with limited plotting
-capabilities. There is a list of other tutorials on the ngspice web
-page:
-[http://ngspice.sourceforge.net/tutorials.html](http://ngspice.sourceforge.net/tutorials.html)
-The ngspice manual is also available at:
-[http://ngspice.sourceforge.net/docs/ngspice-manual.pdf](http://ngspice.sourceforge.net/docs/ngspice-manual.pdf)
-
-
 ## Running Ngspice
 
 Once you create an ngspice file like [example.sp](spice/example.sp), you can run it on the command line by typing:
@@ -87,9 +76,9 @@ The most common use is:
 ```
 .dc <source> <start> <stop> <step>
 ```
-``source'' is the name of the independent voltage or current source, a model
-parameter, or an operating point such as the temperature (TEMP). The start,
-stop and step give the range and accuracy of the static points to simulate.
+*source* is the name of the independent voltage or current source, a model
+parameter, or an operating point such as the temperature (TEMP). The *start*,
+*stop* and *step* give the range and accuracy of the static points to simulate.
 
 The following example causes the value of the voltage source VIN to be
 swept from 0.25 volts to 5.0 volts in increments of 0.25 volts and the circuit is solved for each value:
@@ -307,3 +296,14 @@ One issue to watch out for is that you cannot set your trigger at a
 zero value. If you want to trigger at zero, you can approximate the
 measurement by using a very small, but non-zero, trigger value. For
 example, I could trigger on the value 1n.
+
+
+
+
+## Further information
+
+There is a list of other tutorials on the Ngspice web page:
+[http://ngspice.sourceforge.net/tutorials.html](http://ngspice.sourceforge.net/tutorials.html)
+The ngspice manual is also available at:
+[http://ngspice.sourceforge.net/docs/ngspice-manual.pdf](http://ngspice.sourceforge.net/docs/ngspice-manual.pdf)
+
