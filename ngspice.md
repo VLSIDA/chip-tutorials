@@ -9,14 +9,31 @@ performance, some minor syntax differences (primarily in the analysis
 commands), and possibly some enhanced features. For full information on the
 syntax of spice see the [Spice Syntax](spice.md) tutorial.
 
+## Installing Ngspice
+
+Ngspice is available for all major operating systems. You can download and install it from
+the [Ngspice web site](http://ngspice.sourceforge.net/download.html).  You should 
+be using *at least version 37* of ngspice.  You can check the version by typing:
+```bash
+ngspice --version
+```
+
+If you are using Nix (such as for the OpenLane flow), you can install it with:
+```bash
+nix shell github:efabless/nix-eda#ngspice
+```
+In this method, Nix will provide the binaries, but you first need to install Nix depending on your OS:
+[https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html](https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html)
+
+
 ## Interface
 
 Ngspice is primarily a text interface with limited plotting
 capabilities. There is a list of other tutorials on the ngspice web
 page:
-[http://ngspice.sourceforge.net/tutorials.html]
+[http://ngspice.sourceforge.net/tutorials.html](http://ngspice.sourceforge.net/tutorials.html)
 The ngspice manual is also available at:
-[http://ngspice.sourceforge.net/docs/ngspice-manual.pdf]
+[http://ngspice.sourceforge.net/docs/ngspice-manual.pdf](http://ngspice.sourceforge.net/docs/ngspice-manual.pdf)
 
 
 ## Running Ngspice
@@ -39,7 +56,7 @@ often a source of confusion if someone thinks it is a command since it
 will always be ignored.  You will also see any possible errors or
 warnings loading your spice file. You must fix these before you can
 procede, but it is safe to ignore one about ``Note: can't find init
-file.''
+file.``
 
 To actually simulate, you must type *run* at the prompt. When you
 want to exit ngspice, type *quit* at the prompt. There is no elegant way
