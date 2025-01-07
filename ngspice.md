@@ -38,7 +38,7 @@ The ngspice manual is also available at:
 
 ## Running Ngspice
 
-Once you create an ngspice file, you can run it on the command line by typing:
+Once you create an ngspice file like [example.sp](spice/example.sp), you can run it on the command line by typing:
 ```bash
 ngspice example.sp 
 ```

@@ -301,26 +301,3 @@ useful for defining a supply voltage, for example, which may later
 change.
 
 
-## Simulating SPICE
-
-To simulate SPICE, you need a stimulus file as well as a netlist file. These can be in the
-same file, but often they are kept separate. The stimulus file will often use the .INCLUDE
-directive to include the netlist file. If the netlist file has a subcircuit, the stimulus
-file may also create an instance of it.
-
-Here is an example of a stimulus file for the inverter above (again, the first line is ignored!):
-```
-* Inverter testbench
-.INCLUDE BUFFER.spice
-.TRAN 1n 10n
-Vdd vdd 0 1.8
-
-X2 bufin vdd 0 bufout BUFFER
-
-Vinput bufin 0 PULSE(0 1.8 0 0.1n 0.1n 1n 2n)
-
-.MEASURE tran_delay TRIG v(bufin)*0.5 RISE=1 TARG v(bufout)*0.5 RISE=1
-```
-
-
-
