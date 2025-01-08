@@ -25,6 +25,20 @@ nix shell github:efabless/nix-eda#ngspice
 In this method, Nix will provide the binaries, but you first need to install Nix depending on your OS:
 [https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html](https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html)
 
+## Installing Sky130 PDK
+
+You will also need the spice models and the cell library for Sky130 to do this. The easiest way is to
+use Volare. (If you have used OpenLane, it already installed the PDK for you.) You can do this with:
+```bash
+pip install volare
+volare enable --pdk sky130 0fe599b2afb6708d281543108caf8310912f54af
+```
+You should now see the PDK installed:
+```bash
+$ ls ~/.volare
+sky130A  sky130B  volare
+```
+
 ## Running Ngspice
 
 Once you create an ngspice file like [example.sp](spice/example.sp), you can run it on the command line by typing:
