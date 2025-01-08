@@ -1,10 +1,10 @@
 * Example Inverter with Transient Analysis and Measure
 
 * include the MOSFET models with TT proccess 
-.lib "$PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.lib '~/.volare/sky130A/libs.tech/ngspice/sky130.lib.spice' tt
 
 * include the standard cell library
-.include '$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice'
+.include '~/.volare/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice'
 
 * our supplies are global to the hierarchy
 *.global vdd gnd

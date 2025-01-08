@@ -52,6 +52,16 @@ want to exit ngspice, type *quit* at the prompt. There is no elegant way
 reload a spice file, so you must quit and restart the program each
 time. Please ask if you don't understand a warning or error message.
 
+You can embed those commands directly into the spice file using a control card like this:
+```
+.control
+run
+quit
+.endc
+```
+However, this is syntax specific to Ngspice. 
+
+
 ## Circuit Analysis
 
 Ngspice can perform at least three types of circuit analysis: direct
