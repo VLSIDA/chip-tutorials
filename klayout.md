@@ -22,15 +22,22 @@ KLayout steps in OL2 if you do not do this!
 
 ## Starting KLayout with Sky130
 
-The subdirectory `klayout/tech` contains the Sky130 technology files for
+Clone this repository to your local machine:
+```bash
+git clone git@github.com:VLSIDA/chip-tutorials.git
+cd chip-tutorials/klayout
+```
+The subdirectory `tech` contains the Sky130 technology files for
 KLayout in one convenient place. You can start KLayout and have it use these by
 running the following command:
 
 ```bash
-KLAYOUT_PATH=klayout klayout -e
+KLAYOUT_PATH=. klayout -e
 ```
-where klayout is the subdirectory with the tech subdirectory.
-If you are in another directory, you can specify the absolute path to the klayout subdirectory instead.
+where "." refers to the current directory (chip-tutorials/klayout).
+If you don't specify the *KLAYOUT_PATH* variable,
+it will use the tech directory in your home directory which likely does not
+exist.
 
 You must specify the "-e" argument to enable edit mode. Otherwise, KLayout is
 just started in read-only (viewer) mode.
