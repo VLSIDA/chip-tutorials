@@ -9,10 +9,14 @@ performance, some minor syntax differences (primarily in the analysis
 commands), and possibly some enhanced features. For full information on the
 syntax of spice see the [Spice Syntax](spice.md) tutorial.
 
+
 ## Installing Ngspice
 
 Ngspice is available for all major operating systems. You can download and install it from
-the [Ngspice web site](http://ngspice.sourceforge.net/download.html).  You should 
+the [Ngspice web site](http://ngspice.sourceforge.net/download.html).  
+*You must use Ngspice in WSL for Windows.*
+
+You should 
 be using *at least version 37* of ngspice.  You can check the version by typing:
 ```bash
 ngspice --version
