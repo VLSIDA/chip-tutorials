@@ -1,7 +1,7 @@
 
 # Editing shapes in KLayout
 
-These videos cover a variety of features in KLayout but aren't really necessary for this assignment:
+These videos cover a variety of features in KLayout:
 * [Drawing Shapes](https://www.youtube.com/watch?v=BnQrU1bVC8o)
 * [Editing Shapes](https://www.youtube.com/watch?v=k_ZNBGKYyvg)
 * [Cell Hierarchy Part 1](https://www.youtube.com/watch?v=VaoRk8fuvKY)
