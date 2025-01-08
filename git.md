@@ -54,7 +54,7 @@ More information on ssh is availble at:
 
 You can now clone your personal repository for the class by typing:
 
-`git clone git@git.ucsc.edu:cse122/s23/userid.git newname`
+`git clone git@git.ucsc.edu:cse122/w25/userid.git newname`
 
 where userid is your UCSC ID and newname is what you want to call the
 repository on your local machine. **Note: All students use cse122 above
@@ -64,7 +64,7 @@ repository.
 If you are new to git, you can (and should!) use the web page to confirm files
 in your repository:
 
-[https://git.ucsc.edu/cse122/s23/userid](https://git.ucsc.edu/cse122/s23/userid)
+[https://git.ucsc.edu/cse122/w25/userid](https://git.ucsc.edu/cse122/w25/userid)
 
 where userid is your UCSC ID.
 
