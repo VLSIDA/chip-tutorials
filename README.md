@@ -27,10 +27,5 @@ cd chip-tutorials
 1. [Sky130](sky130.md)
 
 
-## Other interesting things
-
-* [Hardware Systems Collective (HSC)](https://hsc.ucsc.edu) [seminar videos](https://www.youtube.com/@ucsc-hsc).
-* [Ken Shirriff's Blog](https://www.righto.com/)
-* [Sam Zeloof's home chip fab](http://sam.zeloof.xyz/)
 
 
