@@ -125,4 +125,4 @@ defaults to black. ([Submit a PR to this tutorial]( if you know how to fix it!)
   
 # License
 
-Copyright 2024 VLSI-DA (see LICENSE for use)
+Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)

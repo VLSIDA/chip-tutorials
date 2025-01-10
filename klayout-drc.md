@@ -66,4 +66,4 @@ is related to licon in tap well taps and not diff.
   
 # License
 
-Copyright 2024 VLSI-DA (see LICENSE for use)
+Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)

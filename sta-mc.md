@@ -50,4 +50,4 @@ report_checks -corner typ
   
 # License
 
-Copyright 2024 VLSI-DA (see LICENSE for use)
+Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
