@@ -32,11 +32,11 @@ Standard cell libraries will often come with SPICE netlists for the cells. Somet
 these will be individual files, or sometimes they might all be in a single large file. 
 The Sky130 library has its cells in:
 ```
-$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+~/.volare/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 ```
 There are also CDL versions in:
 ```
-$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/cdl/sky130_fd_sc_hd.cdl
+~/.volare/sky130A/libs.ref/sky130_fd_sc_hd/cdl/sky130_fd_sc_hd.cdl
 ```
 
 

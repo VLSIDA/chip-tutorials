@@ -32,13 +32,9 @@ nix shell github:efabless/nix-eda#ngspice
 
 ## Installing Sky130 PDK
 
-You can also install this using Nix and OpenLane by following [these
-instructions](installation.md) through the "smoke test" which will download the
-Skywater 130nm PDK. 
 
-Or, you can do it yourself using Volare. If you have used the OpenLane "smoke
-test" as above, skip this as it already installed the PDK for you. Otherwise,
-you can do this with:
+You should install the PDK using volare which you can install with Python pip.
+For example,
 ```bash
 pip install volare
 volare enable --pdk sky130 0fe599b2afb6708d281543108caf8310912f54af
