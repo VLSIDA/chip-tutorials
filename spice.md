@@ -170,7 +170,7 @@ usually swap the drain and source.
 Instances are special SPICE cards that being with an X. They are used to instantiate
 subcircuit copies like this:
 ```
-X0 in 0 vdd 0 vdd out sky130_fd_sc_hd__inv_1
+X0 in 0 0 vdd vdd out sky130_fd_sc_hd__inv_1
 ```
 which creates an instance of the `sky130_fd_sc_hd__inv_1` subcircuit with the
 name `X0`. The connections to this instance are in the order of the SUBCKT
@@ -183,8 +183,8 @@ connected externally to the vdd net. The VGND and VPB pins are both connected to
 You can declare instances in a SUBCKT. For example, I can make a BUFFER subcircuit from the inverter like this:
 ```
 .SUBCKT BUFFER IN VDD GND OUT
-X0 IN 0 VDD 0 VDD n10 sky130_fd_sc_hd__inv_1
-X1 n10 0 VDD 0 VDD OUT sky130_fd_sc_hd__inv_1
+X0 IN 0 0 VDD VDD n10 sky130_fd_sc_hd__inv_1
+X1 n10 0 0 VDD VDD OUT sky130_fd_sc_hd__inv_1
 .ENDS BUFFER
 ```
 SPICE has only one level of scope for SUBCKTs. This means you cannot have duplicate names. If you repeat names,
