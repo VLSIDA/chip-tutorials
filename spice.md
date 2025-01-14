@@ -7,6 +7,22 @@ the circuit.
 For full information on the
 how to run and use Ngspice, see the [Ngspice Usage](ngspice.md) tutorial.
 
+## Installing Sky130 PDK
+
+
+You should install the PDK using volare which you can install with Python pip.
+For example,
+```bash
+pip install volare
+volare enable --pdk sky130 0fe599b2afb6708d281543108caf8310912f54af
+```
+You should now see the PDK installed:
+```bash
+$ ls ~/.volare
+sky130A  sky130B  volare
+```
+
+
 ## How are SPICE netlists created
 
 SPICE files are text files and can be edited with any text editor. Suffixes for
