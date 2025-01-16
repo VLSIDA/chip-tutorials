@@ -46,6 +46,18 @@ You will then be greeted with the main KLayout window:
 
 ![Main window](klayout/klayout-main.png)
 
+## Troubleshooting
+
+You may get the following error if you try to run KLayout from the docker.
+```bash
+Authorization required, but no authorization protocol specified
+Could not load the Qt platform plugin "xcb" in "" even though it was found. 
+```
+You can resolve this by running:
+```bash
+xhost +local:
+```
+This will give the docker container permission to access your display server (X11).
 
 # Using KLayout
 
