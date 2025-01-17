@@ -2,14 +2,18 @@
 This is a set of videos and readings to get students up to speed on ML and GNNs for EDA applications.
 
 # Basic ML
+
 ## Python
 [Python Tutorial](https://www.learnpython.org/)
+
 ## General Theory
 * [Andrew Ng Course 1](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
+
 ## Pytorch
 * [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html)
 
 # GNN
+
 ## Tutorial Videos
 * [Part 1](https://youtu.be/fOctJB4kVlM?si=nf8-Upzhv0_fu72q)
 * [Part 2](https://youtu.be/ABCGCf8cJOE?si=kj3m7JUHCriBsN59)
