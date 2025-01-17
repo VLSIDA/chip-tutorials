@@ -8,6 +8,7 @@ This is a set of videos and readings to get students up to speed on ML and GNNs 
 
 ## General Theory
 * [Andrew Ng Course 1](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
+* [Andrew Ng Course 2](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc)
 
 ## Pytorch
 * [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html)
