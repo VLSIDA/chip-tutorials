@@ -13,6 +13,11 @@ This is a set of videos and readings to get students up to speed on ML and GNNs 
 ## Pytorch
 * [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html)
 
+# OpenROAD+ML
+
+* [ORDB tips](ordb.md)
+* [ASP-DAC24 Tutorial](https://github.com/ASU-VDA-Lab/ASP-DAC24-Tutorial)
+
 # GNN
 
 ## Tutorial Videos
