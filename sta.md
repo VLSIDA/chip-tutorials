@@ -114,7 +114,7 @@ of the path like this:
 ![Timing Path in OpenROAD](sta/openroad-timing-report.png)
 
 The path should also be highlighted in the layout to see the placement. However, the color 
-defaults to black. ([Submit a PR to this tutorial]( if you know how to fix it!)
+defaults to black.
 
 
 

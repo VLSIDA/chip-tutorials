@@ -1,5 +1,7 @@
 This is info on how to access design data through the OpenRoad python API. It includes both ORDB as well as the timing API.
 
+You should install OpenROAD or [OpenLANE](installation.md).
+
 # How to access the API
 
 You can run:
