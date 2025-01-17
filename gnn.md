@@ -4,7 +4,7 @@ This is a set of videos and readings to get students up to speed on ML and GNNs 
 # Basic ML
 
 ## Python
-[Python Tutorial](https://www.learnpython.org/)
+* [Python Tutorial](https://www.learnpython.org/)
 
 ## General Theory
 * [Andrew Ng Course 1](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
@@ -26,7 +26,7 @@ This is a set of videos and readings to get students up to speed on ML and GNNs 
 
 ## PyTorch Geometry (PyG)
 * [PyG Tutorial](https://pytorch-geometric.readthedocs.io/en/latest/get_started/introduction.html)
-** [Heterogenous GNNs](https://pytorch-geometric.readthedocs.io/en/latest/tutorial/heterogeneous.html)
+* [Heterogenous GNNs](https://pytorch-geometric.readthedocs.io/en/latest/tutorial/heterogeneous.html)
 
 
 # License
