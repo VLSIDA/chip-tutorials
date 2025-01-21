@@ -84,9 +84,12 @@ rcx.adjust_rc(res_factor,
              gndc_factor)
 ```
 
-Read/write SPEF
+### Read/write SPEF
 
-### diff_spef -file 31-user_project_wrapper.spef
+### Diff SPEF files
+```
+diff_spef -file 31-user_project_wrapper.spef
+```
 ```
 rcx.diff_spef(file=spef_file,
               r_conn=False,
@@ -118,3 +121,22 @@ for inst in design.getBlock().getInsts():
         continue
 ```
 ## Iterate over pins
+```
+    for outTerm in inst.getTerms():
+        if timing.isEndpoint(outTerm):
+            pass
+        if design.isInSupply(outTerm):
+            pass
+        if outTerm.isOutputSignal():
+            pass
+        if outTerm.isInputSignal():
+            pass
+
+        rise_delay = 1.0e12*timing.getPinArrival(inTerm, Timing.Rise)
+        fall_delay = 1.0e12*timing.getPinArrival(inTerm, Timing.Fall)
+        print(outTerm.getName(), 
+              rise_delay, 
+              fall_delay
+              )
+```
+## Iterate over library cells
