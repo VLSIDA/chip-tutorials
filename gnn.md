@@ -26,9 +26,9 @@ This is a set of videos and readings to get students up to speed on ML and GNNs 
 * [Part 3](https://youtu.be/0YLZXjMHA-8?si=HTfaxqGfodzEjPi3)
 
 ## Papers
+* [Overview Book on GNNs](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf)
 * [GCN](https://arxiv.org/abs/1609.02907) - The first GNN paper
 * [GAT](https://arxiv.org/abs/1710.10903) - Adding attention for GNNs
-* A good survey?
 
 ## PyTorch Geometry (PyG)
 * [PyG Tutorial](https://pytorch-geometric.readthedocs.io/en/latest/get_started/introduction.html)
