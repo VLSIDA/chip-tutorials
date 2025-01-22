@@ -180,3 +180,47 @@ for lib in tech.getDB().getLibs():
                 print("  -> ", m.getName())
 
 ```
+
+# Getting function and data names
+
+The best way I've found to get additional API info is to set a breakpoint in your code and then use auto-complete to see what is available. Set a breakpoint:
+```
+for lib in tech.getDB().getLibs():
+    for master in lib.getMasters():
+        print(master.getName())
+        for mterm in master.getMTerms():
+            print(" ", mterm.getName())
+            breakpoint()
+```
+and run your script:
+```
+OpenLane Container (2.2.9):/home/USER/class/chip-tutorials% openroad -python load.py
+OpenROAD edf00dff99f6c40d67a30c0e22a8191c5d2ed9d6
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING ORD-0039] .openroad ignored with -python
+[INFO ODB-0227] LEF file: /home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+[ERROR STA-0340] cannot open 'final/spm/sdc/spm.sdc'.
+sky130_fd_sc_hd__a2bb2o_1
+  A1_N
+> /home/mrg/class/chip-tutorials/load.py(31)<module>()
+-> for mterm in master.getMTerms():
+(Pdb) 
+```
+At the debug prompt, you can use the "p" command like this and press tab or indent twice to autocomplete:
+```
+(Pdb) p mterm.get
+mterm.getBBox                 mterm.getDiffArea             mterm.getMPins                mterm.getName                 mterm.getSigType
+mterm.getConstName            mterm.getIndex                mterm.getMTerm                mterm.getOxide2AntennaModel   mterm.getTargets
+mterm.getDefaultAntennaModel  mterm.getIoType               mterm.getMaster               mterm.getShape
+(Pdb) p mterm.get
+```
+Note that it doesn't do it unless you print. So this does not work:
+```
+(Pdb) mterm.get
+```
