@@ -31,7 +31,7 @@ cd chip-tutorials
 1. [Sky130](sky130.md)
 
 ## VLSI-DA Research Tutorials
-1. [OpenROAD and ODB](or_odb.md)
+1. [OpenROAD and ODB](ordb.md)
 1. [GNNs](gnn.md)
 
 # Reading Materials
