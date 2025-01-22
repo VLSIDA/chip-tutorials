@@ -32,6 +32,7 @@ cd chip-tutorials
 
 ## VLSI-DA Research Tutorials
 1. [OpenROAD and ODB](ordb.md)
+1. [ML](ml.md)
 1. [GNNs](gnn.md)
 
 # Reading Materials

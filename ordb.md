@@ -1,4 +1,5 @@
 This is info on how to access design data through the OpenRoad python API. It includes both ORDB as well as the timing API.
+The [ASP-DAC24 Tutorial](https://github.com/ASU-VDA-Lab/ASP-DAC24-Tutorial) also has a lot of good examples.
 
 You should install OpenROAD or [OpenLANE](installation.md).
 
