@@ -1,11 +1,6 @@
 This is info on how to access design data through the OpenRoad python API. It includes both ORDB as well as the timing API.
 
-You should install OpenROAD or [OpenLANE](installation.md) for the full API,
-but if you only want the design database (no timing), you can use the Python
-library which is installable like this:
-```
-pip install openroaddbpy
-```
+You should install OpenROAD or [OpenLANE](installation.md).
 
 For the full API:
 ```
@@ -14,25 +9,13 @@ openroad -python
 to expose the Python interface.
 
 
-If you do not need timing information, you can read only database (design and library cell info) using the ODB python module:
-```
-import opendbpy as odb
-import os 
-
-current_dir = os.path.dirname(os.path.realpath(__file__))
-tests_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
-opendb_dir = os.path.abspath(os.path.join(tests_dir, os.pardir))
-data_dir = os.path.join(tests_dir, "data")
-
-db = odb.dbDatabase.create()
-odb.read_lef(db, os.path.join(data_dir, "gscl45nm.lef"))
-odb.read_def(db, os.path.join(data_dir, "design.def"))
-chip = db.getChip()
-if chip == None:
-    exit("Read DEF Failed")
-exit()
-```
 There is a lot of info in the [tests here](https://github.com/The-OpenROAD-Project/OpenDB/tree/master/tests/python).
+
+An example design is provided in `ordb/final.tar.gz` that you can extract with:
+```
+tar zxvf ordb/final.tar.gz
+```
+
 
 # How to read a design in OpenROAD
 ```
@@ -45,19 +28,12 @@ import odb
 
 openroad.openroad_version()
 
-TECH = "nangate45"
-DESIGN = "gcd"
+odb_file = "final/odb/spm.odb"
+def_file = "final/def/spm.def"
 
-
-odb_file = f"results/{TECH}/{DESIGN}/base/6_final.odb"
-def_file = f"results/{TECH}/{DESIGN}/base/6_final.def"
-sdc_file = f"results/{TECH}/{DESIGN}/base/6_final.sdc"
-spef_file = f"results/{TECH}/{DESIGN}/base/6_final.spef"
-
-lef_files = ["platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef"]
-lib_files = ["platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"]
-ext_rules = "platforms/nangate45/rcx_patterns.rules"
-
+lef_files = ["/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef",
+             "/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"]
+lib_files = ["/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"]
 
 tech = Tech()
 for lef_file in lef_files:
@@ -121,34 +97,9 @@ rcx.diff_spef(file=spef_file,
               r_cc_cap=False)
 ```
 
-# Timing Analysis
-## How to run timing analysis
-```
-design.evalTclString("read_sdc {}".format(sdc_file))
-timing = Timing(design)
-```
-## Getting Timing info
-See iterating below to find pins:
-```
-timing.getPinArrival(inTerm, Timing.Rise)
-timing.getPinArrival(inTerm, Timing.Fall)
-timing.getWireDelay(outTerm, inTerm, Timing.Rise)
-timing.getWireDelay(outTerm, inTerm, Timing.Fall)
-timing.getWireSlew(outTerm, inTerm, Timing.Rise)
-timing.getWireSlew(outTerm, inTerm, Timing.Fall)
-timing.getWireCap(outTerm, inTerm)
-```
 
-## Getting power
-```
-for corner in timing.getCorners():
-    print(timing.staticPower(inst, corner),
-          timing.dynamicPower(inst, corner),
-          )
-```
+# Design Database
 
-
-# How to iterate over the database
 ## Iterate over nets
 ```
 for net in design.getBlock().getNets():
@@ -184,5 +135,52 @@ for outTerm in inst.getTerms():
         pass
 
 ```
-## Iterate over library cells
+## Iterate over library cells (masters)
+```
+for lib in tech.getDB().getLibs():
+    for master in lib.getMasters():
+        print(master.getName())
+        for mterm in master.getMTerms():
+            print(" ", mterm.getName())
+```
 
+# Timing Analysis
+
+## How to run timing analysis
+```
+design.evalTclString("read_sdc {}".format("final/spm/sdc/spm.sdc")
+timing = Timing(design)
+```
+## Getting Timing info
+See iterating below to find pins:
+```
+timing.getPinArrival(inTerm, Timing.Rise)
+timing.getPinArrival(inTerm, Timing.Fall)
+timing.getWireDelay(outTerm, inTerm, Timing.Rise)
+timing.getWireDelay(outTerm, inTerm, Timing.Fall)
+timing.getWireSlew(outTerm, inTerm, Timing.Rise)
+timing.getWireSlew(outTerm, inTerm, Timing.Fall)
+timing.getWireCap(outTerm, inTerm)
+timing.getNetCap(net, corner, Timing.Max)
+timing.getNetCap(net, corner, Timing.Min)
+```
+
+## Getting power
+```
+for corner in timing.getCorners():
+    print(timing.staticPower(inst, corner),
+          timing.dynamicPower(inst, corner),
+          )
+```
+
+## Getting cell arcs
+```
+for lib in tech.getDB().getLibs():
+    for master in lib.getMasters():
+        print(master.getName())
+        for mterm in master.getMTerms():
+            print(" ", mterm.getName())
+            for m in timing.getTimingFanoutFrom(mterm):
+                print("  -> ", m.getName())
+
+```

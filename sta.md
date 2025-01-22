@@ -23,7 +23,7 @@ This tutorial will utilize the spm design example final output that was created 
 You should untar the file for this tutorial:
 ```bash
 git clone git@github.com:VLSIDA/chip-tutorials.git
-cd chip-tutorials/sta
+cd chip-tutorials
 tar -zxvf final.tar.gz
 ```
 which will create the final subdirectory with subdirectories for the different design files.
