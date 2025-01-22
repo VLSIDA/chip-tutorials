@@ -26,6 +26,10 @@ cd chip-tutorials
 
 1. [Sky130](sky130.md)
 
+## VLSI-DA Tutorials
+1. [OpenROAD and ODB](or_odb.md)
+1. [GNNs](gnn.md)
+
 # Reading Materials
 
 - Digital Integrated Circuits (2nd Edition) - A Design Perspective by Rabaey, Chandrakasan, & Nikolic (ISBN-10: 0130909963) 
