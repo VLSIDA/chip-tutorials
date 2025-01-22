@@ -163,7 +163,7 @@ M3 3 2 1 0 PCH <parameters such as L=50n W=180n>
 ```
 Note that the connections in the MOSFET are given in the order: drain,
 gate, source, and body. Since MOSFETs are generally symmetric, you can
-usually swap the drain and source.
+usually swap the drain and source. So in this case, you can swap 3 and 1.
 
 ### Instances (X cards)
 
