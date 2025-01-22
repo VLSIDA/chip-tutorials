@@ -155,12 +155,8 @@ timing = Timing(design)
 See iterating below to find pins:
 ```
 timing.getPinArrival(inTerm, Timing.Rise)
-timing.getPinArrival(inTerm, Timing.Fall)
-timing.getWireDelay(outTerm, inTerm, Timing.Rise)
-timing.getWireDelay(outTerm, inTerm, Timing.Fall)
-timing.getWireSlew(outTerm, inTerm, Timing.Rise)
-timing.getWireSlew(outTerm, inTerm, Timing.Fall)
-timing.getWireCap(outTerm, inTerm)
+timing.getPinSlew(inTerm, Timing.Rise)
+timing.getPinSlack(inTerm, Timing.Ries, Timing.Max)
 timing.getNetCap(net, corner, Timing.Max)
 timing.getNetCap(net, corner, Timing.Min)
 ```
