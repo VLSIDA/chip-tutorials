@@ -42,7 +42,7 @@ VSW A 0 PULSE (0V supply_voltage 500ps 5ps 5ps 1000p 2000ps) DC 0V
 
 * measure the input rise to output fall delay 
 * uses a calculation to compute half of 50% of the supply voltage
-.meas tran rise_delay trig v(A) val=half_supply rise=1 targ v(Z) val=half_supply fall=1
+.meas tran rise_delay trig v(A) val=half_supply fall=1 targ v(Z) val=half_supply rise=1
 * measure the output rise time (slew)
 .meas tran rise_time trig v(Z) val=slew_low rise=1 targ v(Z) val=slew_high rise=1
 
