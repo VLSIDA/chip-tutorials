@@ -167,7 +167,7 @@ usually swap the drain and source. So in this case, you can swap 3 and 1.
 
 ### Instances (X cards)
 
-Instances are special SPICE cards that being with an X. They are used to instantiate
+Instances are special SPICE cards that begin with an X. They are used to instantiate
 subcircuit copies like this:
 ```
 X0 in 0 0 vdd vdd out sky130_fd_sc_hd__inv_1
