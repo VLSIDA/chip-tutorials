@@ -1,22 +1,7 @@
 
-This is a set of videos and readings to get students up to speed on ML and GNNs for EDA applications.
+This is a set of videos and readings to get students up to speed on GNNs.
+You may want to also visit the [ML tutorials](ml.md) for more background on ML.
 
-# Basic ML
-
-## Python
-* [Python Tutorial](https://www.learnpython.org/)
-
-## General Theory
-* [Andrew Ng Course 1](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
-* [Andrew Ng Course 2](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc)
-
-## Pytorch
-* [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html)
-
-# OpenROAD+ML
-
-* [ORDB tips](ordb.md)
-* [ASP-DAC24 Tutorial](https://github.com/ASU-VDA-Lab/ASP-DAC24-Tutorial)
 
 # GNN
 
@@ -33,7 +18,6 @@ This is a set of videos and readings to get students up to speed on ML and GNNs 
 ## PyTorch Geometry (PyG)
 * [PyG Tutorial](https://pytorch-geometric.readthedocs.io/en/latest/get_started/introduction.html)
 * [Heterogenous GNNs](https://pytorch-geometric.readthedocs.io/en/latest/tutorial/heterogeneous.html)
-
 
 # License
 

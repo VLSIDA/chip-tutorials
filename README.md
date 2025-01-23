@@ -8,7 +8,11 @@ cd chip-tutorials
 ```
 
 
+## CSE 122/222A Tutorials
+
 1. [Git](git.md)
+
+## Chip Tutorials
 
 1. [Spice Syntax](spice.md)
 
@@ -25,6 +29,11 @@ cd chip-tutorials
 ## In progress...
 
 1. [Sky130](sky130.md)
+
+## VLSI-DA Research Tutorials
+1. [OpenROAD and ODB](ordb.md)
+1. [ML](ml.md)
+1. [GNNs](gnn.md)
 
 # Reading Materials
 
