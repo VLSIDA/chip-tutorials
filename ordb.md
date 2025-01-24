@@ -64,6 +64,8 @@ This is using detailed routing:
 ```
 rcx.define_process_corner(ext_model_index=0, file="X")
 
+ext_rules = "~/.volare/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.spef_extractor"
+
 #NOTE: This is position dependent
 rcx.extract(ext_model_file=ext_rules,
             corner_cnt=1,
