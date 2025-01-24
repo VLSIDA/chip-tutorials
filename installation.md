@@ -1,13 +1,6 @@
-# Windows Subsystem for Linux
-
-The tools we will be using are not supported for Windows. Windows users can install Windows Subsystem for Linus (WSL)
-to get the tools working. The instructions for installing WSL can be found here:
-https://learn.microsoft.com/en-us/windows/wsl/install
-
-Once WSL is installed you can follow the rest of the instructions from the WSL terminal.
-
 # Installing OpenLane Binaries (OpenROAD, KLayout, etc.)
 
+This assumes you are on a Unix machine or are using [WSL](wsl.md).
 You must install OpenLane2 using either the Nix or the Docker method as discussed here:
 [https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html](https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html)
 
