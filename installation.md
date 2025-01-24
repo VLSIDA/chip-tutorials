@@ -1,17 +1,10 @@
-# Windows Subsystem for Linux
-
-The tools we will be using are not supported for Windows. Windows users can install Windows Subsystem for Linus (WSL)
-to get the tools working. The instructions for installing WSL can be found here:
-https://learn.microsoft.com/en-us/windows/wsl/install
-
-Once WSL is installed you can follow the rest of the instructions from the WSL terminal.
-
 # Installing OpenLane Binaries (OpenROAD, KLayout, etc.)
 
+This assumes you are on a Unix machine or are using [WSL](wsl.md).
 You must install OpenLane2 using either the Nix or the Docker method as discussed here:
 [https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html](https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html)
 
-For this class, we will be using *OpenLane 2.2.9* unless you are told later. Be sure to use this 
+For this class, we will be using *OpenLane 2.3.1* unless you are told later. Be sure to use this 
 version for compatibility with our grading! The version is included in several steps below, so do not
 leave it out.
 
@@ -23,7 +16,7 @@ In this method, Nix will provide the binaries, but you first need to install Nix
 Nix will use the binaries locally, but you need the Nix settings from the OpenLane2 repository.
 To do this, you can clone this with:
 ```
-git clone -b 2.2.9 https://github.com/efabless/openlane2
+git clone -b 2.3.1 https://github.com/efabless/openlane2
 ```
 
 Change to the openlane2 directory and open a Nix shell:
@@ -60,7 +53,7 @@ and you should see "Hello from Docker!" with some other output.
 
 You can install with Pip using:
 ```
-python3 -m pip install openlane==2.2.9
+python3 -m pip install openlane==2.3.1
 ```
 
 From here, you can enter a Docker shell with the OpenLane tools by running:

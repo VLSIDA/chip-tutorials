@@ -11,6 +11,7 @@ cd chip-tutorials
 ## CSE 122/222A Tutorials
 
 1. [Git](git.md)
+2. [WSL](wsl.md)
 
 ## Chip Tutorials
 

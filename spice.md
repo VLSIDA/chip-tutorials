@@ -18,7 +18,7 @@ volare enable --pdk sky130 0fe599b2afb6708d281543108caf8310912f54af
 ```
 You should now see the PDK installed:
 ```bash
-$ ls ~/.volare
+ls ~/.volare
 sky130A  sky130B  volare
 ```
 
