@@ -11,7 +11,6 @@ You may want to also visit the [ML tutorials](ml.md) for more background on ML.
 * [Part 3](https://youtu.be/0YLZXjMHA-8?si=HTfaxqGfodzEjPi3)
 
 ## Papers
-* Book: [Graph Neural Networks](https://graph-neural-networks.github.io/)
 * Book: [Graph Representation Learning](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf)
 * [GCN](https://arxiv.org/abs/1609.02907) - The first GNN paper
 * [GAT](https://arxiv.org/abs/1710.10903) - Adding attention for GNNs
