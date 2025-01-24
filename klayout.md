@@ -32,12 +32,18 @@ KLayout in one convenient place. You can start KLayout and have it use these by
 running the following command:
 
 ```bash
-KLAYOUT_PATH=. klayout -e
+KLAYOUT_PATH=<chip-tutorials dir>/klayout klayout -e
 ```
-where "." refers to the current directory (chip-tutorials/klayout).
+where "<chip-tutorials dir>" refers to the chip-tutorials repos location.
 If you don't specify the *KLAYOUT_PATH* variable,
 it will use the tech directory in your home directory which likely does not
 exist.
+
+Alternatively to avoid having to set KLAYOUT_PATH every time, you can set it
+at the bottom of  your `~/.bashrc` file (or `~/.zshrc` for MacOS and zsh users) with:
+```bash
+export KLAYOUT_PATH=<chip-tutorials dir>/klayout
+```
 
 You must specify the "-e" argument to enable edit mode. Otherwise, KLayout is
 just started in read-only (viewer) mode.
