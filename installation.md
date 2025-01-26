@@ -70,6 +70,9 @@ the scripts will be smart enugh to run commands in the Docker image. Using this
 shell will also allow you to run the GUI versions of tools since the OpenLane
 scripts export the X display properly on most systems. 
 
+Note that some Linux ditrubutions no longer allow you to use `pip` to directly install
+packages to your system. If you get an error message saying "This environment is externally managed"
+you need to create a virtual [environment](venv.md).
 # Smoke Test
 
 To check your installation, run the "smoke test":
