@@ -62,7 +62,7 @@ openlane --dockerized
 ```
 which should open a shell like this:
 ```
-OpenLane Container (2.2.5):/home/<user>/<mydir>
+OpenLane Container (2.3.1):/home/<user>/<mydir>
 ```
 
 You can either run OpenLane here, or you can run it from your regular OS and
