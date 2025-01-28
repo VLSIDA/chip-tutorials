@@ -24,7 +24,7 @@ KLayout steps in OL2 if you do not do this!
 
 Clone this repository to your local machine:
 ```bash
-git clone git@github.com:VLSIDA/chip-tutorials.git
+git clone https://github.com/VLSIDA/chip-tutorials.git
 cd chip-tutorials/klayout
 ```
 The subdirectory `tech` contains the Sky130 technology files for

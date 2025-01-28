@@ -22,7 +22,7 @@ these commands in Python, *the industry standard is currently TCL*.
 This tutorial will utilize the spm design example final output that was created by OpenLane2.
 You should untar the file for this tutorial:
 ```bash
-git clone git@github.com:VLSIDA/chip-tutorials.git
+git clone https://github.com/VLSIDA/chip-tutorials.git
 cd chip-tutorials
 tar -zxvf final.tar.gz
 ```

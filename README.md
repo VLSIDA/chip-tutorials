@@ -3,7 +3,7 @@
 To clone this repo and all of the tutorial files locally, you can use the following command:
 
 ```bash
-git clone git@github.com:VLSIDA/chip-tutorials.git
+git clone https://github.com/VLSIDA/chip-tutorials.git
 cd chip-tutorials
 ```
 
@@ -12,6 +12,7 @@ cd chip-tutorials
 
 1. [Git](git.md)
 2. [WSL](wsl.md)
+3. [Virtual Environment](venv.md)
 
 ## Chip Tutorials
 
