@@ -12,6 +12,7 @@ cd chip-tutorials
 
 1. [Git](git.md)
 2. [WSL](wsl.md)
+3. [Virtual Environment](venv.md)
 
 ## Chip Tutorials
 
