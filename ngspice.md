@@ -234,11 +234,13 @@ Current tran1   * example inverter with transient analysis and measure (Transien
         dc1     * example inverter with transient analysis and measure (DC transfer characteristic)
         const   Constant values (constants)
 ```
-You can either type the name or press enter to quit. To view other results, you must switch to the other analysis using the {\bf setplot} command like this:
+You can either type the name or press enter to quit. To view other results, you must switch to the other analysis using the ```setplot``` command like this:
 ```
 setplot tran1
 ```
-Then, you can plot transient results like this, for example,
+If you don't have a DC simulation and only a transient simulation (like [example.sp](spice/example.sp), you do not
+have to do this command. Then, you can plot transient results like this, for
+example,
 ```
 plot A Z
 ```
