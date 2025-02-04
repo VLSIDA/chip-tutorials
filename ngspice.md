@@ -298,19 +298,19 @@ Pay attention to the two .measure commands in the example spice file
 that compute this:
 ```
 .meas tran rise_delay 
-+ trig v(vs) val=`0.5*supply_voltage` rise=1 
-+ targ v(vo) val=`0.5*supply_voltage` fall=1
++ trig v(vs) val=`0.5*supply_voltage` fall=1 
++ targ v(vo) val=`0.5*supply_voltage` rise=1
 .meas tran rise_time 
 + trig v(vo) val=`0.1*supply_voltage` rise=1 
 + targ v(vo) val=`0.9*supply_voltage` rise=1
 ```
 In the example for computing delay and rise time, we use the names
 rise\_delay and rise\_time, respectively.  Since it is an inverter,
-the rising input triggers a falling output. The rise\_delay is
+the falling input triggers a rising output. The rise\_delay is
 triggered when v(vs), the input source, reaches half of the supply
-voltage (a parameter) during the first rising crossing. The time is
+voltage (a parameter) during the first falling crossing. The time is
 then measured until the target which is when the v(vo), the output
-voltage, reaches half the supply voltage during the first falling.
+voltage, reaches half the supply voltage during the first rising.
 Similarly, the rise\_time is triggered when the output voltage, v(vo)
 reaches 10\% of the supply voltage and stops when it reaches 90\% of
 the supply voltage. Both of these are the first rising time.
