@@ -15,6 +15,19 @@ create_clock [-name name] [-period period] [-waveform waveform] [-add]
    [-comment comment] [pins]
 ```
 
+You can get the units for all the commands by using the `units` command:
+```
+openroad> report_units
+ time 1ns
+ capacitance 1fF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+```
+
+
 
 ## Clocks
 
