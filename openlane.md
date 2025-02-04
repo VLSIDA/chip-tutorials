@@ -2,6 +2,9 @@
 
 This assumes that the smoke test runs and you've [installed OpenLane properly](installation.md).
 
+There is also a very good overview for
+[Newcomers](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#).
+
 You can run an example design called "SPM" by running:
 ```bash
 openlane --run-tag foo --run-example spm
