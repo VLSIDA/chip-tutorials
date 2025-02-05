@@ -36,7 +36,8 @@ This assumes that you have an environment variable pointing to your PDK installa
 ```bash
 export PDK_ROOT=~/.volare
 ```
-You may wish to add this to your .bashrc.
+Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
+PDK installation directory. 
 
 ## Single corner timing analysis
 
@@ -53,8 +54,6 @@ read_db odb/spm.odb
 read_spef spef/max/spm.max.spef
 read_sdc sdc/spm.sdc
 ```
-Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
-PDK installation directory. 
 
 ###  Other ways to read the design file(s)
 
