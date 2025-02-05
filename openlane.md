@@ -46,7 +46,17 @@ openlane --flow OpenInOpenROAD --last-run config.yaml
 and you should see the following:
 ![Default SPM project in OpenROAD GUI](openlane/openroad_gui_spm.png)
 
+To view timing in gui you will need to load the spef and constraint files. To load everything after an
+openroad -gui call run:
 
+'''
+read_lib <path to .lib file>
+read_db <path to .odb file> 
+read_spef <path to .spef file>
+read_sdc <path to .sdc file>
+'''
+
+the odb, spef, and sdc file can be found in the final run directory. The .lib files are with your PDK.
 You should also go through the [Newcomers Guide to
 OpenLane2](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html).
 
