@@ -277,10 +277,13 @@ category. The sequential elements (flip-flops and latches), combinational
 logic, and the clock network are the most significant. If you have macros in
 your design, like a memory, it may also consume power.
 
-By default, the power is computed assuming a default 0.5 switching activity on all nets. However, this may not always
-be true. For example, your reset signal will only transition once! The clock, however, will switch every cycle. 
-All other inputs might switch at, say, 10% of the clock periods.
-You can get a slightly more accurate estimate by setting these:
+## Switching activity
+
+By default, the power is computed assuming a default 0.5 switching activity on
+all nets. However, this may not always be true. For example, your reset signal
+will only transition once! The clock, however, will switch every cycle. All
+other inputs might switch at, say, 10% of the clock periods. You can get a
+slightly more accurate estimate by setting these:
 ```tcl
 openroad> set_power_activity -input -activity 0.1
 openroad> set_power_activity -input_ports rst -activity 0.0
@@ -298,9 +301,28 @@ Total                  6.68e-04   2.38e-04   2.78e-06   9.08e-04 100.0%
                           73.5%      26.2%       0.3%
 ```
 However, this is a small design so it didn't change *that* much.
-Note that you cannot set the activity of the clock.
+Note that you cannot set the activity of the clock. However, if I set all the inputs to 0.0, it would have no combinational
+internal or switching power:
+```
+openroad> set_power_activity -input -activity 0
+openroad> report_power
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             2.00e-04   0.00e+00   1.21e-06   2.01e-04  44.2%
+Combinational          0.00e+00   0.00e+00   1.33e-06   1.33e-06   0.3%
+Clock                  1.72e-04   8.02e-05   2.41e-07   2.52e-04  55.5%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  3.72e-04   8.02e-05   2.78e-06   4.55e-04 100.0%
+                          81.7%      17.6%       0.6%
+```
+But there is still leakage of the combinational logic gates when they aren't switching.
 
-However, you can also use VCD (Verilog Change Dump) files to get the activity for better accuracy:
+### Simulation-based switching
+
+You can also use VCD (Verilog Change Dump) files to get the activity for better accuracy:
 ```tcl
 read_vcd -scope tb/spm spm.vcd
 ```
