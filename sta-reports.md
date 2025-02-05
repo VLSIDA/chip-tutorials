@@ -229,7 +229,7 @@ from a particular input, or through a particular cell. You can use the `-from`,
 
 
 
-## Edges and Pins
+# Reporting Edges and Pins
 
 You can get arrival and required times of specific timing points in a circuit like this:
 ```
