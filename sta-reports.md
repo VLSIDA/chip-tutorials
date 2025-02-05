@@ -1,16 +1,6 @@
-# STA Reports
 
-## Constraints
-
-One useful command is `report_constraints` which will show all the unconstrained paths:
-```
-report_checks -unconstrained
-```
-
-
-## Reporting timing
-
-### Max paths
+# Reporting Timing
+## Max paths
 
 You can get the a timing report by doing:
 ```
@@ -164,7 +154,7 @@ The final slack computation is then the data required time minus the data arriva
 ```
 which means we had plenty of time for this path!
 
-## Report options
+# Report options
 
 This command has a lot of options that you can see:
 ```
@@ -182,7 +172,7 @@ report_checks [-from from_list|-rise_from from_list|-fall_from from_list]
    [-no_line_splits] [> filename] [>> filename]
 ``` 
 
-### Path type options
+## Path type options
 
 You can specify the path type with the `-path_delay` option which can include
 max, min, rise, fall, and combinations of these. Usually, you will specify
@@ -195,7 +185,7 @@ openroad> report_checks -corner tt
 ```
 which would perform checks only the the typical (tt) corner.
 
-### Path format options
+## Path format options
 
 The path details can be controlled with the `-format` options.
 
@@ -221,7 +211,7 @@ time, and slack summarized without any path details. The `summary` option will
 show both the startpoint and entpoints with the summary.
 
 
-### Path detail options
+## Path detail options
 
 The `-fields` option lets you add more details to the path report. For example,
 * `-fields capacitance` will show the capacitance of the nets
@@ -231,7 +221,7 @@ The `-fields` option lets you add more details to the path report. For example,
 These are somes useful if you want to diagnose delay due to a long wire or a
 nhigh fanout net.
 
-### Path filtering options
+## Path filtering options
  
 In some cases, you may want to look at critical paths to a particular output,
 from a particular input, or through a particular cell. You can use the `-from`,
@@ -239,7 +229,7 @@ from a particular input, or through a particular cell. You can use the `-from`,
 
 
 
-# Edges and Pins
+## Edges and Pins
 
 You can get arrival and required times of specific timing points in a circuit like this:
 ```
@@ -259,21 +249,63 @@ output of the non-inverting gate.
 
 
 
-## Reporting power
+# Reporting power
 
-
-```tcl
-set_power_activity -input 0.1
-set_power_activity -input_port clk 0.5
-set_power_activity -input_port rst 0.0
-report_power
+The previous material focused on timing, but STA can also report power. For example, you can get a summary 
+of your design power with:
 ```
+openroad> report_power
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             3.02e-04   3.49e-05   1.21e-06   3.39e-04  37.1%
+Combinational          1.93e-04   1.27e-04   1.33e-06   3.22e-04  35.3%
+Clock                  1.72e-04   8.02e-05   2.41e-07   2.52e-04  27.6%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  6.67e-04   2.42e-04   2.78e-06   9.12e-04 100.0%
+                          73.2%      26.5%       0.3%
+```
+The total power is broken down into internal, switching and leakage power. 
+Internal power is the power dissipated within the cells (i.e. short circuit power). 
+Switching power is the dynamic power of charging and discharging the capacitances in the circuit.
+The leakage power is the power dissipated by leakage through the transistors in the off state.
 
-You can also use VCD (Verilog Change Dump) files to get the activity for better accuracy:
+In addition to the types of power, the power is also broken down into the
+category. The sequential elements (flip-flops and latches), combinational
+logic, and the clock network are the most significant. If you have macros in
+your design, like a memory, it may also consume power.
+
+By default, the power is computed assuming a default 0.5 switching activity on all nets. However, this may not always
+be true. For example, your reset signal will only transition once! The clock, however, will switch every cycle. 
+All other inputs might switch at, say, 10% of the clock periods.
+You can get a slightly more accurate estimate by setting these:
+```tcl
+openroad> set_power_activity -input -activity 0.1
+openroad> set_power_activity -input_ports rst -activity 0.0
+openroad> report_power
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             3.04e-04   3.49e-05   1.21e-06   3.40e-04  37.5%
+Combinational          1.92e-04   1.23e-04   1.33e-06   3.16e-04  34.8%
+Clock                  1.72e-04   8.02e-05   2.41e-07   2.52e-04  27.8%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  6.68e-04   2.38e-04   2.78e-06   9.08e-04 100.0%
+                          73.5%      26.2%       0.3%
+```
+However, this is a small design so it didn't change *that* much.
+Note that you cannot set the activity of the clock.
+
+However, you can also use VCD (Verilog Change Dump) files to get the activity for better accuracy:
 ```tcl
 read_vcd -scope tb/spm spm.vcd
 ```
-if you've created a file with your testbench, `tb`.
+if you've created a file with your testbench, `tb`. However, if you don't run your design in all the modes
+of operation, this can also be inaccurate.
 
 # License
 
