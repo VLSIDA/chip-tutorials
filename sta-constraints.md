@@ -140,6 +140,7 @@ option to use the actual clock delays through the clock distribution network:
 ```
 set_propagated_clock $clocks
 ```
+Usually you will set the uncertainty to 0 or smaller when enabling propagated clocks.
 
 ## Timing Exceptions
 
