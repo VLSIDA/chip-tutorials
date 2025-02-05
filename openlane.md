@@ -38,10 +38,10 @@ openlane --run-tag foo --overwrite config.yaml
 
 ## Viewing the final design
 
-The --last-tag option is also a shortcut for the last run directory. To view the last design in
+The --last-run option is also a shortcut for the last run directory. To view the last design in
 the OpenROAD GUI, you can run:
 ```bash
-openlane --flow OpenInOpenROAD --last-tag config.yaml
+openlane --flow OpenInOpenROAD --last-run config.yaml
 ```
 and you should see the following:
 ![Default SPM project in OpenROAD GUI](openlane/openroad_gui_spm.png)
