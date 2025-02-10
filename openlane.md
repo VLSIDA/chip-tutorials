@@ -47,13 +47,15 @@ and you should see the following:
 ![Default SPM project in OpenROAD GUI](openlane/openroad_gui_spm.png)
 
 To view timing in gui you will need to load the spef and constraint files. To load everything after an
-openroad -gui call run:
+openroad -gui call run. Launching the gui with the openlane flow will not load the required files for viewing static timing.
+It is recommended to write a .tcl file so you don't have to type this into the
+console everytime. 
 
 ```
-read_lib <path to .lib file>
-read_db <path to .odb file> 
-read_spef <path to .spef file>
-read_sdc <path to .sdc file>
+read_lib <path to .lib file from your pdk>
+read_db <path to .odb file from your final run directory> 
+read_spef <path to .spef file from your final run directory>
+read_sdc <path to .sdc file from your final run directory>
 ```
 
 the odb, spef, and sdc file can be found in the final run directory. The .lib files are with your PDK.
