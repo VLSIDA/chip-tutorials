@@ -45,20 +45,29 @@ openlane --flow OpenInOpenROAD --last-run config.yaml
 ```
 and you should see the following:
 ![Default SPM project in OpenROAD GUI](openlane/openroad_gui_spm.png)
+However, this doesn't load any of the timing or constraint information.
 
-To view timing in gui you will need to load the spef and constraint files. To load everything after an
-openroad -gui call run. Launching the gui with the openlane flow will not load the required files for viewing static timing.
-It is recommended to write a .tcl file so you don't have to type this into the
-console everytime. 
-
+We recommend that, instead, you use:
+```bash
+openroad -gui
 ```
-read_lib <path to .lib file from your pdk>
-read_db <path to .odb file from your final run directory> 
-read_spef <path to .spef file from your final run directory>
-read_sdc <path to .sdc file from your final run directory>
+and then load the design files manually. You will need to select which ODB (or DEF) file that you want to load based on
+which stage of the design you want to examine. For example, you can load the final stage, like this:
 ```
+read_lib $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+read_db odb/spm.odb 
+read_spef spef/max/spm.max.spef
+read_sdc sdc/spm.sdc
+```
+where the odb, spef, and sdc file can be found in the final run directory. The .lib file is from your PDK
+directory.
 
-the odb, spef, and sdc file can be found in the final run directory. The .lib files are with your PDK.
+You can add this to a TCL file and source the script like this:
+```tcl
+source myscript.tcl
+```
+so that you don't have to type it over and over again.
+
 You should also go through the [Newcomers Guide to
 OpenLane2](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html).
 
