@@ -2,6 +2,9 @@
 
 This assumes that the smoke test runs and you've [installed OpenLane properly](installation.md).
 
+There is also a very good overview for
+[Newcomers](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#).
+
 You can run an example design called "SPM" by running:
 ```bash
 openlane --run-tag foo --run-example spm
@@ -35,14 +38,35 @@ openlane --run-tag foo --overwrite config.yaml
 
 ## Viewing the final design
 
-The --last-tag option is also a shortcut for the last run directory. To view the last design in
+The --last-run option is also a shortcut for the last run directory. To view the last design in
 the OpenROAD GUI, you can run:
 ```bash
-openlane --flow OpenInOpenROAD --last-tag config.yaml
+openlane --flow OpenInOpenROAD --last-run config.yaml
 ```
 and you should see the following:
 ![Default SPM project in OpenROAD GUI](openlane/openroad_gui_spm.png)
+However, this doesn't load any of the timing or constraint information.
 
+We recommend that, instead, you use:
+```bash
+openroad -gui
+```
+and then load the design files manually. You will need to select which ODB (or DEF) file that you want to load based on
+which stage of the design you want to examine. For example, you can load the final stage, like this:
+```
+read_lib $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+read_db odb/spm.odb 
+read_spef spef/max/spm.max.spef
+read_sdc sdc/spm.sdc
+```
+where the odb, spef, and sdc file can be found in the final run directory. The .lib file is from your PDK
+directory.
+
+You can add this to a TCL file and source the script like this:
+```tcl
+source myscript.tcl
+```
+so that you don't have to type it over and over again.
 
 You should also go through the [Newcomers Guide to
 OpenLane2](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html).

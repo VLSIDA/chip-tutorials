@@ -17,7 +17,10 @@ These tutorials all use [TCL (Tool Command
 Language)](https://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html) scripts to
 interact with OpenSTA. You don't need to master TCL, but you should be familiar with
 it. It is based on LISP but with customized commands for EDA tools. While you can also use
-these commands in Python, *the industry standard is currently TCL*. 
+some of these commands in Python, *the industry standard is currently TCL*. 
+
+The full documentation of the OpenSTA commands can be found
+[here](https://github.com/The-OpenROAD-Project/OpenSTA/blob/2c5df8ccbc09a98bd39af206339505754cbee339/doc/OpenSTA.pdf).
 
 This tutorial will utilize the spm design example final output that was created by OpenLane2.
 You should untar the file for this tutorial:
@@ -28,6 +31,13 @@ tar -zxvf final.tar.gz
 ```
 which will create the final subdirectory with subdirectories for the different design files.
 The ones that we are concerned with are the following: def, odb, nl, sdc, and spef.
+
+This assumes that you have an environment variable pointing to your PDK installation directory. In most cases, this will be:
+```bash
+export PDK_ROOT=~/.volare
+```
+Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
+PDK installation directory. 
 
 ## Single corner timing analysis
 
@@ -44,8 +54,6 @@ read_db odb/spm.odb
 read_spef spef/max/spm.max.spef
 read_sdc sdc/spm.sdc
 ```
-Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
-PDK installation directory. 
 
 ###  Other ways to read the design file(s)
 

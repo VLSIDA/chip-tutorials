@@ -7,9 +7,10 @@ which is required for the Sky130 technology files and the 2.5D viewing. You
 will need to install KLayout from the [KLayout
 website](https://www.klayout.de/build.html). It is pre-built for nearly all
 platforms (Windows, MacOS, Linux) and is easy to install. 
-- Windows 64-bit: [klayout-0.29.4-win64-install.exe](https://www.klayout.org/downloads/Windows/klayout-0.29.4-win64-install.exe)
 - Ubuntu 20.04: [klayout-0.29.4-1_amd64.deb](https://www.klayout.org/downloads/Ubuntu/klayout-0.29.4-1_amd64.deb)
 - MacOS: Depends on your OS Version. Check the [KLayout website](https://www.klayout.de/build.html) for the latest version.
+For Windows, we recommend that you install the Ubuntu version in [Windows
+Subsystem for Linux](wsl.md).
 
 *We have tested with version 0.29.4.* While this is not the newest, it is the same
 as the version used in OpenLane-2, so it should be compatible.

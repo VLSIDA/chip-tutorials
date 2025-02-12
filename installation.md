@@ -1,7 +1,7 @@
 # Installing OpenLane Binaries (OpenROAD, KLayout, etc.)
 
 This assumes you are on a Unix machine or are using [WSL](wsl.md).
-You must install OpenLane2 using either the Nix or the Docker method as discussed here:
+You must install OpenLane2 using ***either*** the Nix or the Docker method as discussed here:
 [https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html](https://openlane2.readthedocs.io/en/latest/getting_started/installation_overview.html)
 
 For this class, we will be using *OpenLane 2.3.1* unless you are told later. Be sure to use this 
