@@ -8,7 +8,7 @@ For this class, we will be using *OpenLane 2.3.1* unless you are told later. Be 
 version for compatibility with our grading! The version is included in several steps below, so do not
 leave it out.
 
-# Nix Instructions
+# Option 1: Nix Instructions
 
 In this method, Nix will provide the binaries, but you first need to install Nix depending on your OS:
 [https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html](https://openlane2.readthedocs.io/en/latest/getting_started/common/nix_installation/index.html)
@@ -32,7 +32,7 @@ which should open a shell like this:
 You should always use OpenLane in this shell since it is how the binaries are installed. 
 The first time, it should download all of the correct binaries.
 
-# Docker Instructions
+# Option 2: Docker Instructions
 
 In this method, Docker will provide the binaries, but you first need to install Docker depending on your OS:
 [https://openlane2.readthedocs.io/en/latest/getting_started/common/docker_installation/index.html](https://openlane2.readthedocs.io/en/latest/getting_started/common/docker_installation/index.html)
