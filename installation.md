@@ -89,6 +89,48 @@ This should end with the following:
 ```
 Note, there might be a few "WARNING" messages, but that is ok.
 
+## Troubleshooting
+
+You may get the following error if you try to run GUI applications from the docker.
+```bash
+Authorization required, but no authorization protocol specified
+Could not load the Qt platform plugin "xcb" in "" even though it was found. 
+```
+You can resolve this by running:
+```bash
+xhost +local:
+```
+This will give the docker container permission to access your display server (X11).
+
+If you are on WSL and this did not resolve the issue try using the following command instead of
+the regular Openlane command:
+```bash
+docker run -v /mnt/wslg:/mnt/wslg
+           -v $HOME:$HOME
+           -e PDK_ROOT=$HOME/.volare
+           -w $(pwd)
+           --user 1000:1000
+           -e DISPLAY=:0
+           -e XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+           --network host
+           --security-opt seccomp=unconfined
+           ghcr.io/efabless/openlane2:2.3.1 <command>
+```
+or this to run an interactive shell in the docker:
+```bash
+docker run -v /mnt/wslg:/mnt/wslg
+           -v $HOME:$HOME
+           -e PDK_ROOT=$HOME/.volare
+           -w $(pwd)
+           --user 1000:1000
+           -e DISPLAY=:0
+           -e XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+           --network host
+           --security-opt seccomp=unconfined
+           ghcr.io/efabless/openlane2:2.3.1 zsh
+```
+
+
 # License
 
 Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
