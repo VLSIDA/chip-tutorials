@@ -70,9 +70,7 @@ the scripts will be smart enugh to run commands in the Docker image. Using this
 shell will also allow you to run the GUI versions of tools since the OpenLane
 scripts export the X display properly on most systems. 
 
-Note that some Linux ditrubutions no longer allow you to use `pip` to directly install
-packages to your system. If you get an error message saying "This environment is externally managed"
-you need to create a virtual [environment](venv.md).
+For any issues refer to the Troubleshooting section.
 # Smoke Test
 
 To check your installation, run the "smoke test":
@@ -92,7 +90,7 @@ Note, there might be a few "WARNING" messages, but that is ok.
 ## Troubleshooting
 
 You may get the following error if you try to run GUI applications from the docker.
-```bash
+```
 Authorization required, but no authorization protocol specified
 Could not load the Qt platform plugin "xcb" in "" even though it was found. 
 ```
@@ -129,7 +127,19 @@ docker run -v /mnt/wslg:/mnt/wslg
            --security-opt seccomp=unconfined
            ghcr.io/efabless/openlane2:2.3.1 zsh
 ```
+---
+You may encounter the eror below depending on your Linux distrubution when trying to run the
+command `python -m pip install <package>`:
+```
+error: externally-managed-environment
 
+× This environment is externally managed
+╰─> To install Python packages system-wide, try 'apt install
+    python-xyz', where xyz is the package you are trying to
+    install.
+```
+This means your distrubution disallows the use of `pip` to install Python packages system-wide.
+You will create a [virual environment](venv.md) to resolve this.
 
 # License
 
