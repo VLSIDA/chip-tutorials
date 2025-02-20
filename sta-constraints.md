@@ -48,9 +48,6 @@ This defines our clock and reset port names:
 ```
 set clock_port "clk_i"
 set reset_port "rst_n"
-set clocks [get_clocks $clock_port]
-set resets [get_port $reset_port]
-set clock_input [get_port $clk_port]
 ```
 This creates a 50ns clock with a 50% duty cycle:
 ```
@@ -60,7 +57,7 @@ This retrieves the pins using the `get_clocks` and `get_port` commands:
 ```
 set clocks [get_clocks $clock_port]
 set resets [get_port $reset_port]
-set clock_input [get_port $clk_port]
+set clock_input [get_port $clock_port]
 ```
 
 The name of the clock can technically be different than the pin name. 
