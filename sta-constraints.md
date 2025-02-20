@@ -44,19 +44,25 @@ jitter. The clock uncertainty is usually specified as a percentage of the clock
 period.
 
 
-This defines our clock and reset port names and retrieves the pins using the
-`get_clocks` and `get_port` commands:
+This defines our clock and reset port names:
 ```
 set clock_port "clk_i"
 set reset_port "rst_n"
-set clocks [get_port $clock_port]
+set clocks [get_clocks $clock_port]
 set resets [get_port $reset_port]
+set clock_input [get_port $clk_port]
 ```
-
 This creates a 50ns clock with a 50% duty cycle:
 ```
 create_clock -name $clock_port -period 50 [get_ports $clock_port]
 ```
+This retrieves the pins using the `get_clocks` and `get_port` commands:
+```
+set clocks [get_clocks $clock_port]
+set resets [get_port $reset_port]
+set clock_input [get_port $clk_port]
+```
+
 The name of the clock can technically be different than the pin name. 
 
 
@@ -71,11 +77,11 @@ case.)
 To filter out the clocks and resets, we can use the `lsearch` and `lreplace`
 in TCL:
 ```
-set clk_indx [lsearch [all_inputs] $clocks]
+set clk_indx [lsearch [all_inputs] $clock_input]
 set clk_input [lindex [all_inputs] $clk_indx]
 set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx ""]
 
-set rst_indx [lsearch all_inputs_wo_clk $resets]
+set rst_indx [lsearch $all_inputs_wo_clk $resets]
 set all_inputs_wo_clk_rst [lreplace $all_inputs_wo_clk $rst_indx $rst_indx ""]
 ```
 which results in a list of all the inputs without the clock and reset
@@ -86,12 +92,12 @@ library cell:
 ```
 set_driving_cell \
     -lib_cell "sky130_fd_sc_hd__inv_2" \
-    -pin "Y"
+    -pin "Y" \
     $all_inputs_wo_clk_rst
 
 set_driving_cell \
     -lib_cell "sky130_fd_sc_hd__clkbuf_2" \
-    -pin "X"
+    -pin "X" \
     $clk_input
 ```
 This effectively models the driving resistance of the input pin so if they are
