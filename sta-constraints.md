@@ -49,9 +49,8 @@ This defines our clock and reset port names and retrieves the pins using the
 ```
 set clock_port "clk_i"
 set reset_port "rst_n"
-set clocks [get_clocks $clock_port]
+set clocks [get_port $clock_port]
 set resets [get_port $reset_port]
-
 ```
 
 This creates a 50ns clock with a 50% duty cycle:
@@ -73,6 +72,7 @@ To filter out the clocks and resets, we can use the `lsearch` and `lreplace`
 in TCL:
 ```
 set clk_indx [lsearch [all_inputs] $clocks]
+set clk_input [lindex [all_inputs] $clk_indx]
 set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx ""]
 
 set rst_indx [lsearch all_inputs_wo_clk $resets]
