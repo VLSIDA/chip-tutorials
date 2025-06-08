@@ -7,7 +7,6 @@ git clone https://github.com/VLSIDA/chip-tutorials.git
 cd chip-tutorials
 ```
 
-
 ## CSE 122/222A Tutorials
 
 1. [Git](git.md)
@@ -22,25 +21,32 @@ cd chip-tutorials
 
 1. [KLayout](klayout.md)
 
-1. [OpenLane Installation](installation.md)
+1. [OpenROAD Installation](orfs-installation.md) (with ORFS)
 
-1. [OpenLane Walkthrough](openlane.md)
+1. [OpenROAD Walkthrough](orfs-walkthrough.md)
 
 1. [Static Timing Analysis](sta.md)
 
-## In progress...
+## In progress
 
 1. [Sky130](sky130.md)
 
 ## VLSI-DA Research Tutorials
+
 1. [OpenROAD and ODB](ordb.md)
 1. [ML](ml.md)
 1. [GNNs](gnn.md)
 
+# Outdated Tutorials
+
+1. [OpenLane Installation](openlane-installation.md)
+
+1. [OpenLane Walkthrough](openlane-walkthrough.md)
+
 # Reading Materials
 
-- Digital Integrated Circuits (2nd Edition) - A Design Perspective by Rabaey, Chandrakasan, & Nikolic (ISBN-10: 0130909963) 
-- Electronic Design Automation for IC Implementation, Circuit Design, and Process Technology Edited by Luciano Lavagno, Igor L. Markov, Grant Martin, and Louis K. Scheffer, CRC Press 2016. (ISBN-10: 0849379245) It is [available through the campus library](https://ucsc.primo.exlibrisgroup.com/permalink/01CDL_SCR_INST/gfkjds/informaworld_s10_1201_9781315215112_version2) 
+- Digital Integrated Circuits (2nd Edition) - A Design Perspective by Rabaey, Chandrakasan, & Nikolic (ISBN-10: 0130909963)
+- Electronic Design Automation for IC Implementation, Circuit Design, and Process Technology Edited by Luciano Lavagno, Igor L. Markov, Grant Martin, and Louis K. Scheffer, CRC Press 2016. (ISBN-10: 0849379245) It is [available through the campus library](https://ucsc.primo.exlibrisgroup.com/permalink/01CDL_SCR_INST/gfkjds/informaworld_s10_1201_9781315215112_version2)
   
 # License
 
