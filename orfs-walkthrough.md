@@ -50,6 +50,8 @@ enough density for manufacturing. The final step (6_1_merge) merges the fill
 cells into the design, and the report (6_report) step describes the final
 design, including the timing, area, and power information.
 
+## Running designs/technologies
+
 While running ```make``` ran the default design, you can pass a variable to the Makefile with a configuration file
 to run other designs. The default runs this:
 
@@ -63,7 +65,74 @@ You can implement this in the ASAP7 technology, but using this config:
 make DESIGN_CONFIG=./designs/asap7/gcd/config.mk
 ```
 
-# Run directories
+## Viewing the final design
+
+The --last-run option is also a shortcut for the last run directory. To view the last design in
+the OpenROAD GUI, you can run:
+
+```bash
+make DESIGN_CONFIG=./designs/nangate45/gcd/config.mk gui_final
+```
+
+## Cleaning up
+
+There are targets to clean individual steps, or the entire flow. The individual steps are:
+
+* clean_synth
+* clean_floorplan
+* clean_place
+* clean_cts
+* clean_route
+* clean_finish
+
+The entire flow is:
+
+* clean_all
+
+For example, you can clean an entire design with:
+
+```bash
+make DESIGN_CONFIG=./designs/asap7/gcd/config.mk clean_all
+```
+
+## Running individual steps
+
+You can also specify what step to run to run until with make:
+
+```bash
+make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN NAME>/config.mk <STEP>
+```
+
+where STEP can be synth, florplan, place, cts, route or finish.
+
+## Interactive TCL usage
+
+To get an interactive TCL console:  
+
+```bash
+make bash DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN NAME>/config.mk
+openroad <TLC file>
+```
+
+This sets a bunch of environment variables so that you can use the ORFS scripts.
+The bash make target sets the necessary environmental variables. This is
+especially useful for using the scripts in the scripts folder of the repo. For
+example you can very easily read a design in TCL with:
+
+```tcl
+source $::env(SCRIPTS_DIR)/load.tcl
+load_design 4_cts.odb 4_cts.sdc
+```
+
+You can run openroad with gdb with
+
+```bash
+gdb --args openroad [tcl file]
+```
+
+Note, you may want to [build OR](orfs-build.md) with debug symbols enabled, however.
+
+# Directory structure
 
 The results (output files) are put in ```results/<techology>/<design>/base```,
 where ```<technology>``` is the technology used (e.g. nangate45, asap7, etc.),
@@ -76,15 +145,6 @@ log file per flow step.
 The reports (e.g. timing, area, power) are put in
 ```reports/<technology>/<design>/base```. Each step has reports depending on what
 it does.
-
-# Viewing the final design
-
-The --last-run option is also a shortcut for the last run directory. To view the last design in
-the OpenROAD GUI, you can run:
-
-```bash
-make DESIGN_CONFIG=./designs/nangate45/gcd/config.mk gui_final
-```
 
 # Config files
 
@@ -104,6 +164,8 @@ export CORE_UTILIZATION ?= 55
 ```
 
 You can see all of the options documented here:
+
+# Advanced Makefile and Debugging
 
 # Help
 
