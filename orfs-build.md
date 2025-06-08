@@ -13,12 +13,14 @@ and OpenROAD. If you took CSE 125/225, you may have Yosys installed locally!
 
 ## Clone the repository
 
-All step need to do this:
+All steps need to get the ORFS repository:
 
 ```bash
 git clone https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
 cd OpepNROAD-flow-scripts
 ```
+
+Unless otherwise specified, all commands should be run from the root of this repo.
 
 ## Docker
 
@@ -37,22 +39,22 @@ You only need to run the build command:
 
 as Docker is the default build method.
 
-#### Debug symbols
-
-*I don't use this flow, so if you have a suggestion, please let me know!*
-
-*NOTE* the --openroad-args are not passed to the Docker build scripts, so you cannot enable debug like the
-Local build method. To add debug symbols in the docker method, you must modify the ```tools/OpenROAD/docker/Dockerfile.builder``` file to add the CMake arguments to the build command
+To add debug symbols in the docker method, you must modify the ```tools/OpenROAD/docker/Dockerfile.builder``` file to add the CMake arguments to the build command
 like this:
 
 ```dockerfile
 RUN ./etc/Build.sh -compiler=${compiler} -threads=${numThreads} -deps-prefixes-file=${depsPrefixFile} -cmake="-DCMAKE_BUILD_TYPE=DEBUG"
 ```
 
+*NOTE* the ```--openroad-args``` argument for ```./build_openroad.sh``` is not
+passed to the Docker build scripts, so you cannot enable debug like the local
+build method.
+
 ### Using OpenROAD in Docker
 
-This is very similar to the ORFS docker image that you used in the [walkthrough](/orfs-walkthrough.md)
-except that you need to specify a local docker image and tag that are shown in the final steps of your compilation:
+This is very similar to the ORFS docker image that you used in the
+[walkthrough](/orfs-walkthrough.md) except that you need to specify a local
+docker image and tag that are shown in the final steps of your compilation:
 
 ```
 #25 naming to docker.io/openroad/flow-ubuntu22.04-builder:6cd62b 
