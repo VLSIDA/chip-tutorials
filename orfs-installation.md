@@ -53,9 +53,6 @@ Then, I use a bash script that I created to run ORFS:
 
 ```bash
 # !/bin/bash
-
-#
-
 TAG="${1:-latest}"
 echo "Running OpenROAD flow with tag: ${TAG}"
 docker run --rm -it \

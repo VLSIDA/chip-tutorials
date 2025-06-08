@@ -64,7 +64,6 @@ I make a modified version of the ```runorfs.sh``` script (called ```runme.sh```)
 
 ```bash
 #!/bin/bash
-#
 TAG="${1:-latest}"
 echo "Running OpenROAD flow with tag: ${TAG}"
 docker run --rm -it \
