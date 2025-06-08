@@ -63,7 +63,7 @@ You can implement this in the ASAP7 technology, but using this config:
 make DESIGN_CONFIG=./designs/asap7/gcd/config.mk
 ```
 
-## Run directories
+# Run directories
 
 The results (output files) are put in ```results/<techology>/<design>/base```,
 where ```<technology>``` is the technology used (e.g. nangate45, asap7, etc.),
@@ -77,7 +77,7 @@ The reports (e.g. timing, area, power) are put in
 ```reports/<technology>/<design>/base```. Each step has reports depending on what
 it does.
 
-## Viewing the final design
+# Viewing the final design
 
 The --last-run option is also a shortcut for the last run directory. To view the last design in
 the OpenROAD GUI, you can run:
@@ -86,7 +86,7 @@ the OpenROAD GUI, you can run:
 make DESIGN_CONFIG=./designs/nangate45/gcd/config.mk gui_final
 ```
 
-## Config files
+# Config files
 
 The config files contain parameters for the design, such as the technology, the
 input files, the constraints, etc. The important parts of a config file
@@ -105,7 +105,7 @@ export CORE_UTILIZATION ?= 55
 
 You can see all of the options documented here:
 
-## Help
+# Help
 
 There is an [ORFS tutrorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html).
 

@@ -2,8 +2,8 @@
 
 This assumes you are on a Unix machine or are using [WSL](wsl.md).
 
-In this method, Docker will provide the binaries, but you first need to install
-Docker depending on your OS.
+In this method, Docker will provide the binaries, but you first need to [install
+Docker depending on your OS](docker.md).
 
 # Check Docker
 

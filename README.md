@@ -15,17 +15,19 @@ cd chip-tutorials
 
 ## Chip Tutorials
 
+1. OpenROAD Tutorials
+    1. [OpenROAD Installation](orfs-installation.md) (with ORFS)
+    1. [OpenROAD Walkthrough](orfs-walkthrough.md)
+    1. [Building OpenROAD from Source](orfs-build.md)
+    1. [OpenROAD and ODB Scripting](ordb.md)
+
+1. [Static Timing Analysis](sta.md)
+
 1. [Spice Syntax](spice.md)
 
 1. [Ngspice Usage](ngspice.md)
 
 1. [KLayout](klayout.md)
-
-1. [OpenROAD Installation](orfs-installation.md) (with ORFS)
-
-1. [OpenROAD Walkthrough](orfs-walkthrough.md)
-
-1. [Static Timing Analysis](sta.md)
 
 ## In progress
 
@@ -33,7 +35,6 @@ cd chip-tutorials
 
 ## VLSI-DA Research Tutorials
 
-1. [OpenROAD and ODB](ordb.md)
 1. [ML](ml.md)
 1. [GNNs](gnn.md)
 
