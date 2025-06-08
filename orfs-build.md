@@ -1,11 +1,13 @@
 # Building OpenROAD with ORFS
 
-You can build OpenROAD from source either in a Docker image or locally if you have a supported machine.
-The full instructions are at ORFS, but this is a document of what has worked for us.
-
 Most people will not need to build OpenROAD from source. I encourage you to use
 the [ORFS Installation](/orfs-installation.md) to avoid this unless you need to
 modify the source code.
+
+You can build OpenROAD from source either in a Docker image or locally if you
+have a supported machine. If you are using WSL on a Windows machine, you should
+use the [local method](/orfs-build.md#). The full instructions are at ORFS, but
+this is a document of what has worked for us.
 
 *BEWARE*, if you have local versions of tools installed, they will get priority
 over the compiled versions in the Docker image. This includes Yosys, OpenSTA,
