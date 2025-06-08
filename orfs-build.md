@@ -42,38 +42,11 @@ as Docker is the default build method.
 *I don't use this flow, so if you have a suggestion, please let me know!*
 
 *NOTE* the --openroad-args are not passed to the Docker build scripts, so you cannot enable debug like the
-Local build method.
+Local build method. To add debug symbols in the docker method, you must modify the ```tools/OpenROAD/docker/Dockerfile.builder``` file to add the CMake arguments to the build command
+like this:
 
-It does look like the docker build flow doesn't use the CMAKE parameters passed to the script:
-
-```
-# 22 175.4 [INFO] ./tools/OpenROAD/etc/Build.sh -dir=/OpenROAD-flow-scripts/tools/OpenROAD/build -threads=128 -cmake= -D CMAKE_INSTALL_PREFIX=/OpenROAD-flow-scripts/tools/install/OpenROAD -D CMAKE_INSTALL_RPATH=/OpenROAD-flow-scripts/dependencies/lib:/OpenROAD-flow-scripts/dependencies/lib64 -D CMAKE_INSTALL_RPATH_USE_LINK_PATH=TRUE
-```
-
-This is where it is called for local:
-
-```
-build_openroad.sh
-```
-
-```
-254:        eval ${NICE} ./tools/OpenROAD/etc/Build.sh -dir="$DIR/tools/OpenROAD/build" -threads=${PROC} -cmake=\'${OPENROAD_APP_ARGS}\'
-```
-
-This is where it is called for docker:
-
-```
-tools/OpenROAD/docker/Dockerfile.builder
-```
-
-```
-21:RUN ./etc/Build.sh -compiler=${compiler} -threads=${numThreads} -deps-prefixes-file=${depsPrefixFile}
-```
-
-Docker.builder docker image gets built from DockerHelper.sh, but that doesn't take any of the args in build_openroad.sh:
-
-```
-        ./etc/DockerHelper.sh create -target=builder -os="${DOCKER_OS_NAME}" -threads="${PROC}"
+```dockerfile
+RUN ./etc/Build.sh -compiler=${compiler} -threads=${numThreads} -deps-prefixes-file=${depsPrefixFile} -cmake="-DCMAKE_BUILD_TYPE=DEBUG"
 ```
 
 ### Using OpenROAD in Docker
