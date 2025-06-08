@@ -62,7 +62,7 @@ docker image and tag that are shown in the final steps of your compilation:
 #25 naming to docker.io/openroad/flow-ubuntu22.04-builder:6cd62b 
 ```
 
-I make a modified version of the ```runorfs.sh``` script (called ```runme.sh```) that uses this image and a general tag:
+I make a modified version of the ```runorfs.sh``` script (called ```runbuilder.sh```) that uses this image and a general tag:
 
 ```bash
 #!/bin/bash
@@ -82,7 +82,7 @@ docker run --rm -it \
 Specify the tag to run this version:
 
 ```bash
-./runme.sh 6cd62b
+./runbuilder.sh 6cd62b
 ```
 
 ## Local
