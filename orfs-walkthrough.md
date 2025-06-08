@@ -169,7 +169,8 @@ export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NAME)/constraint.sdc
 export CORE_UTILIZATION ?= 55
 ```
 
-You can see all of the options documented here:
+You can see all of the flow variable options documented here:
+[Flow Variables](https://openroad-flow-scripts.readthedocs.io/en/latest/user/FlowVariables.html)
 
 ## Help
 
