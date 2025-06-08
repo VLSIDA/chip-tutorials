@@ -1,11 +1,11 @@
-# Installing OpenROAD Flow Scripts (OpenROAD, KLayout, etc.)
+# Installing OpenROAD Flow Scripts
 
 This assumes you are on a Unix machine or are using [WSL](wsl.md).
 
 In this method, Docker will provide the binaries, but you first need to [install
 Docker depending on your OS](docker.md).
 
-# Check Docker
+## Check Docker
 
 Check that Docker is working by running:
 
@@ -40,7 +40,7 @@ For more examples and ideas, visit:
 
 ```
 
-# Install ORFS
+## Install ORFS
 
 First, clone ORFS to get the designs and scripts:
 
@@ -148,7 +148,7 @@ I have no name!@diode:/OpenROAD-flow-scripts/flow$ make gui_final
 which should open the GCD design like this:
 ![Default GCD project in OpenROAD GUI](orfs/orfs_gcd_gui.png)
 
-# Troubleshooting
+## Troubleshooting
 
 You may get the following error if you try to run GUI applications from the docker.
 

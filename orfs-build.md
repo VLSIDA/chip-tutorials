@@ -11,7 +11,7 @@ modify the source code.
 over the compiled versions in the Docker image. This includes Yosys, OpenSTA,
 and OpenROAD. If you took CSE 125/225, you may have Yosys installed locally!
 
-# Clone the repository
+## Clone the repository
 
 All step need to do this:
 
@@ -20,14 +20,14 @@ git clone https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
 cd OpepNROAD-flow-scripts
 ```
 
-# Docker
+## Docker
 
-## Dependencies
+### Dependencies
 
 The dependencies are installed inside the Docker image, so you do not need to install them.
 You do nee to [install docker](docker.md), though.
 
-## Building the Docker image
+### Building the Docker image
 
 You only need to run the build command:
 
@@ -37,7 +37,7 @@ You only need to run the build command:
 
 as Docker is the default build method.
 
-### Debug symbols
+#### Debug symbols
 
 *I don't use this flow, so if you have a suggestion, please let me know!*
 
@@ -76,7 +76,7 @@ Docker.builder docker image gets built from DockerHelper.sh, but that doesn't ta
         ./etc/DockerHelper.sh create -target=builder -os="${DOCKER_OS_NAME}" -threads="${PROC}"
 ```
 
-## Using OpenROAD in Docker
+### Using OpenROAD in Docker
 
 This is very similar to the ORFS docker image that you used in the [walkthrough](/orfs-walkthrough.md)
 except that you need to specify a local docker image and tag:
@@ -84,9 +84,9 @@ except that you need to specify a local docker image and tag:
 ```bash
 ```
 
-# Local
+## Local
 
-## Dependencies
+### Dependencies
 
 You need to run the commands in ```setup.sh``` to install dependencies. This does three things.
 You can run this script if you are root access, but I break down each step since some do not
@@ -119,7 +119,7 @@ assuming that you have a supported OS.
 This builds things such as specific versions of SWIG, cmake, etc. in the
 subdirectory "dependencies".
 
-## Building the code
+### Building the code
 
 tl;dr My command line looks like this:
 
@@ -145,7 +145,7 @@ ORFS repo and branch. I usually manually clone it and use the no init option.
 
 This will update submodules to the version needed by the current commit.
 
-# Using OpenROAD
+## Using OpenROAD
 
 To set your path with the newly built openroad, you should source the environment script:
 
@@ -165,7 +165,7 @@ which should point to
 OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
 ```
 
-## OpenROAD Regression Tests
+### OpenROAD Regression Tests
 
 You can run regression tests for OpenROAD overall by doing:
 
@@ -183,7 +183,7 @@ or just:
 openroad gcd_nangate45.tcl
 ```
 
-## Module Regression Tests
+### Module Regression Tests
 
 You can run regression tests for a specific submodule like this:
 

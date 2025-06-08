@@ -1,4 +1,6 @@
-# Running an example design
+# OpenROAD Flow Scripts (ORFS) Walkthrough
+
+## Running an example design
 
 This assumes that the smoke test runs and you've [installed ORFS properly](orfs-installation.md).
 
@@ -30,27 +32,26 @@ Log                            Elapsed seconds Peak Memory/MB
 Total                                       33           1175
 ```
 
-Step 1 (1_1_yosys and 1_1_yosys_canonicalize) is the synthesis step, where the
-Verilog source files are converted to a gate-level netlist. The next steps
-(2_1_floorplan to 2_4_floorplan_pdn) are the floorplanning steps, where the any
-fixed blocks are placed and the power supply network is created. The next steps
-(3_1_place_gp_skip_io to 3_5_place_dp) are the placement steps, where the gates
-and IO cells (around the perimeter) are placed in the design. The
-3_4_place_resized step is the first timing optimization step, where the gates
-are resized, buffered, etc. to help meet timing. The placement is divided into
-global (3_3_place_gp) and detailed placement (3_5_place_dp) steps. Clock tree
-synthesis (CTS) is the next step (4_1_cts), where the clock tree is built to
-ensure that the clock has low skew to all the sequential elements in the
-design. Global routing (5_1_grt) is the next step, where the the general paths
-of wires are created to minimize congestion and ensure that the design can be
-routed. After that, the design is detail routed (5_2_route), where the wires
-are placed in the routing layers. The final steps of fill cell insertion
-(5_3_fillcell) and fill (6_1_fill) are done to ensure that the design has
-enough density for manufacturing. The final step (6_1_merge) merges the fill
-cells into the design, and the report (6_report) step describes the final
-design, including the timing, area, and power information.
+* 1_1_yosys: logic synthesis with Yosys
+* 1_1_yosys_canonicalize
+* 2_1_floorplan: determines floorplan area and aspect ratio
+* 2_2_floorplan_macro: places fixed size macro blocks (e.g. SRAMs)
+* 2_3_floorplan_tapcell:
+* 2_4_floorplan_pdn: creates power ring and/or power straps
+* 3_1_place_gp_skip_io:
+* 3_2_place_iop: places the IO cells around the perimeter
+* 3_3_place_gp: performs global placement of the gates
+* 3_4_place_resized: performs global placement timing optimization, resizing gates, buffering, etc.
+* 3_5_place_dp: performs detailed placement of the gates
+* 4_1_cts: performs clock tree synthesis (CTS) to build the clock tree
+* 5_1_grt: performs global routing
+* 5_2_route: performs detailed routing
+* 5_3_fillcell: adds fill cells to row places without cells
+* 6_1_fill: adds routing fill to the design
+* 6_1_merge: merges the GDS of library cells into the design
+* 6_report: performs final design reporting, including timing, area, and power
 
-## Running designs/technologies
+### Running designs/technologies
 
 While running ```make``` ran the default design, you can pass a variable to the Makefile with a configuration file
 to run other designs. The default runs this:
@@ -65,7 +66,7 @@ You can implement this in the ASAP7 technology, but using this config:
 make DESIGN_CONFIG=./designs/asap7/gcd/config.mk
 ```
 
-## Viewing the final design
+### Viewing the final design
 
 The --last-run option is also a shortcut for the last run directory. To view the last design in
 the OpenROAD GUI, you can run:
@@ -74,7 +75,7 @@ the OpenROAD GUI, you can run:
 make DESIGN_CONFIG=./designs/nangate45/gcd/config.mk gui_final
 ```
 
-## Cleaning up
+### Cleaning up
 
 There are targets to clean individual steps, or the entire flow. The individual steps are:
 
@@ -95,7 +96,7 @@ For example, you can clean an entire design with:
 make DESIGN_CONFIG=./designs/asap7/gcd/config.mk clean_all
 ```
 
-## Running individual steps
+### Running individual steps
 
 You can also specify what step to run to run until with make:
 
@@ -103,9 +104,9 @@ You can also specify what step to run to run until with make:
 make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN NAME>/config.mk <STEP>
 ```
 
-where STEP can be synth, florplan, place, cts, route or finish.
+where STEP can be synth, floorplan, place, cts, route or finish.
 
-## Interactive TCL usage
+### Interactive TCL usage
 
 To get an interactive TCL console:  
 
@@ -123,6 +124,8 @@ example you can very easily read a design in TCL with:
 source $::env(SCRIPTS_DIR)/load.tcl
 load_design 4_cts.odb 4_cts.sdc
 ```
+
+### Debugging OpenROAD (C++ code)
 
 You can run openroad with gdb with
 
@@ -146,7 +149,7 @@ The reports (e.g. timing, area, power) are put in
 ```reports/<technology>/<design>/base```. Each step has reports depending on what
 it does.
 
-# Config files
+## Config files
 
 The config files contain parameters for the design, such as the technology, the
 input files, the constraints, etc. The important parts of a config file
@@ -165,9 +168,7 @@ export CORE_UTILIZATION ?= 55
 
 You can see all of the options documented here:
 
-# Advanced Makefile and Debugging
-
-# Help
+## Help
 
 There is an [ORFS tutrorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html).
 
