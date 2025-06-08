@@ -77,7 +77,7 @@ docker run --rm -it \
   docker.io/openroad/flow-ubuntu22.04-builder:${TAG}
 ```
 
-Specify th tag to run this version:
+Specify the tag to run this version:
 
 ```bash
 ./runme.sh 6cd62b
