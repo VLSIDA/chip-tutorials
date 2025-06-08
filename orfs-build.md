@@ -79,9 +79,34 @@ Docker.builder docker image gets built from DockerHelper.sh, but that doesn't ta
 ### Using OpenROAD in Docker
 
 This is very similar to the ORFS docker image that you used in the [walkthrough](/orfs-walkthrough.md)
-except that you need to specify a local docker image and tag:
+except that you need to specify a local docker image and tag that are shown in the final steps of your compilation:
+
+```
+#25 naming to docker.io/openroad/flow-ubuntu22.04-builder:6cd62b 
+```
+
+I make a modified version of the ```runorfs.sh``` script (called ```runme.sh```) that uses this image and a general tag:
 
 ```bash
+#!/bin/bash
+#
+TAG="${1:-latest}"
+echo "Running OpenROAD flow with tag: ${TAG}"
+docker run --rm -it \
+  -u $(id -u ${USER}):$(id -g ${USER}) \
+  -v $(pwd)/flow:/OpenROAD-flow-scripts/flow \
+  -e DISPLAY=${DISPLAY} \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v ${HOME}/.Xauthority:/.Xauthority \
+  --network host \
+  --security-opt seccomp=unconfined \
+  docker.io/openroad/flow-ubuntu22.04-builder:${TAG}
+```
+
+Specify th tag to run this version:
+
+```bash
+./runme.sh 6cd62b
 ```
 
 ## Local

@@ -6,6 +6,9 @@ This assumes that the smoke test runs and you've [installed ORFS properly](orfs-
 
 The documentation is available at [ReadTheDocs](https://openroad.readthedocs.io/en/latest/).
 
+The general steps of ORFS are shown here:
+![OpenROAD Flow Scripts Methodology Steps](orfs/orfs_flow.png)
+
 ORFS uses a Makefile to run the flow scripts. Specifically, it goes through the following steps that you see in the output
 of a successful run:
 
