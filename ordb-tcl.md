@@ -53,10 +53,12 @@ Example:
 
 ```tcl
 proc greet {name greeting} {
-    puts "$greeting, $name!"
+    set msg "$greeting, $name!"
+    return $msg
 }
 
-greet "OpenROAD" "Hello"
+set message [greet "OpenROAD" "Hello"]
+puts "Returned message: $message"
 ```
 
 ## Using TCL Commands in OpenROAD
@@ -65,10 +67,35 @@ To use TCL commands in OpenROAD Flow Scripts, you can embed your TCL code direct
 
 Example:
 
-```tcl
 read_lef my_design.lef
 read_def my_design.def
+read_liberty my_design.lib
 check_timing
+
+## How to read a design in OpenROAD
+
+An example design is provided in `ordb/final.tar.gz` that you can extract with:
+
+```
+tar zxvf ordb/final.tar.gz
+```
+
+```
+set odb_file "final/odb/spm.odb"
+set def_file "final/def/spm.def"
+
+set lef_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef" 
+               "/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"}
+set lib_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"}
+
+foreach lef_file $lef_files {
+    read_lef $lef_file
+}
+foreach lib_file $lib_files {
+    read_liberty $lib_file
+}
+
+read_def $def_file
 ```
 
 There are a lot of files to load, so you can use the [ORFS scripts to load all
