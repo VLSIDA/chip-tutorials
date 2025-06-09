@@ -67,7 +67,6 @@ If you want to use a specific version, you can specify it as an argument to the 
 ```bash
 
 # for the version corresponding to your ORFS repository
-
 ./runorfs.sh
 
 # for a specific version, you can specify the tag
