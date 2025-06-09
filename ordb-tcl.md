@@ -63,28 +63,31 @@ puts "Returned message: $message"
 
 ## Using TCL Commands in OpenROAD
 
-To use TCL commands in OpenROAD Flow Scripts, you can embed your TCL code directly into the scripts. The OpenROAD environment provides various commands specific to design, such as loading design files, running synthesis, and checking timing.
+To use TCL commands in OpenROAD Flow Scripts, you can embed your TCL code
+directly into the scripts. The OpenROAD environment provides various commands
+specific to design, such as loading design files, running synthesis, and
+checking timing.
 
 Example:
 
+```tcl
 read_lef my_design.lef
 read_def my_design.def
 read_liberty my_design.lib
 check_timing
+```
 
 ## How to read a design in OpenROAD
 
 An example design is provided in `ordb/final.tar.gz` that you can extract with:
 
-```
-tar zxvf ordb/final.tar.gz
+```tcl
 ```
 
-```
 set odb_file "final/odb/spm.odb"
 set def_file "final/def/spm.def"
 
-set lef_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef" 
+set lef_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef"
                "/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"}
 set lib_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"}
 
@@ -96,6 +99,7 @@ foreach lib_file $lib_files {
 }
 
 read_def $def_file
+
 ```
 
 There are a lot of files to load, so you can use the [ORFS scripts to load all
@@ -106,58 +110,61 @@ of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-
 ### Iterating Over Gates and Nets
 
 1. **Iterating Over Gates:**
-   - Use the `get_cells` command to retrieve all the cells (gates) in the design.
-   - Iterate over each cell using a loop to access its properties.
+  - Use the `get_cells` command to retrieve all the cells (gates) in the design.
+  - Iterate over each cell using a loop to access its properties.
 
-   **Example:**
+  **Example:**
 
-   ```tcl
-   set cells [get_cells]
-   foreach cell $cells {
-       # Get the cell name
-       set cell_name [get_property $cell full_name]
-       puts "Cell: $cell_name"
-   }
-   ```
+  ```tcl
+  set cells [get_cells]
+  foreach cell $cells {
+      # Get the cell name
+      set cell_name [get_property $cell full_name]
+      puts "Cell: $cell_name"
+  }
+  ```
 
 2. **Iterating Over Nets:**
-   - Use the `get_nets` command to retrieve all the nets in the design.
-   - Iterate over each net to access its properties.
 
-   **Example:**
+- Use the `get_nets` command to retrieve all the nets in the design.
+- Iterate over each net to access its properties.
 
-   ```tcl
-   set nets [get_nets]
-   foreach net $nets {
-       # Get the net name
-       set net_name [get_property $net full_name]
-       puts "Net: $net_name"
-   }
-   ```
+  **Example:**
+
+  ```tcl
+  set nets [get_nets]
+  foreach net $nets {
+      # Get the net name
+      set net_name [get_property $net full_name]
+      puts "Net: $net_name"
+  }
+  ```
 
 ### Querying Timing and Other Information
 
 1. **Querying Timing Information:**
-   - Use commands like `report_timing` to extract detailed timing information.
 
-   **Example:**
+- Use commands like `report_timing` to extract detailed timing information.
 
-   ```tcl
-   set path [lindex [find_timing_paths -sort_by_slack -group_count 1] 0]
-   set slack [get_property $path slack]
-   puts "Critical Path Slack: $slack"
-   ```
+  **Example:**
+
+  ```tcl
+  set path [lindex [find_timing_paths -sort_by_slack -group_count 1] 0]
+  set slack [get_property $path slack]
+  puts "Critical Path Slack: $slack"
+  ```
 
 2. **Querying Other Properties:**
-   - Utilize `get_property` to fetch various attributes of cells, nets, or paths.
 
-   **Example:**
+- Utilize `get_property` to fetch various attributes of cells, nets, or paths.
 
-   ```tcl
-   set cell [get_cells -name my_cell]
-   set cell_type [get_property $cell type]
-   puts "Cell Type: $cell_type"
-   ```
+  **Example:**
+
+  ```tcl
+  set cell [get_cells -name my_cell]
+  set cell_type [get_property $cell type]
+  puts "Cell Type: $cell_type"
+  ```
 
 These examples demonstrate typical usage patterns for iterating and querying
 within a design in OpenROAD using TCL commands. These scripts can be adjusted
