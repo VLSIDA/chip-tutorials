@@ -47,7 +47,7 @@ docker run --rm -it \
 
 ```
 
-This will not only export your display so you can run GUI applicatios in the Docker, but it also
+This will not only export your display so you can run GUI applications in the Docker, but it also
 mounts the directory "flow" on your local filesystem in the Docker image. This directory contains the
 designs, scripts, and the results when you run the designs.
 
@@ -66,7 +66,7 @@ that you don't expect. If you want to use a specific version, you can specify it
 
 ```bash
 
-# for the latest version
+# for the version corresponding to your ORFS repository
 
 ./runorfs.sh
 
