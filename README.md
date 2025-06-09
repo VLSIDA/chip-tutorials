@@ -19,6 +19,7 @@ cd chip-tutorials
 1. OpenROAD Flow Scripts (ORFS) Tutorials
     1. [ORFS Installation](orfs-installation.md)
     1. [ORFS Walkthrough](orfs-walkthrough.md)
+    1. [Porting a Design to ORFS](orfs-porting.md)
     1. [Building OpenROAD from Source](orfs-build.md)
     1. [OpenROAD and ODB Scripting](ordb.md)
 
