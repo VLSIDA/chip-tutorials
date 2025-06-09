@@ -61,8 +61,8 @@ chmod +x runorfs.sh
 ```
 
 You can run the latest by just executing the script, or you can specify a [particular tag](https://hub.docker.com/r/openroad/orfs/tags). If you
-don't specify the tag, it will pull the most recent version every time and you may get updates
-that you don't expect. If you want to use a specific version, you can specify it like this:
+don't specify the tag, it will pull the version corresponding to your ORFS repository.
+If you want to use a specific version, you can specify it as an argument to the command line:
 
 ```bash
 
@@ -70,11 +70,13 @@ that you don't expect. If you want to use a specific version, you can specify it
 
 ./runorfs.sh
 
-# for a specific version
-# make sure ORFS repository is the same version
+# for a specific version, you can specify the tag
 git checkout v3.0-3141-gb6d79b23
-# run a particular version
-./runofs.sh v3.0-3141-gb6d79b23
+./runorfs.sh v3.0-3141-gb6d79b23
+
+# or a commit ID
+git checkout 7fcc19
+./runorfs.sh 7fcc19
 
 ````
 
