@@ -207,3 +207,7 @@ The outputs of the regression test will be saved in the results subdirectory.
 The log is called ```<TEST>-tcl.log``` and the diff with the ".ok" log is in
 ```<TEST>-tcl.diff```. If there is a Verilog or DEF output, it is saved with
 the extension ```<TEST>_out-tcl.v``` (or def).
+
+# License
+
+Copyright 2025 VLSI-DA (see [LICENSE](LICENSE) for use)
