@@ -111,9 +111,7 @@ of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-
 
 ## OpenROAD Database (ORDB)
 
-### Iterating Over Gates and Nets
-
-1. **Iterating Over Gates:**
+### Iterating Over Gates
 
 - Use the `get_cells` command to retrieve all the cells (gates) in the design.
 - Iterate over each cell using a loop to access its properties.
@@ -129,7 +127,7 @@ of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-
   }
   ```
 
-2. **Iterating Over Nets:**
+### Iterating Over Nets
 
 - Use the `get_nets` command to retrieve all the nets in the design.
 - Iterate over each net to access its properties.
@@ -145,9 +143,7 @@ of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-
   }
   ```
 
-### Querying Timing and Other Information
-
-1. **Querying Timing Information:**
+### Querying Timing Information
 
 - Use commands like `report_timing` to extract detailed timing information.
 
@@ -159,7 +155,7 @@ of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-
   puts "Critical Path Slack: $slack"
   ```
 
-2. **Querying Other Properties:**
+### Querying Other Properties
 
 - Utilize `get_property` to fetch various attributes of cells, nets, or paths.
 
