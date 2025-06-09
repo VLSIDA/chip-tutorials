@@ -25,6 +25,8 @@ TCL, or Tool Command Language, is a scripting language commonly used in electron
 - `set`: Assigns a value to a variable.
 - `puts`: Outputs a string to the console.
 - `expr`: Evaluates an expression.
+- `proc`: Defines a procedure to encapsulate reusable code blocks.
+- `foreach`: Iterates over each element in a list.
 
 Example:
 
@@ -32,6 +34,29 @@ Example:
 set a 10
 set b 20
 puts "The sum is: [expr $a + $b]"
+```
+
+- Working with Lists: Create a list and iterate over its elements.
+
+Example:
+
+```tcl
+set my_list [list 1 2 3 4 5]
+foreach item $my_list {
+    puts "Item: $item"
+}
+```
+
+- Defining a Procedure (`proc`): Create a procedure to encapsulate reusable code blocks.
+
+Example:
+
+```tcl
+proc greet {name greeting} {
+    puts "$greeting, $name!"
+}
+
+greet "OpenROAD" "Hello"
 ```
 
 ## Using TCL Commands in OpenROAD
@@ -48,23 +73,6 @@ check_timing
 
 There are a lot of files to load, so you can use the [ORFS scripts to load all
 of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-walkthrough.html#interactive-tcl-usage).
-
-## Examples
-
-Here are some examples of TCL scripts used in OpenROAD:
-
-- Loading a design:
-
-  ```tcl
-  read_lef my_design.lef
-  read_def my_design.def
-  ````
-
-- Running a timing check:
-
-  ```tcl
-  check_timing
-  ```
 
 ## OpenROAD Database (ORDB)
 
@@ -124,16 +132,19 @@ Here are some examples of TCL scripts used in OpenROAD:
    puts "Cell Type: $cell_type"
    ```
 
-These examples demonstrate typical usage patterns for iterating and querying within a design in OpenROAD using TCL commands. These scripts can be adjusted according to specific needs, leveraging the extensive set of commands available in the OpenROAD TCL API.
-
-```
+These examples demonstrate typical usage patterns for iterating and querying
+within a design in OpenROAD using TCL commands. These scripts can be adjusted
+according to specific needs, leveraging the extensive set of commands available
+in the OpenROAD TCL API.
 
 ## Conclusion
 
-More informatio on TCL commands for timing can be found in the [STA Tutorial](sta.md).
+More information on TCL commands for timing can be found in the [STA
+Tutorial](sta.md).
 
-Using TCL within OpenROAD Flow Scripts can greatly enhance your ability to automate and control the design process. For more information on TCL scripting, refer to the [OpenROAD documentation](https://openroad.readthedocs.io/).
-
+Using TCL within OpenROAD Flow Scripts can greatly enhance your ability to
+automate and control the design process. For more information on TCL scripting,
+refer to the [OpenROAD documentation](https://openroad.readthedocs.io/).
 
 # License
 
