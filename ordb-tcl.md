@@ -4,7 +4,19 @@ This tutorial provides a brief overview of how to use TCL commands within OpenRO
 
 ## Setting Up the Environment
 
-To begin using TCL with OpenROAD, ensure you have the OpenROAD tools installed. You can do this by following the installation guide provided in the OpenROAD documentation. Once installed, you can access the TCL shell by running the OpenROAD executable with the `-no_init` option.
+To begin using TCL with OpenROAD, ensure you have the [OpenROAD tools installed](orfs-installation.md).
+Once installed, you can access the TCL shell by running the
+OpenROAD executable:
+
+```bash
+$ openroad
+OpenROAD v2.0-22053-g4e2370113b
+Features included (+) or not (-): +GPU +GUI +Python : DEBUG
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+openroad>
+
+```
 
 ## Basic TCL Commands
 
@@ -34,6 +46,9 @@ read_def my_design.def
 check_timing
 ```
 
+There are a lot of files to load, so you can use the [ORFS scripts to load all
+of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-walkthrough.html#interactive-tcl-usage).
+
 ## Examples
 
 Here are some examples of TCL scripts used in OpenROAD:
@@ -51,11 +66,71 @@ Here are some examples of TCL scripts used in OpenROAD:
   check_timing
   ```
 
+## OpenROAD Database (ORDB)
+
+### Iterating Over Gates and Nets
+
+1. **Iterating Over Gates:**
+   - Use the `get_cells` command to retrieve all the cells (gates) in the design.
+   - Iterate over each cell using a loop to access its properties.
+
+   **Example:**
+
+   ```tcl
+   set cells [get_cells]
+   foreach cell $cells {
+       # Get the cell name
+       set cell_name [get_property $cell full_name]
+       puts "Cell: $cell_name"
+   }
+   ```
+
+2. **Iterating Over Nets:**
+   - Use the `get_nets` command to retrieve all the nets in the design.
+   - Iterate over each net to access its properties.
+
+   **Example:**
+
+   ```tcl
+   set nets [get_nets]
+   foreach net $nets {
+       # Get the net name
+       set net_name [get_property $net full_name]
+       puts "Net: $net_name"
+   }
+   ```
+
+### Querying Timing and Other Information
+
+1. **Querying Timing Information:**
+   - Use commands like `report_timing` to extract detailed timing information.
+
+   **Example:**
+
+   ```tcl
+   set path [lindex [find_timing_paths -sort_by_slack -group_count 1] 0]
+   set slack [get_property $path slack]
+   puts "Critical Path Slack: $slack"
+   ```
+
+2. **Querying Other Properties:**
+   - Utilize `get_property` to fetch various attributes of cells, nets, or paths.
+
+   **Example:**
+
+   ```tcl
+   set cell [get_cells -name my_cell]
+   set cell_type [get_property $cell type]
+   puts "Cell Type: $cell_type"
+   ```
+
+These examples demonstrate typical usage patterns for iterating and querying within a design in OpenROAD using TCL commands. These scripts can be adjusted according to specific needs, leveraging the extensive set of commands available in the OpenROAD TCL API.
+
+```
+
 ## Conclusion
 
 Using TCL within OpenROAD Flow Scripts can greatly enhance your ability to automate and control the design process. For more information on TCL scripting, refer to the [OpenROAD documentation](https://openroad.readthedocs.io/).
-
-```
 
 
 # License
