@@ -82,6 +82,8 @@ git checkout 7fcc19
 *Beware*, your cloned version of ORFS should match the version of the Docker image that you run. If it doesn't,
 you may get differences if the command interfaces change.
 
+You can safely ignore the message "groups: cannot find name for group ID 1000" when you start the Docker image.
+
 # Smoke Test
 
 To check your installation, run a smoke test:
