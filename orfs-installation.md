@@ -40,16 +40,18 @@ For more examples and ideas, visit:
 
 ```
 
-## Install ORFS
+## Clone ORFS
 
 First, clone ORFS to get the designs and scripts:
 
 ```bash
 git clone https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
-cd OpepNROAD-flow-scripts
+cd OpenROAD-flow-scripts
 ```
 
-Then, I use a bash script that I created to run ORFS:
+## Run ORFS Docker image
+
+I use a bash script that I created to run ORFS:
 
 ```bash
 # !/bin/bash
