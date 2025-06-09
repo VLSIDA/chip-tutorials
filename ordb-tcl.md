@@ -81,9 +81,13 @@ check_timing
 
 An example design is provided in `ordb/final.tar.gz` that you can extract with:
 
-```tcl
+```bash
+tar xvf ordb/final.tar.gz
 ```
 
+Then you can run the following TCL commands to load the design and libraries:
+
+```tcl
 set odb_file "final/odb/spm.odb"
 set def_file "final/def/spm.def"
 
@@ -110,8 +114,9 @@ of the design configuration files](https://vlsida.github.io/chip-tutorials/orfs-
 ### Iterating Over Gates and Nets
 
 1. **Iterating Over Gates:**
-  - Use the `get_cells` command to retrieve all the cells (gates) in the design.
-  - Iterate over each cell using a loop to access its properties.
+
+- Use the `get_cells` command to retrieve all the cells (gates) in the design.
+- Iterate over each cell using a loop to access its properties.
 
   **Example:**
 
