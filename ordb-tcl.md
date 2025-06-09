@@ -130,6 +130,8 @@ These examples demonstrate typical usage patterns for iterating and querying wit
 
 ## Conclusion
 
+More informatio on TCL commands for timing can be found in the [STA Tutorial](sta.md).
+
 Using TCL within OpenROAD Flow Scripts can greatly enhance your ability to automate and control the design process. For more information on TCL scripting, refer to the [OpenROAD documentation](https://openroad.readthedocs.io/).
 
 
