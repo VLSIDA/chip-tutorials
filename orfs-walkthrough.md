@@ -129,10 +129,31 @@ will need to clean the floorplan and run from that step again.
 
 ### Interactive TCL usage
 
-To get an interactive TCL console:  
+If you want to use OpenROAD interactively, you need to first your path by sourcing the environment script.
+The Makefile is smart enough to not require this, but if you are running ```openroad``` directly, you
+will need to do this. For example,
+
+```bash
+source env.sh
+```
+
+You can then see that you are using the correct version of OpenROAD by running:
+
+```bash
+which openroad
+```
+
+which should point to
+
+```
+OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+```
+
+Then, to get an interactive TCL console:  
 
 ```bash
 make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN>/config.mk bash
+source env.sh
 openroad <TLC file>
 ```
 
@@ -147,17 +168,6 @@ load_design 4_cts.odb 4_cts.sdc
 
 Because you have specified the config file, it knows which design and
 technology, so you only have to specify the ODB file and SDC constraints.
-
-### Debugging OpenROAD (when debugging C++ code)
-
-You can run openroad with gdb with
-
-```bash
-gdb --args openroad [tcl file]
-```
-
-Note, you may want to [build OR](orfs-build.md) with debug symbols enabled, however.
-GDB should behave as normal with breakpoints, stepping, etc.
 
 # Directory structure
 

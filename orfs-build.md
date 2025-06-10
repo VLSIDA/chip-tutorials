@@ -208,6 +208,18 @@ The log is called ```<TEST>-tcl.log``` and the diff with the ".ok" log is in
 ```<TEST>-tcl.diff```. If there is a Verilog or DEF output, it is saved with
 the extension ```<TEST>_out-tcl.v``` (or def).
 
+### Debugging OpenROAD (when debugging C++ code)
+
+You can run openroad with gdb with
+
+```bash
+gdb --args openroad [tcl file]
+```
+
+Note, you may want to [build OR](orfs-build.md) with debug symbols enabled, however.
+GDB should behave as normal with breakpoints, stepping, etc.
+Unfortunately, the Docker image, by default, does not have gdb installed, so you will need to add this (more to come later).
+
 # License
 
 Copyright 2025 VLSI-DA (see [LICENSE](LICENSE) for use)
