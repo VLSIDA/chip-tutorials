@@ -60,9 +60,10 @@ chmod +x runorfs.sh
 
 ```
 
-You can run the latest by just executing the script, or you can specify a [particular tag](https://hub.docker.com/r/openroad/orfs/tags). If you
-don't specify the tag, it will pull the version corresponding to your ORFS repository.
-If you want to use a specific version, you can specify it as an argument to the command line:
+You can run the version corresponding to your version of ORFS by just executing
+the script, or you can specify a [particular
+tag](https://hub.docker.com/r/openroad/orfs/tags) or github commit ID. For
+example:
 
 ```bash
 
@@ -79,6 +80,8 @@ git checkout 7fcc19
 
 ````
 
+## Troubleshooting and Common mistakes
+
 *Beware*, your cloned version of ORFS should match the version of the Docker image that you run. If it doesn't,
 you may get differences if the command interfaces change.
 
@@ -94,9 +97,12 @@ I have no name!@diode:/OpenROAD-flow-scripts/flow$ make
 
 ```
 
-You will get a lot of output, but it should end with something like this:
+This will run, by default, the design GCD (Greatest Common Divisor) in the
+Nangate 45nm technology. It will run the flow from synthesis to routing, and
+you will get a lot of output, but it should end with something like this:
 
 ```
+Log                            Elapsed seconds Peak Memory/MB
 1_1_yosys                                    0             42
 1_1_yosys_canonicalize                       0             38
 2_1_floorplan                                0             97
@@ -150,4 +156,4 @@ permission to access your display server (X11).
 
 # License
 
-Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
+Copyright 2025 VLSI-DA (see [LICENSE](LICENSE) for use)

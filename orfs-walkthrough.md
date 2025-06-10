@@ -54,7 +54,7 @@ Total                                       33           1175
 * 6_1_merge: merges the GDS of library cells into the design
 * 6_report: performs final design reporting, including timing, area, and power
 
-### Running designs/technologies
+### Running different designs and technologies
 
 While running ```make``` ran the default design, you can pass a variable to the Makefile with a configuration file
 to run other designs. The default runs this:
@@ -63,16 +63,23 @@ to run other designs. The default runs this:
 make DESIGN_CONFIG=./designs/nangate45/gcd/config.mk
 ```
 
-You can implement this in the ASAP7 technology, but using this config:
+You can implement this in the ASAP7 technology by using this config:
 
 ```
 make DESIGN_CONFIG=./designs/asap7/gcd/config.mk
 ```
 
+The general format is:
+
+```
+make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN>/config.mk 
+```
+
+where PLATFORM is the technology used (e.g. nangate45, asap7, etc.) and DESIGN is the design name (e.g. gcd).
+
 ### Viewing the final design
 
-The --last-run option is also a shortcut for the last run directory. To view the last design in
-the OpenROAD GUI, you can run:
+To view the last design in the OpenROAD GUI, you can run:
 
 ```bash
 make DESIGN_CONFIG=./designs/nangate45/gcd/config.mk gui_final
@@ -104,31 +111,44 @@ make DESIGN_CONFIG=./designs/asap7/gcd/config.mk clean_all
 You can also specify what step to run to run until with make:
 
 ```bash
-make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN NAME>/config.mk <STEP>
+make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN>/config.mk <STEP>
 ```
 
-where STEP can be synth, floorplan, place, cts, route or finish.
+where STEP can be synth, floorplan, place, cts, route or finish. This is useful
+if you are having a problem with global routing, for example. To debug it, you
+can repeat cleaning and making like this:
+
+```bash
+make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN>/config.mk clean_route
+make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN>/config.mk route
+```
+
+As long as you don't change any features that affect the design, this is ok.
+However, if you change a feature that modifies the floorplan, for example, you
+will need to clean the floorplan and run from that step again.
 
 ### Interactive TCL usage
 
 To get an interactive TCL console:  
 
 ```bash
-make bash DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN NAME>/config.mk
+make DESIGN_CONFIG=designs/<PLATFORM>/<DESIGN>/config.mk bash
 openroad <TLC file>
 ```
 
-This sets a bunch of environment variables so that you can use the ORFS scripts.
-The bash make target sets the necessary environmental variables. This is
-especially useful for using the scripts in the scripts folder of the repo. For
-example you can very easily read a design in TCL with:
+This bash script sets a bunch of environment variables (e.g., SCRIPTS_DIR,
+LEF_FILES, LIB_FILES, etc.) so that you can use the ORFS scripts in
+```flow/scripts```. For example you can very easily read a design after CTS in TCL with:
 
 ```tcl
 source $::env(SCRIPTS_DIR)/load.tcl
 load_design 4_cts.odb 4_cts.sdc
 ```
 
-### Debugging OpenROAD (C++ code)
+Because you have specified the config file, it knows which design and
+technology, so you only have to specify the ODB file and SDC constraints.
+
+### Debugging OpenROAD (when debugging C++ code)
 
 You can run openroad with gdb with
 
@@ -137,19 +157,20 @@ gdb --args openroad [tcl file]
 ```
 
 Note, you may want to [build OR](orfs-build.md) with debug symbols enabled, however.
+GDB should behave as normal with breakpoints, stepping, etc.
 
 # Directory structure
 
-The results (output files) are put in ```results/<techology>/<design>/base```,
-where ```<technology>``` is the technology used (e.g. nangate45, asap7, etc.),
-```<design>``` is the design name (e.g. gcd). The results directory is created
+The results (output files) are put in ```results/<PLATFORM>/<DESIGN>/base```,
+where ```<PLATFORM>``` is the technology used (e.g. nangate45, asap7, etc.),
+```<DESIGN>``` is the design name (e.g. gcd). The results directory is created
 if it does not exist.
 
-The log files are put in ```logs/<technology>/<design>/base```. There is one
+The log files are put in ```logs/<PLATFORM>/<DESIGN>/base```. There is one
 log file per flow step.
 
 The reports (e.g. timing, area, power) are put in
-```reports/<technology>/<design>/base```. Each step has reports depending on what
+```reports/<PLATFORM>/<DESIGN>/base```. Each step has reports depending on what
 it does.
 
 ## Config files
@@ -172,6 +193,10 @@ export CORE_UTILIZATION ?= 55
 You can see all of the flow variable options documented here:
 [Flow Variables](https://openroad-flow-scripts.readthedocs.io/en/latest/user/FlowVariables.html)
 
+There are a lot of default variables that get set, but the config file
+overrides them. The ```make bash``` target sources the default settings and
+your config file for a particular technology and design.
+
 ## Help
 
 There is an [ORFS tutrorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html).
@@ -190,4 +215,4 @@ The OpenROAD documentation is available at [ReadTheDocs](https://openroad.readth
 
 # License
 
-Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
+Copyright 2025 VLSI-DA (see [LICENSE](LICENSE) for use)
