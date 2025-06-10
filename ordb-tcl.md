@@ -172,6 +172,44 @@ within a design in OpenROAD using TCL commands. These scripts can be adjusted
 according to specific needs, leveraging the extensive set of commands available
 in the OpenROAD TCL API.
 
+## ORFS Scripts
+
+The flow scripts for the ORFS flow are in the directory ```flow/scripts```.
+There are many good examples of TCL usage in these scripts.
+
+For example, the IO placement script is ```flow/scripts/io_placement.tcl``` and
+is repeated here:
+
+```tcl
+source $::env(SCRIPTS_DIR)/load.tcl
+erase_non_stage_variables place
+
+if {![env_var_exists_and_non_empty FLOORPLAN_DEF] && \
+    ![env_var_exists_and_non_empty FOOTPRINT] && \
+    ![env_var_exists_and_non_empty FOOTPRINT_TCL]} {
+  load_design 3_1_place_gp_skip_io.odb 2_floorplan.sdc
+  log_cmd place_pins \
+    -hor_layers $::env(IO_PLACER_H) \
+    -ver_layers $::env(IO_PLACER_V) \
+    {*}$::env(PLACE_PINS_ARGS)
+  write_db $::env(RESULTS_DIR)/3_2_place_iop.odb
+  write_pin_placement $::env(RESULTS_DIR)/3_2_place_iop.tcl
+} else {
+  log_cmd exec cp $::env(RESULTS_DIR)/3_1_place_gp_skip_io.odb $::env(RESULTS_DIR)/3_2_place_iop.odb
+}
+```
+
+This sources the ```load.tcl``` script, runs ```load_design``` (after checking
+for some variables) and then runs the ```place_pins``` command to do IO
+placement. Finally, it saves the design and pin placement with ```write_db```
+and ```write_pin_placement```, respectively. If else condition skips placement
+and just copies the ODB file. Presumably the IO placement will be done with
+standard cell placemen tin the next step. The ```log_cmd``` is a TCL procedure
+that ensures the command output gets put in the log.
+
+Other interesting step scripts: global_place, resize (the timing optimizer),
+detail_place, cts, global_route, detailed_route, etc.
+
 ## Conclusion
 
 More information on TCL commands for timing can be found in the [STA
