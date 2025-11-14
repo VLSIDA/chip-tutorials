@@ -91,9 +91,9 @@ Then you can run the following TCL commands to load the design and libraries:
 set odb_file "final/odb/spm.odb"
 set def_file "final/def/spm.def"
 
-set lef_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef"
-               "/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"}
-set lib_files {"/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"}
+set lef_files {"/home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef"
+               "/home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"}
+set lib_files {"/home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"}
 
 foreach lef_file $lef_files {
     read_lef $lef_file

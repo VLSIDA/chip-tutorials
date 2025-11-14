@@ -1,8 +1,8 @@
 
-# Running DRC 
+# Running DRC
 
+There are a few options for running DRC:
 
-There are a few options for running DRC: 
 - BEOL: "back-end of line" or device layer checks only
 - FEOL: "front-end of line" or metal layer checks only
 - Full: Both BEOL and FEOL checks.
@@ -30,10 +30,10 @@ information.
 If you click on a given error, it will open an explanation as well as highlight
 the related error in the layout with a thin black line.
 
-Detailed explanations of the DRC errors can be found in the 
+Detailed explanations of the DRC errors can be found in the
 [Sky130 Periphery Rules documentation](https://skywater-pdk.readthedocs.io/en/main/rules.html)
 
-Typically, DRC rules are formulated by the layer and the rule number. 
+Typically, DRC rules are formulated by the layer and the rule number.
 We highlighted the poly.7 rule and can go to the poly section to see the details:
 
 ![Poly design rules](klayout/klayout-poly-designrules.png)
@@ -48,7 +48,7 @@ If you look closely at the examples, there is an example of poly.7 and poly.8 wi
 In the example, there are also licon.1 and licon.5 errors which are available
 in the [licon
 section](https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#licon)
-of the design rules. Licon.1 specifies the minimum and maximum contact size which must be 0.17um. Licon.5 
+of the design rules. Licon.1 specifies the minimum and maximum contact size which must be 0.17um. Licon.5
 has several sub rules (a, b, and c) which can be seen most easily in the following image:
 
 ![Licon.5 design rules](klayout/klayout-licon.png)

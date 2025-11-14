@@ -34,9 +34,9 @@ openroad.openroad_version()
 odb_file = "final/odb/spm.odb"
 def_file = "final/def/spm.def"
 
-lef_files = ["/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef",
-             "/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"]
-lib_files = ["/home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"]
+lef_files = ["/home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef",
+             "/home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef"]
+lib_files = ["/home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"]
 
 tech = Tech()
 for lef_file in lef_files:
@@ -70,7 +70,7 @@ This is using detailed routing:
 ```
 rcx.define_process_corner(ext_model_index=0, file="X")
 
-ext_rules = "~/.volare/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.spef_extractor"
+ext_rules = "~/.ciel/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.spef_extractor"
 
 #NOTE: This is position dependent
 rcx.extract(ext_model_file=ext_rules,
@@ -226,11 +226,11 @@ Features included (+) or not (-): +Charts +GPU +GUI +Python
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
 [WARNING ORD-0039] .openroad ignored with -python
-[INFO ODB-0227] LEF file: /home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+[INFO ODB-0227] LEF file: /home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
 [WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
-The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
 
-[INFO ODB-0227] LEF file: /home/mrg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+[INFO ODB-0227] LEF file: /home/mrg/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
 [ERROR STA-0340] cannot open 'final/spm/sdc/spm.sdc'.
 sky130_fd_sc_hd__a2bb2o_1
   A1_N

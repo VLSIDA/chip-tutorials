@@ -37,7 +37,7 @@ The ones that we are concerned with are the following: def, odb, nl, sdc, and sp
 This assumes that you have an environment variable pointing to your PDK installation directory. In most cases, this will be:
 
 ```bash
-export PDK_ROOT=~/.volare
+export PDK_ROOT=~/.ciel
 ```
 
 Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
