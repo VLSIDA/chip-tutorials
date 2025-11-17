@@ -11,7 +11,7 @@
 .param supply_voltage=1.8V
 
 * set the operating temperature
-.option temp=27
+.option temp=25
 
 * include the circuit to be simulated
 Xinv A gnd gnd vdd vdd Z sky130_fd_sc_hd__inv_1
