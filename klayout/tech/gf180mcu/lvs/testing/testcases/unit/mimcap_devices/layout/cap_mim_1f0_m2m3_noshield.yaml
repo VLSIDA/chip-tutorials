@@ -1,0 +1,4 @@
+cap_mim_1f0_m2m3_noshield:
+  -rd mim_option: "A"
+  -rd metal_level: "3LM"
+  -rd mim_cap: "1"

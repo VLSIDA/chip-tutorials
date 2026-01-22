@@ -1,0 +1,42 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2023 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if BEOL
+  #================================================
+  #---------- Circuit-Under-Pad (CUP) -------------
+  #================================================
+
+  # Rule CUP.2: Minimum width of the metal line used for bond pads: 1
+  logger.info('Executing rule CUP.2')
+  metals.each do |metal_name, metal|
+    next if metal == top_metal
+    cup2_l1 = metal.interacting(pad).not_interacting(guard_ring_mk).width(1.um).interacting(pad)
+    cup2_l1.output('CUP.2', 'CUP.2 : Minimum width of the metal (#{metal_name}) line used for bond pads: 1')
+    cup2_l1.forget
+  end
+
+  # Rule CUP.3: Minimum space of the metal line used for bond pads (slots): 1
+  logger.info('Executing rule CUP.3')
+  metals.each do |metal_name, metal|
+    next if metal == top_metal
+    cup3_l1 = metal.interacting(pad).not_interacting(guard_ring_mk).notch(1.um).interacting(pad)
+    cup3_l1.output('CUP.3', 'CUP.3 : Minimum space of the metal (#{metal_name}) line used for bond pads (slots): 1')
+    cup3_l1.forget
+  end
+
+end

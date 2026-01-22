@@ -1,0 +1,161 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2023 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+  #================================================
+  #---------------------NWELL----------------------
+  #================================================
+
+  logger.info('Starting NWELL derivations')
+
+  nw_lv = nwell.not_interacting(v5_xtor).not_interacting(dualgate)
+  nw_mv = nwell.overlapping(dualgate)
+
+  # Rule NW.1a_LV: Min. Nwell Width (This is only for litho purpose on the generated area) is 0.86µm.
+  logger.info('Executing rule NW.1a_LV')
+  nw1a_l1 = nw_lv.width(0.86.um, euclidian)
+  nw1a_l1.output('NW.1a_LV',
+                 'NW.1a_LV : Min. Nwell Width (This is only for litho purpose on the generated area): 0.86µm')
+  nw1a_l1.forget
+
+  # Rule NW.1a_MV: Min. Nwell Width (This is only for litho purpose on the generated area) is 0.86µm.
+  logger.info('Executing rule NW.1a_MV')
+  nw1a_l1 = nw_mv.width(0.86.um, euclidian)
+  nw1a_l1.output('NW.1a_MV',
+                 'NW.1a_MV : Min. Nwell Width (This is only for litho purpose on the generated area): 0.86µm')
+  nw1a_l1.forget
+
+  # Rule NW.1b_LV: Min. Nwell Width as a resistor (Outside DNWELL only) is 2µm.
+  logger.info('Executing rule NW.1b_LV')
+  nw_res_mk = res_mk.interacting(nwell).not_inside(nwell)
+  nw_1b_lv = nw_lv.outside(dnwell).and(nw_res_mk)
+  nw1b_l1  = nw_1b_lv.width(2.um, euclidian)
+  nw1b_l1.output('NW.1b_LV', 'NW.1b_LV : Min. Nwell Width as a resistor (Outside DNWELL only): 2µm')
+  nw1b_l1.forget
+  nw_1b_lv.forget
+
+  # Rule NW.1b_MV: Min. Nwell Width as a resistor (Outside DNWELL only) is 2µm.
+  logger.info('Executing rule NW.1b_MV')
+  nw_1b_mv = nw_mv.outside(dnwell).and(nw_res_mk)
+  nw1b_l1  = nw_1b_mv.width(2.um, euclidian)
+  nw1b_l1.output('NW.1b_MV', 'NW.1b_MV : Min. Nwell Width as a resistor (Outside DNWELL only): 2µm')
+  nw1b_l1.forget
+  nw_1b_mv.forget
+
+  unless SPLIT_DEEP
+    if CONNECTIVITY_RULES
+      logger.info('CONNECTIVITY_RULES section')
+
+      connected_nwell_3p3v, unconnected_nwell_3p3v = conn_space(nwell, 0.6, 1.4, euclidian)
+      connected_nwell_5p0v, unconnected_nwell_5p0v = conn_space(nwell, 0.74, 1.7, euclidian)
+
+      # Rule NW.2a_LV: Min. Nwell Space (Outside DNWELL) [Equi-potential],
+      ## Merge if the space is less than is 0.6µm.
+      logger.info('Executing rule NW.2a_LV')
+      nw2a_l1 = connected_nwell_3p3v.not_inside(ymtp_mk).not_interacting(v5_xtor).not_interacting(dualgate)
+      nw2a_l1.output('NW.2a_LV',
+                     'NW.2a_LV : Min. Nwell Space (Outside DNWELL) [Equi-potential],
+                      Merge if the space is less than. : 0.6µm')
+      nw2a_l1.forget
+
+      # Rule NW.2a_MV: Min. Nwell Space (Outside DNWELL) [Equi-potential],
+      ## Merge if the space is less than is 0.74µm.
+      logger.info('Executing rule NW.2a_MV')
+      nw2a_l1 = connected_nwell_5p0v.not_inside(ymtp_mk).overlapping(dualgate)
+      nw2a_l1.output('NW.2a_MV',
+                     'NW.2a_MV : Min. Nwell Space (Outside DNWELL) [Equi-potential],
+                      Merge if the space is less than. : 0.74µm')
+      nw2a_l1.forget
+
+      # Rule NW.2b_LV: Min. Nwell Space (Outside DNWELL) [Different potential] is 1.4µm.
+      logger.info('Executing rule NW.2b_LV')
+      nw2b_l1 = unconnected_nwell_3p3v.not_interacting(v5_xtor).not_interacting(dualgate)
+      nw2b_l1.output('NW.2b_LV', 'NW.2b_LV : Min. Nwell Space (Outside DNWELL) [Different potential]: 1.4µm.')
+      nw2b_l1.forget
+
+      # Rule NW.2b_MV: Min. Nwell Space (Outside DNWELL) [Different potential] is 1.7µm.
+      logger.info('Executing rule NW.2b_MV')
+      nw2b_l1 = unconnected_nwell_5p0v.overlapping(dualgate)
+
+    else
+      logger.info('CONNECTIVITY_RULES disabled section')
+
+      # Rule NW.2b_LV: Min. Nwell Space (Outside DNWELL) [Different potential] is 1.4µm.
+      logger.info('Executing rule NW.2b_LV')
+      nw2b_l1 = nw_lv.isolated(1.4.um, euclidian)
+      nw2b_l1.output('NW.2b_LV', 'NW.2b_LV : Min. Nwell Space (Outside DNWELL) [Different potential]: 1.4µm')
+      nw2b_l1.forget
+
+      # Rule NW.2b_MV: Min. Nwell Space (Outside DNWELL) [Different potential] is 1.7µm.
+      logger.info('Executing rule NW.2b_MV')
+      nw2b_l1 = nw_mv.isolated(1.7.um, euclidian)
+
+    end
+    nw2b_l1.output('NW.2b_MV', 'NW.2b_MV : Min. Nwell Space (Outside DNWELL) [Different potential]: 1.7µm')
+    nw2b_l1.forget # CONNECTIVITY_RULES
+  end
+
+  # Rule NW.3: Min. Nwell to DNWELL space is 3.1µm.
+  logger.info('Executing rule NW.3')
+  nw3_l1 = nwell.separation(dnwell, 3.1.um, euclidian)
+  nw3_l1.output('NW.3', 'NW.3 : Min. Nwell to DNWELL space: 3.1µm')
+  nw3_l1.forget
+
+  # Rule NW.4: Min. Nwell to LVPWELL space is 0um.
+  logger.info('Executing rule NW.4')
+  nw4_l1 = nwell.and(lvpwell)
+  nw4_l1.output('NW.4', 'NW.4 : Min. Nwell to LVPWELL space: 0um')
+  nw4_l1.forget
+
+  # Rule NW.5_LV: Min. DNWELL enclose Nwell is 0.5µm.
+  logger.info('Executing rule NW.5_LV')
+  nw5_l1 = nw_lv.enclosed(dnwell, 0.5.um, euclidian).polygons(0.001.um)
+  nw5_l2 = nw_lv.not_outside(dnwell).not(dnwell)
+  nw5_l  = nw5_l1.join(nw5_l2)
+  nw5_l.output('NW.5_LV', 'NW.5_LV : Min. DNWELL enclose Nwell: 0.5µm')
+  nw5_l1.forget
+  nw5_l2.forget
+  nw5_l.forget
+  nw_lv.forget
+
+  # Rule NW.5_MV: Min. DNWELL enclose Nwell is 0.5µm.
+  logger.info('Executing rule NW.5_MV')
+  nw5_l1 = nw_mv.enclosed(dnwell, 0.5.um, euclidian).polygons(0.001.um)
+  nw5_l2 = nwell.not_outside(dnwell).not(dnwell)
+  nw5_l  = nw5_l1.join(nw5_l2)
+  nw5_l.output('NW.5_MV', 'NW.5_MV : Min. DNWELL enclose Nwell: 0.5µm')
+  nw5_l1.forget
+  nw5_l2.forget
+  nw5_l.forget
+  nw_mv.forget
+
+  # Rule NW.6: Nwell resistors can only exist outside DNWELL.
+  logger.info('Executing rule NW.6')
+  nw6_l1 = nwell.inside(res_mk).and(dnwell)
+  nw6_l1.output('NW.6', 'NW.6 : Nwell resistors can only exist outside DNWELL.')
+  nw6_l1.forget
+
+  # Rule NW.6_MV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_05.html
+
+  # Rule NW.7_LV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_05.html
+
+  # Rule NW.7_MV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_05.html
+end

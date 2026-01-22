@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="1100" viewBox="-1050 -1050 1100 1100">
+<defs>
+<style type="text/css">
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l42d0 {stroke: #BE0032; fill: #BE0032; fill-opacity: 0.5;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+</style>
+</defs>
+<rect x="-1050" y="-1050" width="1100" height="1100" fill="#222222" stroke="none"/>
+<g id="Mn_4_fail" transform="scale(1 -1)">
+<polygon id="0x272d880" class="l3d222" points="-1000,0 -1000,1000 0,1000 0,0"/>
+<polygon id="0x2725bf0" class="l42d0" points="-300,0 -300,999.9 0,999.9 0,0"/>
+<text id="0x26ffa50" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-215.8 485.4) rotate(90) scale(0.2) scale(1 -1)">M3.4</text>
+</g>
+</svg>

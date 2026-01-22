@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1442.65" height="554.34" viewBox="-1400.415 -511.695 1442.65 554.34">
+<defs>
+<style type="text/css">
+.l32d0 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l12d0 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l127d5 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l22d0 {stroke: #BE0032; fill: #BE0032; fill-opacity: 0.5;}
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l2d222 {fill:none;stroke:green;stroke-dasharray:8,8;}
+.l31d0 {stroke: #B3446C; fill: #B3446C; fill-opacity: 0.5;}
+.l58d0 {stroke: #F3C300; fill: #F3C300; fill-opacity: 0.5;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+.l58t0 {stroke: none; fill: #F3C300;}
+</style>
+</defs>
+<rect x="-1400.415" y="-511.695" width="1442.65" height="554.34" fill="#222222" stroke="none"/>
+<g id="DRC_BJT" transform="scale(1 -1)">
+<polygon id="0x55eeb5e6a7a0" class="l22d0" points="-1075.57,328.5 -1075.57,392.15 -1075.62,392.15 -1075.62,399.7 -1038.62,399.7 -1038.62,328.5"/>
+<polygon id="0x55eeb61b01b0" class="l22d0" points="-682.61,328.5 -682.61,392.15 -682.66,392.15 -682.66,399.7 -645.66,399.7 -645.66,328.5"/>
+<polygon id="0x55eeb61b3d10" class="l22d0" points="-277.17,328.5 -277.17,392.15 -277.22,392.15 -277.22,399.7 -240.22,399.7 -240.22,328.5"/>
+<polygon id="0x55eeb61b6cc0" class="l22d0" points="-1075.57,86.3 -1075.57,149.95 -1075.62,149.95 -1075.62,157.5 -1038.62,157.5 -1038.62,86.3"/>
+<polygon id="0x55eeb60e6f20" class="l22d0" points="-682.61,86.3 -682.61,149.95 -682.66,149.95 -682.66,157.5 -645.66,157.5 -645.66,86.3"/>
+<polygon id="0x55eeb60c0cb0" class="l22d0" points="-277.17,86.3 -277.17,149.95 -277.22,149.95 -277.22,157.5 -240.22,157.5 -240.22,86.3"/>
+<polygon id="0x55eeb614b1b0" class="l22d0" points="-1203.67,70.5 -1203.67,133.05 -1171.57,133.05 -1171.57,70.5"/>
+<polygon id="0x55eeb6151330" class="l22d0" points="-1282.22,84 -1282.22,146.55 -1250.12,146.55 -1250.12,84"/>
+<polygon id="0x55eeb6153ff0" class="l22d0" points="-1282.27,133.65 -1282.27,146.55 -1282.22,146.55 -1282.22,133.65"/>
+<polygon id="0x55eeb615f2e0" class="l22d0" points="-889.31,133.65 -889.31,146.55 -889.26,146.55 -889.26,133.65"/>
+<polygon id="0x55eeb6140200" class="l22d0" points="-889.26,84 -889.26,146.55 -857.16,146.55 -857.16,84"/>
+<polygon id="0x55eeb61402d0" class="l22d0" points="-810.71,70.5 -810.71,133.05 -778.61,133.05 -778.61,70.5"/>
+<polygon id="0x55eeb60d12f0" class="l22d0" points="-405.27,70.5 -405.27,133.05 -373.17,133.05 -373.17,70.5"/>
+<polygon id="0x55eeb60f0020" class="l22d0" points="-483.82,84 -483.82,146.55 -451.72,146.55 -451.72,84"/>
+<polygon id="0x55eeb60f00f0" class="l22d0" points="-483.87,133.65 -483.87,146.55 -483.82,146.55 -483.82,133.65"/>
+<polygon id="0x55eeb610e160" class="l22d0" points="-1203.67,312.7 -1203.67,375.25 -1171.57,375.25 -1171.57,312.7"/>
+<polygon id="0x55eeb6142f90" class="l22d0" points="-1282.22,326.2 -1282.22,388.75 -1250.12,388.75 -1250.12,326.2"/>
+<polygon id="0x55eeb6143060" class="l22d0" points="-1282.27,375.85 -1282.27,388.75 -1282.22,388.75 -1282.22,375.85"/>
+<polygon id="0x55eeb5ea2d30" class="l22d0" points="-889.31,375.85 -889.31,388.75 -889.26,388.75 -889.26,375.85"/>
+<polygon id="0x55eeb5f1ca30" class="l22d0" points="-889.26,326.2 -889.26,388.75 -857.16,388.75 -857.16,326.2"/>
+<polygon id="0x55eeb5f1cb00" class="l22d0" points="-810.71,312.7 -810.71,375.25 -778.61,375.25 -778.61,312.7"/>
+<polygon id="0x55eeb60f4c60" class="l22d0" points="-405.27,312.7 -405.27,375.25 -373.17,375.25 -373.17,312.7"/>
+<polygon id="0x55eeb610f360" class="l22d0" points="-483.82,326.2 -483.82,388.75 -451.72,388.75 -451.72,326.2"/>
+<polygon id="0x55eeb610f430" class="l22d0" points="-483.87,375.85 -483.87,388.75 -483.82,388.75 -483.82,375.85"/>
+<polygon id="0x55eeb61529b0" class="l3d222" points="-1324.54,22.93 -1324.54,204.12 -982.1,204.12 -982.1,22.93"/>
+<polygon id="0x55eeb6173230" class="l3d222" points="-526.14,22.93 -526.14,204.12 -183.7,204.12 -183.7,22.93"/>
+<polygon id="0x55eeb6173300" class="l3d222" points="-931.58,22.93 -931.58,204.12 -589.14,204.12 -589.14,22.93"/>
+<polygon id="0x55eeb5e357f0" class="l32d0" points="-1080.57,323.5 -1080.57,387.15 -1080.62,387.15 -1080.62,404.7 -1033.62,404.7 -1033.62,323.5"/>
+<polygon id="0x55eeb5e90110" class="l32d0" points="-687.61,323.5 -687.61,387.15 -687.66,387.15 -687.66,404.7 -640.66,404.7 -640.66,323.5"/>
+<polygon id="0x55eeb5e90200" class="l32d0" points="-282.17,323.5 -282.17,387.15 -282.22,387.15 -282.22,404.7 -235.22,404.7 -235.22,323.5"/>
+<polygon id="0x55eeb6148740" class="l32d0" points="-1080.57,81.3 -1080.57,144.95 -1080.62,144.95 -1080.62,162.5 -1033.62,162.5 -1033.62,81.3"/>
+<polygon id="0x55eeb5ec5bb0" class="l32d0" points="-687.61,81.3 -687.61,144.95 -687.66,144.95 -687.66,162.5 -640.66,162.5 -640.66,81.3"/>
+<polygon id="0x55eeb5ec5ca0" class="l32d0" points="-282.17,81.3 -282.17,144.95 -282.22,144.95 -282.22,162.5 -235.22,162.5 -235.22,81.3"/>
+<polygon id="0x55eeb5fd0400" class="l32d0" points="-1289.92,60.55 -1289.92,165.9 -1127.57,165.9 -1127.57,60.55"/>
+<polygon id="0x55eeb60ead00" class="l32d0" points="-491.52,60.55 -491.52,165.9 -329.17,165.9 -329.17,60.55"/>
+<polygon id="0x55eeb60eadd0" class="l32d0" points="-1289.92,302.75 -1289.92,408.1 -1127.57,408.1 -1127.57,302.75"/>
+<polygon id="0x55eeb61a5cb0" class="l32d0" points="-491.52,302.75 -491.52,408.1 -329.17,408.1 -329.17,302.75"/>
+<polygon id="0x55eeb5e6c280" class="l31d0" points="-896.96,60.55 -896.96,165.9 -734.61,165.9 -734.61,60.55"/>
+<polygon id="0x55eeb60480b0" class="l31d0" points="-896.96,302.75 -896.96,408.1 -734.61,408.1 -734.61,302.75"/>
+<polygon id="0x55eeb6048180" class="l12d0" points="-1300.82,51.9 -1300.82,177.8 -1079.62,177.8 -1079.62,51.9"/>
+<polygon id="0x55eeb5d1fbb0" class="l12d0" points="-502.42,51.9 -502.42,177.8 -281.22,177.8 -281.22,51.9"/>
+<polygon id="0x55eeb5e698a0" class="l12d0" points="-1300.82,294.1 -1300.82,420 -1079.62,420 -1079.62,294.1"/>
+<polygon id="0x55eeb5e69910" class="l12d0" points="-502.42,294.1 -502.42,420 -281.22,420 -281.22,294.1"/>
+<polygon id="0x55eeb5edff30" class="l2d222" points="-1334.84,264.93 -1334.84,446.12 -992.4,446.12 -992.4,264.93"/>
+<polygon id="0x55eeb5eaf380" class="l127d5" points="-1282.22,70.5 -1282.22,160.9 -1076.57,160.9 -1076.57,70.5"/>
+<polygon id="0x55eeb5fb95c0" class="l127d5" points="-889.26,70.5 -889.26,160.9 -683.61,160.9 -683.61,70.5"/>
+<polygon id="0x55eeb5fb9630" class="l127d5" points="-483.82,70.5 -483.82,160.9 -278.17,160.9 -278.17,70.5"/>
+<polygon id="0x55eeb60123a0" class="l127d5" points="-1300.82,294.1 -1300.82,420.1 -1076.57,420.1 -1076.57,294.1"/>
+<polygon id="0x55eeb6012410" class="l127d5" points="-889.36,312.7 -889.36,403.1 -683.61,403.1 -683.61,312.7"/>
+<polygon id="0x55eeb60fc3d0" class="l127d5" points="-483.82,312.7 -483.82,403.1 -278.27,403.1 -278.27,312.7"/>
+<polygon id="0x55eeb60fc440" class="l58d0" points="-296.49,150.05 -296.49,151.25 -301.29,151.25 -301.29,153.65 -296.49,153.65 -296.49,154.85 -294.09,152.45"/>
+<polygon id="0x55eeb60fc4b0" class="l58d0" points="-290.74,150.05 -293.14,152.45 -290.74,154.85 -290.74,153.65 -285.94,153.65 -285.94,151.25 -290.74,151.25"/>
+<polygon id="0x55eeb60cbd10" class="l58d0" points="-85.04,137.45 -87.44,139.85 -85.04,142.25 -85.04,141.05 -80.24,141.05 -80.24,138.65 -85.04,138.65"/>
+<polygon id="0x55eeb5f603f0" class="l58d0" points="-478,137.45 -480.4,139.85 -478,142.25 -478,141.05 -473.2,141.05 -473.2,138.65 -478,138.65"/>
+<polygon id="0x55eeb5f604f0" class="l58d0" points="-683.7,150.05 -686.1,152.45 -683.7,154.85 -683.7,153.65 -678.9,153.65 -678.9,151.25 -683.7,151.25"/>
+<polygon id="0x55eeb5d61f40" class="l58d0" points="-689.45,150.05 -689.45,151.25 -694.25,151.25 -694.25,153.65 -689.45,153.65 -689.45,154.85 -687.05,152.45"/>
+<polygon id="0x55eeb60c04e0" class="l58d0" points="-1094.89,150.05 -1094.89,151.25 -1099.69,151.25 -1099.69,153.65 -1094.89,153.65 -1094.89,154.85 -1092.49,152.45"/>
+<polygon id="0x55eeb60c05e0" class="l58d0" points="-1089.14,150.05 -1091.54,152.45 -1089.14,154.85 -1089.14,153.65 -1084.34,153.65 -1084.34,151.25 -1089.14,151.25"/>
+<polygon id="0x55eeb5d05fd0" class="l58d0" points="-883.44,137.45 -885.84,139.85 -883.44,142.25 -883.44,141.05 -878.64,141.05 -878.64,138.65 -883.44,138.65"/>
+<polygon id="0x55eeb5e7ef30" class="l2d222" points="-526.14,264.93 -526.14,446.12 -183.7,446.12 -183.7,264.93"/>
+<polygon id="0x55eeb5edfec0" class="l2d222" points="-941.54,264.93 -941.54,446.12 -599.1,446.12 -599.1,264.93"/>
+<text id="0x55eeb5e6c160" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1304.9 278.48) scale(1 -1)">BJT.1</text>
+<text id="0x55eeb5e6c1f0" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-911.94 278.48) scale(1 -1)">BJT.2</text>
+<text id="0x55eeb5efcce0" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-212.05 278.48) scale(1 -1)">BJT.3</text>
+<text id="0x55eeb5efcd70" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1304.9 28.18) scale(1 -1)">BJT.1</text>
+<text id="0x55eeb5de9d20" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-911.94 28.18) scale(1 -1)">BJT.2</text>
+<text id="0x55eeb5de9db0" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-212.05 28.18) scale(1 -1)">BJT.3</text>
+<text id="0x55eeb5d79220" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-23.34 277.21) rotate(180) scale(1 -1) scale(1 -1)">BJT.1 Min. DRC_BJT overlap of DNWELL for NPN BJT = 0</text>
+<text id="0x55eeb5d792b0" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-23.34 259.13) rotate(180) scale(1 -1) scale(1 -1)">BJT.2 Min. DRC_BJT overlap of PCOMP in Psub  = 0</text>
+<text id="0x55eeb5d79340" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-23.34 239.14) rotate(180) scale(1 -1) scale(1 -1)">BJT.3 Minimum space of DRC_BJT layer to unrelated COMP = 0.1</text>
+</g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1146.706" height="401.496" viewBox="-1275.463 -768.973 1146.706 401.496">
+<defs>
+<style type="text/css">
+.l22d0 {stroke: #BE0032; fill: #BE0032; fill-opacity: 0.5;}
+.l32d0 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l118d5 {stroke: #C2B280; fill: #C2B280; fill-opacity: 0.5;}
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l12d0 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l2d222 {fill:none;stroke:green;stroke-dasharray:8,8;}
+.l58d0 {stroke: #F3C300; fill: #F3C300; fill-opacity: 0.5;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+.l58t0 {stroke: none; fill: #F3C300;}
+</style>
+</defs>
+<rect x="-1275.463" y="-768.973" width="1146.706" height="401.496" fill="#222222" stroke="none"/>
+<g id="LVS_BJT" transform="scale(1 -1)">
+<polygon id="0x55570073f1b0" class="l22d0" points="-951.5,467.5 -951.5,531.15 -951.55,531.15 -951.55,538.7 -914.55,538.7 -914.55,467.5"/>
+<polygon id="0x555700741aa0" class="l22d0" points="-233.8,467.5 -233.8,531.15 -233.85,531.15 -233.85,538.7 -196.85,538.7 -196.85,467.5"/>
+<polygon id="0x555700745c40" class="l22d0" points="-1158.2,514.85 -1158.2,527.75 -1158.15,527.75 -1158.15,514.85"/>
+<polygon id="0x555700675ea0" class="l22d0" points="-361.9,451.7 -361.9,514.25 -329.8,514.25 -329.8,451.7"/>
+<polygon id="0x55570064fc30" class="l22d0" points="-1158.15,465.2 -1158.15,527.75 -1126.05,527.75 -1126.05,465.2"/>
+<polygon id="0x5557006da130" class="l22d0" points="-440.45,465.2 -440.45,527.75 -408.35,527.75 -408.35,465.2"/>
+<polygon id="0x5557006e02d0" class="l22d0" points="-1079.6,451.7 -1079.6,514.25 -1047.5,514.25 -1047.5,451.7"/>
+<polygon id="0x5557006e2f90" class="l22d0" points="-440.5,514.85 -440.5,527.75 -440.45,527.75 -440.45,514.85"/>
+<polygon id="0x5557006be8d0" class="l3d222" points="-1223.34,419.6 -1223.34,578.55 -1102.93,578.55 -1102.93,419.6"/>
+<polygon id="0x5557006ee340" class="l32d0" points="-956.5,462.5 -956.5,526.15 -956.55,526.15 -956.55,543.7 -909.55,543.7 -909.55,462.5"/>
+<polygon id="0x5557006cf280" class="l32d0" points="-238.8,462.5 -238.8,526.15 -238.85,526.15 -238.85,543.7 -191.85,543.7 -191.85,462.5"/>
+<polygon id="0x555700660310" class="l32d0" points="-1165.85,441.75 -1165.85,547.1 -1003.5,547.1 -1003.5,441.75"/>
+<polygon id="0x55570067f020" class="l32d0" points="-448.15,441.75 -448.15,547.1 -285.8,547.1 -285.8,441.75"/>
+<polygon id="0x55570067f0f0" class="l12d0" points="-1176.75,433.1 -1176.75,559 -955.55,559 -955.55,433.1"/>
+<polygon id="0x5557006d1ff0" class="l12d0" points="-459.05,433.1 -459.05,559 -237.85,559 -237.85,433.1"/>
+<polygon id="0x555700702290" class="l118d5" points="-440.45,451.7 -440.45,542.1 -234.8,542.1 -234.8,451.7"/>
+<polygon id="0x5557006e1a20" class="l118d5" points="-1158.15,451.7 -1158.15,542.1 -952.5,542.1 -952.5,451.7"/>
+<polygon id="0x5557006e1950" class="l2d222" points="-374.22,419.6 -374.22,578.55 -180.88,578.55 -180.88,419.6"/>
+<polygon id="0x555700683cd0" class="l58d0" points="-1160.6,518.65 -1160.6,519.85 -1165.4,519.85 -1165.4,522.25 -1160.6,522.25 -1160.6,523.45 -1158.2,521.05"/>
+<text id="0x55570069d100" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-192.03 422.16) scale(1 -1)">LVS_BJT.1</text>
+<text id="0x55570069d190" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1218.13 422.16) scale(1 -1)">LVS_BJT.1</text>
+<text id="0x55570069e360" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-1222.3 658.41) scale(1 -1)">LVS_BJT.1 LVS_BJT overlap of all NPN COMP layers = 0</text>
+<text id="0x55570069e3f0" class="l58t0" text-anchor="middle" dominant-baseline="central" transform="translate(-625.2 716.85) scale(3) scale(1 -1)">LVS_BJT MARKING LAYER</text>
+</g>
+</svg>

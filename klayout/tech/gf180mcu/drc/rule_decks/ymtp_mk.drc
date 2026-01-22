@@ -1,0 +1,152 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+
+  #================================================
+  #--------------------YMTP_MK---------------------
+  #================================================
+
+  logger.info('Starting YMTP_MK derivations')
+
+  ymtp_mk_lv = ymtp_mk.not_interacting(v5_xtor).not_interacting(dualgate)
+  ymtp_mk_mv = ymtp_mk.overlapping(dualgate)
+  comp_ymtp_lv = comp.and(ymtp_mk_lv)
+  comp_ymtp_mv = comp.and(ymtp_mk_mv)
+  poly_ymtp_lv = poly2.and(ymtp_mk_lv)
+  poly_ymtp_mv = poly2.and(ymtp_mk_mv)
+
+  # Rule Y.NW.2b_LV: Min. Nwell Space
+  ## (Outside DNWELL, Inside YMTP_MK) [Different potential]. is 1µm
+  logger.info('Executing rule Y.NW.2b_LV')
+  ynw2b_l1 = nwell_n_dn.and(ymtp_mk_lv).space(1.um, euclidian)
+  ynw2b_l1.output('Y.NW.2b_LV', "Y.NW.2b_LV : Min. Nwell Space
+                    (Outside DNWELL, Inside YMTP_MK) [Different potential]. : 1µm")
+  ynw2b_l1.forget
+
+  # Rule Y.NW.2b_MV: Min. Nwell Space
+  ## (Outside DNWELL, Inside YMTP_MK) [Different potential]. is 1µm
+  logger.info('Executing rule Y.NW.2b_MV')
+  ynw2b_l1 = nwell_n_dn.and(ymtp_mk_mv).space(1.um, euclidian)
+  ynw2b_l1.output('Y.NW.2b_MV', "Y.NW.2b_MV : Min. Nwell Space
+                     (Outside DNWELL, Inside YMTP_MK) [Different potential]. : 1µm")
+  ynw2b_l1.forget
+
+  # Rule Y.DF.4d_LV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_13.html
+
+  # Rule Y.DF.4d_MV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_13.html
+
+  # Rule Y.DF.6_MV: Min. COMP extend beyond gate
+  ## (it also means source/drain overhang) inside YMTP_MK. is 0.15µm
+  logger.info('Executing rule Y.DF.6_MV')
+  ydf6_l1 = poly_ymtp_mv.enclosed(comp.not(otp_mk).and(ymtp_mk_mv), 0.15.um, euclidian)
+  ydf6_l1.output('Y.DF.6_MV', "Y.DF.6_MV : Min. COMP extend beyond gate
+                    (it also means source/drain overhang) inside YMTP_MK. : 0.15µm")
+  ydf6_l1.forget
+
+  # Rule Y.DF.16_LV: Min. space from (Nwell outside DNWELL) to
+  ## (unrelated NCOMP outside Nwell and DNWELL) (inside YMTP_MK). is 0.27µm
+  logger.info('Executing rule Y.DF.16_LV')
+  ydf16_l1 = ncomp.and(ymtp_mk_lv).outside(all_nwell).separation(nwell_n_dn, 0.27.um, euclidian)
+  ydf16_l1.output('Y.DF.16_LV', "Y.DF.16_LV : Min. space from (Nwell outside DNWELL) to
+                    (unrelated NCOMP outside Nwell and DNWELL) (inside YMTP_MK). : 0.27µm")
+  ydf16_l1.forget
+  ymtp_mk_lv.forget
+
+  # Rule Y.DF.16_MV: Min. space from (Nwell outside DNWELL) to
+  ## (unrelated NCOMP outside Nwell and DNWELL) (inside YMTP_MK). is 0.23µm
+  logger.info('Executing rule Y.DF.16_MV')
+  ydf16_l1 = ncomp.and(ymtp_mk_mv).outside(all_nwell).separation(nwell_n_dn, 0.23.um, euclidian)
+  ydf16_l1.output('Y.DF.16_MV', "Y.DF.16_MV : Min. space from (Nwell outside DNWELL) to
+                     (unrelated NCOMP outside Nwell and DNWELL) (inside YMTP_MK). : 0.23µm")
+  ydf16_l1.forget
+  ymtp_mk_mv.forget
+
+  # Rule Y.PL.1_LV: Interconnect Width (inside YMTP_MK). is 0.13µm
+  logger.info('Executing rule Y.PL.1_LV')
+  ypl1_l1 = poly_ymtp_lv.outside(plfuse).width(0.13.um, euclidian)
+  ypl1_l1.output('Y.PL.1_LV', 'Y.PL.1_LV : Interconnect Width (inside YMTP_MK). : 0.13µm')
+  ypl1_l1.forget
+
+  # Rule Y.PL.1_MV: Interconnect Width (inside YMTP_MK).
+  ## This rule is currently not applicable for 5V.
+  logger.info('Executing rule Y.PL.1_MV')
+  ypl1_l1 = poly_ymtp_mv.outside(plfuse)
+  ypl1_l1.output('Y.PL.1_MV', "Y.PL.1_MV : Interconnect Width (inside YMTP_MK).
+                    This rule is currently not applicable for 5V.")
+  ypl1_l1.forget
+
+  # Rule Y.PL.2_LV: Gate Width (Channel Length) (inside YMTP_MK) is 0.13µm.
+  logger.info('Executing rule Y.PL.2_LV')
+  ypl2_l1 = poly_ymtp_lv.edges.and(tgate.edges).not(otp_mk).width(0.13.um, euclidian)
+  ypl2_l1.output('Y.PL.2_LV', 'Y.PL.2_LV : Gate Width (Channel Length) (inside YMTP_MK): 0.13µm')
+  ypl2_l1.forget
+
+  # Rule Y.PL.2_MV: Gate Width (Channel Length) (inside YMTP_MK) is 0.47µm.
+  logger.info('Executing rule Y.PL.2_MV')
+  ypl2_l1 = poly_ymtp_mv.edges.and(tgate.edges).not(otp_mk).width(0.47.um, euclidian)
+  ypl2_l1.output('Y.PL.2_MV', 'Y.PL.2_MV : Gate Width (Channel Length) (inside YMTP_MK): 0.47µm')
+  ypl2_l1.forget
+
+  # Rule Y.PL.4_MV: Poly2 extension beyond COMP to form Poly2 end cap (inside YMTP_MK) is 0.16µm.
+  logger.info('Executing rule Y.PL.4_MV')
+  ypl4_l1 = comp_ymtp_mv.enclosed(poly_ymtp_mv, 0.16.um, euclidian)
+  ypl4_l1.output('Y.PL.4_MV',
+                 'Y.PL.4_MV : Poly2 extension beyond COMP to form Poly2 end cap (inside YMTP_MK): 0.16µm')
+  ypl4_l1.forget
+
+  # Rule Y.PL.5a_LV: Space from field Poly2 to unrelated COMP (inside YMTP_MK).
+  ##  Space from field Poly2 to Guard-ring (inside YMTP_MK). is 0.04µm
+  logger.info('Executing rule Y.PL.5a_LV')
+  ypl5a_l1 = poly_ymtp_lv.separation(comp_ymtp_lv, 0.04.um, euclidian)
+  ypl5a_l1.output('Y.PL.5a_LV', "Y.PL.5a_LV : Space from field Poly2 to unrelated COMP (inside YMTP_MK).
+                     Space from field Poly2 to Guard-ring (inside YMTP_MK). : 0.04µm")
+  ypl5a_l1.forget
+
+  # Rule Y.PL.5a_MV: Space from field Poly2 to unrelated COMP (inside YMTP_MK).
+  ## Space from field Poly2 to Guard-ring (inside YMTP_MK). is 0.2µm
+  logger.info('Executing rule Y.PL.5a_MV')
+  ypl5a_l1 = poly_ymtp_mv.separation(comp_ymtp_mv, 0.2.um, euclidian)
+  ypl5a_l1.output('Y.PL.5a_MV', "Y.PL.5a_MV : Space from field Poly2 to unrelated COMP (inside YMTP_MK).
+                     Space from field Poly2 to Guard-ring (inside YMTP_MK). : 0.2µm")
+  ypl5a_l1.forget
+
+  # Rule Y.PL.5b_LV: Space from field Poly2 to related COMP (inside YMTP_MK). is 0.04µm
+  logger.info('Executing rule Y.PL.5b_LV')
+  ypl5b_l1 = poly_ymtp_lv.separation(comp_ymtp_lv, 0.04.um, euclidian)
+  ypl5b_l1.output('Y.PL.5b_LV', 'Y.PL.5b_LV : Space from field Poly2 to related COMP (inside YMTP_MK). : 0.04µm')
+  ypl5b_l1.forget
+  comp_ymtp_lv.forget
+  poly_ymtp_lv.forget
+
+  # Rule Y.PL.5b_MV: Space from field Poly2 to related COMP (inside YMTP_MK). is 0.2µm
+  logger.info('Executing rule Y.PL.5b_MV')
+  ypl5b_l1 = poly_ymtp_mv.separation(comp_ymtp_mv, 0.2.um, euclidian)
+  ypl5b_l1.output('Y.PL.5b_MV', 'Y.PL.5b_MV : Space from field Poly2 to related COMP (inside YMTP_MK). : 0.2µm')
+  ypl5b_l1.forget
+  poly_ymtp_mv.forget
+  comp_ymtp_mv.forget
+
+  # Rule Y.PL.6_LV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_13.html
+
+  # Rule Y.PL.6_MV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_13.html
+end

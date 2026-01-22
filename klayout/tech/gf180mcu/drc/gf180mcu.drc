@@ -1,0 +1,503 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2023 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+#=======================================================================================================================
+#--------------------------------------------- GF 0.18um MCU DRC RULE DECK ---------------------------------------------
+#=======================================================================================================================
+require 'time'
+require 'logger'
+require 'etc'
+
+exec_start_time = Time.now
+
+# Custom formatter including timestamp and memory usage
+formatter = proc do |_severity, datetime, _progname, msg|
+  memory_usage = "#{RBA::Timer.memory_size / 1024}K"
+  "#{datetime}: Memory Usage (#{memory_usage}) : #{msg}\n"
+end
+
+# Create stdout logger
+logger = Logger.new($stdout)
+logger.formatter = formatter
+
+# Don't buffer stdout
+$stdout.sync = true
+
+#================================================
+#----------------- FILE SETUP -------------------
+#================================================
+logger.info("Starting running GF180MCU Klayout DRC runset on #{$input}")
+logger.info("Ruby Version for klayout: #{RUBY_VERSION}")
+
+if $input
+  if $topcell
+    source($input, $topcell)
+  else
+    source($input)
+  end
+end
+
+logger.info('Loading database to memory is complete.')
+
+if $report
+  logger.info("GF180MCU Klayout DRC runset output at: #{$report}")
+  report('DRC Run Report at', $report)
+else
+  layout_dir = Pathname.new(RBA::CellView.active.filename).parent.realpath
+  report_path = layout_dir.join('gf180_drc.lyrdb').to_s
+  logger.info("GF180MCU Klayout DRC runset output at default location: #{report_path}")
+  report('DRC Run Report at', report_path)
+end
+
+#================================================
+#------------------ SWITCHES --------------------
+#================================================
+logger.info('Evaluate switches.')
+
+def bool_check?(obj)
+  obj.to_s.downcase == 'true'
+end
+
+TABLE_NAME = $table_name || 'main'
+
+logger.info("table_name selected  #{TABLE_NAME}")
+
+# connectivity rules
+CONNECTIVITY_EN = bool_check?($conn_drc)
+
+conn_tables = %w[dnwell dnwell_split nwell nwell_split lvpwell
+                 lvpwell_split nat nat_split ldnmos ldnmos_split ldpmos ldpmos_split main]
+
+CONNECTIVITY_RULES = if conn_tables.include?(TABLE_NAME) && CONNECTIVITY_EN
+                       true
+                     else
+                       false
+                     end
+
+logger.info("CONNECTIVITY_RULES enabled: #{CONNECTIVITY_RULES}")
+
+# split deep rules
+SPLIT_DEEP = bool_check?($split_deep)
+
+# WEDGE
+WEDGE = bool_check?($wedge)
+
+logger.info("Wedge enabled: #{WEDGE}")
+
+# BALL
+BALL = bool_check?($ball)
+
+logger.info("Ball enabled: #{BALL}")
+
+# GOLD
+GOLD = bool_check?($gold)
+
+logger.info("Gold enabled: #{GOLD}")
+
+# MIM
+MIM_OPTION = $mim_option || 'B'
+
+logger.info("MIM Option selected: #{MIM_OPTION}")
+
+# OFFGRID
+OFFGRID = bool_check?($offgrid)
+
+logger.info("Offgrid enabled:  #{OFFGRID}")
+
+# threads
+if $thr
+  threads($thr)
+else
+  thr ||= Etc.nprocessors
+  threads(thr)
+end
+
+logger.info("Number of threads to use #{$thr}")
+
+#=== PRINT DETAILS ===
+
+verbose(bool_check?($verbose))
+
+logger.info("Verbose mode: #{$verbose}")
+
+# === TILING MODE ===
+case $run_mode
+## Tiling mode is for testing purpose only [Not used in run_drc.py]
+when 'tiling'
+  tiles(500.um)
+  tile_borders(50.um)
+  logger.info('Tiling  mode is enabled.')
+
+when 'deep'
+  #=== HIER MODE ===
+  deep
+  logger.info("deep  mode is enabled for #{TABLE_NAME} table")
+else
+  #=== FLAT MODE ===
+  flat
+  logger.info("flat  mode is enabled for #{TABLE_NAME} table")
+end
+
+# METAL_TOP
+METAL_TOP = $metal_top || '11K'
+
+logger.info("METAL_TOP Selected is #{METAL_TOP}")
+
+# METAL_LEVEL
+METAL_LEVEL = $metal_level || '5LM'
+
+logger.info("METAL_STACK Selected is #{METAL_LEVEL}")
+
+# FEOL
+FEOL = bool_check?($feol)
+
+logger.info("FEOL enabled: #{FEOL}")
+
+# BEOL
+BEOL = bool_check?($beol)
+
+logger.info("BEOL enabled: #{BEOL}")
+
+# DUMMY
+DUMMY = bool_check?($dummy)
+
+logger.info("DUMMY enabled: #{DUMMY}")
+
+# DUMMY
+DUMMY_SUB_PREV = !bool_check?($dummy_no_sub_prev)
+
+logger.info("DUMMY_SUB_PREV enabled: #{DUMMY_SUB_PREV}")
+
+## SLOW_VIA
+SLOW_VIA = bool_check?($slow_via)
+
+logger.info("SLOW_VIA enabled: #{SLOW_VIA}")
+
+#================================================
+#------------- LAYERS DEFINITIONS ---------------
+#================================================
+
+# %include rule_decks/layers_def.drc
+
+#=====================================================
+#------------- BASE LAYERS DERIVATIONS ---------------
+#=====================================================
+
+dnwell_n        = dnwell.not(lvpwell)
+dnwell_p        = dnwell.and(lvpwell)
+
+all_nwell       = dnwell_n.join(nwell)
+
+ncomp           = comp.and(nplus)
+pcomp           = comp.and(pplus)
+ncomp_not_poly  = ncomp.not(poly2)
+pcomp_not_poly  = pcomp.not(poly2)
+tgate           = poly2.and(comp).not(res_mk)
+
+nactive         = ncomp.not(all_nwell)
+ngate           = nactive.and(tgate)
+nsd             = nactive.interacting(ngate).not(ngate).not(res_mk)
+ptap            = pcomp.not(all_nwell).not(res_mk)
+
+pactive         = pcomp.and(all_nwell)
+pgate           = pactive.and(tgate)
+psd             = pactive.interacting(pgate).not(pgate).not(res_mk)
+ntap            = ncomp.and(all_nwell).not(res_mk)
+
+ngate_dn        = ngate.and(dnwell_p)
+ptap_dn         = ptap.and(dnwell_p).outside(well_diode_mk)
+
+pgate_dn        = pgate.and(dnwell_n)
+ntap_dn         = ntap.and(dnwell_n)
+
+psd_dn          = pcomp.and(dnwell_n).interacting(pgate_dn).not(pgate_dn).not(res_mk)
+nsd_dn          = ncomp.and(dnwell_p).interacting(ngate_dn).not(ngate_dn).not(res_mk)
+
+natcomp        	= nat.and(comp)
+natcomp_not_poly	= natcomp.not(poly2)
+
+# Gate
+nom_gate = tgate.not(dualgate)
+thick_gate = tgate.and(dualgate)
+
+ngate_56v = ngate.and(dualgate)
+pgate_56v = pgate.and(dualgate)
+
+ngate_5v = ngate_56v.and(v5_xtor)
+pgate_5v = pgate_56v.and(v5_xtor)
+
+ngate_6v = ngate_56v.not(v5_xtor)
+pgate_6v = pgate_56v.not(v5_xtor)
+
+# DNWELL
+dnwell_3p3v = dnwell.not_interacting(v5_xtor).not_interacting(dualgate)
+dnwell_56v = dnwell.overlapping(dualgate)
+
+# LVPWELL
+lvpwell_dn = lvpwell.interacting(dnwell)
+lvpwell_out = lvpwell.not_interacting(dnwell)
+
+lvpwell_dn3p3v = lvpwell.and(dnwell_3p3v)
+lvpwell_dn56v = lvpwell.and(dnwell_56v)
+
+# NWELL
+nwell_dn = nwell.interacting(dnwell)
+nwell_n_dn = nwell.not_interacting(dnwell)
+
+#================================================
+#------------- LAYERS CONNECTIONS ---------------
+#================================================
+
+if CONNECTIVITY_RULES
+  logger.info('Construct connectivity for the design.')
+
+  connect(dnwell, ncomp_not_poly)
+  connect(lvpwell_out, pcomp_not_poly)
+  connect(lvpwell_dn, pcomp_not_poly)
+  connect(nwell, ncomp_not_poly)
+  connect(mvsd, ncomp_not_poly)
+  connect(mvpsd, pcomp_not_poly)
+
+  if contact_tables.include?(TABLE_NAME)
+    connect(ncomp_not_poly,  contact)
+    connect(pcomp_not_poly,  contact)
+    connect(natcomp_not_poly, contact)
+    connect(contact, metal1_drawn)
+  end
+
+  if via1_tables.include?(TABLE_NAME)
+    connect(metal1_drawn, via1)
+    connect(via1, metal2_drawn)
+  end
+
+  case METAL_LEVEL
+  when '3LM', '4LM', '5LM', '6LM'
+    if via2_tables.include?(TABLE_NAME)
+      connect(metal2_drawn, via2)
+      connect(via2, metal3_drawn)
+    end
+  end
+  case METAL_LEVEL
+  when '4LM', '5LM', '6LM'
+    connect(metal3_drawn, via3)
+    connect(via3, metal4_drawn)
+  end
+  case METAL_LEVEL
+  when '5LM', '6LM'
+    connect(metal4_drawn, via4)
+    connect(via4, metal5_drawn)
+  end
+  case METAL_LEVEL
+  when '6LM'
+    connect(metal5_drawn, via5)
+    connect(via5, metaltop_drawn)
+  end
+end
+
+#================================================
+#------------ PRE-DEFINED FUNCTIONS -------------
+#================================================
+
+def unconn_errors_check(net1, net2, unconnected_errors)
+  if !net1 || !net2
+    logger.error("Connectivity check encountered 2 nets that doesn't exist. Potential issue in klayout...")
+  elsif net1.circuit != net2.circuit || net1.cluster_id != net2.cluster_id
+    # unconnected
+    unconnected_errors.data.insert(ep)
+  end
+  unconnected_errors
+end
+
+def get_nets(_data, layer1, layer2, edge_pairs)
+  net1 = l2n_data.probe_net(layer1.data, edge_pairs.first.p1)
+  net2 = l2n_data.probe_net(layer2.data, edge_pairs.second.p1)
+  [net1, net2]
+end
+
+def conn_space_viol(layer, conn_val, mode)
+  connected_output = layer.space(conn_val.um, mode).polygons(0.001.um)
+  singularity_errors = layer.space(0.001.um, mode).polygons(0.001.um)
+  [connected_output, singularity_errors]
+end
+
+def conn_space_check(layer, not_conn_val, mode)
+  unconnected_errors_unfiltered = layer.space(not_conn_val.um, mode)
+  connected_output, singularity_errors = conn_space_viol(layer, conn_val, mode)
+  # Filter out the errors arising from the same net
+  unconnected_errors = DRC::DRCLayer.new(self, RBA::EdgePairs.new)
+  unconnected_errors_unfiltered.data.each do |ep|
+    net1, net2 = get_nets(l2n_data, layer, layer, ep)
+    unconnected_errors = unconn_errors_check(net1, net2, unconnected_errors)
+  end
+  unconnected_output = unconnected_errors.polygons.join(singularity_errors)
+  [connected_output, unconnected_output]
+end
+
+def conn_space_nets(layer, conn_val, not_conn_val, mode)
+  nets = layer.nets
+  connected_output = nets.space(conn_val.um, mode, props_eq).polygons(0.001.um)
+  singularity_errors = nets.space(0.001.um, mode).polygons(0.001.um)
+  unconnected_output = nets.space(not_conn_val.um, mode, props_ne).polygons(0.001.um).join(singularity_errors)
+  [connected_output, unconnected_output]
+end
+
+def conn_space(layer, conn_val, not_conn_val, mode)
+  if layer.respond_to?(:nets) # KLayout version (>=0.28.4) which supports "nets"
+    connected_output, unconnected_output = conn_space_nets(layer, conn_val, not_conn_val, mode)
+  else
+    raise 'ERROR : Wrong connectivity implementation' if conn_val > not_conn_val
+
+    connected_output, unconnected_output = conn_space_check(layer, not_conn_val, mode)
+  end
+  [connected_output, unconnected_output]
+end
+
+def sep_viol_nets(layer1, layer2, conn_val, not_conn_val, mode)
+  connected_output   = layer1.nets.separation(layer2.nets, conn_val.um,     mode, props_eq).polygons(0.001.um)
+  unconnected_output = layer1.nets.separation(layer2.nets, not_conn_val.um, mode, props_ne).polygons(0.001.um)
+  [connected_output, unconnected_output]
+end
+
+def unconn_separation_check(layer1, layer2, not_conn_val, mode)
+  unconnected_errors_unfiltered = layer1.separation(layer2, not_conn_val.um, mode)
+  # Filter out the errors arising from the same net
+  unconnected_errors = DRC::DRCLayer.new(self, RBA::EdgePairs.new)
+  unconnected_errors_unfiltered.data.each do |ep|
+    net1, net2 = get_nets(l2n_data, layer1, layer2, ep)
+    unconnected_errors = unconn_errors(net1, net2, unconnected_errors)
+  end
+  unconnected_errors
+end
+
+def conn_separation(layer1, layer2, conn_val, not_conn_val, mode)
+  if layer1.respond_to?(:nets) # KLayout version (>=0.28.4) which supports "nets"
+    connected_output, unconnected_output = sep_viol_nets(layer1, layer2, conn_val, not_conn_val, mode)
+  else
+    raise 'ERROR : Wrong connectivity implementation' if conn_val > not_conn_val
+
+    connected_output = layer1.separation(layer2, conn_val.um, mode).polygons(0.001.um)
+    unconnected_errors = unconn_separation_check(layer1, layer2, not_conn_val, mode)
+    unconnected_output = unconnected_errors.polygons(0.001.um)
+  end
+  [connected_output, unconnected_output]
+end
+
+def size_overunder_in_layers(large_layer, size_layer, size_value)
+  out_layer = DRC::DRCLayer.new(self, RBA::Region.new)
+  large_layer.data.each do |ep|
+    curr_large_layer = DRC::DRCLayer.new(self, RBA::Region.new(ep))
+    curr_large_layer = curr_large_layer.and(size_layer)
+    curr_large_layer = curr_large_layer.sized(size_value, 'square_limit').merged.sized(-size_value, 'square_limit')
+    out_layer.data.insert(curr_large_layer.data)
+  end
+  out_layer
+end
+
+# === IMPLICIT EXTRACTION ===
+if CONNECTIVITY_RULES
+  logger.info('Connectivity rules enabled, Netlist object will be generated.')
+  netlist
+end
+
+# === LAYOUT EXTENT ===
+CHIP = extent.sized(0.0)
+logger.info("Total area of the design is #{CHIP.area} um^2.")
+
+#================================================
+#----------------- MAIN RUNSET ------------------
+#================================================
+
+logger.info('Starting GF180MCU DRC rules.')
+logger.info('Running all FEOL rules') if FEOL
+logger.info('Running all BEOL rules') if BEOL
+logger.info('Running all DUMMY rules') if DUMMY
+
+# %include rule_decks/comp.drc
+# %include rule_decks/contact.drc
+# %include rule_decks/contact_split.drc
+# %include rule_decks/dnwell.drc
+# %include rule_decks/dnwell_split.drc
+# %include rule_decks/drc_bjt.drc
+# %include rule_decks/dualgate.drc
+# %include rule_decks/efuse.drc
+# %include rule_decks/esd.drc
+# %include rule_decks/geom.drc
+# %include rule_decks/hres.drc
+# %include rule_decks/ldnmos.drc
+# %include rule_decks/ldnmos_split.drc
+# %include rule_decks/ldpmos.drc
+# %include rule_decks/ldpmos_split.drc
+# %include rule_decks/lres.drc
+# %include rule_decks/lvpwell.drc
+# %include rule_decks/lvpwell_split.drc
+# %include rule_decks/lvs_bjt.drc
+# %include rule_decks/mcell.drc
+# %include rule_decks/metal1.drc
+# %include rule_decks/metal1_split.drc
+# %include rule_decks/metal2.drc
+# %include rule_decks/metal3.drc
+# %include rule_decks/metal4.drc
+# %include rule_decks/metal5.drc
+# %include rule_decks/metaltop_30k.drc
+# %include rule_decks/metaltop.drc
+# %include rule_decks/mim_a.drc
+# %include rule_decks/mim_b.drc
+# %include rule_decks/nat.drc
+# %include rule_decks/nat_split.drc
+# %include rule_decks/nplus.drc
+# %include rule_decks/nwell.drc
+# %include rule_decks/nwell_split.drc
+# %include rule_decks/otp_mk.drc
+# %include rule_decks/poly2.drc
+# %include rule_decks/pplus.drc
+# %include rule_decks/pres.drc
+# %include rule_decks/sab.drc
+# %include rule_decks/sram_3p3.drc
+# %include rule_decks/sram_5p0.drc
+# %include rule_decks/tail.drc
+# %include rule_decks/via1.drc
+# %include rule_decks/via1_split.drc
+# %include rule_decks/via2.drc
+# %include rule_decks/via2_split.drc
+# %include rule_decks/via3.drc
+# %include rule_decks/via3_split.drc
+# %include rule_decks/via4.drc
+# %include rule_decks/via4_split.drc
+# %include rule_decks/via5.drc
+# %include rule_decks/ymtp_mk.drc
+
+# Always enabled
+# %include rule_decks/dummy_exclude.drc
+
+# %include rule_decks/dummy_comp.drc
+# %include rule_decks/dummy_poly2.drc
+# %include rule_decks/dummy_metal1.drc
+# %include rule_decks/dummy_metal2.drc
+# %include rule_decks/dummy_metal3.drc
+# %include rule_decks/dummy_metal4.drc
+# %include rule_decks/dummy_metal5.drc
+
+# %include rule_decks/guard_ring.drc
+
+# %include rule_decks/cup.drc
+
+#================================================
+#-------------------- Tail ----------------------
+#================================================
+
+# %include rule_decks/tail.drc

@@ -1,0 +1,126 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if DUMMY
+  #================================================
+  #---------------------POLY2----------------------
+  #================================================
+
+  logger.info('Starting Dummy Poly2 derivations')
+
+  # Rule DPF.1: Dummy Poly2 is generated on top of dummy COMP.
+  logger.info('Executing rule DPF.1')
+  dpf1_l1 = poly2_dummy.not_covering(comp_dummy)
+  dpf1_l1.output('DPF.1', 'DPF.1 : Dummy Poly2 is generated on top of dummy COMP.')
+  dpf1_l1.forget
+
+  # Rule DPF.2b: Resulted minimum space between Dummy poly in all directions: 1.1
+  logger.info('Executing rule DPF.2b')
+  dpf2b_l1 = poly2_dummy.space(1.1.um, euclidian)
+  dpf2b_l1.output('DPF.2b', 'DPF.2b : Resulted minimum space between Dummy poly in all directions: 1.1')
+  dpf2b_l1.forget
+
+  # Rule DPF.4: Space of dummy poly2 to COMP: 3.2
+  logger.info('Executing rule DPF.4')
+  dpf4_l1 = poly2_dummy.separation(comp, 3.2.um, euclidian)
+  dpf4_l1.output('DPF.4', 'DPF.4 : Space of dummy poly2 to COMP: 3.2')
+  dpf4_l1.forget
+  
+  # Rule DPF.5: Space of dummy poly2 to poly2: 5
+  logger.info('Executing rule DPF.5')
+  dpf5_l1 = poly2_dummy.separation(poly2, 5.um, euclidian)
+  dpf5_l1.output('DPF.5', 'DPF.5 : Space of dummy poly2 to poly2: 5')
+  dpf5_l1.forget
+
+  # Rule DPF.6a: Space from dummy poly2 to Nwell boundary: 1
+  logger.info('Executing rule DPF.6a')
+  dpf6a_l1 = poly2_dummy.separation(nwell, 1.um, euclidian)
+  dpf6a_l1.output('DPF.6a', 'DPF.6a : Space from dummy poly2 to Nwell boundary: 1')
+  dpf6a_l1.forget
+  
+  # Rule DPF.6b: Space from dummy poly2 to DNWELL boundary: 2
+  logger.info('Executing rule DPF.6b')
+  dpf6b_l1 = poly2_dummy.separation(dnwell, 2.um, euclidian)
+  dpf6b_l1.output('DPF.6b', 'DPF.6b : Space from dummy poly2 to DNWELL boundary: 2')
+  dpf6b_l1.forget
+  
+  # Rule DPF.6c: Space from dummy poly2 to LVPWELL boundary: 1
+  logger.info('Executing rule DPF.6c')
+  dpf6c_l1 = poly2_dummy.separation(lvpwell, 1.um, euclidian)
+  dpf6c_l1.output('DPF.6c', 'DPF.6c : Space from dummy poly2 to LVPWELL boundary: 1')
+  dpf6c_l1.forget
+  
+  # Rule DPF.6d: Space from dummy poly2 to Dualgate boundary: 1
+  logger.info('Executing rule DPF.6d')
+  dpf6d_l1 = poly2_dummy.separation(dualgate, 1.um, euclidian)
+  dpf6d_l1.output('DPF.6d', 'DPF.6d : Space from dummy poly2 to Dualgate boundary: 1')
+  dpf6d_l1.forget
+
+  # Rule DPF.8: Space from dummy poly2 to Resistor marking layer (RES_MK): 19.7
+  logger.info('Executing rule DPF.8')
+  dpf8_l1 = poly2_dummy.separation(res_mk, 19.7.um, euclidian)
+  dpf8_l1.output('DPF.8', 'DPF.8 : Space from dummy poly2 to Resistor marking layer (RES_MK): 19.7')
+  dpf8_l1.forget
+  
+  # Rule DPF.9: Space of dummy poly2 to Pad: 6.7
+  logger.info('Executing rule DPF.9')
+  dpf9_l1 = poly2_dummy.separation(pad, 6.7.um, euclidian)
+  dpf9_l1.output('DPF.9', 'DPF.9 : Space of dummy poly2 to Pad: 6.7')
+  dpf9_l1.forget
+  
+  # Rule DPF.11: Space to dummy COMP exclude layer (NDMY): 29.7
+  logger.info('Executing rule DPF.11')
+  dpf11_l1 = poly2_dummy.separation(ndmy, 29.7.um, euclidian)
+  dpf11_l1.output('DPF.11', 'DPF.11 : Space to dummy COMP exclude layer (NDMY): 29.7')
+  dpf11_l1.forget
+
+  if DUMMY_SUB_PREV
+
+    # Rule DPF.12: Space of dummy poly2 fill to active circuit metal1: 2
+    logger.info('Executing rule DPF.12')
+    dpf12_l1 = poly2_dummy.separation(metal1_drawn, 2.um, euclidian)
+    dpf12_l1.output('DPF.12', 'DPF.12 : Space of dummy poly2 fill to active circuit metal1: 2')
+    dpf12_l1.forget
+    
+    # Rule DPF.13: Space of dummy poly2 fill to active circuit metal2: 2
+    logger.info('Executing rule DPF.13')
+    dpf13_l1 = poly2_dummy.separation(metal2_drawn, 2.um, euclidian)
+    dpf13_l1.output('DPF.13', 'DPF.13 : Space of dummy poly2 fill to active circuit metal2: 2')
+    dpf13_l1.forget
+
+  end
+
+  # Rule DPF.14: Minimum dummy poly2 space to IND_MK layer: 3
+  logger.info('Executing rule DPF.14')
+  dpf14_l1 = poly2_dummy.separation(ind_mk, 3.um, euclidian)
+  dpf14_l1.output('DPF.14', 'DPF.14 : Minimum dummy poly2 space to IND_MK layer: 3')
+  dpf14_l1.forget
+  
+  # Rule DPF.16: Minimum dummy poly2 space to MTPMARK layer: 3
+  logger.info('Executing rule DPF.16')
+  dpf16_l1 = poly2_dummy.separation(mtpmark, 3.um, euclidian)
+  dpf16_l1.output('DPF.16', 'DPF.16 : Minimum dummy poly2 space to MTPMARK layer: 3')
+  dpf16_l1.forget
+  
+  # Rule DPF.19: Space from dummy poly2 to dummy poly2 excluding layer (PMNDMY): 8
+  logger.info('Executing rule DPF.19')
+  dpf19_l1 = poly2_dummy.separation(pmndmy, 8.um, euclidian)
+  dpf19_l1.output('DPF.19', 'DPF.19 : Space from dummy poly2 to dummy poly2 excluding layer (PMNDMY): 8')
+  dpf19_l1.forget
+
+end

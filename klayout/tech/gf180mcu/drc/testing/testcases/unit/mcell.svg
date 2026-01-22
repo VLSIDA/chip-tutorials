@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3932.269" height="2465.159" viewBox="-4244.8395 -2527.0295 3932.269 2465.159">
+<defs>
+<style type="text/css">
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l2d222 {fill:none;stroke:green;stroke-dasharray:8,8;}
+.l6d222 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l11d17 {stroke: #DCD300; fill: #DCD300; fill-opacity: 0.5;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+.l12t222 {stroke: none; fill: #F3C300;}
+</style>
+</defs>
+<rect x="-4244.8395" y="-2527.0295" width="3932.269" height="2465.159" fill="#222222" stroke="none"/>
+<g id="7_17_Mcell" transform="scale(1 -1)">
+<polygon id="0x55aee097aab0" class="l11d17" points="-786.37,773.15 -788.37,775.15 -786.37,777.15 -782.37,777.15 -782.37,773.15"/>
+<polygon id="0x55aee097a9d0" class="l11d17" points="-720.37,775.37 -722.37,777.37 -720.37,779.37 -716.37,779.37 -716.37,775.37"/>
+<polygon id="0x55aee097a960" class="l11d17" points="-732.37,775.37 -732.37,779.37 -728.37,779.37 -726.37,777.37 -728.37,775.37"/>
+<polygon id="0x55aee0945d40" class="l11d17" points="-608.37,779.94 -608.37,783.94 -602.37,783.94 -602.37,780.94 -603.37,779.94"/>
+<polygon id="0x55aee0821e40" class="l11d17" points="-600.53,774.1 -600.53,777.1 -599.53,778.1 -594.53,778.1 -594.53,774.1"/>
+<polygon id="0x55aee0945cd0" class="l11d17" points="-544.53,773.15 -544.53,785.15 -539.73,785.15 -539.73,781.15 -540.53,781.15 -540.53,777.15 -535.73,777.15 -535.73,785.15 -531.73,785.15 -531.73,773.15"/>
+<polygon id="0x55aee0821dd0" class="l11d17" points="-2909.47,2316.35 -2909.47,2334.35 -2897.99,2334.35 -2897.99,2325.35 -2901.99,2325.35 -2901.99,2330.35 -2905.47,2330.35 -2905.47,2320.35 -2901.99,2320.35 -2901.99,2325.35 -2897.99,2325.35 -2897.99,2316.35"/>
+<polygon id="0x55aee0821d60" class="l11d17" points="-2646.73,2316.35 -2646.73,2334.35 -2635.23,2334.35 -2635.23,2325.35 -2639.23,2325.35 -2639.23,2330.35 -2642.73,2330.35 -2642.73,2320.35 -2639.23,2320.35 -2639.23,2325.35 -2635.23,2325.35 -2635.23,2316.35"/>
+<polygon id="0x55aee0821cf0" class="l11d17" points="-2651.73,2312.41 -2651.73,2338.29 -2630.23,2338.29 -2630.23,2325.35 -2634.23,2325.35 -2634.23,2334.29 -2647.73,2334.29 -2647.73,2316.41 -2634.23,2316.41 -2634.23,2325.35 -2630.23,2325.35 -2630.23,2312.41"/>
+<polygon id="0x55aee06cce90" class="l11d17" points="-2718.23,2316.36 -2718.23,2334.34 -2706.73,2334.34 -2706.73,2325.35 -2710.73,2325.35 -2710.73,2330.34 -2714.23,2330.34 -2714.23,2320.36 -2710.73,2320.36 -2710.73,2325.35 -2706.73,2325.35 -2706.73,2316.36"/>
+<polygon id="0x55aee06cce20" class="l11d17" points="-2723.23,2312.41 -2723.23,2338.29 -2701.73,2338.29 -2701.73,2325.35 -2705.73,2325.35 -2705.73,2334.29 -2719.23,2334.29 -2719.23,2316.41 -2705.73,2316.41 -2705.73,2325.35 -2701.73,2325.35 -2701.73,2312.41"/>
+<polygon id="0x55aee06ccdb0" class="l11d17" points="-1909.48,2316.35 -1909.48,2334.35 -1897.98,2334.35 -1897.98,2325.35 -1901.98,2325.35 -1901.98,2330.35 -1905.48,2330.35 -1905.48,2320.35 -1901.98,2320.35 -1901.98,2325.35 -1897.98,2325.35 -1897.98,2316.35"/>
+<polygon id="0x55aee0b2ea80" class="l6d222" points="-2649.73,2314.41 -2649.73,2336.29 -2632.23,2336.29 -2632.23,2314.41"/>
+<polygon id="0x55aee0b2e9b0" class="l6d222" points="-2716.23,2318.36 -2716.23,2332.34 -2708.73,2332.34 -2708.73,2318.36"/>
+<polygon id="0x55aee0b2e940" class="l2d222" points="-946.64,247.04 -946.64,279.04 -922.64,279.04 -922.64,247.04"/>
+<polygon id="0x55aee0acb3c0" class="l2d222" points="-619.47,247.05 -619.47,283.05 -583.47,283.05 -583.47,247.05"/>
+<polygon id="0x55aee0acb2f0" class="l2d222" points="-681.47,247.04 -681.47,275.04 -649.47,275.04 -649.47,247.04"/>
+<polygon id="0x55aee09c3180" class="l2d222" points="-752.64,253.16 -752.64,281.16 -720.64,281.16 -720.64,253.16"/>
+<polygon id="0x55aee09c30b0" class="l2d222" points="-743.47,247.99 -743.47,275.99 -711.47,275.99 -711.47,247.99"/>
+<polygon id="0x55aee0769df0" class="l2d222" points="-892.64,247.04 -892.64,283.04 -856.64,283.04 -856.64,247.04"/>
+<polygon id="0x55aee0769d20" class="l2d222" points="-798.37,763.15 -798.37,787.15 -772.37,787.15 -772.37,763.15"/>
+<polygon id="0x55aee0769cb0" class="l2d222" points="-732.37,765.37 -732.37,789.37 -706.37,789.37 -706.37,765.37"/>
+<polygon id="0x55aee07336d0" class="l2d222" points="-742.37,765.37 -742.37,789.37 -716.37,789.37 -716.37,765.37"/>
+<polygon id="0x55aee0733600" class="l2d222" points="-1066.37,763.15 -1066.37,795.15 -1042.37,795.15 -1042.37,763.15"/>
+<polygon id="0x55aee0b096d0" class="l2d222" points="-1058.37,767.15 -1058.37,791.15 -1026.37,791.15 -1026.37,767.15"/>
+<polygon id="0x55aee0b09600" class="l2d222" points="-806.37,763.15 -806.37,795.15 -782.37,795.15 -782.37,763.15"/>
+<polygon id="0x55aee0ae6600" class="l2d222" points="-618.37,769.94 -618.37,793.94 -592.37,793.94 -592.37,769.94"/>
+<polygon id="0x55aee0ae6530" class="l2d222" points="-610.53,764.1 -610.53,788.1 -584.53,788.1 -584.53,764.1"/>
+<polygon id="0x55aee0adefa0" class="l2d222" points="-554.53,763.15 -554.53,795.15 -521.73,795.15 -521.73,763.15"/>
+<polygon id="0x55aee0adeed0" class="l2d222" points="-803.55,1540.25 -803.55,1570.25 -780.05,1570.25 -780.05,1540.25"/>
+<polygon id="0x55aee07eab10" class="l2d222" points="-750.05,1540.25 -750.05,1570.25 -726.55,1570.25 -726.55,1540.25"/>
+<polygon id="0x55aee07eaa40" class="l2d222" points="-1919.48,2306.35 -1919.48,2344.35 -1887.98,2344.35 -1887.98,2306.35"/>
+<polygon id="0x55aee0acdee0" class="l11d17" points="-3936.64,257.04 -3936.64,269.04 -3932.69,269.04 -3932.69,257.04"/>
+<polygon id="0x55aee0acde10" class="l11d17" points="-936.64,257.04 -936.64,269.04 -932.64,269.04 -932.64,257.04"/>
+<polygon id="0x55aee0ac5560" class="l11d17" points="-4056.1,773.15 -4056.1,785.15 -4052.1,785.15 -4052.1,773.15"/>
+<polygon id="0x55aee0ac5490" class="l11d17" points="-4048.15,777.15 -4048.15,781.15 -4036.15,781.15 -4036.15,777.15"/>
+<polygon id="0x55aee0ab5fc0" class="l11d17" points="-3856.15,773.15 -3856.15,785.15 -3852.15,785.15 -3852.15,773.15"/>
+<polygon id="0x55aee0ab5ef0" class="l11d17" points="-3796.15,773.15 -3796.15,785.15 -3792.15,785.15 -3792.15,773.15"/>
+<polygon id="0x55aee0a79f80" class="l11d17" points="-3478.01,776.9 -3478.01,780.9 -3474.01,780.9 -3474.01,776.9"/>
+<polygon id="0x55aee0a79eb0" class="l11d17" points="-3482.01,772.9 -3482.01,776.9 -3478.01,776.9 -3478.01,772.9"/>
+<polygon id="0x55aee08e5920" class="l11d17" points="-1056.37,773.15 -1056.37,785.15 -1052.37,785.15 -1052.37,773.15"/>
+<polygon id="0x55aee08e5850" class="l11d17" points="-1048.37,777.15 -1048.37,781.15 -1036.37,781.15 -1036.37,777.15"/>
+<polygon id="0x55aee08f55a0" class="l11d17" points="-796.37,773.15 -796.37,785.15 -792.37,785.15 -792.37,773.15"/>
+<polygon id="0x55aee08f54d0" class="l11d17" points="-3793.5,1550.25 -3793.5,1560.25 -3790.05,1560.25 -3790.05,1550.25"/>
+<polygon id="0x55aee08b5720" class="l11d17" points="-3740.05,1550.25 -3740.05,1560.25 -3736.6,1560.25 -3736.6,1550.25"/>
+<polygon id="0x55aee08b5650" class="l11d17" points="-793.55,1550.25 -793.55,1560.25 -790.05,1560.25 -790.05,1550.25"/>
+<polygon id="0x55aee06db5c0" class="l11d17" points="-740.05,1550.25 -740.05,1560.25 -736.55,1560.25 -736.55,1550.25"/>
+<polygon id="0x55aee06db4c0" class="l11d17" points="-3607.02,257.05 -3609.47,259.5 -3609.47,273.05 -3605.47,273.05 -3605.47,261.05 -3593.47,261.05 -3593.47,257.05"/>
+<polygon id="0x55aee06ef510" class="l11d17" points="-3671.47,257.04 -3671.47,260.94 -3667.37,265.04 -3659.47,265.04 -3659.47,257.04"/>
+<polygon id="0x55aee06ef430" class="l11d17" points="-3742.69,263.21 -3742.69,271.21 -3730.69,271.21 -3730.69,265.99 -3733.47,263.21"/>
+<polygon id="0x55aee06c36e0" class="l11d17" points="-3733.47,257.99 -3733.47,263.21 -3730.69,265.99 -3721.47,265.99 -3721.47,257.99"/>
+<polygon id="0x55aee06c3600" class="l11d17" points="-3800.69,259.26 -3804.69,263.26 -3800.69,267.26 -3792.69,267.26 -3792.69,259.26"/>
+<polygon id="0x55aee06aa5b0" class="l11d17" points="-3816.69,259.26 -3816.69,267.26 -3808.69,267.26 -3804.69,263.26 -3808.69,259.26"/>
+<polygon id="0x55aee06aa4a0" class="l11d17" points="-3878.69,257.04 -3882.69,261.04 -3882.69,273.04 -3878.69,273.04 -3878.69,262.59 -3877.14,261.04 -3866.69,261.04 -3866.69,257.04"/>
+<polygon id="0x55aee0692090" class="l11d17" points="-671.47,257.04 -671.47,261.04 -667.47,265.04 -659.47,265.04 -659.47,257.04"/>
+<polygon id="0x55aee0691fb0" class="l11d17" points="-742.64,263.16 -742.64,271.16 -730.64,271.16 -730.64,265.99 -733.47,263.16"/>
+<polygon id="0x55aee0b079e0" class="l11d17" points="-733.47,257.99 -733.47,263.16 -730.64,265.99 -721.47,265.99 -721.47,257.99"/>
+<polygon id="0x55aee0b07900" class="l11d17" points="-3850.15,773.15 -3852.15,775.15 -3850.15,777.15 -3846.15,777.15 -3846.15,773.15"/>
+<polygon id="0x55aee0ae5d50" class="l11d17" points="-3786.3,773.15 -3788.3,775.15 -3786.3,777.15 -3782.3,777.15 -3782.3,773.15"/>
+<polygon id="0x55aee0ae5c70" class="l11d17" points="-3720.45,775.37 -3722.45,777.37 -3720.45,779.37 -3716.45,779.37 -3716.45,775.37"/>
+<polygon id="0x55aee0ae0120" class="l11d17" points="-3732.3,775.37 -3732.3,779.37 -3728.3,779.37 -3726.3,777.37 -3728.3,775.37"/>
+<polygon id="0x55aee0ae0040" class="l11d17" points="-3608.45,779.79 -3608.45,783.79 -3602.45,783.79 -3602.45,780.79 -3603.45,779.79"/>
+<polygon id="0x55aee09eae90" class="l11d17" points="-3600.76,774.1 -3600.76,777.1 -3599.76,778.1 -3594.76,778.1 -3594.76,774.1"/>
+<polygon id="0x55aee09eae20" class="l11d17" points="-3544.76,773.15 -3544.76,785.15 -3539.96,785.15 -3539.96,781.15 -3540.76,781.15 -3540.76,777.15 -3536.01,777.15 -3536.01,785.15 -3532.01,785.15 -3532.01,773.15"/>
+<polygon id="0x55aee0674070" class="l3d222" points="-2733.23,2302.41 -2733.23,2348.29 -2691.73,2348.29 -2691.73,2302.41"/>
+<polygon id="0x55aee06e7280" class="l3d222" points="-2661.73,2302.41 -2661.73,2348.29 -2620.23,2348.29 -2620.23,2302.41"/>
+<polygon id="0x55aee06e7350" class="l3d222" points="-2919.47,2306.35 -2919.47,2344.35 -2887.99,2344.35 -2887.99,2306.35"/>
+<polygon id="0x55aee07ecf00" class="l3d222" points="-3750.05,1540.25 -3750.05,1570.25 -3726.6,1570.25 -3726.6,1540.25"/>
+<polygon id="0x55aee07ecfd0" class="l3d222" points="-3803.5,1540.25 -3803.5,1570.25 -3780.05,1570.25 -3780.05,1540.25"/>
+<polygon id="0x55aee084df20" class="l3d222" points="-3492.01,762.9 -3492.01,786.9 -3468.01,786.9 -3468.01,762.9"/>
+<polygon id="0x55aee084dff0" class="l3d222" points="-3488.01,766.9 -3488.01,790.9 -3464.01,790.9 -3464.01,766.9"/>
+<polygon id="0x55aee092e7d0" class="l3d222" points="-3554.76,763.15 -3554.76,795.15 -3522.01,795.15 -3522.01,763.15"/>
+<polygon id="0x55aee092e8a0" class="l3d222" points="-3610.76,764.1 -3610.76,788.1 -3584.76,788.1 -3584.76,764.1"/>
+<polygon id="0x55aee0949e40" class="l3d222" points="-3618.45,769.79 -3618.45,793.79 -3592.45,793.79 -3592.45,769.79"/>
+<polygon id="0x55aee0949f10" class="l3d222" points="-3806.15,763.15 -3806.15,795.15 -3782.15,795.15 -3782.15,763.15"/>
+<polygon id="0x55aee0938e30" class="l3d222" points="-3866.15,763.15 -3866.15,795.15 -3842.15,795.15 -3842.15,763.15"/>
+<polygon id="0x55aee0938f00" class="l3d222" points="-4058.15,767.15 -4058.15,791.15 -4026.15,791.15 -4026.15,767.15"/>
+<polygon id="0x55aee099da40" class="l3d222" points="-4066.1,763.15 -4066.1,795.15 -4042.1,795.15 -4042.1,763.15"/>
+<polygon id="0x55aee099db10" class="l3d222" points="-3742.3,765.37 -3742.3,789.37 -3716.3,789.37 -3716.3,765.37"/>
+<polygon id="0x55aee09a3c40" class="l3d222" points="-3732.45,765.37 -3732.45,789.37 -3706.45,789.37 -3706.45,765.37"/>
+<polygon id="0x55aee09a3d10" class="l3d222" points="-3798.3,763.15 -3798.3,787.15 -3772.3,787.15 -3772.3,763.15"/>
+<polygon id="0x55aee09b06d0" class="l3d222" points="-3862.15,763.15 -3862.15,787.15 -3836.15,787.15 -3836.15,763.15"/>
+<polygon id="0x55aee09b07a0" class="l3d222" points="-3892.69,247.04 -3892.69,283.04 -3856.69,283.04 -3856.69,247.04"/>
+<polygon id="0x55aee088c0e0" class="l3d222" points="-3826.69,249.26 -3826.69,277.26 -3794.69,277.26 -3794.69,249.26"/>
+<polygon id="0x55aee088c1b0" class="l3d222" points="-3814.69,249.26 -3814.69,277.26 -3782.69,277.26 -3782.69,249.26"/>
+<polygon id="0x55aee09f2000" class="l3d222" points="-3743.47,247.99 -3743.47,275.99 -3711.47,275.99 -3711.47,247.99"/>
+<polygon id="0x55aee09f20d0" class="l3d222" points="-3752.69,253.21 -3752.69,281.21 -3720.69,281.21 -3720.69,253.21"/>
+<polygon id="0x55aee07ebcd0" class="l3d222" points="-3681.47,247.04 -3681.47,275.04 -3649.47,275.04 -3649.47,247.04"/>
+<polygon id="0x55aee07ebda0" class="l3d222" points="-3619.47,247.05 -3619.47,283.05 -3583.47,283.05 -3583.47,247.05"/>
+<polygon id="0x55aee06da820" class="l3d222" points="-3946.64,247.04 -3946.64,279.04 -3922.69,279.04 -3922.69,247.04"/>
+<polygon id="0x55aee06da8f0" class="l11d17" points="-607.22,257.05 -609.47,259.3 -609.47,273.05 -605.47,273.05 -605.47,261.05 -593.47,261.05 -593.47,257.05"/>
+<polygon id="0x55aee06ccd40" class="l11d17" points="-878.74,257.04 -882.64,260.94 -882.64,273.04 -878.64,273.04 -878.64,262.69 -876.99,261.04 -866.64,261.04 -866.64,257.04"/>
+<text id="0x55aee0b32580" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3945.53 249.13) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b324d0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3680.36 249.13) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b32420" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3823.82 251.65) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b32370" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3750.03 255.61) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b322e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3891.58 249.13) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b32250" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3617.43 250.82) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b321c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-945.53 249.13) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b32130" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-680.36 249.13) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b320a0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-749.98 255.56) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b32010" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-891.53 249.13) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b31f80" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-617.43 250.82) scale(0.2) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b31ef0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4065.58 763.78) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31e60" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3865.66 763.71) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31dd0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3805.84 763.6) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b2f3c0" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-2269.85 2325.34) scale(20) scale(1 -1)">MC.4</text>
+<text id="0x55aee0b2f450" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-797.58 1536.06) scale(0.5) scale(1 -1)">Basic</text>
+<text id="0x55aee0b2f4e0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-743.71 1535.91) scale(0.5) scale(1 -1)">Larger</text>
+<text id="0x55aee0b2f680" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-2265.05 1555.24) scale(20) scale(1 -1)">MC.3</text>
+<text id="0x55aee0b2f710" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3797.53 1536.06) scale(0.5) scale(1 -1)">Basic</text>
+<text id="0x55aee0b2f7a0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3743.71 1535.91) scale(0.5) scale(1 -1)">Larger</text>
+<text id="0x55aee0b2f830" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-491.31 762.05) scale(0.3) scale(1 -1)">Cor2Cor_90Deg</text>
+<text id="0x55aee0b2f8c0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-554.02 762.31) scale(0.3) scale(1 -1)">Notch</text>
+<text id="0x55aee0b2f950" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-610.46 763.34) scale(0.3) scale(1 -1)">45deg</text>
+<text id="0x55aee0b2f9e0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-676.05 762.4) scale(0.3) scale(1 -1)">Enclose</text>
+<text id="0x55aee0b2fa70" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-741.99 764.48) scale(0.3) scale(1 -1)">Corner2Corner</text>
+<text id="0x55aee0b2fb00" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-805.96 762.39) scale(0.3) scale(1 -1)">Corner2Edge</text>
+<text id="0x55aee0b2fb90" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-865.9 762.39) scale(0.3) scale(1 -1)">Singular</text>
+<text id="0x55aee0b2fc20" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-929.79 762.45) scale(0.3) scale(1 -1)">Overlap</text>
+<text id="0x55aee0b2fcb0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-996.08 762.53) scale(0.3) scale(1 -1)">Touch</text>
+<text id="0x55aee0b2fd40" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-1065.83 762.5) scale(0.3) scale(1 -1)">Space</text>
+<text id="0x55aee0b2fdd0" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-2265.05 785.14) scale(20) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b2fe60" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3491.59 762.05) scale(0.3) scale(1 -1)">Cor2Cor_90Deg</text>
+<text id="0x55aee0b2fef0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3554.25 762.31) scale(0.3) scale(1 -1)">Notch</text>
+<text id="0x55aee0b30190" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3610.69 763.34) scale(0.3) scale(1 -1)">45deg</text>
+<text id="0x55aee0b30220" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3676.13 762.4) scale(0.3) scale(1 -1)">Enclose</text>
+<text id="0x55aee0b302b0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3741.92 764.48) scale(0.3) scale(1 -1)">Corner2Corner</text>
+<text id="0x55aee0b30340" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3805.74 762.39) scale(0.3) scale(1 -1)">Corner2Edge</text>
+<text id="0x55aee0b303d0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3865.68 762.39) scale(0.3) scale(1 -1)">Singular</text>
+<text id="0x55aee0b30460" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3929.57 762.45) scale(0.3) scale(1 -1)">Overlap</text>
+<text id="0x55aee0b304f0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3995.86 762.53) scale(0.3) scale(1 -1)">Touch</text>
+<text id="0x55aee0b30580" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-4065.56 762.5) scale(0.3) scale(1 -1)">Space</text>
+<text id="0x55aee0b30610" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-617.73 240.91) scale(0.5) scale(1 -1)">Corner2Edge</text>
+<text id="0x55aee0b306a0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-889.03 240.61) scale(0.5) scale(1 -1)">Width_45deg</text>
+<text id="0x55aee0b30730" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-680.56 240.61) scale(0.5) scale(1 -1)">Corner_45Deg</text>
+<text id="0x55aee0b307c0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-749.09 242.13) scale(0.5) scale(1 -1)">Corner2Corner</text>
+<text id="0x55aee0b30850" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-943.03 240.61) scale(0.5) scale(1 -1)">Width</text>
+<text id="0x55aee0b308e0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-882.89 255.98) scale(0.1) scale(1 -1)">Default Pass. Minus 2xMinGrid to Fail</text>
+<text id="0x55aee0b30970" class="l12t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-619.26 244.65) scale(0.1) scale(1 -1)">LIMITATION: Please ensure width*sqrt(2) &lt; width+statusOvlpTc</text>
+<text id="0x55aee0b30a00" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-609.72 255.99) scale(0.1) scale(1 -1)">Default Pass. Minus 2xMinGrid to Fail</text>
+<text id="0x55aee0b30a90" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-2265.05 265.04) scale(20) scale(1 -1)">MC.1</text>
+<text id="0x55aee0b30b20" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3617.73 240.91) scale(0.5) scale(1 -1)">Corner2Edge</text>
+<text id="0x55aee0b30bb0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3889.08 240.61) scale(0.5) scale(1 -1)">Width_45deg</text>
+<text id="0x55aee0b30c40" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3680.56 240.61) scale(0.5) scale(1 -1)">Corner_45Deg</text>
+<text id="0x55aee0b30cd0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3749.09 242.13) scale(0.5) scale(1 -1)">Corner2Corner</text>
+<text id="0x55aee0b30d60" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3825.01 241.75) scale(0.5) scale(1 -1)">Singular</text>
+<text id="0x55aee0b30df0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3943.03 240.61) scale(0.5) scale(1 -1)">Width</text>
+<text id="0x55aee0b30e80" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3882.94 255.98) scale(0.1) scale(1 -1)">Default Pass. Minus 2xMinGrid to Fail</text>
+<text id="0x55aee0b30f10" class="l12t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-3619.26 244.65) scale(0.1) scale(1 -1)">LIMITATION: Please ensure width*sqrt(2) &lt; width+statusOvlpTc</text>
+<text id="0x55aee0b30fa0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3609.72 255.99) scale(0.1) scale(1 -1)">Default Pass. Minus 2xMinGrid to Fail</text>
+<text id="0x55aee0b31030" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1917.78 2309.09) scale(0.2) scale(1 -1)">MC.4</text>
+<text id="0x55aee0b310c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-2658.15 2307.65) scale(0.5) scale(1 -1)">MC.4</text>
+<text id="0x55aee0b31150" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-2730.68 2308.5) scale(0.5) scale(1 -1)">MC.4</text>
+<text id="0x55aee0b311e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-2917.77 2309.09) scale(0.2) scale(1 -1)">MC.4</text>
+<text id="0x55aee0b31270" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-801.57 1542.35) scale(0.2) scale(1 -1)">MC.3</text>
+<text id="0x55aee0b31300" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-748.42 1542.09) scale(0.2) scale(1 -1)">MC.3</text>
+<text id="0x55aee0b317a0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3801.52 1542.35) scale(0.2) scale(1 -1)">MC.3</text>
+<text id="0x55aee0b31830" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3748.42 1542.09) scale(0.2) scale(1 -1)">MC.3</text>
+<text id="0x55aee0b318c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-554.01 763.97) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31950" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-617.29 770.88) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b319e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-741.9 766.04) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31a70" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-806.06 763.6) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31b00" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1065.85 763.78) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31b90" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3554.24 763.97) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31c20" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3491.51 763.62) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31cb0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3617.37 770.73) scale(0.1) scale(1 -1)">MC.2</text>
+<text id="0x55aee0b31d40" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3741.83 766.04) scale(0.1) scale(1 -1)">MC.2</text>
+</g>
+</svg>

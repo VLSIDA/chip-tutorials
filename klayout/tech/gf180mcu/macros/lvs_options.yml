@@ -1,0 +1,16 @@
+---
+sub_name: gf180mcu_gnd
+run_mode: flat
+variant: C
+netlist: ''
+spice_net: true
+top_cell_name: ''
+spice_comment: false
+scale: false
+verbose: false
+schematic_simple: false
+net_only: false
+top_lvl_pins: false
+combine: false
+purge: false
+purge_nets: false

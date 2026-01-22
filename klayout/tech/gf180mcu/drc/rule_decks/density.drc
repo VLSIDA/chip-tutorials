@@ -1,0 +1,549 @@
+# frozen_string_literal: true
+
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#=======================================================================================================================
+#----------------------------------------- GF 0.18 um MCU DRC RULE DECK ------------------------------------------------
+#=======================================================================================================================
+require 'time'
+require 'logger'
+require 'etc'
+
+exec_start_time = Time.now
+
+# Custom formatter including timestamp and memory usage
+formatter = proc do |_severity, datetime, _progname, msg|
+  memory_usage = "#{RBA::Timer.memory_size / 1024}K"
+  "#{datetime}: Memory Usage (#{memory_usage}) : #{msg}\n"
+end
+
+# Create stdout logger
+logger = Logger.new($stdout)
+logger.formatter = formatter
+
+# Don't buffer stdout
+$stdout.sync = true
+
+#================================================
+#----------------- FILE SETUP -------------------
+#================================================
+logger.info("Starting running GF180MCU Klayout DRC runset on #{$input}")
+logger.info("Ruby Version for klayout: #{RUBY_VERSION}")
+
+if $input
+  if $topcell
+    source($input, $topcell)
+  else
+    source($input)
+  end
+end
+
+logger.info('Loading database to memory is complete.')
+
+if $report
+  logger.info("GF180MCU Klayout density DRC runset output at: #{$report}")
+  report('GF180 DENSITY DRC Run Report at', $report)
+else
+  layout_dir = Pathname.new(RBA::CellView.active.filename).dirname.realpath
+  report_path = layout_dir.join('gf180_drc.lyrdb').to_s
+  logger.info("GF180MCU Klayout density DRC runset output at default location: #{report_path}")
+  report('GF180 DENSITY DRC Run Report at', report_path)
+end
+
+#=======================================================================================
+#------------------------------------- SWITCHES ----------------------------------------
+#=======================================================================================
+
+logger.info('Evaluate switches.')
+
+# threads
+if $thr
+  threads($thr)
+else
+  thr ||= Etc.nprocessors
+  threads(thr)
+end
+
+logger.info("Number of threads to use #{$thr}")
+
+#=== PRINT DETAILS ===
+logger.info("Verbose mode: #{$verbose}")
+if $verbose == 'true'
+  verbose(true)
+else
+  verbose(false)
+end
+
+# === LAYOUT EXTENT ===
+CHIP = extent.sized(0.0)
+
+# === TILING MODE ===
+case $run_mode
+when 'tiling'
+  tiles(500.um)
+  tile_borders(10.um)
+  logger.info('Tiling  mode is enabled.')
+
+when 'deep'
+  #=== HIER MODE ===
+  deep
+  logger.info('deep  mode is enabled.')
+else
+  #=== FLAT MODE ===
+  flat
+  logger.info('flat  mode is enabled.')
+end
+
+# METAL_TOP
+METAL_TOP = $metal_top || '9K'
+
+logger.info("METAL_TOP Selected is #{METAL_TOP}")
+
+# METAL_LEVEL
+METAL_LEVEL = $metal_level || '5LM'
+
+logger.info("METAL_STACK Selected is #{METAL_LEVEL}")
+
+#======================================================================================================
+#--------------------------------------- LAYER DEFINITIONS --------------------------------------------
+#======================================================================================================
+
+polygons_count = 0
+logger.info('Read in polygons from layers.')
+
+def get_polygons(layer, data_type)
+  ps = polygons(layer, data_type)
+  $run_mode == 'deep' ? ps : ps.merged
+end
+
+comp_drawn = get_polygons(22, 0)
+count = comp_drawn.count
+logger.info("comp_drawn has #{count} polygons")
+polygons_count += count
+
+comp_dummy = get_polygons(22, 4)
+count = comp_dummy.count
+logger.info("comp_dummy has #{count} polygons")
+polygons_count += count
+
+comp = comp_drawn + comp_dummy
+
+dualgate = get_polygons(55, 0)
+count = dualgate.count
+logger.info("dualgate has #{count} polygons")
+polygons_count += count
+
+poly2_drawn = get_polygons(30, 0)
+count = poly2_drawn.count
+logger.info("poly2_drawn has #{count} polygons")
+polygons_count += count
+
+poly2_dummy = get_polygons(30, 4)
+count = poly2_dummy.count
+logger.info("poly2_dummy has #{count} polygons")
+polygons_count += count
+
+poly2 = poly2_drawn + poly2_dummy
+
+contact = get_polygons(33, 0)
+count = contact.count
+logger.info("contact has #{count} polygons")
+polygons_count += count
+
+metal1_drawn = get_polygons(34, 0)
+count = metal1_drawn.count
+logger.info("metal1_drawn has #{count} polygons")
+polygons_count += count
+
+metal1_dummy = get_polygons(34, 4)
+count = metal1_dummy.count
+logger.info("metal1_dummy has #{count} polygons")
+polygons_count += count
+
+metal1         = metal1_drawn + metal1_dummy
+
+metal1_label = get_polygons(34, 10)
+count = metal1_label.count
+logger.info("metal1_label has #{count} polygons")
+polygons_count += count
+
+metal1_slot = get_polygons(34, 3)
+count = metal1_slot.count
+logger.info("metal1_slot has #{count} polygons")
+polygons_count += count
+
+metal1_blk = get_polygons(34, 5)
+count = metal1_blk.count
+logger.info("metal1_blk has #{count} polygons")
+polygons_count += count
+
+via1 = get_polygons(35, 0)
+count = via1.count
+logger.info("via1 has #{count} polygons")
+polygons_count += count
+
+metal2_drawn = get_polygons(36, 0)
+count = metal2_drawn.count
+logger.info("metal2_drawn has #{count} polygons")
+polygons_count += count
+
+metal2_dummy = get_polygons(36, 4)
+count = metal2_dummy.count
+logger.info("metal2_dummy has #{count} polygons")
+polygons_count += count
+
+metal2 = metal2_drawn + metal2_dummy
+
+metal2_label = get_polygons(36, 10)
+count = metal2_label.count
+logger.info("metal2_label has #{count} polygons")
+polygons_count += count
+
+metal2_slot = get_polygons(36, 3)
+count = metal2_slot.count
+logger.info("metal2_slot has #{count} polygons")
+polygons_count += count
+
+metal2_blk = get_polygons(36, 5)
+count = metal2_blk.count
+logger.info("metal2_blk has #{count} polygons")
+polygons_count += count
+
+case METAL_LEVEL
+when '3LM', '4LM', '5LM', '6LM'
+  via2 = get_polygons(38, 0)
+  count = via2.count
+  logger.info("via2 has #{count} polygons")
+  polygons_count += count
+
+  metal3_drawn = get_polygons(42, 0)
+  count = metal3_drawn.count
+  logger.info("metal3_drawn has #{count} polygons")
+  polygons_count += count
+
+  metal3_dummy = get_polygons(42, 4)
+  count = metal3_dummy.count
+  logger.info("metal3_dummy has #{count} polygons")
+  polygons_count += count
+
+  metal3 = metal3_drawn + metal3_dummy
+
+  metal3_label = get_polygons(42, 10)
+  count = metal3_label.count
+  logger.info("metal3_label has #{count} polygons")
+  polygons_count += count
+
+  metal3_slot = get_polygons(42, 3)
+  count = metal3_slot.count
+  logger.info("metal3_slot has #{count} polygons")
+  polygons_count += count
+
+  metal3_blk = get_polygons(42, 5)
+  count = metal3_blk.count
+  logger.info("metal3_blk has #{count} polygons")
+  polygons_count += count
+end
+
+case METAL_LEVEL
+when '4LM', '5LM', '6LM'
+  via3 = get_polygons(40, 0)
+  count = via3.count
+  logger.info("via3 has #{count} polygons")
+  polygons_count += count
+
+  metal4_drawn = get_polygons(46, 0)
+  count = metal4_drawn.count
+  logger.info("metal4_drawn has #{count} polygons")
+  polygons_count += count
+
+  metal4_dummy = get_polygons(46, 4)
+  count = metal4_dummy.count
+  logger.info("metal4_dummy has #{count} polygons")
+  polygons_count += count
+
+  metal4 = metal4_drawn + metal4_dummy
+
+  metal4_label = get_polygons(46, 10)
+  count = metal4_label.count
+  logger.info("metal4_label has #{count} polygons")
+  polygons_count += count
+
+  metal4_slot = get_polygons(46, 3)
+  count = metal4_slot.count
+  logger.info("metal4_slot has #{count} polygons")
+  polygons_count += count
+
+  metal4_blk = get_polygons(46, 5)
+  count = metal4_blk.count
+  logger.info("metal4_blk has #{count} polygons")
+  polygons_count += count
+end
+
+case METAL_LEVEL
+when '5LM', '6LM'
+  via4 = get_polygons(41, 0)
+  count = via4.count
+  logger.info("via4 has #{count} polygons")
+  polygons_count += count
+
+  metal5_drawn = get_polygons(81, 0)
+  count = metal5_drawn.count
+  logger.info("metal5_drawn has #{count} polygons")
+  polygons_count += count
+
+  metal5_dummy = get_polygons(81, 4)
+  count = metal5_dummy.count
+  logger.info("metal5_dummy has #{count} polygons")
+  polygons_count += count
+
+  metal5 = metal5_drawn + metal5_dummy
+
+  metal5_label = get_polygons(81, 10)
+  count = metal5_label.count
+  logger.info("metal5_label has #{count} polygons")
+  polygons_count += count
+
+  metal5_slot = get_polygons(81, 3)
+  count = metal5_slot.count
+  logger.info("metal5_slot has #{count} polygons")
+  polygons_count += count
+
+  metal5_blk = get_polygons(81, 5)
+  count = metal5_blk.count
+  logger.info("metal5_blk has #{count} polygons")
+  polygons_count += count
+end
+
+case METAL_LEVEL
+when '6LM'
+  via5 = get_polygons(82, 0)
+  count = via5.count
+  logger.info("via5 has #{count} polygons")
+  polygons_count += count
+
+  metaltop_drawn = get_polygons(53, 0)
+  count = metaltop_drawn.count
+  logger.info("metaltop_drawn has #{count} polygons")
+  polygons_count += count
+
+  metaltop_dummy = get_polygons(53, 4)
+  count = metaltop_dummy.count
+  logger.info("metaltop_dummy has #{count} polygons")
+  polygons_count += count
+
+  metaltop       = metaltop_drawn + metaltop_dummy
+
+  metaltop_label = get_polygons(53, 10)
+  count = metaltop_label.count
+  logger.info("metaltop_label has #{count} polygons")
+  polygons_count += count
+
+  metaltop_slot = get_polygons(53, 3)
+  count = metaltop_slot.count
+  logger.info("metaltop_slot has #{count} polygons")
+  polygons_count += count
+
+  metalt_blk = get_polygons(53, 5)
+  count = metalt_blk.count
+  logger.info("metalt_blk has #{count} polygons")
+  polygons_count += count
+end
+
+case METAL_LEVEL
+when '2LM'
+  top_via       = via1
+  topmin1_via   = contact
+  top_metal     = metal2
+  topmin1_metal = metal1
+when '3LM'
+  top_via       = via2
+  topmin1_via   = via1
+  top_metal     = metal3
+  topmin1_metal = metal2
+when '4LM'
+  top_via       = via3
+  topmin1_via   = via2
+  top_metal     = metal4
+  topmin1_metal = metal3
+when '5LM'
+  top_via       = via4
+  topmin1_via   = via3
+  top_metal     = metal5
+  topmin1_metal = metal4
+when '6LM'
+  top_via       = via5
+  topmin1_via   = via4
+  top_metal     = metaltop
+  topmin1_metal = metal5
+else
+  logger.error("Unknown metal stack #{METAL_LEVEL}")
+  raise
+end
+
+#======================================================================================================
+#--------------------------------------- LAYER DERIVATIONS --------------------------------------------
+#======================================================================================================
+
+logger.info('Starting GF180MCU DENSITY layer derivations.')
+
+#=====================================================================================================================
+#-------------------------------------------------- MAIN RUNSET ------------------------------------------------------
+#=====================================================================================================================
+
+logger.info('Starting GF180MCU DENSITY DRC rules.')
+
+# Rule DCF.1b: Minimum global density for active layers (COMP+ Dummy COMP) shall be 25%.
+logger.info('Executing rule DCF.1b')
+comp_ratio = comp.area / CHIP.area
+logger.info("COMP ratio: #{comp_ratio * 100} %")
+if (comp_ratio) * 100 < 25
+  logger.info('[ERROR] DCF.1b : Global density for active layers (COMP+ Dummy COMP) shall be >= 25%')
+  CHIP.output('DCF.1b',
+              'DCF.1b : Global density for active layers (COMP+ Dummy COMP) shall be >= 25%')
+end
+
+# Rule DCF.1d: Maximum global density for active layers (COMP+ Dummy COMP) shall be 70%.
+logger.info('Executing rule DCF.1d')
+if (comp_ratio) * 100 > 70
+  logger.info('[ERROR] DCF.1d : Global density for active layers (COMP+ Dummy COMP) shall be <= 70%')
+  CHIP.output('DCF.1d',
+              'DCF.1d : Global density for active layers (COMP+ Dummy COMP) shall be <= 70%')
+end
+
+# Rule PL.8: Poly2 coverage over the entire die shall be 14%.
+## Dummy poly2 lines must be added to meet the minimum poly2 density requirement.
+logger.info('Executing rule PL.8')
+poly2_ratio = poly2.area / CHIP.area
+logger.info("Poly2 ratio: #{poly2_ratio * 100} %")
+if (poly2_ratio) * 100 < 14
+  logger.info('[ERROR] PL.8 : Poly2 coverage over the entire die shall be >= 14%')
+  CHIP.output('PL.8',
+              'PL.8 : Poly2 coverage over the entire die shall be >= 14%
+               Dummy poly2 lines must be added to meet the minimum poly2 density requirement. : 14%')
+end
+
+# Rule M1.4: Metal1 coverage over the entire die shall be >30%
+## (Refer to section 13.0 for Dummy Metal fill guidelines.
+## Customer needs to ensure enough dummy metal to satisfy Metal1 coverage)
+logger.info('Executing rule M1.4')
+metal1_ratio = metal1.area / CHIP.area
+logger.info("Metal1 ratio: #{metal1_ratio * 100} %")
+if (metal1_ratio) * 100 < 30
+  logger.info('[ERROR] M1.4 : Metal1 coverage over the entire die shall be >30%')
+  CHIP.output('M1.4',
+              'M1.4 : Metal1 coverage over the entire die shall be >30%
+              (Refer to section 13.0 for Dummy Metal fill guidelines.
+               Customer needs to ensure enough dummy metal to satisfy Metal1 coverage) : 30%')
+end
+
+# Rule M2.4: Metal2 coverage over the entire die shall be >30%
+## (Refer to section 13.0 for Dummy Metal fill guidelines.
+## Customer needs to ensure enough dummy metal to satisfy Metal2 coverage)
+logger.info('Executing rule M2.4')
+metal2_ratio = metal2.area / CHIP.area
+logger.info("Metal2 ratio: #{metal2_ratio * 100} %")
+if (metal2_ratio) * 100 < 30
+  logger.info('[ERROR] M2.4 : Metal2 coverage over the entire die shall be >30%')
+  CHIP.output('M2.4',
+              'M2.4 : Metal2 coverage over the entire die shall be >30%
+               (Refer to section 13.0 for Dummy Metal fill guidelines.
+               Customer needs to ensure enough dummy metal to satisfy Metal2 coverage) : 30%')
+end
+
+if METAL_LEVEL == '3LM' || METAL_LEVEL == '4LM' || METAL_LEVEL == '5LM' || METAL_LEVEL == '6LM'
+  # Rule M3.4: metal3 coverage over the entire die shall be >30%
+  ## (Refer to section 13.0 for Dummy Metal fill guidelines.
+  ## Customer needs to ensure enough dummy metal to satisfy metal3 coverage)
+  logger.info('Executing rule M3.4')
+  metal3_ratio = metal3.area / CHIP.area
+  logger.info("Metal3 ratio: #{metal3_ratio * 100} %")
+  if (metal3_ratio) * 100 < 30
+    logger.info('[ERROR] M3.4 : metal3 coverage over the entire die shall be >30%')
+    CHIP.output('M3.4',
+                'M3.4 : metal3 coverage over the entire die shall be >30%
+                 (Refer to section 13.0 for Dummy Metal fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy metal3 coverage) : 30%')
+  end
+end
+
+if METAL_LEVEL == '4LM' || METAL_LEVEL == '5LM' || METAL_LEVEL == '6LM'
+  # Rule M4.4: metal4 coverage over the entire die shall be >30%
+  ## (Refer to section 13.0 for Dummy Metal fill guidelines.
+  ## Customer needs to ensure enough dummy metal to satisfy metal4 coverage)
+  logger.info('Executing rule M4.4')
+  metal4_ratio = metal4.area / CHIP.area
+  logger.info("Metal4 ratio: #{metal4_ratio * 100} %")
+  if (metal4_ratio) * 100 < 30
+    logger.info('[ERROR] M4.4 : metal4 coverage over the entire die shall be >30%')
+    CHIP.output('M4.4',
+                'M4.4 : metal4 coverage over the entire die shall be >30%
+                 (Refer to section 13.0 for Dummy Metal fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy metal4 coverage) : 30%')
+  end
+end
+
+if METAL_LEVEL == '5LM' || METAL_LEVEL == '6LM'
+  # Rule M5.4: metal5 coverage over the entire die shall be >30%
+  ## (Refer to section 13.0 for Dummy Metal fill guidelines.
+  ## Customer needs to ensure enough dummy metal to satisfy metal5 coverage)
+  logger.info('Executing rule M5.4')
+  metal5_ratio = metal5.area / CHIP.area
+  logger.info("Metal5 ratio: #{metal5_ratio * 100} %")
+  if (metal5_ratio) * 100 < 30
+    logger.info('[ERROR] M5.4 : metal5 coverage over the entire die shall be >30%')
+    CHIP.output('M5.4',
+                'M5.4 : metal5 coverage over the entire die shall be >30%
+                 (Refer to section 13.0 for Dummy Metal fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy metal5 coverage) : 30%')
+  end
+end
+
+if METAL_TOP == '30K'
+  # Rule MT30.7: Thick MetalTop coverage over the entire die shall be >30%
+  ## (Refer to section 13.0 for Dummy Metal-fill guidelines.
+  ## Customer needs to ensure enough dummy metal to satisfy Metaln coverage).
+  logger.info('Executing rule MT30.7')
+  top_metal_ratio = top_metal.area / CHIP.area
+  logger.info("MetalTop ratio: #{top_metal_ratio * 100} %")
+  if (top_metal_ratio) * 100 < 30
+    logger.info('[ERROR] MT30.7 : Thick MetalTop coverage over the entire die shall be >30%')
+    CHIP.output('MT30.7',
+                'MT30.7 : Thick MetalTop coverage over the entire die shall be >30%
+                 (Refer to section 13.0 for Dummy Metal-fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy Metaln coverage). : 30%')
+  end
+else
+  # Rule MT.3: MetalTop coverage over the entire die shall be >30%
+  ## (Refer to section 10.3 for Dummy Metal-fill guidelines.
+  ## Customer needs to ensure enough dummy metal to satisfy Metaln coverage)
+  logger.info('Executing rule MT.3')
+  top_metal_ratio = top_metal.area / CHIP.area
+  logger.info("MetalTop ratio: #{top_metal_ratio * 100} %")
+  if (top_metal_ratio) * 100 < 30
+    logger.info('[ERROR] MT.3 : MetalTop coverage over the entire die shall be >30%')
+    CHIP.output('MT.3',
+                'MT.3 : MetalTop coverage over the entire die shall be >30%
+                 (Refer to section 10.3 for Dummy Metal-fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy Metaln coverage) : 30%')
+  end
+end
+
+exec_end_time = Time.now
+run_time = exec_end_time - exec_start_time
+logger.info(format('DRC Total Run time %f seconds', run_time))
+
+#===================================
+#--------------- END ---------------
+#===================================

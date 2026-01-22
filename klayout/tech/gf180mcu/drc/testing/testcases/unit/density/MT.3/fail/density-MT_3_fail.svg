@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="1100" viewBox="-1050 -1050 1100 1100">
+<defs>
+<style type="text/css">
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l53d0 {stroke: #882D17; fill: #882D17; fill-opacity: 0.5;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+</style>
+</defs>
+<rect x="-1050" y="-1050" width="1100" height="1100" fill="#222222" stroke="none"/>
+<g id="MT_3_fail" transform="scale(1 -1)">
+<polygon id="0x23c9d30" class="l3d222" points="-1000,0 -1000,1000 0,1000 0,0"/>
+<polygon id="0x25d9b30" class="l53d0" points="-300,0 -300,999.9 0,999.9 0,0"/>
+<text id="0x271ad90" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-181.52 536.91) rotate(90) scale(0.2) scale(1 -1)">MT.3</text>
+</g>
+</svg>

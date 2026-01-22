@@ -1,0 +1,146 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if MIM_OPTION == 'A'
+  #================================================
+  #------------MIM CAPACITOR OPTION A -------------
+  #================================================
+
+  logger.info('MIM Capacitor Option A section')
+
+  mim_virtual = fusetop.sized(1.06.um).and(metal2.interacting(fusetop))
+
+  # Rule MIM.1: Minimum MiM bottom plate spacing to the bottom plate metal
+  ## (whether adjacent MiM or routing metal). is 1.2µm
+  logger.info('Executing rule MIM.1')
+  mim1_l1 = metal2.separation(mim_virtual, transparent, 1.2.um)
+  mim1_l1.output('MIM.1', 'MIM.1 : Minimum MiM bottom plate spacing to the bottom plate metal
+                 (whether adjacent MiM or routing metal). : 1.2µm')
+  mim1_l1.forget
+
+  # Rule MIM.2: Minimum MiM bottom plate overlap of Via2 layer.
+  ## [This is applicable for via2 within 1.06um oversize of FuseTop layer
+  ## (referenced to virtual bottom plate)]. is 0.4µm
+  logger.info('Executing rule MIM.2')
+  mim2_via = via2.overlapping(mim_virtual)
+  mim2_l1 = mim2_via.enclosed(metal2, 0.4.um, euclidian).polygons(0.001.um)
+  mim2_l2 = mim2_via.not_outside(metal2).not(metal2)
+  mim2_l  = mim2_l1.join(mim2_l2)
+  mim2_l.output('MIM.2', 'MIM.2 : Minimum MiM bottom plate overlap of Via2 layer.
+                 [This is applicable for via2 within 1.06um oversize of FuseTop layer
+                 (referenced to virtual bottom plate)]. : 0.4µm')
+  mim2_l1.forget
+  mim2_l2.forget
+  mim2_l.forget
+  mim2_via.forget
+
+  # Rule MIM.3: Minimum MiM bottom plate overlap of Top plate.
+  logger.info('Executing rule MIM.3')
+  mim3_l1 = fusetop.enclosed(mim_virtual, 0.6.um).polygons(0.001.um)
+  mim3_l2 = fusetop.not_inside(mim_virtual)
+  mim3_l = mim3_l1.join(mim3_l2)
+  mim3_l.output('MIM.3', 'MIM.3 : Minimum MiM bottom plate overlap of Top plate.')
+  mim3_l1.forget
+  mim3_l2.forget
+  mim_virtual.forget
+
+  # Rule MIM.4: Minimum MiM top plate (FuseTop) overlap of Via2. is 0.4µm
+  logger.info('Executing rule MIM.4')
+  mim4_l1 = via2.enclosed(fusetop, 0.4.um, euclidian).polygons(0.001.um)
+  mim4_l2 = via2.not_outside(fusetop).not(fusetop)
+  mim4_l  = mim4_l1.join(mim4_l2)
+  mim4_l.output('MIM.4', 'MIM.4 : Minimum MiM top plate (FuseTop) overlap of Via2. : 0.4µm')
+  mim4_l1.forget
+  mim4_l2.forget
+  mim4_l.forget
+
+  # Rule MIM.5: Minimum spacing between top plate and
+  ## the Via2 connecting to the bottom plate. is 0.4µm
+  logger.info('Executing rule MIM.5')
+  mim5_l1 = fusetop.separation(via2.interacting(metal2), 0.4.um, euclidian)
+  mim5_l1.output('MIM.5', 'MIM.5 : Minimum spacing between top plate and
+                  the Via2 connecting to the bottom plate. : 0.4µm')
+  mim5_l1.forget
+
+  # Rule MIM.6: Minimum spacing between unrelated top plates. is 0.6µm
+  logger.info('Executing rule MIM.6')
+  mim6_l1 = fusetop.space(0.6.um, euclidian)
+  mim6_l1.output('MIM.6', 'MIM.6 : Minimum spacing between unrelated top plates. : 0.6µm')
+  mim6_l1.forget
+
+  # Rule MIM.7: Min FuseTop enclosure by CAP_MK is 0um.
+  logger.info('Executing rule MIM.7')
+  mim7_l1 = fusetop.not(cap_mk)
+  mim7_l1.output('MIM.7', 'MIM.7 : Min FuseTop enclosure by CAP_MK: 0um')
+  mim7_l1.forget
+
+  # Rule MIM.8a: Minimum MIM cap area (defined by FuseTop area) is 25µm².
+  logger.info('Executing rule MIM.8a')
+  mim8a_l1 = fusetop.with_area(nil, 25.um)
+  mim8a_l1.output('MIM.8a', 'MIM.8a : Minimum MIM cap area (defined by FuseTop area): 25µm²')
+  mim8a_l1.forget
+
+  # Rule MIM.8b: Maximum single MIM Cap area (Use multiple MIM caps in parallel
+  ## connection if bigger capacitors are required) (um2). is 10000µm
+  logger.info('Executing rule MIM.8b')
+  mim8b_l1 = fusetop.with_area(10_001.um, nil)
+  mim8b_l1.output('MIM.8b', 'MIM.8b : Maximum single MIM Cap area (Use multiple MIM caps in parallel
+                   connection if bigger capacitors are required) (um2). : 10000µm')
+  mim8b_l1.forget
+
+  # Rule MIM.9: Min. via spacing for sea of via on MIM top plate. is 0.5µm
+  logger.info('Executing rule MIM.9')
+  mim9_l1 = via2.and(fusetop).space(0.5.um, euclidian)
+  mim9_l1.output('MIM.9', 'MIM.9 : Min. via spacing for sea of via on MIM top plate. : 0.5µm')
+  mim9_l1.forget
+
+  # Rule MIM.10: (a) There cannot be any Via1 touching MIM bottom plate Metal2.
+  ## (b) MIM bottom plate Metal2 can only be connected through the higher Via (Via2).
+  logger.info('Executing rule MIM.10')
+  mim10_l1 = via1.and(metal2.and(fusetop))
+  mim10_l1.output('MIM.10', 'MIM.10 : (a) There cannot be any Via1 touching MIM bottom plate Metal2.
+                  (b) MIM bottom plate Metal2 can only be connected through the higher Via (Via2).')
+  mim10_l1.forget
+
+  # Rule MIM.11: Bottom plate of multiple MIM caps can be shared (for common nodes)
+  # as long as total MIM area with that single common plate does not exceed MIM.8b rule.
+  logger.info('Executing rule MIM.11')
+  mim11_large_metal2 = metal2.interacting(fusetop).with_area(10_000, nil)
+  mim11_large_metal2_violation = polygon_layer
+  mim11_large_metal2.data.each do |p|
+    mim11_metal2_polygon_layer = polygon_layer
+    mim11_metal2_polygon_layer.data.insert(p)
+    fuse_in_polygon = fusetop.and(mim11_metal2_polygon_layer)
+    next unless fuse_in_polygon.area > 10_000
+
+    mim11_bad_metal2_polygon = mim11_metal2_polygon_layer.interacting(fuse_in_polygon)
+    mim11_bad_metal2_polygon.data.each do |b|
+      b.num_points.positive? && mim11_large_metal2_violation.data.insert(b)
+    end
+  end
+  mim11_l1 = mim11_large_metal2_violation
+  mim11_l1.output('MIM.11', 'MIM.11 : Bottom plate of multiple MIM caps can be shared (for common nodes)
+                  as long as total MIM area with that single common plate does not exceed MIM.8b rule.')
+  mim11_l1.forget
+  mim11_large_metal2.forget
+  mim11_large_metal2_violation.forget
+
+  # Rule MIM.12 is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_4_1.html
+
+end

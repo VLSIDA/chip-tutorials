@@ -1,0 +1,77 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2023 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+#================================================
+#--------------------LVPWELL---------------------
+#================================================
+if FEOL && SPLIT_DEEP
+
+  logger.info('Starting LVPWELL derivations')
+  lvpwell_dn_mv = lvpwell_dn.interacting(dualgate)
+
+  if CONNECTIVITY_RULES
+
+    logger.info('CONNECTIVITY_RULES section')
+
+    connected_lvpwell_3p3v, unconnected_lvpwell_3p3v = conn_space(lvpwell_dn, 0.86, 1.4, euclidian)
+    connected_lvpwell_5p0v, unconnected_lvpwell_5p0v = conn_space(lvpwell_dn, 0.86, 1.7, euclidian)
+
+    # Rule LPW.2a_LV: Min. LVPWELL to LVWELL Space (Inside DNWELL) [Different potential]. is 1.4µm
+    logger.info('Executing rule LPW.2a_LV')
+    lpw2a_l1 = unconnected_lvpwell_3p3v.not_interacting(v5_xtor).not_interacting(dualgate)
+    lpw2a_l1.output('LPW.2a_LV',
+                    'LPW.2a_LV : Min. LVPWELL to LVWELL Space (Inside DNWELL) [Different potential]. : 1.4µm')
+    lpw2a_l1.forget
+
+    # Rule LPW.2a_MV: Min. LVPWELL to LVPWELL Space (Inside DNWELL) [Different potential]. is 1.7µm
+    logger.info('Executing rule LPW.2a_MV')
+    lpw2a_l1 = unconnected_lvpwell_5p0v.overlapping(dualgate)
+    lpw2a_l1.output('LPW.2a_MV',
+                    'LPW.2a_MV : Min. LVPWELL to LVPWELL Space (Inside DNWELL) [Different potential]. : 1.7µm')
+    lpw2a_l1.forget
+
+    # Rule LPW.2b_LV: Min. LVPWELL to LVPWELL Space [Equi potential]. is 0.86µm
+    logger.info('Executing rule LPW.2b_LV')
+    lpw2b_l1 = connected_lvpwell_3p3v.not_interacting(v5_xtor).not_interacting(dualgate)
+    lpw2b_l1.output('LPW.2b_LV', 'LPW.2b_LV : Min. LVPWELL to LVPWELL Space [Equi potential]. : 0.86µm')
+    lpw2b_l1.forget
+
+    # Rule LPW.2b_MV: Min. LVPWELL to LVPWELL Space [Equi potential]. is 0.86µm
+    logger.info('Executing rule LPW.2b_MV')
+    lpw2b_l1 = connected_lvpwell_5p0v.overlapping(dualgate)
+    lpw2b_l1.output('LPW.2b_MV', 'LPW.2b_MV : Min. LVPWELL to LVPWELL Space [Equi potential]. : 0.86µm')
+    lpw2b_l1.forget
+
+  else
+    logger.info('CONNECTIVITY_RULES disabled section')
+
+    # Rule LPW.2a_LV: Min. LVPWELL to LVWELL Space (Inside DNWELL) [Different potential]. is 1.4µm
+    logger.info('Executing rule LPW.2a_LV')
+    lpw2a_l1 = lvpwell_dn.isolated(1.4.um, euclidian)
+    lpw2a_l1.output('LPW.2a_LV',
+                    'LPW.2a_LV : Min. LVPWELL to LVWELL Space (Inside DNWELL) [Different potential]. : 1.4µm')
+    lpw2a_l1.forget
+
+    # Rule LPW.2a_MV: Min. LVPWELL to LVPWELL Space (Inside DNWELL) [Different potential]. is 1.7µm
+    logger.info('Executing rule LPW.2a_MV')
+    lpw2a_l1 = lvpwell_dn_mv.isolated(1.7.um, euclidian)
+    lpw2a_l1.output('LPW.2a_MV',
+                    'LPW.2a_MV : Min. LVPWELL to LVPWELL Space (Inside DNWELL) [Different potential]. : 1.7µm')
+    lpw2a_l1.forget
+  end
+end

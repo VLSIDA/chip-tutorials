@@ -1,0 +1,107 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+  #================================================
+  #--------------------5V SRAM---------------------
+  #================================================
+
+  logger.info('Starting 5V SRAM derivations')
+
+  sram_mv = sramcore.overlapping(v5_xtor)
+  nw_n_dn_sram = nwell_n_dn.and(sram_mv)
+  poly_sram = poly2.and(sram_mv)
+  comp_sram = comp.and(sram_mv)
+  contact_sram = contact.and(sram_mv)
+  lvpwell_dn_sram = lvpwell_dn.and(sram_mv)
+  ncomp_dn_sram = ncomp.inside(dnwell).and(sramcore)
+
+  # Rule S.DF.4c_MV: Min. (Nwell overlap of PCOMP) outside DNWELL is 0.45µm.
+  logger.info('Executing rule S.DF.4c_MV')
+  pcomp_out_dn_sram = pcomp.outside(dnwell).and(sram_mv)
+  sdf4c_l1 = pcomp_out_dn_sram.enclosed(nw_n_dn_sram, 0.45.um, euclidian).polygons(0.001.um)
+  sdf4c_l2 = pcomp_out_dn_sram.not_outside(nw_n_dn_sram).not(nw_n_dn_sram)
+  sdf4c_l  = sdf4c_l1.or(sdf4c_l2)
+  sdf4c_l.output('S.DF.4c_MV', 'S.DF.4c_MV : Min. (Nwell overlap of PCOMP) outside DNWELL: 0.45µm')
+  sdf4c_l1.forget
+  sdf4c_l2.forget
+  sdf4c_l.forget
+  pcomp_out_dn_sram.forget
+
+  # Rule S.DF.6_MV: Min. COMP extend beyond gate (it also means source/drain overhang) is 0.32µm.
+  logger.info('Executing rule S.DF.6_MV')
+  sdf6_l1 = poly_sram.enclosed(comp_sram, 0.32.um, euclidian)
+  sdf6_l1.output('S.DF.6_MV',
+                 'S.DF.6_MV : Min. COMP extend beyond gate (it also means source/drain overhang): 0.32µm')
+  sdf6_l1.forget
+
+  # Rule S.DF.7_MV: Min. (LVPWELL Spacer to PCOMP) inside DNWELL is 0.45µm.
+  logger.info('Executing rule S.DF.7_MV')
+  sdf7_l1 = pcomp.inside(dnwell).and(sram_mv).separation(lvpwell_dn_sram, 0.45.um, euclidian)
+  sdf7_l1.output('S.DF.7_MV', 'S.DF.7_MV : Min. (LVPWELL Spacer to PCOMP) inside DNWELL: 0.45µm')
+  sdf7_l1.forget
+
+  # Rule S.DF.8_MV: Min. (LVPWELL overlap of NCOMP) Inside DNWELL is 0.45µm.
+  logger.info('Executing rule S.DF.8_MV')
+  sdf8_l1 = ncomp_dn_sram.enclosed(lvpwell_dn_sram, 0.45.um, euclidian).polygons(0.001.um)
+  sdf8_l2 = ncomp_dn_sram.not_outside(lvpwell_dn_sram).not(lvpwell_dn_sram)
+  sdf8_l  = sdf8_l1.or(sdf8_l2)
+  sdf8_l.output('S.DF.8_MV', 'S.DF.8_MV : Min. (LVPWELL overlap of NCOMP) Inside DNWELL: 0.45µm')
+  sdf8_l1.forget
+  sdf8_l2.forget
+  sdf8_l.forget
+  lvpwell_dn_sram.forget
+  ncomp_dn_sram.forget
+
+  # Rule S.DF.16_MV: Min. space from (Nwell outside DNWELL) to (NCOMP outside Nwell and DNWELL) is 0.45µm.
+  logger.info('Executing rule S.DF.16_MV')
+  sdf16_l1 = ncomp.outside(nwell).outside(dnwell).and(sram_mv).separation(nw_n_dn_sram, 0.45.um, euclidian)
+  sdf16_l1.output('S.DF.16_MV',
+                  'S.DF.16_MV : Min. space from (Nwell outside DNWELL) to (NCOMP outside Nwell and DNWELL): 0.45µm')
+  sdf16_l1.forget
+  sram_mv.forget
+  nw_n_dn_sram.forget
+
+  # Rule S.PL.5a_MV: Space from field Poly2 to unrelated
+  ## COMP/Spacer from field Poly2 to Guard-ring is 0.12µm.
+  logger.info('Executing rule S.PL.5a_MV')
+  spl5a_l1 = poly_sram.not_overlapping(comp_sram).separation(comp_sram, 0.12.um, euclidian)
+  spl5a_l1.output('S.PL.5a_MV', 'S.PL.5a_MV : Space from field Poly2 to unrelated
+                   COMP/Spacer from field Poly2 to Guard-ring: 0.12µm')
+  spl5a_l1.forget
+
+  # Rule S.PL.5b_MV: Space from field Poly2 to related COMP. is 0.12µm
+  logger.info('Executing rule S.PL.5b_MV')
+  spl5b_l1 = poly_sram.overlapping(comp_sram).separation(comp_sram, 0.12.um, euclidian)
+  spl5b_l1.output('S.PL.5b_MV', 'S.PL.5b_MV : Space from field Poly2 to related COMP: 0.12µm')
+  spl5b_l1.forget
+  poly_sram.forget
+
+  # Rule S.CO.4_MV: COMP overlap of contact is 0.04µm.
+  logger.info('Executing rule S.CO.4_MV')
+  sco4_l1 = contact_sram.enclosed(comp_sram, 0.04.um, euclidian).polygons(0.001.um)
+  sco4_l2 = contact_sram.not_outside(comp_sram).not(comp_sram)
+  sco4_l  = sco4_l1.or(sco4_l2)
+  sco4_l.output('S.CO.4_MV', 'S.CO.4_MV : COMP overlap of contact: 0.04µm')
+  sco4_l1.forget
+  sco4_l2.forget
+  sco4_l.forget
+  comp_sram.forget
+  contact_sram.forget
+
+end

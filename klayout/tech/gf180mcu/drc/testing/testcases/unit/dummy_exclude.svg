@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2230.459" height="3077.349" viewBox="-2144.3395 -2967.3695 2230.459 3077.349">
+<defs>
+<style type="text/css">
+.l152d5 {stroke: #2B3D26; fill: #2B3D26; fill-opacity: 0.5;}
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l2d222 {fill:none;stroke:green;stroke-dasharray:8,8;}
+.l111d5 {stroke: #E25822; fill: #E25822; fill-opacity: 0.5;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+.l58t0 {stroke: none; fill: #F3C300;}
+</style>
+</defs>
+<rect x="-2144.3395" y="-2967.3695" width="2230.459" height="3077.349" fill="#222222" stroke="none"/>
+<g id="10_8_DE" transform="scale(1 -1)">
+<polygon id="0x55914a8f0f70" class="l111d5" points="-1249.26,2137.69 -1249.26,2218.64 -1335.81,2218.64 -1354.56,2199.89 -1354.56,2137.69"/>
+<polygon id="0x55914a8f0fe0" class="l111d5" points="-75.81,65.63 -75.81,863.98 -1950.81,863.98 -1950.81,65.63"/>
+<polygon id="0x55914a8aec20" class="l152d5" points="-1128.86,2601.34 -1128.86,2609.29 -1129.86,2610.29 -1204.06,2610.29 -1204.06,2601.34"/>
+<polygon id="0x55914a9f8900" class="l152d5" points="-1696.41,2601.34 -1696.41,2651.34 -1704.41,2651.34 -1704.41,2601.34"/>
+<polygon id="0x55914a9f8970" class="l3d222" points="-1050.7,2498.63 -1050.7,2705.72 -1540.65,2705.72 -1540.65,2498.63"/>
+<polygon id="0x55914aa3e310" class="l3d222" points="-53.76,1071.87 -53.76,1982.72 -1992.35,1982.72 -1992.35,1071.87"/>
+<polygon id="0x55914aa3e380" class="l3d222" points="-1035.42,2118.4 -1035.42,2400.18 -1716.16,2400.18 -1716.16,2118.4"/>
+<polygon id="0x55914aa3e3f0" class="l2d222" points="-1605.49,2498.63 -1605.49,2705.72 -1997.88,2705.72 -1997.88,2498.63"/>
+<polygon id="0x55914ab485c0" class="l2d222" points="-53.76,29.9 -53.76,961.5 -1992.35,961.5 -1992.35,29.9"/>
+<polygon id="0x55914ab48630" class="l2d222" points="-1732.63,2118.4 -1732.63,2400.18 -1991.09,2400.18 -1991.09,2118.4"/>
+<polygon id="0x55914aa0def0" class="l111d5" points="-1942.81,2601.34 -1942.81,2651.34 -1950.81,2651.34 -1950.81,2601.34"/>
+<polygon id="0x55914a908330" class="l111d5" points="-1900.81,2345.49 -1900.81,2395.49 -1950.81,2395.49 -1950.81,2345.49"/>
+<polygon id="0x55914a908270" class="l111d5" points="-1491.71,2345.49 -1491.71,2395.49 -1541.71,2395.49 -1541.71,2345.49"/>
+<polygon id="0x55914a895050" class="l111d5" points="-1696.21,2168.59 -1696.21,2218.59 -1746.21,2218.59 -1746.21,2168.59"/>
+<polygon id="0x55914a894f90" class="l111d5" points="-1442.51,2601.34 -1442.51,2651.29 -1450.46,2651.29 -1450.46,2601.34"/>
+<polygon id="0x55914ac4f5f0" class="l111d5" points="-1442.51,2601.34 -1442.51,2651.29 -1450.46,2651.29 -1450.46,2601.34"/>
+<polygon id="0x55914ac4f530" class="l111d5" points="-75.81,1132.48 -75.81,1932.53 -1950.81,1932.53 -1950.81,1132.48"/>
+<text id="0x55914aa0dfb0" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1950.21 37.66) scale(2) scale(1 -1)">DE.3</text>
+<text id="0x55914aa6efd0" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1958.98 1087.92) scale(2) scale(1 -1)">DE.3</text>
+<text id="0x55914ab4f770" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1681.23 2140.12) scale(2) scale(1 -1)">DE.4</text>
+<text id="0x55914ab4f800" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1950.21 2140.12) scale(2) scale(1 -1)">DE.4</text>
+<text id="0x55914ab4f890" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1950.21 2509.93) scale(2) scale(1 -1)">DE.2</text>
+<text id="0x55914ab6ade0" class="l11t222" text-anchor="start" dominant-baseline="text-after-edge" transform="translate(-1467.55 2509.93) scale(2) scale(1 -1)">DE.2</text>
+<text id="0x55914ab6ae70" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-889.31 2620.75) scale(2) scale(1 -1)">2 ERRs</text>
+<text id="0x55914ab59dd0" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-2000.25 2103.95) scale(1 -1)">DE.3 (a) Maximum NDMY size (sq um) = 15000</text>
+<text id="0x55914ab59e60" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-2000.06 2769.05) scale(1 -1)">DE.2 Minimum DNDMY or PMNDMY size (x or y dimension in um) = 0.8</text>
+<text id="0x55914abbe9e0" class="l58t0" text-anchor="middle" dominant-baseline="central" transform="translate(-1402.96 2827.49) scale(3) scale(1 -1)">NDMY and PMNDMY</text>
+<text id="0x55914abbea90" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-2004.46 2438.55) scale(1 -1)">DE.4 Minimum NDMY to NDMY space = 20</text>
+<text id="0x55914abc4be0" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-2000.25 2080.95) scale(1 -1)">DE.3 (b) If size greater than 15000um (sq) then one side cannot be greater than (um) = 80</text>
+<text id="0x55914abc4ce0" class="l58t0" text-anchor="start" dominant-baseline="central" transform="translate(-889.31 2274.25) scale(2) scale(1 -1)">2 ERRs</text>
+</g>
+</svg>

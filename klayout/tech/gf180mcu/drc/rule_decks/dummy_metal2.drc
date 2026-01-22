@@ -1,0 +1,63 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if DUMMY && (METAL_LEVEL == '3LM' || METAL_LEVEL == '4LM' || METAL_LEVEL == '5LM' || METAL_LEVEL == '6LM')
+  #================================================
+  #----------------- Dummy METAL2 -----------------
+  #================================================
+
+  # Rule DM2.2b: Min Dummy metal line space (for DRC): 0.98
+  logger.info('Executing rule DM2.2b')
+  dm2_2b_l1 = metal2_dummy.space(0.98.um, euclidian)
+  dm2_2b_l1.output('DM2.2b', 'DM2.2b : Min Dummy metal line space (for DRC): 0.98')
+  dm2_2b_l1.forget
+
+  # Rule DM2.3: Minimum space between dummy metal and circuit Metal line: 2
+  logger.info('Executing rule DM2.3')
+  dm2_3_l1 = metal2_dummy.separation(metal2, 2.um, euclidian)
+  dm2_3_l1.output('DM2.3', 'DM2.3 : Minimum space between dummy metal and circuit Metal line: 2')
+  dm2_3_l1.forget
+
+  if DUMMY_SUB_PREV
+
+    # Rule DM2.4_DM2.6: Dummy Metal space (no overlap) to Subsequent Metal layer: 1
+    logger.info('Executing rule DM2.4_DM2.6')
+    dm2_4_dm2_6_l1 = metal2_dummy.separation(metal3_drawn, 1.um, euclidian)
+    dm2_4_dm2_6_l1.output('DM2.4_DM2.6', 'DM2.4_DM2.6 : Dummy Metal space (no overlap) to Subsequent Metal layer: 1')
+    dm2_4_dm2_6_l1.forget
+
+    # Rule DM2.5_DM2.7: Dummy Metal space (no overlap) to Previous Metal layer: 1
+    logger.info('Executing rule DM2.5_DM2.7')
+    dm2_5_dm2_7_l1 = metal2_dummy.separation(metal1_drawn, 1.um, euclidian)
+    dm2_5_dm2_7_l1.output('DM2.5_DM2.7', 'DM2.5_DM2.7 : Dummy Metal space (no overlap) to Previous Metal layer: 1')
+    dm2_5_dm2_7_l1.forget
+
+  end
+
+  # Rule DM2.8: Minimum space between dummy metal and FuseTop, POLYFUSE, FUSEWINDOW_D, PMNDMY, MTPMK, OTP_MK: 6
+  logger.info('Executing rule DM2.8')
+  dm2_8_l1 = metal2_dummy.separation(fusetop, 6.um, euclidian)
+  dm2_8_l1 += metal2_dummy.separation(polyfuse, 6.um, euclidian)
+  dm2_8_l1 += metal2_dummy.separation(fusewindow_d, 6.um, euclidian)
+  dm2_8_l1 += metal2_dummy.separation(pmndmy, 6.um, euclidian)
+  dm2_8_l1 += metal2_dummy.separation(mtpmark, 6.um, euclidian)
+  dm2_8_l1 += metal2_dummy.separation(otp_mk, 6.um, euclidian)
+  dm2_8_l1.output('DM2.8', 'DM2.8 : Minimum space between dummy metal and FuseTop, POLYFUSE, FUSEWINDOW_D, PMNDMY, MTPMK, OTP_MK: 6')
+  dm2_8_l1.forget
+
+end

@@ -1,0 +1,59 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+# This is hardcoded for 5 Metal layers
+
+if DUMMY && (METAL_LEVEL == '5LM')
+  #================================================
+  #----------------- Dummy METAL5 -----------------
+  #================================================
+
+  # Rule DM5.2b: Min Dummy metal line space (for DRC): 0.98
+  logger.info('Executing rule DM5.2b')
+  dm5_2b_l1 = metal5_dummy.space(0.98.um, euclidian)
+  dm5_2b_l1.output('DM5.2b', 'DM5.2b : Min Dummy metal line space (for DRC): 0.98')
+  dm5_2b_l1.forget
+
+  if DUMMY_SUB_PREV
+
+    # Rule DM5.3: Minimum space between dummy metal and circuit Metal line: 2
+    logger.info('Executing rule DM5.3')
+    dm5_3_l1 = metal5_dummy.separation(metal5, 2.um, euclidian)
+    dm5_3_l1.output('DM5.3', 'DM5.3 : Minimum space between dummy metal and circuit Metal line: 2')
+    dm5_3_l1.forget
+
+    # Rule DM5.5_DM5.7: Dummy Metal space (no overlap) to Previous Metal layer: 1
+    logger.info('Executing rule DM5.5_DM5.7')
+    dm5_5_dm5_7_l1 = metal5_dummy.separation(metal4_drawn, 1.um, euclidian)
+    dm5_5_dm5_7_l1.output('DM5.5_DM5.7', 'DM5.5_DM5.7 : Dummy Metal space (no overlap) to Previous Metal layer: 1')
+    dm5_5_dm5_7_l1.forget
+
+  end
+
+  # Rule DM5.8: Minimum space between dummy metal and FuseTop, POLYFUSE, FUSEWINDOW_D, PMNDMY, MTPMK, OTP_MK: 6
+  logger.info('Executing rule DM5.8')
+  dm5_8_l1 = metal5_dummy.separation(fusetop, 6.um, euclidian)
+  dm5_8_l1 += metal5_dummy.separation(polyfuse, 6.um, euclidian)
+  dm5_8_l1 += metal5_dummy.separation(fusewindow_d, 6.um, euclidian)
+  dm5_8_l1 += metal5_dummy.separation(pmndmy, 6.um, euclidian)
+  dm5_8_l1 += metal5_dummy.separation(mtpmark, 6.um, euclidian)
+  dm5_8_l1 += metal5_dummy.separation(otp_mk, 6.um, euclidian)
+  dm5_8_l1.output('DM5.8', 'DM5.8 : Minimum space between dummy metal and FuseTop, POLYFUSE, FUSEWINDOW_D, PMNDMY, MTPMK, OTP_MK: 6')
+  dm5_8_l1.forget
+
+end

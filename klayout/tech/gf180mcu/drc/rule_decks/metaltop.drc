@@ -1,0 +1,83 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+#================================================
+#--------------------METALTOP--------------------
+#================================================
+if BEOL
+
+  case METAL_TOP
+  when '6K'
+    logger.info('MetalTop thickness 6k section')
+
+    # Rule MT.1: min. metaltop width is 0.36µm
+    logger.info('Executing rule MT.1')
+    mt1_l1 = top_metal.width(0.36.um, euclidian)
+    mt1_l1.output('MT.1', 'MT.1 : min. metaltop width : 0.36µm')
+    mt1_l1.forget
+
+    # Rule MT.2a: min. metaltop spacing is 0.38µm
+    logger.info('Executing rule MT.2a')
+    mt2a_l1 = top_metal.space(0.38.um, euclidian)
+    mt2a_l1.output('MT.2a', 'MT.2a : min. metaltop spacing : 0.38µm')
+    mt2a_l1.forget
+
+    # Rule MT.2b: Space to wide metaltop (length & width > 10um) is 0.5µm
+    logger.info('Executing rule MT.2b')
+    wide_top_metal = top_metal.sized(-5.um, 0.um).sized(0.um, -5.um).sized(5.um, 0.um).sized(0.um, 5.um).and(top_metal)
+    mt2b_l1 = top_metal.separation(wide_top_metal, 0.5.um, euclidian, without_touching_edges)
+    mt2b_l1.output('MT.2b', 'MT.2b : Space to wide metaltop (length & width > 10um) : 0.5µm')
+    mt2b_l1.forget
+    wide_top_metal.forget
+
+    # Rule MT.4: Minimum MetalTop area is 0.5625µm²
+    logger.info('Executing rule MT.4')
+    mt4_l1 = top_metal.with_area(nil, 0.5625.um)
+    mt4_l1.output('MT.4', 'MT.4 : Minimum MetalTop area : 0.5625µm²')
+    mt4_l1.forget
+
+  when '9K', '11K'
+    logger.info('MetalTop thickness 9k/11k section')
+
+    # Rule MT.1: min. metaltop width is 0.44µm
+    logger.info('Executing rule MT.1')
+    mt1_l1 = top_metal.width(0.44.um, euclidian)
+    mt1_l1.output('MT.1', 'MT.1 : min. metaltop width : 0.44µm')
+    mt1_l1.forget
+
+    # Rule MT.2a: min. metaltop spacing is 0.46µm
+    logger.info('Executing rule MT.2a')
+    mt2a_l1 = top_metal.space(0.46.um, euclidian)
+    mt2a_l1.output('MT.2a', 'MT.2a : min. metaltop spacing : 0.46µm')
+    mt2a_l1.forget
+
+    # Rule MT.2b: Space to wide Metal2 (length & width > 10um) is 0.6µm
+    logger.info('Executing rule MT.2b')
+    wide_top_metal = top_metal.sized(-5.um, 0.um).sized(0.um, -5.um).sized(5.um, 0.um).sized(0.um, 5.um).and(top_metal)
+    mt2b_l1 = top_metal.separation(wide_top_metal, 0.6.um, euclidian)
+    mt2b_l1.output('MT.2b', 'MT.2b : Space to wide metaltop (length & width > 10um) : 0.6µm')
+    mt2b_l1.forget
+    wide_top_metal.forget
+
+    # Rule MT.4: Minimum MetalTop area is 0.5625µm²
+    logger.info('Executing rule MT.4')
+    mt4_l1 = top_metal.with_area(nil, 0.5625.um)
+    mt4_l1.output('MT.4', 'MT.4 : Minimum MetalTop area : 0.5625µm²')
+    mt4_l1.forget
+  end
+end

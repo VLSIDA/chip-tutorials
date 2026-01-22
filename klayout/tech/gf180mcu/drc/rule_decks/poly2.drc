@@ -1,0 +1,191 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+  #================================================
+  #---------------------POLY2----------------------
+  #================================================
+
+  logger.info('Starting POLY2 derivations')
+
+  poly2_lv = poly2.not_interacting(v5_xtor).not_interacting(dualgate)
+  poly2_mv = poly2.overlapping(dualgate)
+  poly_pl_lv = poly2_lv.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)
+  poly_pl_mv = poly2_mv.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)
+
+  # Rule PL.1_LV: Interconnect Width (outside PLFUSE) is 0.18µm.
+  logger.info('Executing rule PL.1_LV')
+  pl1_l1 = poly2_lv.outside(plfuse).not(ymtp_mk).width(0.18.um, euclidian)
+  pl1_l1.output('PL.1_LV', 'PL.1_LV : Interconnect Width (outside PLFUSE). : 0.18µm')
+  pl1_l1.forget
+
+  # Rule PL.1_MV: Interconnect Width (outside PLFUSE) is 0.2µm.
+  logger.info('Executing rule PL.1_MV')
+  pl1_l1 = poly2_mv.outside(plfuse).not(ymtp_mk).width(0.2.um, euclidian)
+  pl1_l1.output('PL.1_MV', 'PL.1_MV : Interconnect Width (outside PLFUSE). : 0.2µm')
+  pl1_l1.forget
+
+  # Rule PL.1a_LV: Interconnect Width (inside PLFUSE) is 0.18µm.
+  logger.info('Executing rule PL.1a_LV')
+  pl1a_l1 = poly2_lv.inside(plfuse).width(0.18.um, euclidian)
+  pl1a_l1.output('PL.1a_LV', 'PL.1a_LV : Interconnect Width (inside PLFUSE). : 0.18µm')
+  pl1a_l1.forget
+
+  # Rule PL.1a_MV: Interconnect Width (inside PLFUSE) is 0.18µm.
+  logger.info('Executing rule PL.1a_MV')
+  pl1a_l1 = poly2_mv.inside(plfuse).width(0.18.um, euclidian)
+  pl1a_l1.output('PL.1a_MV', 'PL.1a_MV : Interconnect Width (inside PLFUSE). : 0.18µm')
+  pl1a_l1.forget
+  poly2_mv.forget
+
+  # Rule PL.2_LV: Gate Width (Channel Length) is 0.28µm.
+  logger.info('Executing rule PL.2_LV')
+  pl2_l1 = tgate.interacting(poly2_lv).not(otp_mk).not(ymtp_mk)
+  pl2_l = pl2_l1.edges.inside_part(comp).width(0.28.um, euclidian)
+  pl2_l.output('PL.2_LV', 'PL.2_LV : Gate Width (Channel Length). : 0.28µm')
+  pl2_l.forget
+  pl2_l1.forget
+  poly2_lv.forget
+
+  # Rule PL.2_MV: Gate Width (Channel Length).
+  logger.info('Executing rule PL.2_MV')
+  pl_2_mv_n = ngate_5v.edges.inside_part(comp).width(0.6.um, euclidian).polygons
+  pl_2_mv_p = pgate_5v.edges.inside_part(comp).width(0.5.um, euclidian).polygons
+  pl_2_6v_n = ngate_6v.edges.inside_part(comp).width(0.7.um, euclidian).polygons
+  pl_2_6v_p = pgate_6v.edges.inside_part(comp).width(0.55.um, euclidian).polygons
+  pl2_l1 = pl_2_mv_n.or(pl_2_mv_p).or(pl_2_6v_n.or(pl_2_6v_p))
+  pl2_l1.output('PL.2_MV', 'PL.2_MV : Gate Width (Channel Length).')
+  pl2_l1.forget
+  pl_2_mv_n.forget
+  pl_2_mv_p.forget
+  pl_2_6v_n.forget
+  pl_2_6v_p.forget
+
+  # Rule PL.3a: Space on COMP/Field is 0.24µm.
+  logger.info('Executing rule PL.3a')
+  pl3a_l1 = tgate.or(poly2.not(comp)).not(otp_mk).space(0.24.um, euclidian)
+  pl3a_l1.output('PL.3a', 'PL.3a : Space on COMP/Field: 0.24µm')
+  pl3a_l1.forget
+
+  # Rule PL.3b_LV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_08.html
+
+  # Rule PL.3b_MV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_08.html
+
+  # Rule PL.4_LV: Extension beyond COMP to form Poly2 end cap. is 0.22µm
+  logger.info('Executing rule PL.4_LV')
+  comp_pl = comp.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)
+  pl4_l1 = comp_pl.enclosed(poly_pl_lv, 0.22.um, euclidian)
+  pl4_l1.output('PL.4_LV', 'PL.4_LV : Extension beyond COMP to form Poly2 end cap. : 0.22µm')
+  pl4_l1.forget
+
+  # Rule PL.4_MV: Extension beyond COMP to form Poly2 end cap. is 0.22µm
+  logger.info('Executing rule PL.4_MV')
+  pl4_l1 = comp_pl.enclosed(poly_pl_mv, 0.22.um, euclidian)
+  pl4_l1.output('PL.4_MV', 'PL.4_MV : Extension beyond COMP to form Poly2 end cap. : 0.22µm')
+  pl4_l1.forget
+
+  # Rule PL.5a_LV: Space from field Poly2 to unrelated COMP Spacer from field Poly2 to Guard-ring. is 0.1µm
+  logger.info('Executing rule PL.5a_LV')
+  pl5a_l1 = poly_pl_lv.separation(comp_pl, 0.1.um, euclidian)
+  pl5a_l1.output('PL.5a_LV',
+                 'PL.5a_LV : Space from field Poly2 to unrelated COMP Spacer from field Poly2 to Guard-ring. : 0.1µm')
+  pl5a_l1.forget
+
+  # Rule PL.5a_MV: Space from field Poly2 to unrelated COMP Spacer from field Poly2 to Guard-ring. is 0.3µm
+  logger.info('Executing rule PL.5a_MV')
+  pl5a_l1 = poly_pl_mv.outside(sramcore).separation(comp_pl, 0.3.um, euclidian)
+  pl5a_l1.output('PL.5a_MV',
+                 'PL.5a_MV : Space from field Poly2 to unrelated COMP Spacer from field Poly2 to Guard-ring. : 0.3µm')
+  pl5a_l1.forget
+
+  # Rule PL.5b_LV: Space from field Poly2 to related COMP. is 0.1µm
+  logger.info('Executing rule PL.5b_LV')
+  pl5b_l1 = poly_pl_lv.separation(comp_pl, 0.1.um, euclidian)
+  pl5b_l1.output('PL.5b_LV', 'PL.5b_LV : Space from field Poly2 to related COMP. : 0.1µm')
+  pl5b_l1.forget
+
+  # Rule PL.5b_MV: Space from field Poly2 to related COMP. is 0.3µm
+  logger.info('Executing rule PL.5b_MV')
+  pl5b_l1 = poly_pl_mv.outside(sramcore).separation(comp_pl, 0.3.um, euclidian)
+  pl5b_l1.output('PL.5b_MV', 'PL.5b_MV : Space from field Poly2 to related COMP. : 0.3µm')
+  pl5b_l1.forget
+  poly_pl_lv.forget
+  poly_pl_mv.forget
+  comp_pl.forget
+
+  # Rule PL.6: 90 degree bends on the COMP are not allowed.
+  logger.info('Executing rule PL.6')
+  pl6_l1 = poly2.corners(90.0).sized(0.1).or(poly2.corners(-90.0).sized(0.1)).not(ymtp_mk).inside(comp.not(ymtp_mk))
+  pl6_l1.output('PL.6', 'PL.6 : 90 degree bends on the COMP are not allowed.')
+  pl6_l1.forget
+
+  # Rule PL.7_LV: 45 degree bent gate width is 0.3µm
+  logger.info('Executing rule PL.7_LV')
+  nom_e1 = nom_gate.edges.inside_part(comp).with_angle(25, 65)
+  nom_e2 = nom_gate.edges.inside_part(comp).with_angle(-65, -25)
+  pl7_edges_nom = nom_e1.or(nom_e2)
+  pl7_l1 = pl7_edges_nom.width(0.3.um, euclidian)
+  pl7_l1.output('PL.7_LV', 'PL.7_LV : 45 degree bent gate width : 0.3µm')
+  pl7_l1.forget
+  nom_e1.forget
+  nom_e2.forget
+  pl7_edges_nom.forget
+
+  # Rule PL.7_MV: 45 degree bent gate width is 0.7µm.
+  logger.info('Executing rule PL.7_MV')
+  thick_e1 = thick_gate.edges.inside_part(comp).with_angle(25, 65)
+  thick_e2 = thick_gate.edges.inside_part(comp).with_angle(-65, -25)
+  pl7_edges_thick = thick_e1.or(thick_e2)
+  pl7_l2 = pl7_edges_thick.width(0.7.um, euclidian)
+  pl7_l2.output('PL.7_MV', 'PL.7_MV : 45 degree bent gate width: 0.7µm')
+  pl7_l2.forget
+  thick_e1.forget
+  thick_e2.forget
+  pl7_edges_thick.forget
+
+  # Rule PL.9: Poly2 inter connect connecting 3.3V and 5V areas (area inside and outside Dualgate)
+  ## are not allowed. They shall be done though metal lines only.
+  logger.info('Executing rule PL.9')
+  pl9_l1 = poly2.interacting(poly2.not(v5_xtor).not(dualgate)).interacting(poly2.and(dualgate))
+  pl9_l1.output('PL.9',
+                'PL.9 : Poly2 inter connect connecting 3.3V and 5V areas (area inside and outside Dualgate)
+                 are not allowed. They shall be done though metal lines only.')
+  pl9_l1.forget
+
+  # Rule PL.10 is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_08.html
+
+  # Rule PL.11: V5_Xtor must enclose 5V device.
+  logger.info('Executing rule PL.11')
+  pl11_l1 = v5_xtor.not_interacting(dualgate.or(otp_mk))
+  pl11_l1.output('PL.11', 'PL.11 : V5_Xtor must enclose 5V device.')
+  pl11_l1.forget
+
+  # Rule PL.12_LV is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_07_08.html
+
+  # Rule PL.12: V5_Xtor enclose 5V Comp.
+  logger.info('Executing rule PL.12')
+  pl12_comp = comp.interacting(poly2)
+  pl12_l1 = pl12_comp.interacting(v5_xtor).not(v5_xtor)
+  pl12_l1.output('PL.12', 'PL.12 : V5_Xtor enclose 5V Comp.')
+  pl12_l1.forget
+  pl12_comp.forget
+end

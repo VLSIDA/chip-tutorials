@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28930.924" height="16022.854" viewBox="-28213.232 -19165.882 28930.924 16022.854">
+<defs>
+<style type="text/css">
+.l81d0 {stroke: #A1CAF1; fill: #A1CAF1; fill-opacity: 0.5;}
+.l14d222 {stroke: #F38400; fill: #F38400; fill-opacity: 0.5;}
+.l3d222 {fill:none;stroke:red;stroke-dasharray:8,8;}
+.l2d222 {fill:none;stroke:green;stroke-dasharray:8,8;}
+.l11t222 {stroke: none; fill: #2B3D26;}
+.l12t222 {stroke: none; fill: #F3C300;}
+</style>
+</defs>
+<rect x="-28213.232" y="-19165.882" width="28930.924" height="16022.854" fill="#222222" stroke="none"/>
+<g id="metal5" transform="scale(1 -1)">
+<polygon id="0x55582d8aafd0" class="l2d222" points="-5122.57,8492.69 -5122.57,8499.45 -5116.67,8499.45 -5116.67,8492.69"/>
+<polygon id="0x55582d8e3c10" class="l3d222" points="-897.73,8492.81 -897.73,8500.44 -889,8500.44 -889,8492.81"/>
+<polygon id="0x55582d8e3b50" class="l81d0" points="-896.73,8493.81 -896.73,8495.81 -896.13,8495.81 -896.13,8493.81"/>
+<polygon id="0x55582d8e3a90" class="l81d0" points="-893.38,8494.41 -893.38,8496.41 -892.98,8496.41 -892.98,8494.41"/>
+<polygon id="0x55582d8a6fb0" class="l2d222" points="-26831.71,4458.07 -26831.71,4605.19 -26754.95,4605.19 -26754.95,4458.07"/>
+<polygon id="0x55582d8e35f0" class="l3d222" points="-944.91,8492.81 -944.91,8498.93 -932.69,8498.93 -932.69,8492.81"/>
+<polygon id="0x55582d8a7090" class="l14d222" points="-26830.61,4459.17 -26830.61,4460.88 -26828.9,4460.88 -26828.9,4459.17"/>
+<polygon id="0x55582d8a7100" class="l81d0" points="-26829.19,4459.17 -26830.61,4460.59 -26830.32,4460.88 -26828.9,4459.46"/>
+<polygon id="0x55582d8e3530" class="l81d0" points="-943.91,8493.81 -943.91,8494.41 -941.91,8494.41 -941.91,8493.81"/>
+<polygon id="0x55582d8a71e0" class="l14d222" points="-26898.19,4461.95 -26898.19,4604.09 -26756.05,4604.09 -26756.05,4461.95"/>
+<polygon id="0x55582d8a7250" class="l81d0" points="-26827.12,4461.95 -26898.19,4533.02 -26827.12,4604.09 -26756.05,4533.02"/>
+<polygon id="0x55582d8e2e60" class="l81d0" points="-939.16,8494.01 -939.16,8494.41 -937.16,8494.41 -937.16,8494.01"/>
+<polygon id="0x55582d8a7330" class="l81d0" points="-26644.45,4558.07 -26644.45,4560.07 -26644.05,4560.07 -26644.05,4558.07"/>
+<polygon id="0x55582d8a73f0" class="l2d222" points="-26748.95,4458.07 -26748.95,4669.8 -26534.32,4669.8 -26534.32,4458.07"/>
+<polygon id="0x55582d8e31f0" class="l3d222" points="-1001.19,8492.81 -1001.19,8500.53 -990.57,8500.53 -990.57,8492.81"/>
+<polygon id="0x55582d8a7570" class="l14d222" points="-26677.46,4526.66 -26677.46,4668.8 -26535.32,4668.8 -26535.32,4526.66"/>
+<polygon id="0x55582d8a7630" class="l81d0" points="-26606.39,4526.66 -26677.46,4597.73 -26606.39,4668.8 -26535.32,4597.73"/>
+<polygon id="0x55582d8e3130" class="l81d0" points="-1000.19,8493.81 -1000.19,8494.41 -998.19,8494.41 -998.19,8493.81"/>
+<polygon id="0x55582d8e3070" class="l81d0" points="-995.44,8494.01 -995.44,8496.01 -995.04,8496.01 -995.04,8494.01"/>
+<polygon id="0x55582d8a7900" class="l81d0" points="-26424.69,4561.7 -26424.69,4563.7 -26424.29,4563.7 -26424.29,4561.7"/>
+<polygon id="0x55582d8a79c0" class="l81d0" points="-26527.32,4459.07 -26527.32,4559.57 -26426.82,4559.57 -26426.82,4459.07"/>
+<polygon id="0x55582d8a7a80" class="l2d222" points="-26528.32,4458.07 -26528.32,4673.43 -26314.56,4673.43 -26314.56,4458.07"/>
+<polygon id="0x55582d8e2c20" class="l3d222" points="-912.41,8492.81 -912.41,8501.79 -903.33,8501.79 -903.33,8492.81"/>
+<polygon id="0x55582d8e2b60" class="l81d0" points="-911.41,8493.81 -911.41,8496.81 -910.81,8496.81 -910.81,8493.81"/>
+<polygon id="0x55582d8a7d00" class="l81d0" points="-25991.75,4558.07 -25991.75,4560.07 -25991.35,4560.07 -25991.35,4558.07"/>
+<polygon id="0x55582d8a7dc0" class="l81d0" points="-26092.05,4459.07 -26092.05,4559.57 -25991.55,4559.57 -25991.55,4459.07"/>
+<polygon id="0x55582d8b6940" class="l2d222" points="-26093.05,4458.07 -26093.05,4667.54 -25883.88,4667.54 -25883.88,4458.07"/>
+<polygon id="0x55582d8e2aa0" class="l81d0" points="-908.06,8495.41 -908.06,8497.41 -907.66,8497.41 -907.66,8495.41"/>
+<polygon id="0x55582d8e2680" class="l3d222" points="-927.09,8492.81 -927.09,8502.79 -918.01,8502.79 -918.01,8492.81"/>
+<polygon id="0x55582d8b6bf0" class="l81d0" points="-25776.38,4558.07 -25776.38,4560.07 -25775.98,4560.07 -25775.98,4558.07"/>
+<polygon id="0x55582d8b6cb0" class="l81d0" points="-25876.88,4459.07 -25876.88,4559.57 -25776.38,4559.57 -25776.38,4459.07"/>
+<polygon id="0x55582d8b6d70" class="l2d222" points="-25877.88,4458.07 -25877.88,4667.68 -25668.37,4667.68 -25668.37,4458.07"/>
+<polygon id="0x55582d8e25c0" class="l81d0" points="-926.09,8493.81 -926.09,8496.81 -925.49,8496.81 -925.49,8493.81"/>
+<polygon id="0x55582d8e2500" class="l81d0" points="-922.74,8495.41 -922.74,8498.41 -922.34,8498.41 -922.34,8495.41"/>
+<polygon id="0x55582d8b6ff0" class="l81d0" points="-25507.62,4559.17 -25507.62,4562.17 -25507.22,4562.17 -25507.22,4559.17"/>
+<polygon id="0x55582d8b70b0" class="l81d0" points="-25661.37,4459.07 -25661.37,4559.57 -25510.62,4559.57 -25510.62,4459.07"/>
+<polygon id="0x55582d8b7170" class="l2d222" points="-25662.37,4458.07 -25662.37,4707.43 -25361.96,4707.43 -25361.96,4458.07"/>
+<polygon id="0x55582d8e2100" class="l3d222" points="-964.44,8492.81 -964.44,8499.64 -950.51,8499.64 -950.51,8492.81"/>
+<polygon id="0x55582d8e2040" class="l81d0" points="-963.44,8493.81 -963.44,8494.41 -960.44,8494.41 -960.44,8493.81"/>
+<polygon id="0x55582d8b7420" class="l81d0" points="-25251.46,4559.17 -25251.46,4562.17 -25251.06,4562.17 -25251.06,4559.17"/>
+<polygon id="0x55582d8b74e0" class="l81d0" points="-25354.96,4459.07 -25354.96,4559.57 -25254.46,4559.57 -25254.46,4459.07"/>
+<polygon id="0x55582d8b75a0" class="l2d222" points="-25355.96,4458.07 -25355.96,4671.9 -25141.33,4671.9 -25141.33,4458.07"/>
+<polygon id="0x55582d8e1f80" class="l81d0" points="-957.69,8494.01 -957.69,8494.41 -955.69,8494.41 -955.69,8494.01"/>
+<polygon id="0x55582d8e1ce0" class="l3d222" points="-984.97,8492.81 -984.97,8499.64 -970.04,8499.64 -970.04,8492.81"/>
+<polygon id="0x55582d8b7800" class="l81d0" points="-24980.58,4559.17 -24980.58,4561.17 -24980.18,4561.17 -24980.18,4559.17"/>
+<polygon id="0x55582d8b78c0" class="l81d0" points="-25134.33,4459.07 -25134.33,4559.57 -24983.58,4559.57 -24983.58,4459.07"/>
+<polygon id="0x55582d8b7980" class="l2d222" points="-25135.33,4458.07 -25135.33,4706.43 -24834.92,4706.43 -24834.92,4458.07"/>
+<polygon id="0x55582d8e1c20" class="l81d0" points="-983.97,8493.81 -983.97,8494.41 -980.97,8494.41 -980.97,8493.81"/>
+<polygon id="0x55582d8b23e0" class="l81d0" points="-978.22,8494.01 -978.22,8494.41 -975.22,8494.41 -975.22,8494.01"/>
+<polygon id="0x55582d8b7d40" class="l81d0" points="-24453.54,4559.17 -24453.54,4559.57 -24450.54,4559.57 -24450.54,4559.17"/>
+<polygon id="0x55582d8b7e00" class="l81d0" points="-24607.29,4459.07 -24607.29,4559.57 -24456.54,4559.57 -24456.54,4459.07"/>
+<polygon id="0x55582d8b7ec0" class="l2d222" points="-24608.29,4458.07 -24608.29,4704.83 -24305.28,4704.83 -24305.28,4458.07"/>
+<polygon id="0x55582d8b26a0" class="l3d222" points="-1019.12,8492.81 -1019.12,8501.24 -1006.79,8501.24 -1006.79,8492.81"/>
+<polygon id="0x55582d8b25e0" class="l81d0" points="-1018.12,8493.81 -1018.12,8494.41 -1015.12,8494.41 -1015.12,8493.81"/>
+<polygon id="0x55582d8b3150" class="l81d0" points="-24144.53,4559.17 -24144.53,4559.57 -24142.53,4559.57 -24142.53,4559.17"/>
+<polygon id="0x55582d8b3210" class="l81d0" points="-24298.28,4459.07 -24298.28,4559.57 -24147.53,4559.57 -24147.53,4459.07"/>
+<polygon id="0x55582d8b32d0" class="l2d222" points="-24299.28,4458.07 -24299.28,4704.83 -23997.27,4704.83 -23997.27,4458.07"/>
+<polygon id="0x55582d8b2520" class="l81d0" points="-1012.37,8494.01 -1012.37,8496.01 -1011.97,8496.01 -1011.97,8494.01"/>
+<polygon id="0x55582d8b2260" class="l3d222" points="-1035.34,8492.81 -1035.34,8501.53 -1024.72,8501.53 -1024.72,8492.81"/>
+<polygon id="0x55582d8b36e0" class="l81d0" points="-23664.54,4608.32 -23664.54,4611.32 -23664.14,4611.32 -23664.14,4608.32"/>
+<polygon id="0x55582d8b37a0" class="l81d0" points="-23768.04,4459.07 -23768.04,4609.82 -23667.54,4609.82 -23667.54,4459.07"/>
+<polygon id="0x55582d8b3860" class="l2d222" points="-23769.04,4458.07 -23769.04,4738.82 -23536.64,4738.82 -23536.64,4458.07"/>
+<polygon id="0x55582d8b21a0" class="l81d0" points="-1034.34,8493.81 -1034.34,8494.41 -1032.34,8494.41 -1032.34,8493.81"/>
+<polygon id="0x55582d8b20e0" class="l81d0" points="-1029.59,8494.01 -1029.59,8497.01 -1029.19,8497.01 -1029.19,8494.01"/>
+<polygon id="0x55582d8b3c90" class="l81d0" points="-23426.14,4608.32 -23426.14,4610.32 -23425.74,4610.32 -23425.74,4608.32"/>
+<polygon id="0x55582d8b3d50" class="l81d0" points="-23529.64,4459.07 -23529.64,4609.82 -23429.14,4609.82 -23429.14,4459.07"/>
+<polygon id="0x55582d8b3e10" class="l2d222" points="-23530.64,4458.07 -23530.64,4737.82 -23298.24,4737.82 -23298.24,4458.07"/>
+<polygon id="0x55582d8b1d80" class="l3d222" points="-1053.27,8492.81 -1053.27,8502.24 -1040.94,8502.24 -1040.94,8492.81"/>
+<polygon id="0x55582d8b1cc0" class="l81d0" points="-1052.27,8493.81 -1052.27,8494.41 -1049.27,8494.41 -1049.27,8493.81"/>
+<polygon id="0x55582d8b4270" class="l81d0" points="-24724.42,4559.17 -24724.42,4561.17 -24724.02,4561.17 -24724.02,4559.17"/>
+<polygon id="0x55582d8b4330" class="l81d0" points="-24827.92,4459.07 -24827.92,4559.57 -24727.42,4559.57 -24727.42,4459.07"/>
+<polygon id="0x55582d8b43f0" class="l2d222" points="-24828.92,4458.07 -24828.92,4670.9 -24614.29,4670.9 -24614.29,4458.07"/>
+<polygon id="0x55582d8b1c00" class="l81d0" points="-1046.52,8494.01 -1046.52,8497.01 -1046.12,8497.01 -1046.12,8494.01"/>
+<polygon id="0x55582d8b1990" class="l3d222" points="-1082.17,8492.81 -1082.17,8499.96 -1078.02,8499.96 -1078.02,8492.81"/>
+<polygon id="0x55582d8b4870" class="l81d0" points="-23886.77,4559.17 -23886.77,4559.57 -23884.77,4559.57 -23884.77,4559.17"/>
+<polygon id="0x55582d8b4930" class="l81d0" points="-23990.27,4459.07 -23990.27,4559.57 -23889.77,4559.57 -23889.77,4459.07"/>
+<polygon id="0x55582d8b49f0" class="l2d222" points="-23991.27,4458.07 -23991.27,4669.3 -23775.04,4669.3 -23775.04,4458.07"/>
+<polygon id="0x55582d8b18d0" class="l81d0" points="-1081.17,8493.81 -1081.17,8495.81 -1080.57,8495.81 -1080.57,8493.81"/>
+<polygon id="0x55582d8b1810" class="l81d0" points="-1080.57,8495.81 -1080.57,8497.81 -1080.17,8497.81 -1080.17,8495.81"/>
+<polygon id="0x55582d8b4ea0" class="l81d0" points="-23187.74,4558.07 -23187.74,4560.07 -23187.34,4560.07 -23187.34,4558.07"/>
+<polygon id="0x55582d8b4f60" class="l81d0" points="-23291.24,4459.07 -23291.24,4559.57 -23190.74,4559.57 -23190.74,4459.07"/>
+<polygon id="0x55582d8b5020" class="l2d222" points="-23292.24,4458.07 -23292.24,4669.8 -23077.61,4669.8 -23077.61,4458.07"/>
+<polygon id="0x55582d8b1570" class="l3d222" points="-1095.59,8492.81 -1095.59,8503.68 -1087.77,8503.68 -1087.77,8492.81"/>
+<polygon id="0x55582d8b14b0" class="l81d0" points="-1094.59,8493.81 -1094.59,8495.81 -1093.99,8495.81 -1093.99,8493.81"/>
+<polygon id="0x55582d8b13f0" class="l81d0" points="-1092.15,8497.65 -1092.15,8499.65 -1091.75,8499.65 -1091.75,8497.65"/>
+<polygon id="0x55582d8decf0" class="l3d222" points="-6830.41,4458.12 -6830.41,4605.09 -6753.8,4605.09 -6753.8,4458.12"/>
+<polygon id="0x55582d8b1110" class="l81d0" points="-1102.62,8497.59 -1104.04,8499.01 -1103.61,8499.44 -1102.19,8498.02"/>
+<polygon id="0x55582d8dee70" class="l14d222" points="-6829.31,4459.22 -6829.31,4460.93 -6827.6,4460.93 -6827.6,4459.22"/>
+<polygon id="0x55582d8def30" class="l81d0" points="-6827.89,4459.22 -6829.31,4460.64 -6829.02,4460.93 -6827.6,4459.51"/>
+<polygon id="0x55582d8b1050" class="l14d222" points="-1104.04,8497.59 -1104.04,8499.44 -1102.19,8499.44 -1102.19,8497.59"/>
+<polygon id="0x55582d8df0b0" class="l14d222" points="-6897.04,4461.85 -6897.04,4603.99 -6754.9,4603.99 -6754.9,4461.85"/>
+<polygon id="0x55582d8df170" class="l81d0" points="-6825.97,4461.85 -6897.04,4532.92 -6825.97,4603.99 -6754.9,4532.92"/>
+<polygon id="0x55582d8b0ed0" class="l3d222" points="-1109.92,8492.81 -1109.92,8500.44 -1101.19,8500.44 -1101.19,8492.81"/>
+<polygon id="0x55582d8df350" class="l81d0" points="-6643.35,4558.12 -6643.35,4560.12 -6642.95,4560.12 -6642.95,4558.12"/>
+<polygon id="0x55582d8df410" class="l3d222" points="-6747.8,4458.12 -6747.8,4669.75 -6533.37,4669.75 -6533.37,4458.12"/>
+<polygon id="0x55582d8b0e10" class="l81d0" points="-1105.57,8494.41 -1105.57,8496.41 -1105.17,8496.41 -1105.17,8494.41"/>
+<polygon id="0x55582d8df590" class="l14d222" points="-6676.51,4526.61 -6676.51,4668.75 -6534.37,4668.75 -6534.37,4526.61"/>
+<polygon id="0x55582d8df650" class="l81d0" points="-6605.44,4526.61 -6676.51,4597.68 -6605.44,4668.75 -6534.37,4597.68"/>
+<polygon id="0x55582d8b0c20" class="l81d0" points="-1117.05,8496.47 -1118.47,8497.89 -1118.04,8498.32 -1116.62,8496.9"/>
+<polygon id="0x55582d8b0b60" class="l14d222" points="-1118.47,8496.47 -1118.47,8498.32 -1116.62,8498.32 -1116.62,8496.47"/>
+<polygon id="0x55582d8df920" class="l81d0" points="-6423.89,4561.6 -6423.89,4563.6 -6423.49,4563.6 -6423.49,4561.6"/>
+<polygon id="0x55582d8df9e0" class="l81d0" points="-6526.37,4459.12 -6526.37,4559.62 -6425.87,4559.62 -6425.87,4459.12"/>
+<polygon id="0x55582d8dfaa0" class="l3d222" points="-6527.37,4458.12 -6527.37,4673.23 -6313.91,4673.23 -6313.91,4458.12"/>
+<polygon id="0x55582d8b09e0" class="l81d0" points="-1118.75,8493.91 -1120.17,8495.33 -1119.88,8495.62 -1118.46,8494.2"/>
+<polygon id="0x55582d8b0920" class="l14d222" points="-1120.17,8493.91 -1120.17,8495.62 -1118.46,8495.62 -1118.46,8493.91"/>
+<polygon id="0x55582d8b51f0" class="l81d0" points="-5507.02,4559.22 -5507.02,4562.22 -5506.62,4562.22 -5506.62,4559.22"/>
+<polygon id="0x55582d8b52b0" class="l81d0" points="-5660.72,4459.12 -5660.72,4559.62 -5509.97,4559.62 -5509.97,4459.12"/>
+<polygon id="0x55582d8dfc60" class="l3d222" points="-5661.72,4458.12 -5661.72,4707.38 -5361.51,4707.38 -5361.51,4458.12"/>
+<polygon id="0x55582d8b07a0" class="l3d222" points="-1121.27,8492.81 -1121.27,8499.42 -1115.52,8499.42 -1115.52,8492.81"/>
+<polygon id="0x55582d8b06e0" class="l3d222" points="-1132.5,8492.81 -1132.5,8499.41 -1126.87,8499.41 -1126.87,8492.81"/>
+<polygon id="0x55582d8dff10" class="l81d0" points="-5251.06,4559.22 -5251.06,4562.22 -5250.66,4562.22 -5250.66,4559.22"/>
+<polygon id="0x55582d8dffd0" class="l81d0" points="-5354.51,4459.12 -5354.51,4559.62 -5254.01,4559.62 -5254.01,4459.12"/>
+<polygon id="0x55582d8e0090" class="l3d222" points="-5355.51,4458.12 -5355.51,4671.85 -5141.08,4671.85 -5141.08,4458.12"/>
+<polygon id="0x55582d8b0670" class="l81d0" points="-1131.5,8493.81 -1131.5,8498.41 -1131.1,8498.41 -1131.1,8494.21 -1128.27,8494.21 -1128.27,8497.01 -1128.35,8497.01 -1128.35,8498.41 -1127.87,8498.41 -1127.87,8493.81"/>
+<polygon id="0x55582d8affe0" class="l2d222" points="-4896.58,8492.69 -4896.58,8500.42 -4887.65,8500.42 -4887.65,8492.69"/>
+<polygon id="0x55582d8e0310" class="l81d0" points="-4980.38,4559.22 -4980.38,4561.22 -4979.98,4561.22 -4979.98,4559.22"/>
+<polygon id="0x55582d8e03d0" class="l81d0" points="-5134.08,4459.12 -5134.08,4559.62 -4983.33,4559.62 -4983.33,4459.12"/>
+<polygon id="0x55582d8e0490" class="l3d222" points="-5135.08,4458.12 -5135.08,4706.38 -4834.87,4706.38 -4834.87,4458.12"/>
+<polygon id="0x55582d8aff20" class="l81d0" points="-4895.58,8493.69 -4895.58,8495.69 -4894.98,8495.69 -4894.98,8493.69"/>
+<polygon id="0x55582d8afe60" class="l81d0" points="-4892.18,8494.29 -4892.18,8496.29 -4891.78,8496.29 -4891.78,8494.29"/>
+<polygon id="0x55582d8e0740" class="l81d0" points="-4453.74,4559.22 -4453.74,4559.62 -4450.74,4559.62 -4450.74,4559.22"/>
+<polygon id="0x55582d8e0800" class="l81d0" points="-4607.44,4459.12 -4607.44,4559.62 -4456.69,4559.62 -4456.69,4459.12"/>
+<polygon id="0x55582d8e08c0" class="l3d222" points="-4608.44,4458.12 -4608.44,4704.78 -4305.63,4704.78 -4305.63,4458.12"/>
+<polygon id="0x55582d8af970" class="l2d222" points="-4944.36,8492.69 -4944.36,8498.91 -4931.94,8498.91 -4931.94,8492.69"/>
+<polygon id="0x55582d8af8b0" class="l81d0" points="-4943.36,8493.69 -4943.36,8494.29 -4941.36,8494.29 -4941.36,8493.69"/>
+<polygon id="0x55582d8e0b20" class="l81d0" points="-4144.93,4559.22 -4144.93,4559.62 -4142.93,4559.62 -4142.93,4559.22"/>
+<polygon id="0x55582d8e0be0" class="l81d0" points="-4298.63,4459.12 -4298.63,4559.62 -4147.88,4559.62 -4147.88,4459.12"/>
+<polygon id="0x55582d8e0ca0" class="l3d222" points="-4299.63,4458.12 -4299.63,4704.78 -3997.82,4704.78 -3997.82,4458.12"/>
+<polygon id="0x55582d8af7f0" class="l81d0" points="-4938.56,8493.89 -4938.56,8494.29 -4936.56,8494.29 -4936.56,8493.89"/>
+<polygon id="0x55582d8af330" class="l2d222" points="-5001.24,8492.69 -5001.24,8500.51 -4990.42,8500.51 -4990.42,8492.69"/>
+<polygon id="0x55582d8bd950" class="l81d0" points="-3665.34,4608.37 -3665.34,4611.37 -3664.94,4611.37 -3664.94,4608.37"/>
+<polygon id="0x55582d8bda10" class="l81d0" points="-3768.79,4459.12 -3768.79,4609.87 -3668.29,4609.87 -3668.29,4459.12"/>
+<polygon id="0x55582d8bdad0" class="l3d222" points="-3769.79,4458.12 -3769.79,4738.77 -3537.59,4738.77 -3537.59,4458.12"/>
+<polygon id="0x55582d8af270" class="l81d0" points="-5000.24,8493.69 -5000.24,8494.29 -4998.24,8494.29 -4998.24,8493.69"/>
+<polygon id="0x55582d8af1b0" class="l81d0" points="-4995.44,8493.89 -4995.44,8495.89 -4995.04,8495.89 -4995.04,8493.89"/>
+<polygon id="0x55582d8bdeb0" class="l81d0" points="-3427.14,4608.37 -3427.14,4610.37 -3426.74,4610.37 -3426.74,4608.37"/>
+<polygon id="0x55582d8bdf70" class="l81d0" points="-3530.59,4459.12 -3530.59,4609.87 -3430.09,4609.87 -3430.09,4459.12"/>
+<polygon id="0x55582d8be030" class="l3d222" points="-3531.59,4458.12 -3531.59,4737.77 -3299.39,4737.77 -3299.39,4458.12"/>
+<polygon id="0x55582d8aed10" class="l2d222" points="-4911.46,8492.69 -4911.46,8501.77 -4902.18,8501.77 -4902.18,8492.69"/>
+<polygon id="0x55582d8aec50" class="l81d0" points="-4910.46,8493.69 -4910.46,8496.69 -4909.86,8496.69 -4909.86,8493.69"/>
+<polygon id="0x55582d8be440" class="l81d0" points="-4724.42,4559.22 -4724.42,4561.22 -4724.02,4561.22 -4724.02,4559.22"/>
+<polygon id="0x55582d8be500" class="l81d0" points="-4827.87,4459.12 -4827.87,4559.62 -4727.37,4559.62 -4727.37,4459.12"/>
+<polygon id="0x55582d8be5c0" class="l3d222" points="-4828.87,4458.12 -4828.87,4670.85 -4614.44,4670.85 -4614.44,4458.12"/>
+<polygon id="0x55582d8ae580" class="l81d0" points="-4907.06,8495.29 -4907.06,8497.29 -4906.66,8497.29 -4906.66,8495.29"/>
+<polygon id="0x55582d8ae910" class="l2d222" points="-4926.34,8492.69 -4926.34,8502.77 -4917.06,8502.77 -4917.06,8492.69"/>
+<polygon id="0x55582d8be9f0" class="l81d0" points="-3887.37,4559.22 -3887.37,4559.62 -3885.37,4559.62 -3885.37,4559.22"/>
+<polygon id="0x55582d8beab0" class="l81d0" points="-3990.82,4459.12 -3990.82,4559.62 -3890.32,4559.62 -3890.32,4459.12"/>
+<polygon id="0x55582d8beb70" class="l3d222" points="-3991.82,4458.12 -3991.82,4669.25 -3775.79,4669.25 -3775.79,4458.12"/>
+<polygon id="0x55582d8ae850" class="l81d0" points="-4925.34,8493.69 -4925.34,8496.69 -4924.74,8496.69 -4924.74,8493.69"/>
+<polygon id="0x55582d8ae790" class="l81d0" points="-4921.94,8495.29 -4921.94,8498.29 -4921.54,8498.29 -4921.54,8495.29"/>
+<polygon id="0x55582d8befd0" class="l81d0" points="-3188.94,4558.12 -3188.94,4560.12 -3188.54,4560.12 -3188.54,4558.12"/>
+<polygon id="0x55582d8bf090" class="l81d0" points="-3292.39,4459.12 -3292.39,4559.62 -3191.89,4559.62 -3191.89,4459.12"/>
+<polygon id="0x55582d8bf150" class="l3d222" points="-3293.39,4458.12 -3293.39,4669.75 -3078.96,4669.75 -3078.96,4458.12"/>
+<polygon id="0x55582d8ae340" class="l2d222" points="-4964.09,8492.69 -4964.09,8499.62 -4949.96,8499.62 -4949.96,8492.69"/>
+<polygon id="0x55582d8ae280" class="l81d0" points="-4963.09,8493.69 -4963.09,8494.29 -4960.09,8494.29 -4960.09,8493.69"/>
+<polygon id="0x55582d8ae1c0" class="l81d0" points="-4957.29,8493.89 -4957.29,8494.29 -4955.29,8494.29 -4955.29,8493.89"/>
+<polygon id="0x55582d8adda0" class="l2d222" points="-4984.82,8492.69 -4984.82,8499.62 -4969.69,8499.62 -4969.69,8492.69"/>
+<polygon id="0x55582d8d2f50" class="l81d0" points="-922.74,17829.6 -922.74,17832.41 -914.31,17832.41 -914.31,17840.84 -911.5,17840.84 -911.5,17831.54 -913.44,17829.6"/>
+<polygon id="0x55582d8d2fc0" class="l3d222" points="-932.74,17819.6 -932.74,17850.84 -901.5,17850.84 -901.5,17819.6"/>
+<polygon id="0x55582d8adce0" class="l81d0" points="-4983.82,8493.69 -4983.82,8494.29 -4980.82,8494.29 -4980.82,8493.69"/>
+<polygon id="0x55582d8d3140" class="l81d0" points="-861.5,17829.6 -861.5,17835.2 -855.95,17835.2 -853.1,17832.35 -853.1,17829.6"/>
+<polygon id="0x55582d8d31b0" class="l3d222" points="-871.5,17819.6 -871.5,17845.2 -843.1,17845.2 -843.1,17819.6"/>
+<polygon id="0x55582d8adc20" class="l81d0" points="-4978.02,8493.89 -4978.02,8494.29 -4975.02,8494.29 -4975.02,8493.89"/>
+<polygon id="0x55582d8d3380" class="l81d0" points="-803.1,17829.6 -803.1,17835.2 -796.54,17835.2 -794.7,17833.36 -794.7,17829.6"/>
+<polygon id="0x55582d8d33f0" class="l3d222" points="-813.1,17819.6 -813.1,17845.2 -784.7,17845.2 -784.7,17819.6"/>
+<polygon id="0x55582d8ad4b0" class="l2d222" points="-5019.37,8492.69 -5019.37,8501.22 -5006.84,8501.22 -5006.84,8492.69"/>
+<polygon id="0x55582d8d3590" class="l81d0" points="-788.14,17838.96 -788.14,17833.36 -794.7,17833.36 -796.54,17835.2 -796.54,17838.96"/>
+<polygon id="0x55582d8c06b0" class="l3d222" points="-778.14,17848.96 -778.14,17823.36 -806.54,17823.36 -806.54,17848.96"/>
+<polygon id="0x55582d8ad3f0" class="l81d0" points="-5018.37,8493.69 -5018.37,8494.29 -5015.37,8494.29 -5015.37,8493.69"/>
+<polygon id="0x55582d8c08b0" class="l81d0" points="-721.34,17835.2 -726.94,17835.2 -729.74,17832.4 -726.94,17829.6 -721.34,17829.6"/>
+<polygon id="0x55582d8c0980" class="l3d222" points="-711.34,17845.2 -739.74,17845.2 -739.74,17819.6 -711.34,17819.6"/>
+<polygon id="0x55582d8ad330" class="l81d0" points="-5012.57,8493.89 -5012.57,8495.89 -5012.17,8495.89 -5012.17,8493.89"/>
+<polygon id="0x55582d8c0ba0" class="l81d0" points="-738.14,17835.2 -732.54,17835.2 -729.74,17832.4 -732.54,17829.6 -738.14,17829.6"/>
+<polygon id="0x55582d8c0c70" class="l3d222" points="-748.14,17845.2 -719.74,17845.2 -719.74,17819.6 -748.14,17819.6"/>
+<polygon id="0x55582d8acf60" class="l2d222" points="-5035.79,8492.69 -5035.79,8501.51 -5024.97,8501.51 -5024.97,8492.69"/>
+<polygon id="0x55582d8c0ea0" class="l81d0" points="-671.34,17829.6 -671.34,17832.41 -663.78,17832.41 -662.91,17833.28 -662.91,17840.84 -660.1,17840.84 -660.1,17832.41 -662.91,17829.6"/>
+<polygon id="0x55582d8c0f10" class="l3d222" points="-681.34,17819.6 -681.34,17850.84 -650.1,17850.84 -650.1,17819.6"/>
+<polygon id="0x55582d8acea0" class="l81d0" points="-5034.79,8493.69 -5034.79,8494.29 -5032.79,8494.29 -5032.79,8493.69"/>
+<polygon id="0x55582d8c10f0" class="l81d0" points="-610.1,17829.6 -610.1,17838 -607.35,17838 -607.35,17829.6"/>
+<polygon id="0x55582d8c11b0" class="l3d222" points="-620.1,17819.6 -620.1,17848 -597.35,17848 -597.35,17819.6"/>
+<polygon id="0x55582d8acde0" class="l81d0" points="-5029.99,8493.89 -5029.99,8496.89 -5029.59,8496.89 -5029.59,8493.89"/>
+<polygon id="0x55582d8acb60" class="l2d222" points="-5053.92,8492.69 -5053.92,8502.22 -5041.39,8502.22 -5041.39,8492.69"/>
+<polygon id="0x55582d8acaa0" class="l81d0" points="-5052.92,8493.69 -5052.92,8494.29 -5049.92,8494.29 -5049.92,8493.69"/>
+<polygon id="0x55582d8ac9e0" class="l81d0" points="-5047.12,8493.89 -5047.12,8496.89 -5046.72,8496.89 -5046.72,8493.89"/>
+<polygon id="0x55582d8c1590" class="l81d0" points="-3922.69,17829.6 -3922.69,17832.41 -3914.26,17832.41 -3914.26,17840.84 -3911.45,17840.84 -3911.45,17831.24 -3913.09,17829.6"/>
+<polygon id="0x55582d8c1600" class="l2d222" points="-3932.69,17819.6 -3932.69,17850.84 -3901.45,17850.84 -3901.45,17819.6"/>
+<polygon id="0x55582d8ac660" class="l2d222" points="-5063.67,8492.69 -5063.67,8498.44 -5059.52,8498.44 -5059.52,8492.69"/>
+<polygon id="0x55582d8c1780" class="l81d0" points="-3861.45,17829.6 -3861.45,17835.2 -3855.85,17835.2 -3853.05,17832.4 -3853.05,17829.6"/>
+<polygon id="0x55582d8c1850" class="l2d222" points="-3871.45,17819.6 -3871.45,17845.2 -3843.05,17845.2 -3843.05,17819.6"/>
+<polygon id="0x55582d8ac5a0" class="l81d0" points="-5062.67,8493.69 -5062.67,8495.69 -5062.07,8495.69 -5062.07,8493.69"/>
+<polygon id="0x55582d8c1a20" class="l81d0" points="-3803.05,17829.6 -3803.05,17835.2 -3796.64,17835.2 -3794.65,17833.21 -3794.65,17829.6"/>
+<polygon id="0x55582d8c1af0" class="l2d222" points="-3813.05,17819.6 -3813.05,17845.2 -3784.65,17845.2 -3784.65,17819.6"/>
+<polygon id="0x55582d8ac4e0" class="l81d0" points="-5062.07,8494.29 -5062.07,8496.29 -5061.67,8496.29 -5061.67,8494.29"/>
+<polygon id="0x55582d8c1c90" class="l81d0" points="-3788.24,17838.81 -3788.24,17833.21 -3794.65,17833.21 -3796.64,17835.2 -3796.64,17838.81"/>
+<polygon id="0x55582d8c1d60" class="l2d222" points="-3778.24,17848.81 -3778.24,17823.21 -3806.64,17823.21 -3806.64,17848.81"/>
+<polygon id="0x55582d8ac180" class="l2d222" points="-5073.07,8492.69 -5073.07,8498.29 -5069.27,8498.29 -5069.27,8492.69"/>
+<polygon id="0x55582d8c1f60" class="l81d0" points="-3671.44,17829.6 -3671.44,17832.41 -3664.18,17832.41 -3663.01,17833.58 -3663.01,17840.84 -3660.2,17840.84 -3660.2,17832.41 -3663.01,17829.6"/>
+<polygon id="0x55582d8c1fd0" class="l2d222" points="-3681.44,17819.6 -3681.44,17850.84 -3650.2,17850.84 -3650.2,17819.6"/>
+<polygon id="0x55582d8ac0c0" class="l81d0" points="-5072.07,8493.69 -5072.07,8495.69 -5071.47,8495.69 -5071.47,8493.69"/>
+<polygon id="0x55582d8c21f0" class="l81d0" points="-3610.2,17829.6 -3610.2,17838 -3607.4,17838 -3607.4,17829.6"/>
+<polygon id="0x55582d8c22b0" class="l2d222" points="-3620.2,17819.6 -3620.2,17848 -3597.4,17848 -3597.4,17819.6"/>
+<polygon id="0x55582d8ac000" class="l81d0" points="-5071.67,8494.29 -5071.67,8496.29 -5071.27,8496.29 -5071.27,8494.29"/>
+<polygon id="0x55582d8abd90" class="l2d222" points="-5096.54,8492.69 -5096.54,8503.81 -5088.42,8503.81 -5088.42,8492.69"/>
+<polygon id="0x55582d8abcd0" class="l81d0" points="-5095.54,8493.69 -5095.54,8495.69 -5094.94,8495.69 -5094.94,8493.69"/>
+<polygon id="0x55582d8a8100" class="l81d0" points="-3740.1,13895.74 -3740.1,13905.74 -3738.61,13905.74 -3738.61,13895.74"/>
+<polygon id="0x55582d8a8170" class="l2d222" points="-3750.1,13885.74 -3750.1,13915.74 -3728.61,13915.74 -3728.61,13885.74"/>
+<polygon id="0x55582d8abc10" class="l81d0" points="-5092.95,8497.68 -5092.95,8499.68 -5092.55,8499.68 -5092.55,8497.68"/>
+<polygon id="0x55582d8ab970" class="l81d0" points="-5103.57,8497.57 -5104.99,8498.99 -5104.56,8499.42 -5103.14,8498"/>
+<polygon id="0x55582d8ab8b0" class="l14d222" points="-5104.99,8497.57 -5104.99,8499.42 -5103.14,8499.42 -5103.14,8497.57"/>
+<polygon id="0x55582d8aa220" class="l81d0" points="-740.05,13895.74 -740.05,13905.74 -738.66,13905.74 -738.66,13895.74"/>
+<polygon id="0x55582d8aa2e0" class="l3d222" points="-750.05,13885.74 -750.05,13915.74 -728.66,13915.74 -728.66,13885.74"/>
+<polygon id="0x55582d8ab730" class="l2d222" points="-5111.07,8492.69 -5111.07,8500.42 -5102.14,8500.42 -5102.14,8492.69"/>
+<polygon id="0x55582d8ab670" class="l81d0" points="-5106.67,8494.29 -5106.67,8496.29 -5106.27,8496.29 -5106.27,8494.29"/>
+<polygon id="0x55582d8ab450" class="l81d0" points="-5118.2,8496.5 -5119.62,8497.92 -5119.19,8498.35 -5117.77,8496.93"/>
+<polygon id="0x55582d8ab390" class="l14d222" points="-5119.62,8496.5 -5119.62,8498.35 -5117.77,8498.35 -5117.77,8496.5"/>
+<polygon id="0x55582d8ab210" class="l81d0" points="-5120.05,8493.79 -5121.47,8495.21 -5121.18,8495.5 -5119.76,8494.08"/>
+<polygon id="0x55582d8a9de0" class="l81d0" points="-5141.15,8493.99 -5141.15,8495.99 -5140.75,8495.99 -5140.75,8493.99"/>
+<polygon id="0x55582d8a9ea0" class="l81d0" points="-5141.45,8493.69 -5141.45,8496.29 -5140.45,8496.29 -5140.45,8493.69"/>
+<polygon id="0x55582d8a9f60" class="l2d222" points="-5142.45,8492.69 -5142.45,8497.29 -5139.45,8497.29 -5139.45,8492.69"/>
+<polygon id="0x55582d8ab150" class="l14d222" points="-5121.47,8493.79 -5121.47,8495.5 -5119.76,8495.5 -5119.76,8493.79"/>
+<polygon id="0x55582d8aaea0" class="l81d0" points="-5132.85,8493.69 -5132.85,8498.29 -5132.45,8498.29 -5132.45,8494.09 -5129.57,8494.09 -5129.57,8496.89 -5129.65,8496.89 -5129.65,8498.29 -5129.17,8498.29 -5129.17,8493.69"/>
+<polygon id="0x55582d8aaf10" class="l2d222" points="-5133.85,8492.69 -5133.85,8499.29 -5128.17,8499.29 -5128.17,8492.69"/>
+<text id="0x55582d8e6cb0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-889.15 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6c20" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1078.23 8493.28) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6b90" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1087.98 8493.32) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6b00" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1101.54 8493.45) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6a70" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1115.98 8493.34) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e69e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1127.33 8493.39) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6950" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1041.09 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e68c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-932.84 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6830" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-990.72 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e67a0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-903.48 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6710" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-918.16 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6680" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-950.66 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e65f0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-970.19 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e6560" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1006.94 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e64d0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-1024.87 8493.23) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e58f0" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-3015.05 8498.24) rotate(180) scale(1 -1) scale(0.5) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5860" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4887.8 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e57d0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5059.67 8493.12) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8d0bc0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-25141.48 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d0c50" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-24835.07 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d0ce0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-24305.43 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d0d70" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-23997.42 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d0e00" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-23536.79 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d0eb0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-23298.39 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d0f60" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-24614.44 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d1010" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-23775.19 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d10c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-25362.11 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d1170" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-26755.41 4458.6) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d1220" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-26534.67 4458.71) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d12d0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-26314.77 4458.58) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d1380" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-25884.07 4458.56) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d1430" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-25668.52 4458.5) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d14e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-23077.76 4458.49) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8e5740" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5069.46 8493.18) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e56b0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5088.63 8493.2) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5620" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5102.49 8493.33) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5590" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5117.13 8493.22) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5500" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5128.63 8493.27) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5470" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5139.7 8493.21) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e53e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5041.54 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5350" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4932.09 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e52c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4990.57 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5230" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4902.33 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e51a0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4917.21 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5110" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4950.11 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8e5080" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4969.84 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8aaa00" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5006.99 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8aa950" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5025.12 8493.11) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2a</text>
+<text id="0x55582d8c2850" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-730.64 13887.84) rotate(180) scale(1 -1) scale(0.2) scale(1 -1)">M5.3</text>
+<text id="0x55582d8c27a0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-734.63 13881.55) rotate(180) scale(1 -1) scale(0.5) scale(1 -1)">Basic</text>
+<text id="0x55582d8c26f0" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-2265.04 13900.73) rotate(180) scale(1 -1) scale(0.5) scale(1 -1)">M5.3</text>
+<text id="0x55582d8d20b0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5141.23 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2160" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4835.02 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2210" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4305.78 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d22c0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3997.97 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2370" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3537.74 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2420" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3299.54 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d24d0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-4614.59 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2580" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3775.94 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2630" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-5361.66 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d26e0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-6754.26 4458.65) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2790" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-6533.72 4458.76) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2840" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-6314.12 4458.63) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d28f0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3079.11 4458.54) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8d2bd0" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-15015.05 4595.44) rotate(180) scale(1 -1) scale(0.5) scale(1 -1)">M5.2b</text>
+<text id="0x55582d8c2640" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3730.59 13887.84) rotate(180) scale(1 -1) scale(0.2) scale(1 -1)">M5.3</text>
+<text id="0x55582d8c25b0" class="l12t222" text-anchor="start" dominant-baseline="central" transform="translate(-3734.58 13881.55) rotate(180) scale(1 -1) scale(0.5) scale(1 -1)">Basic</text>
+<text id="0x55582d8a9bd0" class="l12t222" text-anchor="middle" dominant-baseline="central" transform="translate(-2265.04 17827.05) rotate(180) scale(1 -1) scale(0.5) scale(1 -1)">M5.1</text>
+<text id="0x55582d8a9850" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3597.69 17820.17) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8a97a0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3843.33 17820.35) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8a96f0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3778.74 17823.91) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8a9640" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3650.61 17820.2) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8bfc50" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-901.96 17820.19) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8bfd00" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-650.51 17820.2) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8c2c00" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-778.64 17824.06) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8c2cb0" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-711.55 17820.13) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8c2d60" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-843.38 17820.35) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8c2e10" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-597.64 17820.17) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+<text id="0x55582d8a9590" class="l11t222" text-anchor="start" dominant-baseline="central" transform="translate(-3901.91 17820.19) rotate(180) scale(1 -1) scale(0.1) scale(1 -1)">M5.1</text>
+</g>
+</svg>

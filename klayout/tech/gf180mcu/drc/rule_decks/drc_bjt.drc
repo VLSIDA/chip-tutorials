@@ -1,0 +1,46 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+
+  #================================================
+  #--------------------DRC_BJT---------------------
+  #================================================
+
+  # Rule BJT.1: Min. DRC_BJT overlap of DNWELL for NPN BJT is 0um.
+  logger.info('Executing rule BJT.1')
+  vnpn_e = ncomp.and(lvs_bjt).and(dnwell).and(drc_bjt)
+  vnpn_b = pcomp.and(lvpwell).and(dnwell).and(drc_bjt)
+  vnpn_c = ncomp.and(dnwell).not(lvs_bjt).and(drc_bjt)
+  drc_bjt_npn = drc_bjt.interacting(vnpn_e).interacting(vnpn_b).interacting(vnpn_c)
+  bjt1_l1 = drc_bjt_npn.not_covering(dnwell)
+  bjt1_l1.output('BJT.1', 'BJT.1 : Min. DRC_BJT overlap of DNWELL for NPN BJT: 0um')
+  bjt1_l1.forget
+
+  # Rule BJT.2: Min. DRC_BJT overlap of PCOM in Psub is 0um.
+  logger.info('Executing rule BJT.2')
+  bjt2_l1 = drc_bjt.not_covering(pcomp.outside(all_nwell).interacting(drc_bjt))
+  bjt2_l1.output('BJT.2', 'BJT.2 : Min. DRC_BJT overlap of PCOM in Psub: 0um')
+  bjt2_l1.forget
+
+  # Rule BJT.3: Minimum space of DRC_BJT layer to unrelated COMP. is 0.1µm
+  logger.info('Executing rule BJT.3')
+  bjt3_l1 = comp.outside(drc_bjt).separation(drc_bjt, 0.1.um, euclidian)
+  bjt3_l1.output('BJT.3', 'BJT.3 : Minimum space of DRC_BJT layer to unrelated COMP. : 0.1µm')
+  bjt3_l1.forget
+end

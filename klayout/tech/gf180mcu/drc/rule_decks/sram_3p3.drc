@@ -1,0 +1,105 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+
+  #================================================
+  #-------------------3.3V SRAM--------------------
+  #================================================
+
+  logger.info('Starting 3.3V SRAM derivations')
+
+  sram_lv = sramcore.not_interacting(v5_xtor).not_interacting(dualgate)
+  nw_n_dn_sram = nwell_n_dn.and(sram_lv)
+  poly_sram = poly2.and(sram_lv)
+  comp_sram = comp.and(sram_lv)
+  contact_sram = contact.and(sram_lv)
+  metal1_sram = metal1.and(sram_lv)
+
+  # Rule S.DF.4c_LV: Min. (Nwell overlap of PCOMP) outside DNWELL is 0.4µm.
+  logger.info('Executing rule S.DF.4c_LV')
+  pcomp_out_dn_sram = pcomp.outside(dnwell).and(sram_lv)
+  sdf4c_l1 = pcomp_out_dn_sram.enclosed(nw_n_dn_sram, 0.4.um, euclidian).polygons(0.001.um)
+  sdf4c_l2 = pcomp_out_dn_sram.not_outside(nw_n_dn_sram).not(nw_n_dn_sram)
+  sdf4c_l  = sdf4c_l1.or(sdf4c_l2)
+  sdf4c_l.output('S.DF.4c_LV', 'S.DF.4c_LV : Min. (Nwell overlap of PCOMP) outside DNWELL: 0.4µm')
+  sdf4c_l1.forget
+  sdf4c_l2.forget
+  sdf4c_l.forget
+  pcomp_out_dn_sram.forget
+
+  # Rule S.DF.16_LV: Min. space from (Nwell outside DNWELL) to
+  ## (NCOMP outside Nwell and DNWELL) is 0.4µm.
+  logger.info('Executing rule S.DF.16_LV')
+  sdf16_l1 = ncomp.outside(nwell).outside(dnwell).and(sram_lv).separation(nw_n_dn_sram, 0.4.um, euclidian)
+  sdf16_l1.output('S.DF.16_LV', "S.DF.16_LV : Min. space from (Nwell outside DNWELL) to
+                     (NCOMP outside Nwell and DNWELL): 0.4µm")
+  sdf16_l1.forget
+  nw_n_dn_sram.forget
+  sram_lv.forget
+
+  # Rule S.CO.3_LV: Poly2 overlap of contact is 0.04µm.
+  logger.info('Executing rule S.CO.3_LV')
+  sco3_l1 = contact_sram.enclosed(poly_sram, 0.04.um, euclidian).polygons(0.001.um)
+  sco3_l2 = contact_sram.not_outside(poly_sram).not(poly_sram)
+  sco3_l  = sco3_l1.or(sco3_l2)
+  sco3_l.output('S.CO.3_LV', 'S.CO.3_LV : Poly2 overlap of contact: 0.04µm')
+  sco3_l1.forget
+  sco3_l2.forget
+  sco3_l.forget
+  poly_sram.forget
+
+  # Rule S.CO.4_LV: COMP overlap of contact is 0.03µm.
+  logger.info('Executing rule S.CO.4_LV')
+  sco4_l1 = comp_sram.enclosing(contact_sram, 0.03.um, euclidian).polygons(0.001.um)
+  sco4_l2 = contact_sram.not_outside(comp_sram).not(comp_sram)
+  sco4_l  = sco4_l1.or(sco4_l2)
+  sco4_l.output('S.CO.4_LV', 'S.CO.4_LV : COMP overlap of contact: 0.03µm')
+  sco4_l1.forget
+  sco4_l2.forget
+  sco4_l.forget
+  comp_sram.forget
+
+  # Rule S.CO.6_ii_LV: (ii) If Metal1 overlaps contact
+  ## by < 0.04um on one side, adjacent metal1 edges overlap is 0.02.um
+  logger.info('Executing rule S.CO.6_ii_LV')
+  s_co6_cond_edges = contact_sram.edges.not_outside(contact_sram.enclosed(metal1_sram, 0.02.um, projection).edges)
+  s_co6_check_corner = s_co6_cond_edges.extended_in(0.002.um)
+  s_co6_check = contact_sram.edges.interacting(s_co6_check_corner).not(s_co6_cond_edges)
+  s_co6_cond_corner = s_co6_cond_edges.width(0.002.um, angle_limit(135)).polygons
+  s_co6_l1 = s_co6_check.enclosed(metal1_sram.edges, 0.04.um, projection).polygons
+  s_co6_l2 = contact_sram.interacting(s_co6_cond_corner)
+  s_co6_l = s_co6_l1.or(s_co6_l2)
+  s_co6_l.output('S.CO.6_ii_LV', 'S.CO.6_ii_LV : (ii) If Metal1 overlaps contact
+                  by < 0.04um on one side, adjacent metal1 edges overlap: 0.02.um')
+  s_co6_l.forget
+  s_co6_l1.forget
+  s_co6_l2.forget
+  s_co6_cond_edges.forget
+  s_co6_check_corner.forget
+  s_co6_cond_corner.forget
+  s_co6_check.forget
+  contact_sram.forget
+
+  # Rule S.M1.1_LV: min. metal1 width is 0.22µm
+  logger.info('Executing rule S.M1.1_LV')
+  sm11_l1 = metal1_sram.width(0.22.um, euclidian)
+  sm11_l1.output('S.M1.1_LV', 'S.M1.1_LV : min. metal1 width : 0.22µm')
+  sm11_l1.forget
+  metal1_sram.forget
+end

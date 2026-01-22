@@ -1,0 +1,48 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2023 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+#================================================
+#-------------------10V LDPMOS-------------------
+#================================================
+if FEOL && SPLIT_DEEP
+  if CONNECTIVITY_RULES
+    logger.info('CONNECTIVITY_RULES section')
+
+    connected_mdp_10b, unconnected_mdp_10a = conn_space(mvpsd, 1, 2, euclidian)
+
+    # Rule MDP.10a: Min MVPSD space within LDMOS_XTOR marking [diff potential]. is 2µm
+    logger.info('Executing rule MDP.10a')
+    mdp10a_l1 = unconnected_mdp_10a
+    mdp10a_l1.output('MDP.10a', 'MDP.10a : Min MVPSD space within LDMOS_XTOR marking [diff potential]. : 2µm')
+    mdp10a_l1.forget
+
+    # Rule MDP.10b: Min MVPSD space [same potential]. Merge if space less than 1um. is 1µm
+    logger.info('Executing rule MDP.10b')
+    mdp10b_l1 = connected_mdp_10b
+    mdp10b_l1.output('MDP.10b', 'MDP.10b : Min MVPSD space [same potential]. Merge if space less than 1um. : 1µm')
+    mdp10b_l1.forget
+  else
+    logger.info('CONNECTIVITY_RULES disabled section')
+
+    # Rule MDP.10a: Min MVPSD space within LDMOS_XTOR marking [diff potential]. is 2µm
+    logger.info('Executing rule MDP.10a')
+    mdp10a_l1 = mvpsd.space(2.um, euclidian)
+    mdp10a_l1.output('MDP.10a', 'MDP.10a : Min MVPSD space within LDMOS_XTOR marking [diff potential]. : 2µm')
+    mdp10a_l1.forget
+  end
+end

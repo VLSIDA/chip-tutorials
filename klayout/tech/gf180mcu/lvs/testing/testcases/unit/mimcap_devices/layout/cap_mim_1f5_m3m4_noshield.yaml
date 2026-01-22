@@ -1,0 +1,4 @@
+cap_mim_1f5_m3m4_noshield:
+  -rd mim_option: "B"
+  -rd metal_level: "4LM"
+  -rd mim_cap: "1.5"

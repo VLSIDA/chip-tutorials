@@ -1,0 +1,10 @@
+---
+run_mode: flat
+variant: C
+top_cell_name: ''
+verbose: 'false'
+feol: true
+beol: true
+offgrid: 'true'
+connectivity: 'false'
+dummy: 'true'

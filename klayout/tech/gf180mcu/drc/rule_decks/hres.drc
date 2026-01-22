@@ -1,0 +1,153 @@
+# frozen_string_literal: true
+
+################################################################################################
+# Copyright 2022 GlobalFoundries PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################################
+
+if FEOL
+  #================================================
+  #----------------H POLY RESISTOR-----------------
+  #================================================
+
+  logger.info('Starting HRES derivations')
+  hres1_poly = poly2.interacting(pplus).interacting(sab).interacting(res_mk)
+  hres_poly = hres1_poly.interacting(resistor)
+  hres_resistor = resistor.interacting(hres1_poly)
+  hres_contact = contact.and(hres_poly)
+
+  # Rule HRES.1: Minimum space is 0.4µm. Note: Merge if the spacing is less than 0.4 um.
+  logger.info('Executing rule HRES.1')
+  hres1_l1 = hres_resistor.space(0.4.um, euclidian)
+  hres1_l1.output('HRES.1', 'HRES.1 : Minimum space: 0.4µm. Note: Merge if the spacing is less than 0.4 um.')
+  hres1_l1.forget
+
+  # Rule HRES.2: Minimum width of Poly2 resistor is 1µm.
+  logger.info('Executing rule HRES.2')
+  hres2_l1 = hres_poly.width(1.um, euclidian)
+  hres2_l1.output('HRES.2', 'HRES.2 : Minimum width of Poly2 resistor: 1µm')
+  hres2_l1.forget
+
+  # Rule HRES.3: Minimum space between Poly2 resistors is 0.4µm.
+  logger.info('Executing rule HRES.3')
+  hres3_l1 = hres_poly.space(0.4.um, euclidian)
+  hres3_l1.output('HRES.3', 'HRES.3 : Minimum space between Poly2 resistors: 0.4µm')
+  hres3_l1.forget
+
+  # Rule HRES.4: Minimum RESISTOR overlap of Poly2 resistor is 0.4µm.
+  logger.info('Executing rule HRES.4')
+  hres4_l1 = hres_poly.enclosed(resistor, 0.4.um, euclidian).polygons(0.001.um)
+  hres4_l2 = hres_poly.not_outside(resistor).not(resistor)
+  hres4_l  = hres4_l1.or(hres4_l2)
+  hres4_l.output('HRES.4', 'HRES.4 : Minimum RESISTOR overlap of Poly2 resistor: 0.4µm')
+  hres4_l1.forget
+  hres4_l2.forget
+  hres4_l.forget
+
+  # Rule HRES.5: Minimum RESISTOR space to unrelated Poly2 is 0.3µm.
+  logger.info('Executing rule HRES.5')
+  hres5_l1 = hres_resistor.separation(poly2.not_interacting(sab), 0.3.um, euclidian)
+  hres5_l1.output('HRES.5', 'HRES.5 : Minimum RESISTOR space to unrelated Poly2: 0.3µm')
+  hres5_l1.forget
+
+  # Rule HRES.6: Minimum RESISTOR space to COMP is  0.3.um.
+  logger.info('Executing rule HRES.6')
+  hres6_l1 = hres_resistor.separation(comp, 0.3.um, euclidian).polygons(0.001.um)
+  hres6_l2 = comp.not_outside(hres_resistor)
+  hres6_l = hres6_l1.or(hres6_l2)
+  hres6_l.output('HRES.6', 'HRES.6 : Minimum RESISTOR space to COMP: 0.3um')
+  hres6_l.forget
+  hres6_l1.forget
+  hres6_l2.forget
+  hres1_poly.forget
+  hres_resistor.forget
+
+  # Rule HRES.7: Minimum Pplus overlap of contact on Poly2 resistor is 0.2µm.
+  logger.info('Executing rule HRES.7')
+  hres7_l1 = hres_contact.enclosed(pplus, 0.2.um, euclidian).polygons(0.001.um)
+  hres7_l2 = hres_contact.not_outside(pplus).not(pplus)
+  hres7_l  = hres7_l1.or(hres7_l2)
+  hres7_l.output('HRES.7', 'HRES.7 : Minimum Pplus overlap of contact on Poly2 resistor: 0.2µm')
+  hres7_l1.forget
+  hres7_l2.forget
+  hres7_l.forget
+
+  # Rule HRES.8: Minimum space from salicide block to contact on Poly2 resistor is 0.22.um.
+  logger.info('Executing rule HRES.8')
+  hres8_l1 = hres_contact.separation(sab,
+                                     0.22.um).polygons(0.001.um).or(hres_contact.interacting(sab))
+  hres8_l1.output('HRES.8', 'HRES.8 : Minimum space from salicide block to contact on Poly2 resistor: 0.22.um')
+  hres8_l1.forget
+  hres_contact.forget
+
+  # Rule HRES.9: Minimum salicide block overlap of Poly2 resistor in width direction is 0.28.um.
+  logger.info('Executing rule HRES.9')
+  hres9_sab             = sab.interacting(pplus).interacting(res_mk).interacting(resistor)
+  hres9_clear_sab       = hres9_sab.not(hres_poly)
+  hres9_bad_inside_edge = hres9_sab.edges.inside_part(hres_poly).extended(0, 0, 0.001.um, 0.001.um)
+                                   .interacting(hres9_clear_sab, 1, 1)
+  hres9_sab_hole = hres9_sab.holes.and(hres_poly)
+  hres9_l1 = hres_poly.enclosed(hres9_sab, 0.28.um, euclidian).polygons(0.001.um)
+  hres9_l2 = hres9_bad_inside_edge.or(hres9_sab_hole)
+  hres9_l = hres9_l1.or(hres9_l2)
+  hres9_l.output('HRES.9', 'HRES.9 : Minimum salicide block overlap of Poly2 resistor in width direction: 0.28.um')
+  hres9_l.forget
+  hres9_l1.forget
+  hres9_l2.forget
+  hres9_sab.forget
+  hres9_clear_sab.forget
+  hres9_bad_inside_edge.forget
+  hres9_sab_hole.forget
+
+  # Rule HRES.10: Minimum & maximum Pplus overlap of SAB is 0.1.um
+  logger.info('Executing rule HRES.10')
+  pplus1_hres10 = pplus.and(sab).drc(width != 0.1.um)
+  pplus2_hres10 = pplus.not_overlapping(sab).edges
+  hres10_l1 = pplus1_hres10.or(pplus2_hres10).extended(0, 0, 0.001.um, 0.001.um).interacting(hres_poly)
+  hres10_l1.output('HRES.10', 'HRES.10 : Minimum & maximum Pplus overlap of SAB: 0.1.um')
+  hres10_l1.forget
+  pplus1_hres10.forget
+  pplus2_hres10.forget
+
+  # Rule HRES.11 is not a DRC check
+  ## Please refer to https://gf180mcu-pdk.readthedocs.io/en/latest/physical_verification/design_manual/drm_10_03.html#hres-poly-resistor-phres-optional-with-one-additional-mask
+
+  # Rule HRES.12a: P type Poly2 resistor (high sheet rho) shall be covered by RES_MK marking.
+  ## RES_MK length shall be coincide with resistor length (Defined by Pplus space)
+  ## and width covering the width of Poly2.
+  logger.info('Executing rule HRES.12a')
+  mk_hres12a = res_mk.edges.not(poly2.not(pplus).and(sab).edges).inside_part(poly2)
+  hres12a_l1 = res_mk.interacting(resistor).interacting(mk_hres12a)
+  hres12a_l1.output('HRES.12a',
+                    'HRES.12a : P type Poly2 resistor (high sheet rho) shall be covered by RES_MK marking.
+                     RES_MK length shall be coincide with resistor length (Defined by Pplus space)
+                     and width covering the width of Poly2. ')
+  hres12a_l1.forget
+  mk_hres12a.forget
+
+  # Rule HRES.12b: If the size of single RES_MK mark layer is greater than 15000 um2
+  ## and both side (X and Y) are greater than 80 um.
+  ## Then the minimum spacing to adjacent RES_MK layer is 20µm.
+  logger.info('Executing rule HRES.12b')
+  hres12b = res_mk.with_area(15_000.001.um, nil).edges.with_length(80.001.um, nil)
+  hres12b_l1 = hres12b.separation(res_mk.edges, 20.um)
+  hres12b_l1.output('HRES.12b',
+                    'HRES.12b : If the size of single RES_MK mark layer is greater than 15000 um2
+                     and both side (X and Y) are greater than 80 um.
+                     Then the minimum spacing to adjacent RES_MK layer: 20µm')
+  hres12b_l1.forget
+  hres12b.forget
+  hres_poly.forget
+
+end
