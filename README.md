@@ -7,6 +7,12 @@ git clone https://github.com/VLSIDA/chip-tutorials.git
 cd chip-tutorials
 ```
 
+You should use the most recent version if there are any changes. To get this, run:
+
+```bash
+git pull
+```
+
 ## Basic Tutorials
 
 1. [UCSC Git](git.md)
