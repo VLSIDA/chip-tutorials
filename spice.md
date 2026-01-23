@@ -14,7 +14,7 @@ For example,
 
 ```bash
 pip install ciel
-ciel enable --pdk sky130 0fe599b2afb6708d281543108caf8310912f54af
+ciel enable --pdk sky130 54435919abffb937387ec956209f9cf5fd2dfbee
 ```
 
 You should now see the PDK installed:
@@ -98,6 +98,7 @@ inductors, and capacitors. Assorted magnetic elements are supported by
 spice but they are not presented.
 
 Resistors, inductors, and capacitors come in two types:
+
 - a simple, linear element with a value and some dependence on temperature, initialization, and scaling
 - an element that refers to a more complicated model statement
 
@@ -118,6 +119,7 @@ parasitic.
 
 We can specify these three passive devices merely by using the first
 letter of the device name such as:
+
 - Rxxx for resistor
 - Lxxx for inductor
 - Cxxx for capacitor
@@ -226,6 +228,7 @@ To simulate your circuits you will need some way to tell Ngspice what
 is stimulating or supplying electrical power to the circuit. We specify
 these sources in a way similar to the passive devices described
 earlier: name, connecting nodes, and value. As you might have expected
+
 - Vxxx is a voltage source
 - Ixxx is a current source
 
@@ -258,6 +261,7 @@ source is assumed to remain constant during the simulation.
 
 The transient value portion of the statement has several forms, one
 for each type of waveform. The most commonly used forms are:
+
 - EXP - exponential waveform
 - PULSE - pulse waveform
 - PWL - piecewise linear waveform
