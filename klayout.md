@@ -6,7 +6,8 @@ The KLayout that comes with OpenLane-2 Nix/Docker does not have Qt5 support,
 which is required for the Sky130 technology files and the 2.5D viewing. You
 will need to install KLayout from the [KLayout
 website](https://www.klayout.de/build.html). It is pre-built for nearly all
-platforms (Windows, MacOS, Linux) and is easy to install. 
+platforms (Windows, MacOS, Linux) and is easy to install.
+
 - Ubuntu 20.04: [klayout-0.29.4-1_amd64.deb](https://www.klayout.org/downloads/Ubuntu/klayout-0.29.4-1_amd64.deb)
 - MacOS: Depends on your OS Version. Check the [KLayout website](https://www.klayout.de/build.html) for the latest version.
 For Windows, we recommend that you install the Ubuntu version in [Windows
@@ -24,10 +25,12 @@ KLayout steps in OL2 if you do not do this!
 ## Starting KLayout with Sky130
 
 Clone this repository to your local machine:
+
 ```bash
 git clone https://github.com/VLSIDA/chip-tutorials.git
 cd chip-tutorials/klayout
 ```
+
 The subdirectory `tech` contains the Sky130 technology files for
 KLayout in one convenient place. You can start KLayout and have it use these by
 running the following command:
@@ -35,13 +38,15 @@ running the following command:
 ```bash
 KLAYOUT_PATH=<chip-tutorials dir>/klayout klayout -e
 ```
-where "<chip-tutorials dir>" refers to the chip-tutorials repos location.
+
+where "\<chip-tutorials dir\>" refers to the chip-tutorials repos location.
 If you don't specify the *KLAYOUT_PATH* variable,
 it will use the tech directory in your home directory which likely does not
 exist.
 
 Alternatively to avoid having to set KLAYOUT_PATH every time, you can set it
 at the bottom of  your `~/.bashrc` file (or `~/.zshrc` for MacOS and zsh users) with:
+
 ```bash
 export KLAYOUT_PATH=<chip-tutorials dir>/klayout
 ```
@@ -56,14 +61,18 @@ You will then be greeted with the main KLayout window:
 ## Troubleshooting
 
 You may get the following error if you try to run KLayout from the docker.
+
 ```bash
 Authorization required, but no authorization protocol specified
 Could not load the Qt platform plugin "xcb" in "" even though it was found. 
 ```
+
 You can resolve this by running:
+
 ```bash
 xhost +local:
 ```
+
 This will give the docker container permission to access your display server (X11).
 
 # Using KLayout
@@ -111,7 +120,6 @@ The [Edit](klayout-edit.md) tutorial has some useful instructions for editing sh
 can be used to fix DRC errors.
 
 The [Running LVS](klayout-lvs.md) tutorial discusses how to run LVS as well as some common errors and how to fix them.
-
 
 ## Closing crash
 
