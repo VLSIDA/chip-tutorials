@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-Copyright 2022 GlobalFoundries PDK Authors
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    https://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <layer-properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#55ce57</frame-color>
   <fill-color>#55ce57</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -33,6 +19,7 @@ limitations under the License.
   <source>1/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#661a48</frame-color>
   <fill-color>#661a48</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -50,6 +37,7 @@ limitations under the License.
   <source>pass_mk 2/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#7c6078</frame-color>
   <fill-color>#7c6078</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -67,6 +55,7 @@ limitations under the License.
   <source>fail_mk 3/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#f26f6c</frame-color>
   <fill-color>#f26f6c</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -84,6 +73,7 @@ limitations under the License.
   <source>polygon_mk 4/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#324416</frame-color>
   <fill-color>#324416</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -101,6 +91,7 @@ limitations under the License.
   <source>5/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#3acb88</frame-color>
   <fill-color>#3acb88</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -118,6 +109,7 @@ limitations under the License.
   <source>violation_mk 6/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5a68c2</frame-color>
   <fill-color>#5a68c2</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -135,6 +127,7 @@ limitations under the License.
   <source>rule_txt_mk 11/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#718e2d</frame-color>
   <fill-color>#718e2d</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -152,6 +145,7 @@ limitations under the License.
   <source>12/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#3f3f3c</frame-color>
   <fill-color>#3f3f3c</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -169,6 +163,7 @@ limitations under the License.
   <source>case_txt_mk 13/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#3f12e4</frame-color>
   <fill-color>#3f12e4</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -186,6 +181,7 @@ limitations under the License.
   <source>14/222@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#f9bd46</frame-color>
   <fill-color>#f9bd46</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -203,11 +199,12 @@ limitations under the License.
   <source>15/222@1</source>
  </properties>
  <properties>
-  <frame-color>#bd74bd</frame-color>
-  <fill-color>#bd74bd</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#00ff00</frame-color>
+  <fill-color>#00ff00</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I3</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -220,11 +217,12 @@ limitations under the License.
   <source>COMP 22/0@1</source>
  </properties>
  <properties>
-  <frame-color>#88cb1d</frame-color>
-  <fill-color>#88cb1d</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#c8ffc8</frame-color>
+  <fill-color>#c8ffc8</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I3</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -237,28 +235,12 @@ limitations under the License.
   <source>DNWELL 12/0@1</source>
  </properties>
  <properties>
-  <frame-color>#f9946b</frame-color>
-  <fill-color>#f9946b</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#00ffff</frame-color>
+  <fill-color>#00ffff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width>1</width>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name/>
-  <source>Nwell 21/0@1</source>
- </properties>
- <properties>
-  <frame-color>#3a2888</frame-color>
-  <fill-color>#3a2888</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I1</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -271,11 +253,12 @@ limitations under the License.
   <source>LVPWELL 204/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#c16f5c</frame-color>
   <fill-color>#c16f5c</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I1</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -288,11 +271,12 @@ limitations under the License.
   <source>Dualgate 55/0@1</source>
  </properties>
  <properties>
-  <frame-color>#2e9521</frame-color>
-  <fill-color>#2e9521</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ff0000</frame-color>
+  <fill-color>#ff0000</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>C42</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -305,8 +289,9 @@ limitations under the License.
   <source>Poly2 30/0@1</source>
  </properties>
  <properties>
-  <frame-color>#bf3efb</frame-color>
-  <fill-color>#bf3efb</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#e61f0d</frame-color>
+  <fill-color>#e61f0d</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
   <dither-pattern>I5</dither-pattern>
@@ -322,8 +307,9 @@ limitations under the License.
   <source>Nplus 32/0@1</source>
  </properties>
  <properties>
-  <frame-color>#34c590</frame-color>
-  <fill-color>#34c590</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#9900e6</frame-color>
+  <fill-color>#9900e6</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
   <dither-pattern>I9</dither-pattern>
@@ -339,6 +325,7 @@ limitations under the License.
   <source>Pplus 31/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#67392f</frame-color>
   <fill-color>#67392f</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -356,6 +343,7 @@ limitations under the License.
   <source>SAB 49/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#d9ef03</frame-color>
   <fill-color>#d9ef03</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -373,11 +361,12 @@ limitations under the License.
   <source>ESD 24/0@1</source>
  </properties>
  <properties>
-  <frame-color>#c86634</frame-color>
-  <fill-color>#c86634</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ccccd9</frame-color>
+  <fill-color>#ccccd9</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>C1</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -390,11 +379,12 @@ limitations under the License.
   <source>Contact 33/0@1</source>
  </properties>
  <properties>
-  <frame-color>#eddd07</frame-color>
-  <fill-color>#eddd07</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#0000ff</frame-color>
+  <fill-color>#0000ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -407,11 +397,12 @@ limitations under the License.
   <source>Metal1 34/0@1</source>
  </properties>
  <properties>
-  <frame-color>#f5e7f1</frame-color>
-  <fill-color>#f5e7f1</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#0000ff</frame-color>
+  <fill-color>#0000ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>C1</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -424,11 +415,12 @@ limitations under the License.
   <source>Via1 35/0@1</source>
  </properties>
  <properties>
-  <frame-color>#ccf338</frame-color>
-  <fill-color>#ccf338</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ff00ff</frame-color>
+  <fill-color>#ff00ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -441,11 +433,12 @@ limitations under the License.
   <source>Metal2 36/0@1</source>
  </properties>
  <properties>
-  <frame-color>#e1d8ca</frame-color>
-  <fill-color>#e1d8ca</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ff00ff</frame-color>
+  <fill-color>#ff00ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I0</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -458,11 +451,12 @@ limitations under the License.
   <source>Via2 38/0@1</source>
  </properties>
  <properties>
-  <frame-color>#97b91b</frame-color>
-  <fill-color>#97b91b</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#00ffff</frame-color>
+  <fill-color>#00ffff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -475,11 +469,12 @@ limitations under the License.
   <source>Metal3 42/0@1</source>
  </properties>
  <properties>
-  <frame-color>#53e2e8</frame-color>
-  <fill-color>#53e2e8</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#00ffff</frame-color>
+  <fill-color>#00ffff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I0</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -492,11 +487,12 @@ limitations under the License.
   <source>Via3 40/0@1</source>
  </properties>
  <properties>
-  <frame-color>#80317c</frame-color>
-  <fill-color>#80317c</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#5e00e6</frame-color>
+  <fill-color>#5e00e6</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -509,11 +505,12 @@ limitations under the License.
   <source>Metal4 46/0@1</source>
  </properties>
  <properties>
-  <frame-color>#a7b1d1</frame-color>
-  <fill-color>#a7b1d1</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#8000ff</frame-color>
+  <fill-color>#8000ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I0</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -526,11 +523,12 @@ limitations under the License.
   <source>Via4 41/0@1</source>
  </properties>
  <properties>
-  <frame-color>#cdc16b</frame-color>
-  <fill-color>#cdc16b</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#d9cc00</frame-color>
+  <fill-color>#d9cc00</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -543,11 +541,12 @@ limitations under the License.
   <source>Metal5 81/0@1</source>
  </properties>
  <properties>
-  <frame-color>#827e5b</frame-color>
-  <fill-color>#827e5b</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#f3ff80</frame-color>
+  <fill-color>#f3ff80</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I0</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -560,11 +559,12 @@ limitations under the License.
   <source>Via5 82/0@1</source>
  </properties>
  <properties>
-  <frame-color>#b1dd9c</frame-color>
-  <fill-color>#b1dd9c</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#800080</frame-color>
+  <fill-color>#800080</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -577,11 +577,12 @@ limitations under the License.
   <source>MetalTop 53/0@1</source>
  </properties>
  <properties>
-  <frame-color>#72342b</frame-color>
-  <fill-color>#72342b</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ffffcc</frame-color>
+  <fill-color>#ffffcc</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>C21</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -594,11 +595,12 @@ limitations under the License.
   <source>Pad 37/0@1</source>
  </properties>
  <properties>
-  <frame-color>#1437ff</frame-color>
-  <fill-color>#1437ff</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ff0000</frame-color>
+  <fill-color>#ff0000</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>C42</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -611,6 +613,7 @@ limitations under the License.
   <source>Resistor 62/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#82b18c</frame-color>
   <fill-color>#82b18c</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -628,6 +631,7 @@ limitations under the License.
   <source>FHRES 227/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#b9a4fd</frame-color>
   <fill-color>#b9a4fd</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -645,6 +649,7 @@ limitations under the License.
   <source>FuseTop 75/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#87ad41</frame-color>
   <fill-color>#87ad41</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -662,6 +667,7 @@ limitations under the License.
   <source>FuseWindow_D 96/1@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ec7ceb</frame-color>
   <fill-color>#ec7ceb</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -679,6 +685,7 @@ limitations under the License.
   <source>POLYFUSE 220/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#e29901</frame-color>
   <fill-color>#e29901</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -696,6 +703,7 @@ limitations under the License.
   <source>MVSD 210/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#63a2db</frame-color>
   <fill-color>#63a2db</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -713,6 +721,7 @@ limitations under the License.
   <source>MVPSD 11/39@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#91d339</frame-color>
   <fill-color>#91d339</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -730,11 +739,12 @@ limitations under the License.
   <source>NAT 5/0@1</source>
  </properties>
  <properties>
-  <frame-color>#f84e38</frame-color>
-  <fill-color>#f84e38</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#00ff00</frame-color>
+  <fill-color>#00ff00</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -747,11 +757,12 @@ limitations under the License.
   <source>COMP_Dummy 22/4@1</source>
  </properties>
  <properties>
-  <frame-color>#2d4da8</frame-color>
-  <fill-color>#2d4da8</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ff0000</frame-color>
+  <fill-color>#ff0000</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -764,11 +775,12 @@ limitations under the License.
   <source>Poly2_Dummy 30/4@1</source>
  </properties>
  <properties>
-  <frame-color>#c01202</frame-color>
-  <fill-color>#c01202</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#0000ff</frame-color>
+  <fill-color>#0000ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -781,11 +793,12 @@ limitations under the License.
   <source>Metal1_Dummy 34/4@1</source>
  </properties>
  <properties>
-  <frame-color>#2f93c0</frame-color>
-  <fill-color>#2f93c0</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#ff00ff</frame-color>
+  <fill-color>#ff00ff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -798,11 +811,12 @@ limitations under the License.
   <source>Metal2_Dummy 36/4@1</source>
  </properties>
  <properties>
-  <frame-color>#867300</frame-color>
-  <fill-color>#867300</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#00ffff</frame-color>
+  <fill-color>#00ffff</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -815,11 +829,12 @@ limitations under the License.
   <source>Metal3_Dummy 42/4@1</source>
  </properties>
  <properties>
-  <frame-color>#e86c70</frame-color>
-  <fill-color>#e86c70</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#5e00e6</frame-color>
+  <fill-color>#5e00e6</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -832,11 +847,12 @@ limitations under the License.
   <source>Metal4_Dummy 46/4@1</source>
  </properties>
  <properties>
-  <frame-color>#26676b</frame-color>
-  <fill-color>#26676b</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#d9cc00</frame-color>
+  <fill-color>#d9cc00</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -849,11 +865,12 @@ limitations under the License.
   <source>Metal5_Dummy 81/4@1</source>
  </properties>
  <properties>
-  <frame-color>#60fe08</frame-color>
-  <fill-color>#60fe08</fill-color>
+  <expanded>false</expanded>
+  <frame-color>#d9cc00</frame-color>
+  <fill-color>#d9cc00</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I6</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -866,6 +883,7 @@ limitations under the License.
   <source>MetalTop_Dummy 53/4@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#4665c7</frame-color>
   <fill-color>#4665c7</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -883,6 +901,7 @@ limitations under the License.
   <source>COMP_Label 22/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#fb1879</frame-color>
   <fill-color>#fb1879</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -900,14 +919,15 @@ limitations under the License.
   <source>Poly2_Label 30/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#880f5b</frame-color>
   <fill-color>#880f5b</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I2</dither-pattern>
   <line-style/>
   <valid>true</valid>
-  <visible>false</visible>
+  <visible>true</visible>
   <transparent>false</transparent>
   <width>1</width>
   <marked>false</marked>
@@ -917,6 +937,7 @@ limitations under the License.
   <source>Metal1_Label 34/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ff80b7</frame-color>
   <fill-color>#ff80b7</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -934,6 +955,7 @@ limitations under the License.
   <source>Metal2_Label 36/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ad9348</frame-color>
   <fill-color>#ad9348</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -951,6 +973,7 @@ limitations under the License.
   <source>Metal3_Label 42/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#876bbe</frame-color>
   <fill-color>#876bbe</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -968,6 +991,7 @@ limitations under the License.
   <source>Metal4_Label 46/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#43e12f</frame-color>
   <fill-color>#43e12f</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -985,6 +1009,7 @@ limitations under the License.
   <source>Metal5_Label 81/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#a6ec0e</frame-color>
   <fill-color>#a6ec0e</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1002,6 +1027,7 @@ limitations under the License.
   <source>MetalTop_Label 53/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#271fe3</frame-color>
   <fill-color>#271fe3</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1019,6 +1045,7 @@ limitations under the License.
   <source>Metal1_Slot 34/3@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#d56ff8</frame-color>
   <fill-color>#d56ff8</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1036,6 +1063,7 @@ limitations under the License.
   <source>Metal2_Slot 36/3@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#d8c178</frame-color>
   <fill-color>#d8c178</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1053,6 +1081,7 @@ limitations under the License.
   <source>Metal3_Slot 42/3@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#6c36fb</frame-color>
   <fill-color>#6c36fb</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1070,6 +1099,7 @@ limitations under the License.
   <source>Metal4_Slot 46/3@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#225c09</frame-color>
   <fill-color>#225c09</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1087,6 +1117,7 @@ limitations under the License.
   <source>Metal5_Slot 81/3@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#03f979</frame-color>
   <fill-color>#03f979</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1104,6 +1135,7 @@ limitations under the License.
   <source>MetalTop_Slot 53/3@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#6c9be2</frame-color>
   <fill-color>#6c9be2</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1121,6 +1153,7 @@ limitations under the License.
   <source>UBMPPeri 183/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#0174b8</frame-color>
   <fill-color>#0174b8</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1138,6 +1171,7 @@ limitations under the License.
   <source>UBMPArray 184/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5bdc70</frame-color>
   <fill-color>#5bdc70</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1155,6 +1189,7 @@ limitations under the License.
   <source>UBMEPlate 185/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#94d628</frame-color>
   <fill-color>#94d628</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1172,6 +1207,7 @@ limitations under the License.
   <source>Schottky_diode 241/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5660ce</frame-color>
   <fill-color>#5660ce</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1189,6 +1225,7 @@ limitations under the License.
   <source>ZENER 178/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#4a0c51</frame-color>
   <fill-color>#4a0c51</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1206,6 +1243,7 @@ limitations under the License.
   <source>RES_MK 110/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#84fd79</frame-color>
   <fill-color>#84fd79</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1223,6 +1261,7 @@ limitations under the License.
   <source>OPC_drc 124/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#49ee98</frame-color>
   <fill-color>#49ee98</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1240,6 +1279,7 @@ limitations under the License.
   <source>NDMY 111/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#0c7e5b</frame-color>
   <fill-color>#0c7e5b</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1257,11 +1297,12 @@ limitations under the License.
   <source>PMNDMY 152/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#49b403</frame-color>
   <fill-color>#49b403</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
+  <dither-pattern>I1</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -1274,6 +1315,7 @@ limitations under the License.
   <source>V5_XTOR 112/1@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#2522b7</frame-color>
   <fill-color>#2522b7</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1291,6 +1333,7 @@ limitations under the License.
   <source>CAP_MK 117/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#0c5e62</frame-color>
   <fill-color>#0c5e62</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1308,6 +1351,7 @@ limitations under the License.
   <source>MOS_CAP_MK 166/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#99ac7e</frame-color>
   <fill-color>#99ac7e</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1325,6 +1369,7 @@ limitations under the License.
   <source>IND_MK 151/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#9f0f89</frame-color>
   <fill-color>#9f0f89</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1342,6 +1387,7 @@ limitations under the License.
   <source>DIODE_MK 115/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#04507b</frame-color>
   <fill-color>#04507b</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1359,6 +1405,7 @@ limitations under the License.
   <source>DRC_BJT 127/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#0e7575</frame-color>
   <fill-color>#0e7575</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1376,6 +1423,7 @@ limitations under the License.
   <source>LVS_BJT 118/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#f6b1ef</frame-color>
   <fill-color>#f6b1ef</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1393,6 +1441,7 @@ limitations under the License.
   <source>MIM_L_MK 117/10@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#10c9d8</frame-color>
   <fill-color>#10c9d8</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1410,6 +1459,7 @@ limitations under the License.
   <source>Latchup_MK 137/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#79d94d</frame-color>
   <fill-color>#79d94d</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1427,6 +1477,7 @@ limitations under the License.
   <source>GUARD_RING_MK 167/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#2aa0fb</frame-color>
   <fill-color>#2aa0fb</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1444,6 +1495,7 @@ limitations under the License.
   <source>OTP_MK 173/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#7b407b</frame-color>
   <fill-color>#7b407b</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1461,6 +1513,7 @@ limitations under the License.
   <source>MTPMARK 122/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#f894c4</frame-color>
   <fill-color>#f894c4</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1478,6 +1531,7 @@ limitations under the License.
   <source>NEO_EE_MK 88/17@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#d69c01</frame-color>
   <fill-color>#d69c01</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1495,6 +1549,7 @@ limitations under the License.
   <source>SramCore 108/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#c80a86</frame-color>
   <fill-color>#c80a86</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1512,6 +1567,7 @@ limitations under the License.
   <source>LVS_RF 100/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#fa898a</frame-color>
   <fill-color>#fa898a</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1529,6 +1585,7 @@ limitations under the License.
   <source>LVS_Drain 100/7@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5a305a</frame-color>
   <fill-color>#5a305a</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1546,6 +1603,7 @@ limitations under the License.
   <source>IND_MK 151/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#c2bf6d</frame-color>
   <fill-color>#c2bf6d</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1563,6 +1621,7 @@ limitations under the License.
   <source>HVPOLYRS 123/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#9f3b8a</frame-color>
   <fill-color>#9f3b8a</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1580,6 +1639,7 @@ limitations under the License.
   <source>LVS_IO 119/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5aac8a</frame-color>
   <fill-color>#5aac8a</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1597,6 +1657,7 @@ limitations under the License.
   <source>PROBE_MK 13/17@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5de533</frame-color>
   <fill-color>#5de533</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1614,6 +1675,7 @@ limitations under the License.
   <source>ESD_MK 24/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#b654a3</frame-color>
   <fill-color>#b654a3</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1631,6 +1693,7 @@ limitations under the License.
   <source>LVS_Source 100/8@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#9beaaf</frame-color>
   <fill-color>#9beaaf</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1648,6 +1711,7 @@ limitations under the License.
   <source>WELL_DIODE_MK 153/51@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#b0eb32</frame-color>
   <fill-color>#b0eb32</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1665,6 +1729,7 @@ limitations under the License.
   <source>LDMOS_XTOR 226/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#2507df</frame-color>
   <fill-color>#2507df</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1682,6 +1747,7 @@ limitations under the License.
   <source>PLFUSE 125/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#7791b3</frame-color>
   <fill-color>#7791b3</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1699,6 +1765,7 @@ limitations under the License.
   <source>EFUSE_MK 80/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ac9801</frame-color>
   <fill-color>#ac9801</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1716,6 +1783,7 @@ limitations under the License.
   <source>MCELL_FEOL_MK 11/17@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ae438e</frame-color>
   <fill-color>#ae438e</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1733,6 +1801,7 @@ limitations under the License.
   <source>YMTP_MK 86/17@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#5779b7</frame-color>
   <fill-color>#5779b7</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1750,6 +1819,7 @@ limitations under the License.
   <source>DEV_WF_MK 128/17@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#8e3415</frame-color>
   <fill-color>#8e3415</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1767,6 +1837,7 @@ limitations under the License.
   <source>Metal1_BLK 34/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#47649f</frame-color>
   <fill-color>#47649f</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1784,6 +1855,7 @@ limitations under the License.
   <source>Metal2_BLK 36/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#3bf37a</frame-color>
   <fill-color>#3bf37a</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1801,6 +1873,7 @@ limitations under the License.
   <source>Metal3_BLK 42/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#678619</frame-color>
   <fill-color>#678619</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1818,6 +1891,7 @@ limitations under the License.
   <source>Metal4_BLK 46/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#44fa82</frame-color>
   <fill-color>#44fa82</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1835,6 +1909,7 @@ limitations under the License.
   <source>Metal5_BLK 81/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#614b6a</frame-color>
   <fill-color>#614b6a</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1852,11 +1927,12 @@ limitations under the License.
   <source>MetalT_BLK 53/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#d9f817</frame-color>
   <fill-color>#d9f817</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
+  <dither-pattern>I1</dither-pattern>
   <line-style/>
   <valid>true</valid>
   <visible>true</visible>
@@ -1869,6 +1945,7 @@ limitations under the License.
   <source>PR_bndry 0/0@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#0bdfb7</frame-color>
   <fill-color>#0bdfb7</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1886,6 +1963,7 @@ limitations under the License.
   <source>MDIODE 116/5@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#658af3</frame-color>
   <fill-color>#658af3</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1903,6 +1981,7 @@ limitations under the License.
   <source>Metal1_Res 110/11@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#e9465c</frame-color>
   <fill-color>#e9465c</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1920,6 +1999,7 @@ limitations under the License.
   <source>Metal2_Res 110/12@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ba3263</frame-color>
   <fill-color>#ba3263</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1937,6 +2017,7 @@ limitations under the License.
   <source>Metal3_Res 110/13@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#ddeef3</frame-color>
   <fill-color>#ddeef3</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1954,6 +2035,7 @@ limitations under the License.
   <source>Metal4_Res 110/14@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#004676</frame-color>
   <fill-color>#004676</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1971,6 +2053,7 @@ limitations under the License.
   <source>Metal5_Res 110/15@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#e4b00d</frame-color>
   <fill-color>#e4b00d</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -1988,6 +2071,7 @@ limitations under the License.
   <source>Metal6_Res 110/16@1</source>
  </properties>
  <properties>
+  <expanded>false</expanded>
   <frame-color>#edeb06</frame-color>
   <fill-color>#edeb06</fill-color>
   <frame-brightness>0</frame-brightness>
@@ -2003,6 +2087,60 @@ limitations under the License.
   <animation>0</animation>
   <name/>
   <source>Border 63/0@1</source>
+ </properties>
+ <properties>
+  <expanded>false</expanded>
+  <frame-color>#f3ff80</frame-color>
+  <fill-color>#f3ff80</fill-color>
+  <frame-brightness>0</frame-brightness>
+  <fill-brightness>0</fill-brightness>
+  <dither-pattern>I9</dither-pattern>
+  <line-style/>
+  <valid>true</valid>
+  <visible>false</visible>
+  <transparent>false</transparent>
+  <width/>
+  <marked>false</marked>
+  <xfill>false</xfill>
+  <animation>0</animation>
+  <name/>
+  <source>21/0@1</source>
+ </properties>
+ <properties>
+  <expanded>false</expanded>
+  <frame-color>#ffc280</frame-color>
+  <fill-color>#ffc280</fill-color>
+  <frame-brightness>0</frame-brightness>
+  <fill-brightness>0</fill-brightness>
+  <dither-pattern>I5</dither-pattern>
+  <line-style/>
+  <valid>true</valid>
+  <visible>false</visible>
+  <transparent>false</transparent>
+  <width/>
+  <marked>false</marked>
+  <xfill>false</xfill>
+  <animation>0</animation>
+  <name/>
+  <source>58/0@1</source>
+ </properties>
+ <properties>
+  <expanded>false</expanded>
+  <frame-color>#ddff00</frame-color>
+  <fill-color>#ddff00</fill-color>
+  <frame-brightness>0</frame-brightness>
+  <fill-brightness>0</fill-brightness>
+  <dither-pattern>I9</dither-pattern>
+  <line-style/>
+  <valid>true</valid>
+  <visible>false</visible>
+  <transparent>false</transparent>
+  <width/>
+  <marked>false</marked>
+  <xfill>false</xfill>
+  <animation>0</animation>
+  <name/>
+  <source>63/63@1</source>
  </properties>
  <name/>
 </layer-properties>
