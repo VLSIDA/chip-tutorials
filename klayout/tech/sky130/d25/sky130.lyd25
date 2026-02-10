@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <klayout-macro>
- <description>D25 View</description>
+ <description>2.5D View</description>
  <version/>
  <category>d25</category>
  <prolog/>
@@ -12,48 +12,131 @@
  <shortcut/>
  <show-in-menu>true</show-in-menu>
  <group-name>efabless_sky130</group-name>
- <menu-path>efabless_sky130>end("Efabless sky130").end</menu-path>
+ <menu-path>efabless_sky130&gt;end("Efabless sky130").end</menu-path>
  <interpreter>dsl</interpreter>
  <dsl-interpreter-name>d25-dsl-xml</dsl-interpreter-name>
  <text>
+#/This comment fixes syntax highlighting.
 
-sub = input(255)
-dnw = input(64, 18)
-nw = input(64, 20)
-diff = input(65, 20)
-tap = input(65, 44)
-poly = input(66, 20)
-licon = input(66, 44)
-li = input(67, 20)
-mcon = input(67, 44)
-met1 = input(68, 20)
-via1 = input(68, 44)
-met2 = input(69, 20)
-via2 = input(69, 44)
-met3 = input(70, 20)
-via3 = input(70, 44)
-met4 = input(71, 20)
-via4 = input(71, 44)
-met5 = input(72, 20)
+# Extrusion helper function. If zstart is not provided, the extrusion starts where the last one ended
+# Uses color from 2D view by default, or specify frame to draw a wireframe of that color
+# Specify label to copy names from text layer into layer name
+$last_zstart=0
+def e(poly, name, height, zstart=nil, frame=nil, label:nil)
+	if zstart == nil
+		zstart = $last_zstart
+	end
+	$last_zstart = zstart + height
 
-z(sub, zstart: -10.nm, height: 10.nm, name: "sub")
-z(dnw, zstart: -400.nm, height: 400.nm, name: "dnw")
-z(nw, zstart: -200.nm, height: 200.nm, name: "nw")
-z(diff, zstart: -100.nm, height: 100.nm, name: "diff")
-z(tap, zstart: 0.nm, height: 400.nm, name: "tap")
-z(poly, zstart: 0.nm, height: 250.nm, name: "poly")
-z(licon, zstart: 0.nm, height: 400.nm, name: "licon")
-z(li, height: 200.nm, name: "li")
-z(mcon, height: 350.nm, name: "mcon")
-z(met1, height: 300.nm, name: "met1")
-z(via1, height: 350.nm, name: "via1")
-z(met2, height: 300.nm, name: "met2")
-z(via2, height: 350.nm, name: "via2")
-z(met3, height: 300.nm, name: "met3")
-z(via3, height: 350.nm, name: "via3")
-z(met4, height: 500.nm, name: "met4")
-z(via4, height: 400.nm, name: "via4")
-z(met5, height: 500.nm, name: "met5")
+	if label.kind_of?(Array)
+		num = label[0]
+		type = label[1]
+
+		# Get a list of the text objects on the label layer
+		strs = []
+		# The escaping is not a typo. Since this is Ruby stored inside of an XML file, we have to escape angle brackets
+		labels(num, type).texts.data.each { |text| strs &lt;&lt; text.string }
+		if !strs.empty?
+			name += " (" + strs.uniq.join(", ") + ")"
+		end
+	end
+
+	if !poly.is_empty? # Don't draw the layer if it doesn't have anything in it
+		if frame == nil
+			z(poly, name: name, zstart: zstart, height: height)
+		else
+			z(poly, name: name, zstart: zstart, height: height, frame: frame)
+		end
+	end
+end
+
+
+# ====== GRAB LAYERS ======
+
+sub   = polygons(255) # unknown layer
+dnw   = polygons(64, 18) # unknown layer (some kind of well??)
+nwell = polygons(64, 20)
+nwpin = polygons(64, 16)
+pwpin = polygons(122,16)
+hvtp  = polygons(78, 44)
+psdm  = polygons(94, 20)
+nsdm  = polygons(93, 44)
+npc   = polygons(95, 20)
+
+diff  = polygons(65, 20)
+poly  = polygons(66, 20)
+licon = polygons(66, 44)
+li    = polygons(67, 20)
+tap   = polygons(65, 44)
+lipin = polygons(67, 16)
+mcon  = polygons(67, 44)
+met1  = polygons(68, 20)
+m1pin = polygons(68, 16)
+
+via1  = polygons(68, 44)
+met2  = polygons(69, 20)
+via2  = polygons(69, 44)
+met3  = polygons(70, 20)
+via3  = polygons(70, 44)
+met4  = polygons(71, 20)
+via4  = polygons(71, 44)
+met5  = polygons(72, 20)
+
+
+# ====== HEIGHT DEFINITIONS ======
+
+POLY_H = 250.nm
+LICON_H = 400.nm
+LI_H = 200.nm
+WELL_H = 200.nm # "depth" would probably be more accurate
+DIFF_H = 100.nm
+MET_H = 300.nm
+PIN_H = 350.nm # height of pins that emerge from li and metal 1~3
+
+# Where pins emerge from li
+PIN_START = LICON_H + LI_H
+
+
+# ====== EXTRUDE LAYERS ======
+
+# Well pins, sit on top of the substrate
+e(nwpin, "N-Well pin", LICON_H, 0, label: [64, 5]) # Used to connect VNB to nwell body
+e(pwpin, "P-Well pin", LICON_H, 0, label: [64, 59]) # Used to connect VPB to pwell bulk
+
+# Well and diffusion parameters:
+e(nwell, "N-Well",      WELL_H,          -WELL_H, 0xA0A000)
+e(psdm,  "PSDM region", WELL_H,          -WELL_H, 0x990099)
+e(nsdm,  "NSDM region", WELL_H,          -WELL_H, 0x992200)
+e(hvtp,  "HVTP region", WELL_H + POLY_H, -WELL_H, 0xBB7733)
+e(npc,   "NPC region",  POLY_H,  0, 0x661010) # Not a well parameter but it probably fits best here
+e(diff,  "Diffusion",   DIFF_H,              -DIFF_H)
+# I haven't seen these on any cells, and I don't know what they are
+e(sub, "Sub",  10.nm,  -10.nm)
+e(dnw, "DNW", 400.nm, -400.nm)
+
+# Extrusions directly on top of the substrate/wells:
+e(poly,  "Poly",  POLY_H,  0)
+e(licon, "LIcon", LICON_H, 0)
+e(tap,   "Tap",   400.nm,  0) # Used exclusively in tap cells
+
+# Extrusions on top of the transistors:
+e(li,    "LI",      LI_H,  LICON_H)
+e(lipin, "LI pins", PIN_H, PIN_START, label: [67, 5])
+e(mcon,  "Mcon",    PIN_H, PIN_START)
+
+# For external connections:
+e(met1,  "Metal 1",      MET_H)
+e(m1pin, "Metal 1 pins", PIN_H, label: [68, 5])
+
+# It seems that the library cells don't use these; they are only for connecting cells
+e(via1, "Via 1",   PIN_H, PIN_START + PIN_H + MET_H)
+e(met2, "Metal 2", MET_H)
+e(via2, "Via 2",   PIN_H)
+e(met3, "Metal 3", MET_H)
+e(via3, "Via 3",   PIN_H)
+e(met4, "Metal 4", 500.nm) # closer to back end gets thicker
+e(via4, "Via 4",   400.nm)
+e(met5, "Metal 5", 500.nm)
 
 </text>
 </klayout-macro>
