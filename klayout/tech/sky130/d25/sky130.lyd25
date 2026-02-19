@@ -37,7 +37,7 @@ def e(poly, name, height, zstart=nil, frame=nil, label:nil)
 		# The escaping is not a typo. Since this is Ruby stored inside of an XML file, we have to escape angle brackets
 		labels(num, type).texts.data.each { |text| strs &lt;&lt; text.string }
 		if !strs.empty?
-			name += " (" + strs.uniq.join(", ") + ")"
+			name += " " + strs.uniq.join(", ")
 		end
 	end
 
@@ -92,6 +92,7 @@ WELL_H = 200.nm # "depth" would probably be more accurate
 DIFF_H = 100.nm
 MET_H = 300.nm
 PIN_H = 350.nm # height of pins that emerge from li and metal 1~3
+AREA_H = 0.1.nm # for visualizing flat areas where pins can connect
 
 # Where pins emerge from li
 PIN_START = LICON_H + LI_H
@@ -99,9 +100,9 @@ PIN_START = LICON_H + LI_H
 
 # ====== EXTRUDE LAYERS ======
 
-# Well pins, sit on top of the substrate
-e(nwpin, "N-Well pin", LICON_H, 0, label: [64, 5]) # Used to connect VNB to nwell body
-e(pwpin, "P-Well pin", LICON_H, 0, label: [64, 59]) # Used to connect VPB to pwell bulk
+# Well pin locations on top of the substrate
+e(nwpin, "N-Well conn:", AREA_H, 0, label: [64, 5]) # Used to connect VNB to nwell body
+e(pwpin, "P-Well conn:", AREA_H, 0, label: [64, 59]) # Used to connect VPB to pwell bulk
 
 # Well and diffusion parameters:
 e(nwell, "N-Well",      WELL_H,          -WELL_H, 0xA0A000)
@@ -120,13 +121,13 @@ e(licon, "LIcon", LICON_H, 0)
 e(tap,   "Tap",   400.nm,  0) # Used exclusively in tap cells
 
 # Extrusions on top of the transistors:
-e(li,    "LI",      LI_H,  LICON_H)
-e(lipin, "LI pins", PIN_H, PIN_START, label: [67, 5])
-e(mcon,  "Mcon",    PIN_H, PIN_START)
+e(li,    "LI",        LI_H,   LICON_H)
+e(lipin, "LI conns:", AREA_H, PIN_START, label: [67, 5])
+e(mcon,  "Mcon",      PIN_H,  PIN_START)
 
 # For external connections:
-e(met1,  "Metal 1",      MET_H)
-e(m1pin, "Metal 1 pins", PIN_H, label: [68, 5])
+e(met1,  "Metal 1",        MET_H)
+e(m1pin, "Metal 1 conns:", AREA_H, label: [68, 5])
 
 # It seems that the library cells don't use these; they are only for connecting cells
 e(via1, "Via 1",   PIN_H, PIN_START + PIN_H + MET_H)
