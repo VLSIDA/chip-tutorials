@@ -34,6 +34,8 @@ git pull
 
 1. [Spice Syntax](spice.md)
 
+1. [Spice Device Models](spice-models.md)
+
 1. [Ngspice Usage](ngspice.md)
 
 1. [KLayout](klayout.md)

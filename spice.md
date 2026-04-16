@@ -166,7 +166,10 @@ in all combinations: ss, ff, fs, sf.
 The element statement defines the connectivity of the transistor and
 references the .MODEL statement. The .MODEL statement specifies either
 an n- or p-channel device, the level of the model, and a number of
-user-selectable model parameters.  
+user-selectable model parameters. For a deeper discussion of MOSFET
+models — the Level 1 square-law parameters, the BSIM4 model that Sky130
+ships, and how bin selection works — see the
+[Spice Device Models](spice-models.md) tutorial.
 
 The following example specifies a PMOS MOSFET with a model reference
 name, PCH.  The parameters are selected from the model parameters. The
