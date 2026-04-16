@@ -7,7 +7,7 @@ Some Linux distributions now disallow the use of `pip` for installing packages t
 Meaning you need to either install them using your system's package manager, or create a Virtual
 Environment.
 
-To craete a virtual environment, create a directory for your project:
+To create a virtual environment, create a directory for your project:
 ```bash
 mkdir my_project
 ```

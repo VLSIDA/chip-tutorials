@@ -1,6 +1,6 @@
 # Running an example design
 
-This assumes that the smoke test runs and you've [installed OpenLane properly](installation.md).
+This assumes that the smoke test runs and you've [installed OpenLane properly](openlane-installation.md).
 
 There is also a very good overview for
 [Newcomers](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#).

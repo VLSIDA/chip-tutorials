@@ -25,7 +25,7 @@ An entire
 define_corners wc bc typ
 read_lib -corner wc $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
 read_lib -corner bc $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__nom_n40C_1v95.lib
-fead_lib -corner typ $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_lib -corner typ $env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_db odb/spm.db
 read_spef -corner wc spef/max/spm.max.spef
 read_spef -corner bc spef/max/spm.min.spef
