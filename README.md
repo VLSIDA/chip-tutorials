@@ -40,6 +40,8 @@ git pull
 
 1. [KLayout](klayout.md)
 
+1. [Sky130 PDK](sky130.md)
+
 ## VLSI-DA Research Tutorials
 
 1. [ML](ml.md)
@@ -57,10 +59,6 @@ git pull
 
 1. [OpenLane Installation](openlane-installation.md)
 1. [OpenLane Walkthrough](openlane-walkthrough.md)
-
-### In progress
-
-1. [Sky130](sky130.md)
   
 # License
 
