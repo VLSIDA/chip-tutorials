@@ -19,6 +19,7 @@ git pull
 1. [WSL](wsl.md)
 1. [Virtual Environment](venv.md)
 1. [Docker](docker.md)
+1. [Nix](nix.md)
 
 ## Chip Tutorials
 
