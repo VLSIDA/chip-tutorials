@@ -83,7 +83,20 @@ git checkout 7fcc19
 ## Troubleshooting and Common mistakes
 
 *Beware*, your cloned version of ORFS should match the version of the Docker image that you run. If it doesn't,
-you may get differences if the command interfaces change.
+you may get differences if the command interfaces change. `runorfs.sh` does
+this automatically via `git describe --tags`, but only if you cloned ORFS
+with its full history — a `git clone --depth 1` will have no tags and
+silently fall back to `openroad/orfs:latest`, which may not match the
+scripts you just cloned. Prefer a full clone, or pass an explicit tag to
+`./runorfs.sh`.
+
+Recent `openroad/orfs:latest` images are built with **AVX-512**
+instructions and will crash partway through the flow with "child killed:
+illegal instruction" on CPUs that do not support it (this includes most
+pre-Ice-Lake Intel desktops and every Zen/Zen2/Zen3 AMD part). If you see
+that error, pin to an older tagged image — browse
+[DockerHub tags](https://hub.docker.com/r/openroad/orfs/tags) and pass
+one to `./runorfs.sh`, matching your cloned commit.
 
 You can safely ignore the message "groups: cannot find name for group ID 1000" when you start the Docker image.
 
@@ -102,26 +115,27 @@ Nangate 45nm technology. It will run the flow from synthesis to routing, and
 you will get a lot of output, but it should end with something like this:
 
 ```
-Log                            Elapsed seconds Peak Memory/MB
-1_1_yosys                                    0             42
-1_1_yosys_canonicalize                       0             38
-2_1_floorplan                                0             97
-2_2_floorplan_macro                          0             93
-2_3_floorplan_tapcell                        0             93
-2_4_floorplan_pdn                            0             95
-3_1_place_gp_skip_io                         0             94
-3_2_place_iop                                0             94
-3_3_place_gp                                 1            194
-3_4_place_resized                            0            113
-3_5_place_dp                                 0             99
-4_1_cts                                      4            120
-5_1_grt                                     10            213
-5_2_route                                   17           1175
-5_3_fillcell                                 0             97
-6_1_fill                                     0             95
-6_1_merge                                    1            390
-6_report                                     0            137
-Total                                       33           1175
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+1_1_yosys_canonicalize             0             38 45af71d069285cb71fba
+1_2_yosys                          0             37 8f4f1609d45714b16838
+1_synth                            0            102 2c0cb35f152969a57a97
+2_1_floorplan                      0            121 4c0c21a703c4514a4f9e
+2_2_floorplan_macro                0             98 4c0c21a703c4514a4f9e
+2_3_floorplan_tapcell              0             98 41d55f307cb9baec622e
+2_4_floorplan_pdn                  0            101 4b02fdf1131f9ecfb828
+3_1_place_gp_skip_io              18            102 c60b97e4377b3a96d8c4
+3_2_place_iop                      0            100 e10d623fff656d759c03
+3_3_place_gp                      17            212 611a676ae84b63e3582b
+3_4_place_resized                  0            119 611a676ae84b63e3582b
+3_5_place_dp                       0            106 6f409421b824c2937041
+4_1_cts                            2            128 3ae290878676cd808502
+5_1_grt                           21            218 cc66d1cd20f7651b10e1
+5_2_route                         25           2369 cfb6ef9f4d29c356f88b
+5_3_fillcell                       0            101 e40b0e5835f90ee733e0
+6_1_fill                           0             99 e40b0e5835f90ee733e0
+6_1_merge                          2            424
+6_report                           2            157
+Total                             87           2369
 ```
 
 Note, there might be a few "WARNING" messages, but that is ok.
