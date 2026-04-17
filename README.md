@@ -42,6 +42,8 @@ git pull
 
 1. [Sky130 PDK](sky130.md)
 
+1. [GF180MCU PDK](gf180mcu.md)
+
 ## VLSI-DA Research Tutorials
 
 1. [ML](ml.md)
