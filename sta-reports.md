@@ -1,5 +1,10 @@
-
 # Reporting Timing
+
+Once you have loaded a design into OpenSTA (see [STA](sta.md)), the
+reporting commands below pull out setup/hold paths, per-endpoint slack,
+clock skew, and power. All are TCL — they run at the `openroad>`
+prompt or from a sourced `.tcl` script.
+
 ## Max paths
 
 You can get the a timing report by doing:
@@ -228,6 +233,76 @@ from a particular input, or through a particular cell. You can use the `-from`,
 `-to`, and `-through` options to filter the paths using these criteria.
 
 
+
+# Summary reports
+
+Path-based reports (`report_checks`) show you one critical path at a
+time. Summary reports roll up margin across the whole design, which is
+what you want for a sanity check or when comparing two runs. The three
+most useful:
+
+## `report_wns` — Worst Negative Slack
+
+The slack of the single worst-margin path in the design. A positive
+number means the design meets timing; a negative number is the size of
+the worst violation.
+
+```
+openroad> report_wns
+wns 0.43
+```
+
+Use `-corner <name>` to query a specific corner; without it, `report_wns`
+reports the worst slack across every corner.
+
+## `report_tns` — Total Negative Slack
+
+The sum of negative slack across all endpoints. A design with one path
+1 ns late and 300 paths each 0.01 ns late has the same WNS as a design
+with one 1 ns path and nothing else — TNS separates them. Driving TNS
+to zero is usually what you're doing when you add buffers or resize
+cells in ECO fixups.
+
+```
+openroad> report_tns
+tns -2.37
+```
+
+Zero TNS = every endpoint meets setup.
+
+## `report_clock_skew` — clock distribution balance
+
+Reports the delay from the clock source to each flop's clock pin and
+the skew between related flops. Large skew eats into both setup *and*
+hold margin and usually means the clock tree was built badly.
+
+```
+openroad> report_clock_skew
+```
+
+Pair this with `report_clock_min_period`:
+
+```
+openroad> report_clock_min_period
+```
+
+which tells you the minimum period the current netlist would meet at
+the worst corner, rather than the period your SDC asks for. If
+min_period is much smaller than the SDC, you're leaving margin on the
+table; if it's larger, the SDC is asking for something the current
+implementation can't deliver.
+
+## `report_check_types` — violation types
+
+The bucket view — how many setup, hold, recovery, removal, min-period,
+and min-pulse-width violations exist?
+
+```
+openroad> report_check_types -max_slack 0
+```
+
+With `-max_slack 0` it filters to the violating endpoints; omitting it
+reports all endpoint types regardless of margin.
 
 # Reporting Edges and Pins
 

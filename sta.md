@@ -1,7 +1,24 @@
 # Static Timing Analysis (STA) Tutorial
 
-OpenSTA is a command line tool called `sta`, but it is
-also integrated into OpenROAD and the [ORFS environment](orfs.md#installation):
+**Static Timing Analysis** is the exhaustive, *non-simulation* check that
+every path in a synchronous design meets its timing requirements (setup,
+hold, recovery, removal) against a clock. It's called "static" because
+the tool walks the netlist once and computes worst-case arrival times
+from pin-to-pin delays — no vectors required — so coverage is 100 %
+of paths by construction.
+
+## Tools
+
+The open-source STA engine used in this tutorial chain is
+[OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA). It's
+available two ways:
+
+- Standalone CLI: `sta`.
+- Embedded in OpenROAD, which is how most of the
+  [ORFS](orfs.md#installation) and [LibreLane](librelane.md) flows invoke
+  it.
+
+Inside OpenROAD or ORFS, drop into the interactive shell:
 
 ```
 $ openroad
@@ -9,21 +26,28 @@ OpenROAD edf00dff99f6c40d67a30c0e22a8191c5d2ed9d6
 Features included (+) or not (-): +Charts +GPU +GUI +Python
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
-warning: `/var/empty/.tclsh-history' is not writable.
 openroad>
 ```
 
-These tutorials all use [TCL (Tool Command
-Language)](https://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html) scripts to
-interact with OpenSTA. You don't need to master TCL, but you should be familiar with
-it. It is based on LISP but with customized commands for EDA tools. While you can also use
-some of these commands in Python, *the industry standard is currently TCL*.
+Every STA command in these tutorials is a TCL command entered at this
+prompt. [TCL (Tool Command
+Language)](https://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html)
+is the industry-standard scripting language for EDA — not because it's
+a great language, but because nearly every commercial tool (Design
+Compiler, PrimeTime, ICC, Innovus, Tempus) reads it, and your flow will
+need to work with those tools eventually. OpenROAD also exposes a Python
+interface (see [OpenROAD Python API](orfs.md#openroad-python-api))
+but the TCL commands below are the common form.
 
-The full documentation of the OpenSTA commands can be found
-[here](https://github.com/The-OpenROAD-Project/OpenSTA/blob/2c5df8ccbc09a98bd39af206339505754cbee339/doc/OpenSTA.pdf).
+Full OpenSTA command reference:
+<https://github.com/The-OpenROAD-Project/OpenSTA/blob/master/doc/OpenSTA.pdf>.
 
-This tutorial will utilize the spm design example final output that was created by OpenLane2.
-You should untar the file for this tutorial:
+## Example design
+
+This tutorial uses the SPM (serial-parallel multiplier) design bundled in
+this repository as `final.tar.gz`. The tarball was produced by a
+LibreLane run so it contains every view you might want to load: DEF, ODB,
+gate-level Verilog, SDC, and per-corner SPEFs.
 
 ```bash
 git clone https://github.com/VLSIDA/chip-tutorials.git
@@ -31,17 +55,18 @@ cd chip-tutorials
 tar -zxvf final.tar.gz
 ```
 
-which will create the final subdirectory with subdirectories for the different design files.
-The ones that we are concerned with are the following: def, odb, nl, sdc, and spef.
+This creates a `final/` directory with the subdirectories `def`, `odb`,
+`pnl` (gate-level Verilog), `sdc`, `spef`, and `lib`.
 
-This assumes that you have an environment variable pointing to your PDK installation directory. In most cases, this will be:
+Set `PDK_ROOT` to your ciel PDK install (see
+[Sky130 PDK](sky130.md)):
 
 ```bash
 export PDK_ROOT=~/.ciel
 ```
 
-Note that PDK_ROOT is an environment variable set in the OpenLane environment that points to the
-PDK installation directory.
+This is the same variable LibreLane and ORFS use — if one of those is
+already set up, you can skip this.
 
 ## Single corner timing analysis
 
@@ -110,10 +135,6 @@ The [STA Timing Constraints Tutorial](sta-constraints.md) goes into more detail 
 ## Multi-Corner STA
 
 The [STA Multi-Corner Tutorial](sta-mc.md) goes into more detail on how to set up a multi-corner analysis.
-
-## Noise Analysis
-
-TBD
 
 ## OpenROAD Timing GUI
 
