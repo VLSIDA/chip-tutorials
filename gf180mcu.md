@@ -1,6 +1,7 @@
 ---
 title: GF180MCU PDK
-nav_order: 65
+nav_order: 2
+parent: Technologies
 ---
 
 # GlobalFoundries 180 nm MCU Open-Source PDK (gf180mcu)
