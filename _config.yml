@@ -29,9 +29,6 @@ footer_content: "&copy; VLSI-DA, UC Santa Cruz. Released under the repository's 
 
 # Skip non-docs files from the build
 exclude:
-  - final.tar.gz
-  - ordb/
-  - LICENSE
   - Gemfile
   - Gemfile.lock
   - .claude/

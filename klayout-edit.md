@@ -17,4 +17,4 @@ You might need to *edit* a shape to fix an error.
 
 # License
 
-Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
+Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

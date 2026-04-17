@@ -17,3 +17,7 @@ more free multi-project wafer runs.
 - **[GF180MCU PDK](gf180mcu.md)** — GlobalFoundries 180 nm mixed-signal
   / MCU process. 3.3 V and 6 V devices, three metal-stack variants
   (A/B/C/D), used by wafer.space MPW runs.
+
+# License
+
+Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

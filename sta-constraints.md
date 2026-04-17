@@ -336,4 +336,4 @@ set_min_delay 0.3 -from [get_ports async_in] -to [get_ports async_out]
 
 # License
 
-Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
+Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)
