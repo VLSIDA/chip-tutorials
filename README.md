@@ -44,11 +44,10 @@ git pull
 
 1. [Static Timing Analysis](sta.md)
 
-1. [Spice Syntax](spice.md)
-
-1. [Spice Device Models](spice-models.md)
-
-1. [Ngspice Usage](ngspice.md)
+1. SPICE Tutorials
+    1. [SPICE Syntax](spice.md)
+    1. [Ngspice Usage](ngspice.md)
+    1. [SPICE Device Models](spice-models.md)
 
 1. [KLayout](klayout.md)
 
@@ -67,13 +66,6 @@ git pull
 - Digital Integrated Circuits (2nd Edition) - A Design Perspective by Rabaey, Chandrakasan, & Nikolic (ISBN-10: 0130909963)
 - Electronic Design Automation for IC Implementation, Circuit Design, and Process Technology Edited by Luciano Lavagno, Igor L. Markov, Grant Martin, and Louis K. Scheffer, CRC Press 2016. (ISBN-10: 0849379245) It is [available through the campus library](https://ucsc.primo.exlibrisgroup.com/permalink/01CDL_SCR_INST/gfkjds/informaworld_s10_1201_9781315215112_version2)
 
-## Other material
-
-### Outdated Tutorials
-
-1. [OpenLane Installation](openlane-installation.md)
-1. [OpenLane Walkthrough](openlane-walkthrough.md)
-  
 # License
 
 Copyright 2024 VLSI-DA (see [LICENSE](LICENSE) for use)
