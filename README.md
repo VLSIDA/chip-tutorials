@@ -1,3 +1,9 @@
+---
+title: Home
+layout: home
+nav_order: 1
+---
+
 # UCSC VLSI-DA Chip Tutorials
 
 To clone this repo and all of the tutorial files locally, you can use the following command:

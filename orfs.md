@@ -1,3 +1,8 @@
+---
+title: OpenROAD and ORFS
+nav_order: 20
+---
+
 # OpenROAD Flow Scripts (ORFS) and OpenROAD
 
 This is the single reference document for everything ORFS- and

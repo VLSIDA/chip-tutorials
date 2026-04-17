@@ -1,3 +1,9 @@
+---
+title: KLayout
+nav_order: 50
+has_children: true
+---
+
 # Setting up KLayout and PDK for Sky130
 
 ## Installing KLayout

@@ -1,3 +1,9 @@
+---
+title: Device Models
+nav_order: 3
+parent: SPICE
+---
+
 # SPICE Device Models
 
 The `M` card in a SPICE netlist only specifies *how* a transistor is connected

@@ -1,3 +1,8 @@
+---
+title: Docker
+nav_order: 13
+---
+
 # Installing Docker
 
 ## Linux (Ubuntu)

@@ -1,3 +1,8 @@
+---
+title: GF180MCU PDK
+nav_order: 65
+---
+
 # GlobalFoundries 180 nm MCU Open-Source PDK (gf180mcu)
 
 gf180mcu is GlobalFoundries' open-sourced 180 nm process design kit, released

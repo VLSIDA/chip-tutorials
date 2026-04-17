@@ -1,3 +1,9 @@
+---
+title: Editing Layout
+nav_order: 2
+parent: KLayout
+---
+
 
 # Editing shapes in KLayout
 

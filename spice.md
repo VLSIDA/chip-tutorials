@@ -1,3 +1,9 @@
+---
+title: SPICE
+nav_order: 40
+has_children: true
+---
+
 # SPICE Overview
 
 SPICE is an industry standard circuit file format. It is a textual schematic

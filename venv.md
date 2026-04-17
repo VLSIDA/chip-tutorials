@@ -1,3 +1,8 @@
+---
+title: Virtual Environment
+nav_order: 12
+---
+
 # Virtual Environment
 Python virtual environment is a Python package management system for your projects. It lets you
 retain different versions of Python packages for your projects. This is done by creating project

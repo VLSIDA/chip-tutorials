@@ -1,3 +1,8 @@
+---
+title: GNNs
+nav_order: 71
+---
+
 
 This is a set of videos and readings to get students up to speed on GNNs.
 You may want to also visit the [ML tutorials](ml.md) for more background on ML.

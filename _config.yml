@@ -1,0 +1,38 @@
+title: UCSC VLSI-DA Chip Tutorials
+description: Open-source chip-design tutorials covering SPICE, OpenROAD / ORFS, LibreLane, STA, Sky130, GF180MCU, and KLayout.
+
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+
+# just-the-docs options
+search_enabled: true
+search:
+  heading_level: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  rel_url: true
+
+heading_anchors: true
+color_scheme: light
+nav_sort: case_insensitive
+
+aux_links:
+  "GitHub":
+    - "//github.com/VLSIDA/chip-tutorials"
+
+aux_links_new_tab: true
+
+# Default layout + site-wide footer
+footer_content: "&copy; VLSI-DA, UC Santa Cruz. Released under the repository's LICENSE."
+
+# Skip non-docs files from the build
+exclude:
+  - final.tar.gz
+  - ordb/
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - .claude/
+  - test-*/

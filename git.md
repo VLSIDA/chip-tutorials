@@ -1,3 +1,8 @@
+---
+title: UCSC Git
+nav_order: 10
+---
+
 # Git
 
 ## UCSC GitLab

@@ -1,3 +1,9 @@
+---
+title: Timing Constraints
+nav_order: 1
+parent: Static Timing Analysis
+---
+
 # STA Timing Constraints
 
 The industry-standard method of specifying STA timing constraints is the

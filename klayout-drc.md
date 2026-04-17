@@ -1,3 +1,9 @@
+---
+title: Running DRC
+nav_order: 1
+parent: KLayout
+---
+
 
 # Running DRC
 

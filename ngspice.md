@@ -1,3 +1,9 @@
+---
+title: Ngspice Usage
+nav_order: 2
+parent: SPICE
+---
+
 
 # Ngspice Overview
 

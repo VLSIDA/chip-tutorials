@@ -1,3 +1,8 @@
+---
+title: LibreLane
+nav_order: 25
+---
+
 # LibreLane
 
 LibreLane is the successor to OpenLane 2. It is an infrastructure library for

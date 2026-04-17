@@ -1,3 +1,9 @@
+---
+title: Multi-Corner STA
+nav_order: 3
+parent: Static Timing Analysis
+---
+
 # Multi-corner timing analysis
 
 Timing a design at one operating point is rarely enough. A chip leaving the

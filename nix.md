@@ -1,3 +1,8 @@
+---
+title: Nix
+nav_order: 14
+---
+
 # Installing Nix
 
 Nix is a purely functional package manager. Unlike `apt` or `brew`, Nix

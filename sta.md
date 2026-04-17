@@ -1,3 +1,9 @@
+---
+title: Static Timing Analysis
+nav_order: 30
+has_children: true
+---
+
 # Static Timing Analysis (STA) Tutorial
 
 **Static Timing Analysis** is the exhaustive, *non-simulation* check that

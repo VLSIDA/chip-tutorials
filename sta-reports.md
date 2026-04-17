@@ -1,3 +1,9 @@
+---
+title: Reporting
+nav_order: 2
+parent: Static Timing Analysis
+---
+
 # Reporting Timing
 
 Once you have loaded a design into OpenSTA (see [STA](sta.md)), the

@@ -1,3 +1,8 @@
+---
+title: Machine Learning
+nav_order: 70
+---
+
 These are some basic ML tutorials.
 
 # Basic ML
