@@ -33,3 +33,6 @@ exclude:
   - Gemfile.lock
   - .claude/
   - test-*/
+  # KLAYOUT_PATH bundle (DRC/LVS rule decks with upstream READMEs that
+  # should not appear as tutorial pages on the site).
+  - klayout/tech/
