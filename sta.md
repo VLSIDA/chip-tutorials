@@ -1,7 +1,7 @@
 # Static Timing Analysis (STA) Tutorial
 
 OpenSTA is a command line tool called `sta`, but it is
-also integrated into OpenROAD and the [ORFS environment](orfs-installation.md):
+also integrated into OpenROAD and the [ORFS environment](orfs.md#installation):
 
 ```
 $ openroad

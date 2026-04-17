@@ -19,6 +19,19 @@ Key links:
 * Source: <https://github.com/librelane/librelane>
 * Project page: <https://librelane.org>
 
+## Table of contents
+
+- [Prerequisites](#prerequisites)
+- [Installing LibreLane](#installing-librelane)
+- [Smoke test](#smoke-test)
+- [Running the SPM example](#running-the-spm-example)
+- [The config file](#the-config-file)
+- [Run directories and tags](#run-directories-and-tags)
+- [Viewing the final design](#viewing-the-final-design)
+- [Targeting gf180mcu with wafer.space](#targeting-gf180mcu-with-waferspace)
+- [Migrating from OpenLane 2.3](#migrating-from-openlane-23)
+- [Help](#help)
+
 ## Prerequisites
 
 - **Nix.** LibreLane's first-class install path is Nix with the FOSSi
