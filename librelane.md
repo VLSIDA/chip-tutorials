@@ -97,12 +97,12 @@ LibreLane ships with a collection of example designs. The canonical first
 run is SPM (a small serial-parallel multiplier):
 
 ```bash
-python3 -m librelane --pdk-root $HOME/.ciel ./designs/spm/config.json
+python3 -m librelane --pdk-root $HOME/.ciel ./librelane/examples/spm/config.yaml
 ```
 
 This pulls in the shipped configuration, runs the full Classic flow, and
 produces the final GDS. Artifacts land in
-`./designs/spm/runs/RUN_<timestamp>/`.
+`./librelane/examples/spm/runs/RUN_<timestamp>/`.
 
 Inside the run directory you will find:
 
