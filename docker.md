@@ -4,59 +4,57 @@
 
 To install Docker on Ubuntu, follow these steps:
 
-1. **Update your existing list of packages**:
+1. **Update your existing list of packages and install prerequisites**:
+
+   ```bash
+   sudo apt update
+   sudo apt install ca-certificates curl
+   ```
+
+2. **Add Docker's official GPG key** to `/etc/apt/keyrings/`:
+
+   ```bash
+   sudo install -m 0755 -d /etc/apt/keyrings
+   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   sudo chmod a+r /etc/apt/keyrings/docker.asc
+   ```
+
+   Note: the older `apt-key add` flow is deprecated and removed on Ubuntu 22.04+. Use the `/etc/apt/keyrings/` approach above.
+
+3. **Add the Docker APT repository**:
+
+   ```bash
+   echo \
+     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+
+4. **Update the package database with the Docker packages from the newly added repo**:
 
    ```bash
    sudo apt update
    ```
 
-2. **Install packages to allow apt to use a repository over HTTPS**:
+5. **Install Docker**:
 
    ```bash
-   sudo apt install apt-transport-https ca-certificates curl software-properties-common
+   sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
-3. **Add Docker’s official GPG key**:
-
-   ```bash
-   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-   ```
-
-4. **Add the Docker APT repository**:
-
-   ```bash
-   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-   ```
-
-5. **Update the package database with the Docker packages from the newly added repo**:
-
-   ```bash
-   sudo apt update
-   ```
-
-6. **Make sure you are about to install from the Docker repo instead of the default Ubuntu repo**:
-
-   ```bash
-   apt-cache policy docker-ce
-   ```
-
-7. **Install Docker**:
-
-   ```bash
-   sudo apt install docker-ce
-   ```
-
-8. **Check that Docker is running**:
+6. **Check that Docker is running**:
 
    ```bash
    sudo systemctl status docker
    ```
 
-9. **(Optional) Manage Docker as a non-root user**:
+7. **(Optional) Manage Docker as a non-root user**:
 
    ```bash
    sudo usermod -aG docker ${USER}
    ```
+
+   Log out and back in for the group change to take effect.
 
 ## Windows
 

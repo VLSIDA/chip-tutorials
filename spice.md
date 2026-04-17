@@ -14,7 +14,7 @@ For example,
 
 ```bash
 pip install ciel
-ciel enable --pdk sky130 54435919abffb937387ec956209f9cf5fd2dfbee
+ciel enable --pdk sky130 7b70722e33c03fcb5dabcf4d479fb0822d9251c9
 ```
 
 You should now see the PDK installed:

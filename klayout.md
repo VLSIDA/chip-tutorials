@@ -8,13 +8,21 @@ will need to install KLayout from the [KLayout
 website](https://www.klayout.de/build.html). It is pre-built for nearly all
 platforms (Windows, MacOS, Linux) and is easy to install.
 
-- Ubuntu 20.04: [klayout-0.29.4-1_amd64.deb](https://www.klayout.org/downloads/Ubuntu/klayout-0.29.4-1_amd64.deb)
-- MacOS: Depends on your OS Version. Check the [KLayout website](https://www.klayout.de/build.html) for the latest version.
+Pick the build that matches your OS from the [KLayout build page](https://www.klayout.de/build.html).
+Recent prebuilt `.deb` files for common Ubuntu versions:
+
+- Ubuntu 24.04: [klayout_0.30.8-1_amd64.deb](https://www.klayout.org/downloads/Ubuntu-24/klayout_0.30.8-1_amd64.deb)
+- Ubuntu 22.04: [klayout_0.30.8-1_amd64.deb](https://www.klayout.org/downloads/Ubuntu-22/klayout_0.30.8-1_amd64.deb)
+- Ubuntu 20.04: [klayout_0.30.8-1_amd64.deb](https://www.klayout.org/downloads/Ubuntu-20/klayout_0.30.8-1_amd64.deb)
+- MacOS: Depends on your OS Version. Check the [KLayout website](https://www.klayout.de/build.html) for the latest build.
+
 For Windows, we recommend that you install the Ubuntu version in [Windows
 Subsystem for Linux](wsl.md).
 
-*We have tested with version 0.29.4.* While this is not the newest, it is the same
-as the version used in OpenLane-2, so it should be compatible.
+*We have tested with 0.30.8.* KLayout releases roughly monthly, so any
+recent `0.30.x` build should work. If you need byte-exact reproducibility
+with an automated flow such as LibreLane, match whatever version that flow
+pins.
 
 *WARNING*: If you install another version, you must *UNINSTALL* KLayout before using
 OpenLane-2 in subsequent parts of the class. Or, at least, remove it from
