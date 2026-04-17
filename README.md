@@ -31,6 +31,9 @@ git pull
     1. [OpenROAD Python Tutorial](ordb-python.md)
     1. [OpenROAD TCL Tutorial](ordb-tcl.md)
 
+1. LibreLane Tutorials
+    1. [LibreLane](librelane.md)
+
 1. [Static Timing Analysis](sta.md)
 
 1. [Spice Syntax](spice.md)
@@ -40,8 +43,6 @@ git pull
 1. [Ngspice Usage](ngspice.md)
 
 1. [KLayout](klayout.md)
-
-1. [LibreLane](librelane.md)
 
 1. [Sky130 PDK](sky130.md)
 
