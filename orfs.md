@@ -1120,7 +1120,3 @@ optimiser), `detail_place`, `cts`, `global_route`, `detailed_route`.
 - Timing-specific Tcl commands: [STA Tutorial](sta.md).
 - OpenROAD reference:
   <https://openroad.readthedocs.io/en/latest/>.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

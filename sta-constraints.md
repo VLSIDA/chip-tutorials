@@ -332,8 +332,3 @@ toggle — you can bound the allowed delay directly:
 set_max_delay 2.0 -from [get_ports async_in] -to [get_ports async_out]
 set_min_delay 0.3 -from [get_ports async_in] -to [get_ports async_out]
 ```
-
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

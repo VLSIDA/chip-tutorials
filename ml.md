@@ -14,8 +14,3 @@ These are some basic ML tutorials.
 ## General Theory
 * [Andrew Ng Course 1](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
 * [Andrew Ng Course 2](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc)
-
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

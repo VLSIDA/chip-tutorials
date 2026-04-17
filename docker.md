@@ -144,7 +144,3 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 ```
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

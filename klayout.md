@@ -141,7 +141,3 @@ For some reason, on my Ubuntu machine, KLayout crashes when I close it. I get th
 fully exit out:
 
 ![Crash on close](klayout/klayout-close-crash.png)
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

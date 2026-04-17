@@ -106,8 +106,3 @@ report_checks -path_delay min      # worst hold across all corners
 Pair this with aggregated reports (see
 [STA Reporting](sta-reports.md#summary-reports)) to get per-corner TNS /
 WNS summaries rather than walking individual paths.
-
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

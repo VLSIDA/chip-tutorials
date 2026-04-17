@@ -161,7 +161,3 @@ substituter URL is wrong or the daemon isn't seeing it. Double-check
 **Removing Nix entirely** — the Determinate installer ships an uninstall
 command: `/nix/nix-installer uninstall`. This reverses every change
 including the `/nix` directory and shell init modifications.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

@@ -294,7 +294,3 @@ Documentation:
 - LibreLane: <https://librelane.readthedocs.io/>
 - OpenROAD: <https://openroad.readthedocs.io/>
 - Community chat: <https://fossi-chat.org>
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

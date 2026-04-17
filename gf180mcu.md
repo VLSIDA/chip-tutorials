@@ -328,7 +328,3 @@ intra-die mismatch + inter-die global variation. See
 - **Running SPICE with PDK libraries:** [SPICE Syntax](spice.md), [Ngspice Usage](ngspice.md)
 - **Multi-corner STA setup:** [Multi-Corner Timing Analysis](sta-mc.md)
 - **Layout, DRC, LVS on open PDKs:** [KLayout](klayout.md), [KLayout DRC](klayout-drc.md), [KLayout LVS](klayout-lvs.md)
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

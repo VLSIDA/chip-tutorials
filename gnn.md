@@ -23,8 +23,3 @@ You may want to also visit the [ML tutorials](ml.md) for more background on ML.
 * Book: [Graph Representation Learning](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf)
 * [GCN](https://arxiv.org/abs/1609.02907) - The first GNN paper
 * [GAT](https://arxiv.org/abs/1710.10903) - Adding attention for GNNs
-
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

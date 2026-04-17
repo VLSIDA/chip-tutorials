@@ -5,6 +5,14 @@ nav_order: 10
 
 # Git
 
+Which Git host you use depends on your class. Some classes use the
+UCSC-hosted GitLab server; others use GitHub. **Check your syllabus or
+the first assignment for which one applies to you** — the instructions
+below only apply if your class is on UCSC GitLab. If your class is on
+GitHub, follow GitHub's own
+[getting-started guide](https://docs.github.com/en/get-started) and
+skip the rest of this page.
+
 ## UCSC GitLab
 
 We will be using the UCSC GitLab server at:
@@ -74,6 +82,3 @@ in your repository:
 where userid is your UCSC ID.
 
   
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

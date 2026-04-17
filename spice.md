@@ -355,7 +355,3 @@ be parameters, which can be defined by the following form:
 You may define more than one parameter on the same line. This is
 useful for defining a supply voltage, for example, which may later
 change.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

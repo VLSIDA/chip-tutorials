@@ -409,7 +409,3 @@ read_vcd -scope tb/spm spm.vcd
 ```
 if you've created a file with your testbench, `tb`. However, if you don't run your design in all the modes
 of operation, this can also be inaccurate.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

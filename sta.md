@@ -160,7 +160,3 @@ of the path like this:
 
 The path should also be highlighted in the layout to see the placement. However, the color
 defaults to black.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

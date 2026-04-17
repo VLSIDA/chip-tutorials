@@ -61,7 +61,3 @@ has several sub rules (a, b, and c) which can be seen most easily in the followi
 
 Basically, the contact needs to have space on the left/right or bottom/top of different size. Licon.5b
 is related to licon in tap well taps and not diff.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

@@ -37,8 +37,3 @@ Now with the virtual environment active, you can install your packages with:
 ```bash
 python -m pip install <package name>
 ```
-
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

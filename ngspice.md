@@ -379,7 +379,3 @@ There is a list of other tutorials on the Ngspice web page:
 [http://ngspice.sourceforge.net/tutorials.html](http://ngspice.sourceforge.net/tutorials.html)
 The ngspice manual is also available at:
 [http://ngspice.sourceforge.net/docs/ngspice-manual.pdf](http://ngspice.sourceforge.net/docs/ngspice-manual.pdf)
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

@@ -34,7 +34,3 @@ The tools we will be using are not supported for Windows. Windows users can inst
    - Follow the on-screen instructions to complete the setup, which includes creating a user account.
 
 Once WSL and Ubuntu 24.04 are installed, you can follow the rest of the instructions from the WSL terminal.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

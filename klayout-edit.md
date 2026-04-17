@@ -14,7 +14,3 @@ These videos cover a variety of features in KLayout:
 * [Cell Hierarchy Part 2](https://www.youtube.com/watch?v=5wvRE4HFbuw)
 
 You might need to *edit* a shape to fix an error.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

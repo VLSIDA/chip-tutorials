@@ -236,7 +236,3 @@ At higher levels, you might have a bus that is flipped. This is common when you
 mix up big-endian and little-endian. For example, if you have a 4-bit bus and
 the layout has the MSB on the left and the netlist has the MSB on the right,
 you can run into this problem.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)

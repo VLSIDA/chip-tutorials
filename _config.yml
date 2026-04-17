@@ -25,7 +25,7 @@ aux_links:
 aux_links_new_tab: true
 
 # Default layout + site-wide footer
-footer_content: "&copy; VLSI-DA, UC Santa Cruz. Released under the repository's LICENSE."
+footer_content: "Copyright &copy; 2026 VLSI-DA, UC Santa Cruz. Released under the <a href=\"license.html\">Apache License 2.0</a>."
 
 # Skip non-docs files from the build
 exclude:

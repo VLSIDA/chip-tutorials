@@ -245,7 +245,3 @@ characterized the device at that size.
 - No single BSIM4 card fits all device sizes, so Sky130 ships 63 bins per
   device flavor, each with tight `lmin`/`lmax`/`wmin`/`wmax` windows and its
   own fitted coefficients. Instances must be sized to land inside a bin.
-
-# License
-
-Copyright 2026 VLSI-DA (see [LICENSE](license.md) for use)
