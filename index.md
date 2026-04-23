@@ -59,6 +59,7 @@ git pull
 1. Technologies
     1. [Sky130 PDK](sky130.md)
     1. [GF180MCU PDK](gf180mcu.md)
+    1. [ASAP7 PDK](asap7.md)
 
 ## VLSI-DA Research Tutorials
 
