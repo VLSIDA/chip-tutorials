@@ -59,7 +59,7 @@ select "SSH Keys" on the left side as shown here:
 
 Paste the public key into the space provided and click ``Add key'' to add it.
 
-More information on ssh is availble at:
+More information on ssh is available at:
 
 [https://docs.gitlab.com/ee/user/ssh.html](https://docs.gitlab.com/ee/user/ssh.html)
 
