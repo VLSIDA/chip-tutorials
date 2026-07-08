@@ -109,6 +109,7 @@ illegal instruction" on CPUs that do not support it (this includes most
 pre-Ice-Lake Intel desktops and every Zen / Zen 2 / Zen 3 AMD part). If
 you see that error, use `make LEC_CHECK=0` to skip the resizer's logical
 equivalence check that requires AVX-512.
+
 You can safely ignore the message `groups: cannot find name for group
 ID 1000` when the Docker image starts.
 
